@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jmolsmobile.videocapture">
+
+    <!-- 录音 录制声音通过手机或耳机的麦克 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 摄影机 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application>
+        <activity android:name=".ui.view.VideoMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.view.VideoCaptureActivity"
+            android:configChanges="orientation|screenSize">
+        </activity>
+    </application>
+
+</manifest>

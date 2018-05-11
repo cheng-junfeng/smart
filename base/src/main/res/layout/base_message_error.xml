@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/iv_msg_error"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    android:minHeight="@dimen/base_error_height"
+    android:gravity="center_vertical"
+    android:background="@color/base_error_color">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="@dimen/offset_15dp"
+            android:layout_marginEnd="@dimen/offset_15dp">
+                <ImageView
+                    android:layout_width="@dimen/offset_25dp"
+                    android:layout_height="@dimen/offset_25dp"
+                    android:src="@mipmap/ic_msg_error"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:layout_marginLeft="@dimen/offset_5dp"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:textColor="@color/color_asserts_gray"
+                    android:textSize="@dimen/text_size"
+                    android:text="消息状态异常，请确认网络"/>
+        </LinearLayout>
+
+
+</RelativeLayout>

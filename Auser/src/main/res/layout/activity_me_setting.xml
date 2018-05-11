@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_light_gray"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@color/color_white"
+                android:padding="10dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="基本设置"
+                    android:textColor="@color/blackText4"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View style="@style/DeepUnderLine" />
+
+            <!--显示缩略图-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_height"
+                android:background="@color/color_white"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/MeInfoTextLeftStyle"
+                    android:text="显示启动页" />
+
+                <com.wu.safe.base.ui.widget.SwitchButton
+                    android:id="@+id/switch_pic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    app:sb_checked="false"
+                    app:sb_show_indicator="false" />
+            </RelativeLayout>
+
+            <View style="@style/DeepUnderLine" />
+
+            <!--显示缩略图-->
+            <LinearLayout
+                android:id="@+id/ll_pic_quality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_pic_state"
+                    style="@style/MeInfoTextLeftStyle"
+                    android:text="启动页" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="关闭启动页后，将直接进入首页"
+                    android:textColor="@color/blackText4"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <View style="@style/DeepUnderLine" />
+
+            <!--推送开关-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_height"
+                android:background="@color/color_white"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/MeInfoTextLeftStyle"
+                    android:text="推送开关" />
+
+                <com.wu.safe.base.ui.widget.SwitchButton
+                    android:id="@+id/switch_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    app:sb_checked="true"
+                    app:sb_show_indicator="false" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@color/color_white"
+                android:padding="10dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="常用功能"
+                    android:textColor="@color/blackText4"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View style="@style/DeepUnderLine" />
+
+            <!--清空缓存-->
+            <RelativeLayout
+                android:id="@+id/rl_set_clean_cache"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_height"
+                android:background="@drawable/all_item_gray_selector"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/MeInfoTextLeftStyle"
+                    android:text="清空缓存" />
+
+                <TextView
+                    android:id="@+id/tv_set_cache_size"
+                    style="@style/MeInfoTextRightStyleSecond"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center_vertical"
+                    android:text="0M"
+                    android:textColor="@color/blackText2" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_height"
+                    android:layout_height="@dimen/icon_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/ic_back_right" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@color/color_white"
+                android:padding="10dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="其他"
+                    android:textColor="@color/blackText4"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View style="@style/DeepUnderLine" />
+
+            <!--检测更新-->
+            <RelativeLayout
+                android:id="@+id/rl_set_bind"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_height"
+                android:background="@drawable/all_item_gray_selector"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/MeInfoTextLeftStyle"
+                    android:text="账户绑定" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_height"
+                    android:layout_height="@dimen/icon_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/ic_back_right" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

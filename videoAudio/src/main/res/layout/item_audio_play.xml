@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/llFirstAudio"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dip"
+    android:layout_marginBottom="8dip"
+    android:layout_marginLeft="10dip"
+    android:layout_marginRight="10dip"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/rlAudio"
+        android:layout_width="0dp"
+        android:layout_height="30dip"
+        android:layout_weight="8"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_audio_item_bg">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dip"
+            android:src="@drawable/icon_geo"/>
+
+        <ImageView
+            android:id="@+id/tvSoundWave"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dip"
+            android:src="@drawable/ic_sound_wave"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dip"
+        android:background="@drawable/shape_round_corner_border_bg">
+
+        <TextView
+            android:id="@+id/tvAudioTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:text="10s"/>
+
+        <TextView
+            android:id="@+id/tvAudioDelete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="6dip"
+            android:paddingBottom="6dip"
+            android:text="删除"
+            android:textColor="@color/color_light_white"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

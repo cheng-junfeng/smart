@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_light_gray"
+    tools:tracertActivity=".module.main.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/iv_header"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/avatar_default" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/iv_header"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/color_white"
+            android:gravity="center_vertical"
+            android:text="WELCOME" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        android:orientation="vertical"
+        android:layout_below="@+id/rl_top"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <com.wu.safe.base.ui.widget.CommEditText
+            android:id="@+id/et_phone"
+            style="@style/ModuleUserEditTextCommon"
+            android:drawableLeft="@mipmap/login_phone_icon"
+            android:hint="请输入账号"
+            android:inputType="text"
+            app:ce_account_visible_enable="true"
+            android:maxLines="1"
+            android:maxLength="50" />
+
+        <View style="@style/DeepUnderLine" />
+
+        <com.wu.safe.base.ui.widget.CommEditText
+            android:id="@+id/et_psw"
+            style="@style/ModuleUserEditTextCommon"
+            android:drawableLeft="@mipmap/login_psw_icon"
+            android:maxLines="1"
+            android:hint="请输入密码"
+            app:ce_psw_visible_enable="true"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/bt_login"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_below="@id/ll_login"
+        android:layout_marginLeft="@dimen/margin_left_small"
+        android:layout_marginRight="@dimen/margin_left_small"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/all_item_blue_selector"
+        android:text="登录"
+        android:textColor="@color/color_white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/bt_register"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_below="@id/bt_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/margin_left_small"
+        android:layout_marginRight="@dimen/margin_left_small"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/all_item_gray_selector"
+        android:text="注册"
+        android:visibility="gone"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"/>
+
+</RelativeLayout>

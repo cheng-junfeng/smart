@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wu.safe.user" >
+    <application>
+        <activity android:name="com.wu.safe.user.ui.view.MyAboutActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.wu.safe.user.ui.view.MyFeedBackActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.wu.safe.user.ui.view.MyLoginActivity"
+            android:theme="@style/UserTheme"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.wu.safe.user.ui.view.MyInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.wu.safe.user.ui.view.MyRegistActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.wu.safe.user.ui.view.MySelectCountryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.wu.safe.user.ui.view.MyModifyActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.wu.safe.user.ui.view.MyModifyPswActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.wu.safe.user.ui.view.MySettingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.wu.safe.user.ui.view.MyUpgradeActvity"
+            android:theme="@style/Dialog"
+            android:screenOrientation="portrait"/>
+    </application>
+</manifest>

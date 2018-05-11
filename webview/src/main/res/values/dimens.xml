@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="base_toolbar_height">50dp</dimen>
+    <dimen name="base_margin_left">15dp</dimen>
+</resources>

@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/iv_itemview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/all_item_gray_selector"
+        android:clickable="true"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/iv_itemTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginEnd="@dimen/offset_70dp"
+                android:layout_marginStart="@dimen/offset_15dp"
+                android:ellipsize="end"
+                android:paddingTop="@dimen/offset_10dp"
+                android:singleLine="true"
+                android:textColor="@color/color_dark_gray6"
+                android:textSize="@dimen/text_size"
+                tools:text="title" />
+
+            <TextView
+                android:id="@+id/iv_unread"
+                android:layout_gravity="end"
+                android:layout_width="@dimen/type_width"
+                android:layout_height="@dimen/type_height"
+                android:layout_marginTop="@dimen/offset_5dp"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_10"
+                android:textColor="@color/color_light_white"
+                tools:text="Read"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/iv_itemContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/offset_15dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:ellipsize="end"
+            android:paddingTop="@dimen/offset_5dp"
+            android:maxLines="2"
+            android:textColor="@color/color_dark_gray6"
+            android:textSize="@dimen/text_size_small"
+            tools:text="content"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/offset_10dp"
+            android:layout_marginBottom="@dimen/offset_10dp">
+
+            <TextView
+                android:id="@+id/iv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/type_height"
+                android:layout_gravity="start"
+                android:gravity="center"
+                android:layout_marginEnd="@dimen/offset_50dp"
+                android:layout_marginStart="@dimen/offset_15dp"
+                android:paddingLeft="@dimen/offset_5dp"
+                android:paddingRight="@dimen/offset_5dp"
+                android:text="基本通知"
+                android:textSize="@dimen/text_size_10"
+                android:textColor="@color/color_light_white"
+                android:background="@drawable/type_normal" />
+
+            <TextView
+                android:id="@+id/iv_Time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/offset_15dp"
+                android:textColor="@color/color_dark_gray6"
+                android:textSize="@dimen/text_size_small"
+                tools:text="time" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <View style="@style/DeepUnderLine" />
+</RelativeLayout>

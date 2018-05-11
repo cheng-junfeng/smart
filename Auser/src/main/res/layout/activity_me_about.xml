@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/all_item_gray_selector"
+        android:clickable="false"
+        android:gravity="center"
+        android:paddingBottom="@dimen/offset_20dp"
+        android:paddingTop="@dimen/offset_20dp">
+
+        <ImageView
+            android:id="@+id/iv_itemImageNew"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:background="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_itemImageNew"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/offset_10dp"
+            android:text="版本号 1.0.1"
+            android:textColor="@color/color_dark_gray"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View style="@style/DeepUnderLine" />
+
+    <RelativeLayout
+        android:id="@+id/ly_checkVersion"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_height"
+        android:orientation="horizontal"
+        android:background="@drawable/all_item_gray_selector"
+        android:clickable="true"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/iv_title"
+            style="@style/MeInfoTextLeftStyle"
+            android:layout_gravity="start|center_vertical"
+            android:gravity="center_vertical"
+            android:layout_marginStart="@dimen/offset_15dp"
+            android:text="检测更新" />
+
+        <TextView
+            android:id="@+id/iv_new"
+            android:layout_toRightOf="@id/iv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/type_height"
+            android:layout_marginStart="@dimen/offset_10dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="start|center_vertical"
+            android:paddingLeft="@dimen/offset_5dp"
+            android:paddingRight="@dimen/offset_5dp"
+            android:visibility="gone"
+            android:text="new"
+            android:textSize="@dimen/text_size_10"
+            android:textColor="@color/color_light_white"
+            android:background="@drawable/type_error" />
+
+        <ImageView
+            android:layout_width="@dimen/icon_height"
+            android:layout_height="@dimen/icon_height"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/ic_back_right"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/offset_15dp"
+        android:gravity="bottom">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/color_dark_gray"
+            android:text="星球科技股份有限公司"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/color_dark_gray"
+            android:text="2018@junfeng.cheng All rights reserved."/>
+    </LinearLayout>
+</LinearLayout>

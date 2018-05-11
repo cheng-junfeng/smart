@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.jakewharton.butterknife'
+
+def getTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+        manifestPlaceholders = [APP_ID: rootProject.ext.applicationId]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions{
+        jumboMode = true
+        javaMaxHeapSize '4g'
+    }
+    //greendao配置
+    greendao {
+        //版本号，升级时可配置
+        schemaVersion 3
+    }
+    lintOptions {
+        abortOnError false
+        // if true, only report errors.
+        ignoreWarnings true
+    }
+    // 打包后应用名称
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            if(!rootProject.ext.releaseVer){
+                outputFileName = "app_" + getTime() + "_beta.apk"
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.appcompatVer"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:design:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //recycleView
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    //butterknife
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterKnifeVer"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnifeVer"
+    //refresh
+    implementation 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
+    //greendao
+    implementation "org.greenrobot:greendao:$rootProject.ext.greendaoVer"
+    //multidex
+    implementation 'com.android.support:multidex:1.0.1'
+    //badgeview
+    implementation 'cn.bingoogolapple:bga-badgeview-api:1.1.7'
+    annotationProcessor "cn.bingoogolapple:bga-badgeview-compiler:1.1.7"
+
+    //base
+    implementation project(':base')
+    //jpush
+    implementation project(':Apush')
+    //user
+    implementation project(':Auser')
+    //map
+    api project(':Amap')
+    //permission
+    implementation project(':Apermission')
+
+    //webview
+    implementation project(':webview')
+    //zxing
+    api project(':zxinglib')
+    //video
+    implementation project(':videoAudio')
+}

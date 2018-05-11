@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        if(rootProject.ext.releaseVer){
+            buildConfigField "boolean", "RELEASE",   "true"
+            buildConfigField "String", "APP_ID",   rootProject.ext.packageNam
+        }else{
+            buildConfigField "boolean", "RELEASE",   "false"
+            buildConfigField "String", "APP_ID",   rootProject.ext.packageNam
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.appcompatVer"
+    implementation "com.android.support:cardview-v7:${rootProject.ext.appcompatVer}"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //gson
+    api 'com.google.code.gson:gson:2.6.2'
+    //utils
+    api 'com.blankj:utilcode:1.7.1'
+    //recycleView
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    //refresh
+    api 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
+    //lifecycle
+    api 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
+    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    //rx
+    api 'io.reactivex.rxjava2:rxjava:2.0.1'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //retrofit
+    api 'com.squareup.retrofit2:retrofit:2.1.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    api 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //okhttp
+    api 'com.squareup.okhttp3:okhttp:3.4.1'
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="@dimen/dialog_200dp"
+        android:layout_height="@dimen/dialog_130dp"
+        android:background="@drawable/dialog_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/color_light_white"
+            android:gravity="start"
+            android:padding="@dimen/offset_7dp"
+            android:text="Title"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/text_size_16" />
+
+        <View style="@style/DeepUnderLine" />
+
+        <EditText
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@color/color_light_white"
+            android:gravity="start"
+            android:maxLines="1"
+            android:padding="@dimen/offset_7dp"
+            android:text="Message"
+            android:textColor="@color/color_light_black"
+            android:textSize="@dimen/text_size_16" />
+
+        <View style="@style/DeepUnderLine" />
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/color_light_white"
+                android:padding="@dimen/offset_7dp"
+                android:text="取消"
+                android:textColor="@color/base_default"
+                android:textSize="@dimen/text_size_large" />
+
+            <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/base_default"
+                android:padding="@dimen/offset_7dp"
+                android:text="确定"
+                android:textColor="@color/color_light_white"
+                android:textSize="@dimen/text_size_large" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

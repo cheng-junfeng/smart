@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_light_gray"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@color/color_white"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/MeInfoTextLeftStyle"
+                    android:text="头像" />
+
+                <ImageView
+                    android:id="@+id/iv_person_image"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@mipmap/avatar_default"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@color/color_white"
+                android:padding="10dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="基本信息"
+                    android:textColor="@color/blackText4"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View style="@style/DeepUnderLine" />
+
+            <RelativeLayout
+                android:id="@+id/rl_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_height"
+                android:background="@drawable/all_item_gray_selector"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/MeInfoTextLeftStyle"
+                    android:text="用户名" />
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    style="@style/MeInfoTextRightStyleSecond"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center_vertical"
+                    android:text="admin"
+                    android:textColor="@color/blackText2" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_height"
+                    android:layout_height="@dimen/icon_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/ic_back_right" />
+            </RelativeLayout>
+
+            <View style="@style/DeepUnderLine" />
+
+            <RelativeLayout
+                android:id="@+id/rl_user_email"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_height"
+                android:background="@drawable/all_item_gray_selector"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/MeInfoTextLeftStyle"
+                    android:text="邮箱" />
+
+                <TextView
+                    android:id="@+id/tv_user_email"
+                    style="@style/MeInfoTextRightStyleSecond"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center_vertical"
+                    android:text="sjun@outlook.com"
+                    android:textColor="@color/blackText2" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_height"
+                    android:layout_height="@dimen/icon_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/ic_back_right" />
+            </RelativeLayout>
+
+            <View style="@style/DeepUnderLine" />
+
+            <!--修改密码-->
+            <RelativeLayout
+                android:id="@+id/rl_change_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_height"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@drawable/all_item_gray_selector"
+                android:padding="10dp">
+                <TextView
+                    style="@style/MeInfoTextLeftStyle"
+                    android:text="修改密码" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_height"
+                    android:layout_height="@dimen/icon_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/ic_back_right" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

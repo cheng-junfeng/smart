@@ -1,0 +1,7 @@
+<resources>
+    <item name="crop_view" type="id"/>
+    <item name="left_bg_view" type="id"/>
+    <item name="top_bg_view" type="id"/>
+    <item name="bottom_bg_view" type="id"/>
+    <item name="right_bg_view" type="id"/>
+</resources>

@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/color_white</item>
+        <item name="android:actionOverflowButtonStyle">@style/ToolbarOverflow</item>
+        <item name="android:windowAnimationStyle">@style/fade</item>
+        <item name="android:divider">@drawable/divder_bg</item>
+    </style>
+    <!-- 设置toolbar右边菜单样式 -->
+    <style name="ToolbarOverflow" parent="@android:style/Widget.ActionButton.Overflow">
+        <item name="android:color">@color/color_white</item>
+    </style>
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:textColorSecondary">@color/color_white</item>
+        <item name="android:actionOverflowButtonStyle">@style/ToolbarOverflow</item>
+        <item name="android:divider">@drawable/divder_bg</item>
+    </style>
+    <style name="GuideTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:textColorSecondary">@color/color_white</item>
+        <item name="android:windowBackground">@mipmap/bg_1</item>
+    </style>
+</resources>

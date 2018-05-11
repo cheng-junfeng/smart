@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_light_white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_country"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_title_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="国家/地区"
+                android:textColor="#878787" />
+
+            <TextView
+                android:id="@+id/tv_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_title_country"
+                android:layout_marginLeft="32dp"
+                android:layout_centerVertical="true"
+                android:text="中国"
+                android:textColor="#333333" />
+
+            <ImageView
+                android:layout_width="@dimen/icon_height"
+                android:layout_height="@dimen/icon_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_back_right" />
+
+        </RelativeLayout>
+
+        <View style="@style/DeepUnderLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_country_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_title_country"
+                android:layout_centerVertical="true"
+                android:text="+86"
+                android:textColor="#333333" />
+
+            <com.wu.safe.base.ui.widget.CommEditText
+                android:id="@+id/et_phone"
+                style="@style/ModuleUserEditTextCommon"
+                android:hint="请输入手机号"
+                android:paddingLeft="10dp"
+                android:paddingRight="16dp"
+                android:inputType="number"
+                android:maxLength="11" />
+
+        </LinearLayout>
+
+        <View style="@style/DeepUnderLine" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_button_height">
+
+            <com.wu.safe.base.ui.widget.CommEditText
+                android:id="@+id/et_authCode"
+                style="@style/ModuleUserEditTextCommon"
+                android:layout_toLeftOf="@+id/bt_sendCode"
+                android:hint="请输入短信验证码"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:inputType="number"
+                android:maxLength="6" />
+
+            <View android:layout_alignParentBottom="true"
+                style="@style/DeepUnderLine" />
+
+            <Button
+                android:id="@+id/bt_sendCode"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="96dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/ll_login"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/all_button_blue_selector"
+                android:text="发送验证码"
+                android:enabled="false"
+                android:textColor="@color/color_white"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_next"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_below="@id/ll_top"
+        android:layout_marginLeft="@dimen/margin_left_small"
+        android:layout_marginRight="@dimen/margin_left_small"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/all_item_blue_selector"
+        android:text="下一步"
+        android:textColor="@color/color_white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

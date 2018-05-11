@@ -1,0 +1,24 @@
+gradle.allprojects {
+
+    ext.getGitHeadRefsSuffix = {
+        def verName = "";
+        try {
+            def headFile = new File('.git/HEAD')
+            if (headFile.exists()) {
+                String[] strings = headFile.getText('UTF-8').split(" ");
+                if (strings.size() > 1) {
+                    String refFilePath = '.git/' + strings[1];
+                    def refFile = new File(refFilePath.replace("\n", ""));
+                    verName = "_" + refFile.getText('UTF-8').substring(0, 7)
+
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace()
+        }
+        if(!ext.releaseVer){
+            verName = verName + "_beta";
+        }
+        return verName
+    }
+}

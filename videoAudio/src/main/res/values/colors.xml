@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F80CC</color>
+    <color name="colorPrimaryDark">#3F80CC</color>
+    <color name="colorAccent">#3F80CC</color>
+    <color name="color_a_default">#88F06292</color>
+    <color name="color_gray">#E5E5E5</color>
+    <color name="chglib_background_default_divider_color">#DADADC</color>
+
+    <color name="edit_image_border">#a0a0a0</color>
+    <color name="color_light_white">#FFFFFF</color>
+</resources>
