@@ -14,11 +14,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         if(rootProject.ext.releaseVer){
             //release.163
-            manifestPlaceholders = [APP_KEY: "10420815dd764ff9b17490ca",
+            manifestPlaceholders = [APP_KEY: "d4cff3f332a19894e8885730",
                                     APP_ID: rootProject.ext.applicationId]
         }else{
             //beta.outlook
-            manifestPlaceholders = [APP_KEY: "e6e55105889bcfacb706cc1f",
+            manifestPlaceholders = [APP_KEY: "d4cff3f332a19894e8885730",
                                     APP_ID: rootProject.ext.applicationId]
         }
     }

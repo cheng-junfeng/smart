@@ -94,7 +94,7 @@ public class SmartApplication extends MultiDexApplication {
                 }
             }
         };
-        Bugly.init(getApplicationContext(), "639f9bfdf5", GlobalConfig.IS_DEBUG);
+        Bugly.init(getApplicationContext(), "438468c3c2", GlobalConfig.IS_DEBUG);
     }
 
     private boolean shouldInit() {

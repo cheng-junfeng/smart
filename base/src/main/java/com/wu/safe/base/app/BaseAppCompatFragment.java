@@ -76,7 +76,7 @@ public abstract class BaseAppCompatFragment extends RxAppCompatDialogFragment {
     }
 
     protected void showProgress(String progressStr){
-        DialogUtils.showProgressTransparentDialog(getActivity(), progressStr);
+        DialogUtils.showProgressDialog(getActivity(), progressStr);
     }
 
     protected void dismissProgress(){

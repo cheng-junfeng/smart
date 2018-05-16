@@ -121,7 +121,7 @@ public abstract class BaseAppCompatActivity extends RxAppCompatActivity {
     }
 
     protected void showProgress(String progressStr){
-        DialogUtils.showProgressTransparentDialog(this, progressStr);
+        DialogUtils.showProgressDialog(this, progressStr);
     }
 
     protected void dismissProgress(){
