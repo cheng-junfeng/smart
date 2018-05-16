@@ -73,6 +73,13 @@ dependencies {
     //badgeview
     implementation 'cn.bingoogolapple:bga-badgeview-api:1.1.7'
     annotationProcessor "cn.bingoogolapple:bga-badgeview-compiler:1.1.7"
+    //cardview
+    implementation "com.android.support:cardview-v7:26.1.0"
+    //floatButton
+    compile 'com.github.clans:fab:1.6.4'
+    //bottomsheet
+    compile 'com.flipboard:bottomsheet-core:1.5.2'
+    compile 'com.flipboard:bottomsheet-commons:1.5.2'
 
     //base
     implementation project(':base')

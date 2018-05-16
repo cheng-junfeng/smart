@@ -13,4 +13,7 @@
     <dimen name="msg_tx_height">15dp</dimen>
 
     <dimen name="msg_home_height">80dp</dimen>
+
+    <dimen name="card_height">60dp</dimen>
+    <dimen name="card_height_100">100dp</dimen>
 </resources>

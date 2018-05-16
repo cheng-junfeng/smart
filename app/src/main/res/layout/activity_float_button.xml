@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray"
+    android:orientation="vertical">
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/float_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        fab:menu_backgroundColor="@color/transparent"
+        fab:menu_fab_size="mini"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/float_A"
+            android:layout_width="@dimen/offset_30dp"
+            android:layout_height="@dimen/offset_30dp"
+            android:src="@mipmap/ic_back_left"
+            fab:fab_label="AAAAAA"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/float_B"
+            android:layout_width="@dimen/offset_30dp"
+            android:layout_height="@dimen/offset_30dp"
+            android:src="@mipmap/base_setting"
+            android:visibility="visible"
+            fab:fab_label="BBBBBBB"
+            fab:fab_size="mini" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</LinearLayout>

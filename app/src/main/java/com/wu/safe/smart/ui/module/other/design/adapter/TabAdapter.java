@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.module.other.tab.adapter;
+package com.wu.safe.smart.ui.module.other.design.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

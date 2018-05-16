@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.module.other.tab;
+package com.wu.safe.smart.ui.module.other.design.view;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import com.wu.safe.base.utils.ToolbarUtil;
 import com.wu.safe.jsbridge.ui.view.JSWebViewNormalFragment;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
-import com.wu.safe.smart.ui.module.other.tab.adapter.TabAdapter;
+import com.wu.safe.smart.ui.module.other.design.adapter.TabAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ import butterknife.BindView;
 
 
 public class TabActivity extends BaseCompatActivity {
-    private final static String TAG = "InfoActivity";
+    private final static String TAG = "TabActivity";
 
     @BindView(R.id.tab_layout)
     TabLayout tabLayout;
@@ -29,8 +29,9 @@ public class TabActivity extends BaseCompatActivity {
     ViewPager viewPager;
 
     Context mContext;
-    JSWebViewNormalFragment toDoFragment;
-    JSWebViewNormalFragment toTrackFragment;
+    JSWebViewNormalFragment toDoFragment1;
+    JSWebViewNormalFragment toDoFragment2;
+    JSWebViewNormalFragment toDoFragment3;
     private List<Fragment> fragmentList = new ArrayList<>();
     private List<String> titleList = new ArrayList<>();
     private TabAdapter mAdapter;
@@ -44,7 +45,7 @@ public class TabActivity extends BaseCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
-        ToolbarUtil.setToolbarLeft(toolbar, "Tab", null, new View.OnClickListener() {
+        ToolbarUtil.setToolbarLeft(toolbar, "固定表头", null, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
@@ -58,13 +59,16 @@ public class TabActivity extends BaseCompatActivity {
         fragmentList = new ArrayList<>();
         titleList = new ArrayList<>();
 
-        toDoFragment = JSWebViewNormalFragment.newInstance("http://www.taobao.com/");
-        toTrackFragment = JSWebViewNormalFragment.newInstance("http://www.hwdoc.com/");
-        fragmentList.add(toDoFragment);
-        fragmentList.add(toTrackFragment);
+        toDoFragment1 = JSWebViewNormalFragment.newInstance("http://www.baidu.com/");
+        toDoFragment2 = JSWebViewNormalFragment.newInstance("http://www.baidu.com/");
+        toDoFragment3 = JSWebViewNormalFragment.newInstance("http://www.baidu.com/");
+        fragmentList.add(toDoFragment1);
+        fragmentList.add(toDoFragment2);
+        fragmentList.add(toDoFragment3);
 
-        titleList.add("监控");
-        titleList.add("地图");
+        titleList.add("百度1");
+        titleList.add("百度2");
+        titleList.add("百度3");
 
         mAdapter = new TabAdapter(getSupportFragmentManager(), fragmentList, titleList);
         viewPager.setAdapter(mAdapter);
