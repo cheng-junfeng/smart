@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.module.main.time;
+package com.wu.safe.smart.ui.module.other.design.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,8 +15,8 @@ import java.util.Calendar;
 
 import butterknife.BindView;
 
-public class TimeFragment extends BaseCompatFragment {
-    private final static String TAG = "TimeFragment";
+public class PicChooseFragment extends BaseCompatFragment {
+    private final static String TAG = "PicCarouseFragment";
     @BindView(R.id.watch)
     WatcherBoard watch;
     @BindView(R.id.time_hour)

@@ -7,6 +7,8 @@ import android.view.View;
 import com.wu.safe.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
+import com.wu.safe.smart.config.Extra;
+import com.wu.safe.smart.ui.module.other.design.view.BottomDialogActivity;
 import com.wu.safe.smart.ui.module.other.design.view.BottomViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.CountViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.DialogViewActivity;
@@ -16,6 +18,7 @@ import com.wu.safe.smart.ui.module.other.design.view.LeftViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.MoreTabActivity;
 import com.wu.safe.smart.ui.module.other.design.view.PageViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.TabActivity;
+import com.wu.safe.smart.ui.module.other.design.view.fragment.FragmentsActivity;
 
 import butterknife.OnClick;
 
@@ -39,8 +42,10 @@ public class DesignActivity extends BaseCompatActivity {
         });
     }
 
-    @OnClick({R.id.dialog_view, R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view, R.id.left_view, R.id.count_view})
+    @OnClick({R.id.dialog_view, R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view, R.id.bottom_dialog
+            , R.id.left_view, R.id.count_view, R.id.pic_carouse_view, R.id.pic_gallery_view, R.id.pic_choose_view})
     public void onViewClicked(View view) {
+        Bundle bundle = new Bundle();
         switch (view.getId()) {
             case R.id.stable_tab_view:
                 readGo(TabActivity.class);
@@ -69,6 +74,22 @@ public class DesignActivity extends BaseCompatActivity {
                 break;
             case R.id.bottom_view:
                 readGo(BottomViewActivity.class);
+                break;
+            case R.id.bottom_dialog:
+                readGo(BottomDialogActivity.class);
+                break;
+
+            case R.id.pic_carouse_view:
+                bundle.putInt(Extra.FRAGMENT_POS, 1);
+                readGo(FragmentsActivity.class, bundle);
+                break;
+            case R.id.pic_gallery_view:
+                bundle.putInt(Extra.FRAGMENT_POS, 2);
+                readGo(FragmentsActivity.class, bundle);
+                break;
+            case R.id.pic_choose_view:
+                bundle.putInt(Extra.FRAGMENT_POS, 3);
+                readGo(FragmentsActivity.class, bundle);
                 break;
         }
     }

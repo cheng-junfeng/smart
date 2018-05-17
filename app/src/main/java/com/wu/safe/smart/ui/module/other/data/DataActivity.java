@@ -40,7 +40,7 @@ public class DataActivity extends BaseCompatActivity implements DataContract.Vie
 
     @Override
     protected int setContentView() {
-        return R.layout.main_data;
+        return R.layout.activity_data;
     }
 
     @Override

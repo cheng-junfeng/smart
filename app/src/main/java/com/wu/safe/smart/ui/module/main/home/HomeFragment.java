@@ -47,7 +47,7 @@ public class HomeFragment extends BaseCompatFragment {
 
     @Override
     protected int setContentView() {
-        return R.layout.main_home;
+        return R.layout.fragment_home;
     }
 
     @Override

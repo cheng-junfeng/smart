@@ -18,4 +18,5 @@
     <dimen name="card_height_100">100dp</dimen>
     <dimen name="card_height_120">120dp</dimen>
     <dimen name="card_height_200">200dp</dimen>
+    <dimen name="card_height_300">300dp</dimen>
 </resources>

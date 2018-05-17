@@ -66,6 +66,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.module.other.design.view.BottomViewActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ui.module.other.design.view.BottomDialogActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ui.module.other.design.view.GridFilterActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.module.other.design.view.DialogViewActivity"
@@ -73,6 +75,8 @@
         <activity android:name=".ui.module.other.design.view.CountViewActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.module.other.design.view.LeftViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.module.other.design.view.fragment.FragmentsActivity"
             android:screenOrientation="portrait"/>
 
         <!--bugly必须配置-->

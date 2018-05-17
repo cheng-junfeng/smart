@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_light_gray"
+    android:orientation="vertical">
+
+    <!--上下滚动TextView-->
+    <com.wu.safe.smart.ui.widget.MarqueeView
+        android:id="@+id/marqueeView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/white"
+        app:paddingStart="0dp"
+        app:mvAnimDuration="1000"
+        app:mvInterval="2000"
+        app:mvTextColor="#464C4E"
+        app:mvTextSize="16sp"
+        app:mvSingleLine="true"/>
+
+</LinearLayout>
