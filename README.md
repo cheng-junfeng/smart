@@ -51,6 +51,7 @@
 - 5 MultiEditInputView  LinearLayout: 字段输入，字数倒计时
 - 6 SwitchButton        View：按钮切换
 - 7 WaveSideBarView     View：波浪滑动条
+- 8 MarqueeView     	ViewFlipper: 文字轮播
 
  
 ### 5.关于Gradle
@@ -84,7 +85,6 @@
  
 ### 6.功能展示
 <img src="http://i2.bvimg.com/645352/e1d78dd538c3271c.png" width = "270" height = "480" align=center />
-<img src="http://i2.bvimg.com/645352/75ecb59171dd086b.png" width = "270" height = "480" align=center />
 <img src="http://i2.bvimg.com/645352/f50f921e5b7fd1b9.png" width = "270" height = "480" align=center />
 <img src="http://i2.bvimg.com/645352/bbe5ada28baf395b.png" width = "270" height = "480" align=center />
 <img src="http://i2.bvimg.com/645352/a224d91ff8d07552.png" width = "270" height = "480" align=center />
@@ -95,6 +95,9 @@
 <img src="http://i2.bvimg.com/645352/71acd6e6b23b3108.png" width = "270" height = "480" align=center />
 <img src="http://i2.bvimg.com/645352/bce8eaa76591609f.png" width = "270" height = "480" align=center />
 <img src="http://i2.bvimg.com/645352/de0cfb75caf413f9.png" width = "270" height = "480" align=center />
+<img src="http://i4.bvimg.com/645352/03bf03315d8a1d93.png" width = "270" height = "480" align=center />
+<img src="http://i4.bvimg.com/645352/8e49fdf8c5678540.png" width = "270" height = "480" align=center />
+<img src="http://i4.bvimg.com/645352/496945712f86291b.png" width = "270" height = "480" align=center />
 
 
 ### 7.后记
@@ -108,7 +111,8 @@
 - 3 项目代码持续优化中
 
 
-
+### 8.更新说明
+- 1 新增UI：表头+侧滑+底部框+筛选+悬浮按钮+视图分页+倒计时+弹框+文字轮播+照片长廊
 
 
 
