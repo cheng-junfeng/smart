@@ -1,20 +1,24 @@
 package com.wu.safe.smart.ui.module.other.notification;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 import com.wu.safe.base.app.listener.OnClickLongListener;
-import com.wu.safe.base.utils.ToolbarUtil;
-import com.wu.safe.smart.R;
 import com.wu.safe.base.ui.adapter.BaseListAdapter;
-import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.base.ui.bean.ListBean;
 import com.wu.safe.base.utils.NotificationUtil;
+import com.wu.safe.base.utils.ToolbarUtil;
+import com.wu.safe.smart.R;
+import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.user.ui.view.MySettingActivity;
 
 import java.io.File;
@@ -22,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 
 public class NotificationActivity extends BaseCompatActivity {
@@ -32,6 +37,8 @@ public class NotificationActivity extends BaseCompatActivity {
     Context mContext;
     List<ListBean> allData;
     BaseListAdapter mAdapter;
+    @BindView(R.id.switch_notif)
+    TextView switchNotif;
 
     @Override
     protected int setContentView() {
@@ -51,6 +58,17 @@ public class NotificationActivity extends BaseCompatActivity {
 
         initData();
         initView();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        boolean isOpen = NotificationUtil.isNotificationEnabled(mContext);
+        if(isOpen){
+            switchNotif.setText("open");
+        }else{
+            switchNotif.setText("close");
+        }
     }
 
     private void initData() {
@@ -98,7 +116,8 @@ public class NotificationActivity extends BaseCompatActivity {
                             NotificationUtil.showErrorNotification(mContext, new Intent(mContext, MySettingActivity.class), R.mipmap.ic_launcher, "Title1", "content1");
                         }
                         break;
-                        default:break;
+                        default:
+                            break;
                     }
                 }
 
@@ -114,6 +133,22 @@ public class NotificationActivity extends BaseCompatActivity {
         } else {
             mAdapter.setDatas(allData);
             mAdapter.notifyDataSetChanged();
+        }
+    }
+
+    @OnClick(R.id.status_notif)
+    public void onViewClicked() {
+        try {
+            Intent intent = new Intent();
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("app_package", getPackageName());
+            intent.putExtra("app_uid", getApplicationInfo().uid);
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            Uri uri = Uri.fromParts("package", getPackageName(), null);
+            intent.setData(uri);
+            startActivity(intent);
         }
     }
 }
