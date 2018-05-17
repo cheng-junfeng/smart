@@ -7,7 +7,9 @@ import android.view.View;
 import com.wu.safe.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
+import com.wu.safe.smart.ui.module.other.design.view.BottomViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.FloatButtonActivity;
+import com.wu.safe.smart.ui.module.other.design.view.GridViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.MoreTabActivity;
 import com.wu.safe.smart.ui.module.other.design.view.PageViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.TabActivity;
@@ -34,10 +36,11 @@ public class DesignActivity extends BaseCompatActivity {
         });
     }
 
-    @OnClick({R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view})
+    @OnClick({R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view, R.id.left_view})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.grid_view:
+                readGo(GridViewActivity.class);
                 break;
             case R.id.float_view:
                 readGo(FloatButtonActivity.class);
@@ -52,6 +55,9 @@ public class DesignActivity extends BaseCompatActivity {
                 readGo(MoreTabActivity.class);
                 break;
             case R.id.bottom_view:
+                readGo(BottomViewActivity.class);
+                break;
+            case R.id.left_view:
                 break;
         }
     }
