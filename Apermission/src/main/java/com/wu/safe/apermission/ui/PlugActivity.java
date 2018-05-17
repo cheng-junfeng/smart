@@ -67,7 +67,7 @@ public class PlugActivity extends PermissBaseCompatActivity {
                 }
 
             } else {
-                DialogUtils.showSelectDialog(mContext, "尚未安装单位视频插件，立即安装", new OnSelectClickListener() {
+                DialogUtils.showConfirmDialog(mContext, "尚未安装单位视频插件，立即安装", new OnSelectClickListener() {
                     @Override
                     public void onClickPositive() {
                         DialogUtils.dismissDialog();

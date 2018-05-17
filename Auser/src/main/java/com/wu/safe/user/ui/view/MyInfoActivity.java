@@ -116,7 +116,7 @@ public class MyInfoActivity extends UserBaseCompatActivity {
     }
 
     private void exitApp() {
-        DialogUtils.showSelectDialog(this, "确定退出当前账号？", new OnSelectClickListener() {
+        DialogUtils.showConfirmDialog(this, "确定退出当前账号？", new OnSelectClickListener() {
             @Override
             public void onClickPositive() {
                 DialogUtils.dismissDialog();

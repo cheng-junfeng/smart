@@ -16,17 +16,25 @@ import java.util.List;
 
 public class GvFilterAdapter extends BaseAdapter {
 
-    private static final int BASE_TYPE = 1;
+    private static final int BASE_TYPE = 0;
 
     private Context mContext;
     private List<FilterAreaBean> allData = new ArrayList<>();
     private List<FilterAreaBean> listData = new ArrayList<>();
+    private ArrayList<String> selectStr = new ArrayList<>();
     private String parentId = "0";
-    private int mPos = -1;
+    private boolean clickable = true;
 
     public GvFilterAdapter(Context context, List<FilterAreaBean> data) {
         this.mContext = context;
         this.allData.addAll(data);
+        refreshList();
+    }
+
+    public void reset(){
+        clickable = true;
+        parentId = "0";
+        selectStr.clear();
         refreshList();
     }
 
@@ -40,10 +48,21 @@ public class GvFilterAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public String getSelectStr(){
+        StringBuffer result = new StringBuffer();
+        for(String str : selectStr){
+            result.append(str+"-");
+        }
+        return result.toString();
+    }
+
     public void setSelect(int position) {
-        this.mPos = position;
         FilterAreaBean bean = listData.get(position);
+        if(clickable){
+            selectStr.add(bean.getName());
+        }
         if(bean.getAreaType() == BASE_TYPE){
+            clickable = false;
             notifyDataSetChanged();
         }else{
             parentId = bean.getId();
@@ -78,11 +97,6 @@ public class GvFilterAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         viewHolder.NameTv.setText(listData.get(i).getName());
-        if (i == mPos) {
-            viewHolder.NameTv.setSelected(true);
-        } else {
-            viewHolder.NameTv.setSelected(false);
-        }
         return view;
     }
 

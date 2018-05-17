@@ -8,6 +8,7 @@ import com.wu.safe.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.module.other.design.view.BottomViewActivity;
+import com.wu.safe.smart.ui.module.other.design.view.DialogViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.FloatButtonActivity;
 import com.wu.safe.smart.ui.module.other.design.view.GridViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.MoreTabActivity;
@@ -36,9 +37,12 @@ public class DesignActivity extends BaseCompatActivity {
         });
     }
 
-    @OnClick({R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view, R.id.left_view})
+    @OnClick({R.id.dialog_view, R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view, R.id.left_view})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.dialog_view:
+                readGo(DialogViewActivity.class);
+                break;
             case R.id.grid_view:
                 readGo(GridViewActivity.class);
                 break;

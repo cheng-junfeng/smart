@@ -68,6 +68,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.module.other.design.view.GridViewActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ui.module.other.design.view.DialogViewActivity"
+            android:screenOrientation="portrait"/>
 
         <!--bugly必须配置-->
         <activity

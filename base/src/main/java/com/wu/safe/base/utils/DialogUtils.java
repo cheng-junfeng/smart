@@ -24,6 +24,22 @@ public class DialogUtils {
 
     private static Dialog progressdialog = null;
 
+    public static void showProgressDialog(Context context) {
+        dismissProgressDialog();
+        if (null == progressdialog) {
+            progressdialog = new Dialog(context, R.style.Theme_AppCompat_Light_Dialog);
+            progressdialog.setCanceledOnTouchOutside(false);
+            progressdialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            View view = LayoutInflater.from(context).inflate(R.layout.dialog_progress, null);
+            progressdialog.setContentView(view);
+        }
+        if (null != progressdialog && !progressdialog.isShowing()) {
+            progressdialog.show();
+            Window window = progressdialog.getWindow();
+            window.setGravity(Gravity.CENTER);
+        }
+    }
+
     public static void showProgressDialog(Context context, String msg) {
         dismissProgressDialog();
         if (null == progressdialog) {
@@ -93,7 +109,7 @@ public class DialogUtils {
         }
     }
 
-    public static void showSelectDialog(Context context, String message, final OnSelectClickListener listener) {
+    public static void showConfirmDialog(Context context, String message, final OnSelectClickListener listener) {
         dismissDialog();
         if (dialog == null) {
             dialog = new Dialog(context, R.style.Theme_AppCompat_Light_Dialog);

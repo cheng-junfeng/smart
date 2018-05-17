@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/progress_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="进度条1" />
+
+        <Button
+            android:id="@+id/progress2_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="进度条2" />
+
+        <Button
+            android:id="@+id/confirm_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="确认框" />
+
+        <Button
+            android:id="@+id/choose_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="选择框" />
+
+        <Button
+            android:id="@+id/input_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="输入框" />
+
+        <Button
+            android:id="@+id/toast_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="提示" />
+    </LinearLayout>
+
+</LinearLayout>
