@@ -7,9 +7,8 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/dialog_view"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/card_height_100"
+        android:layout_height="@dimen/card_height_120"
         android:layout_marginLeft="@dimen/offset_5dp"
         android:layout_marginRight="@dimen/offset_5dp"
         android:layout_marginTop="@dimen/offset_5dp"
@@ -19,22 +18,77 @@
         app:cardCornerRadius="3dip"
         app:cardElevation="1.5dip">
 
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="弹框"
-            android:textSize="18sp" />
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/title_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:text="头部"
+                android:textSize="18sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/title_top">
+                <android.support.v7.widget.CardView
+                    android:id="@+id/stable_tab_view"
+                    android:layout_width="@dimen/offset_70dp"
+                    android:layout_height="@dimen/offset_70dp"
+                    android:layout_below="@id/cvAddFireVideo"
+                    android:layout_marginLeft="@dimen/offset_5dp"
+                    android:layout_marginTop="@dimen/offset_5dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="3dip"
+                    app:cardElevation="1.5dip">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:text="固定表头"
+                        android:textSize="18sp" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/more_tab_view"
+                    android:layout_width="@dimen/offset_70dp"
+                    android:layout_height="@dimen/offset_70dp"
+                    android:layout_marginLeft="@dimen/offset_5dp"
+                    android:layout_marginRight="@dimen/offset_5dp"
+                    android:layout_marginTop="@dimen/offset_5dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="3dip"
+                    app:cardElevation="1.5dip">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:text="连续表头"
+                        android:textSize="18sp" />
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/grid_view"
+            android:id="@+id/left_lay"
             android:layout_width="0dp"
-            android:layout_height="@dimen/card_height"
+            android:layout_height="@dimen/card_height_200"
             android:layout_below="@id/cvAddFireVideo"
             android:layout_marginLeft="@dimen/offset_5dp"
             android:layout_marginTop="@dimen/offset_5dp"
@@ -44,94 +98,51 @@
             app:cardBackgroundColor="#ffffff"
             app:cardCornerRadius="3dip"
             app:cardElevation="1.5dip">
-
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="格子视图"
-                android:textSize="18sp" />
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/title_left"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|top"
+                    android:text="侧边"
+                    android:textSize="18sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/title_left">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/left_view"
+                        android:layout_width="@dimen/offset_70dp"
+                        android:layout_height="@dimen/offset_70dp"
+                        android:layout_below="@id/cvAddFireVideo"
+                        android:layout_marginLeft="@dimen/offset_5dp"
+                        android:layout_marginTop="@dimen/offset_5dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="3dip"
+                        app:cardElevation="1.5dip">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:text="左侧滑出"
+                            android:textSize="18sp" />
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+            </RelativeLayout>
+
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/float_view"
+            android:id="@+id/center_view"
             android:layout_width="0dp"
-            android:layout_height="@dimen/card_height"
-            android:layout_marginLeft="@dimen/offset_5dp"
-            android:layout_marginRight="@dimen/offset_5dp"
-            android:layout_marginTop="@dimen/offset_5dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#ffffff"
-            app:cardCornerRadius="3dip"
-            app:cardElevation="1.5dip">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="悬浮按钮"
-                android:textSize="18sp" />
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/page_view"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/card_height"
-        android:layout_below="@id/cvAddFireVideo"
-        android:layout_marginLeft="@dimen/offset_5dp"
-        android:layout_marginRight="@dimen/offset_5dp"
-        android:layout_marginTop="@dimen/offset_5dp"
-        android:clickable="true"
-        android:foreground="?attr/selectableItemBackground"
-        app:cardBackgroundColor="#ffffff"
-        app:cardCornerRadius="3dip"
-        app:cardElevation="1.5dip">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="分页视图"
-            android:textSize="18sp" />
-    </android.support.v7.widget.CardView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/stable_tab_view"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/card_height_100"
-            android:layout_below="@id/cvAddFireVideo"
-            android:layout_marginLeft="@dimen/offset_5dp"
-            android:layout_marginTop="@dimen/offset_5dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#ffffff"
-            app:cardCornerRadius="3dip"
-            app:cardElevation="1.5dip">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="固定表头"
-                android:textSize="18sp" />
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/more_tab_view"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/card_height_100"
+            android:layout_height="@dimen/card_height_200"
             android:layout_marginLeft="@dimen/offset_5dp"
             android:layout_marginRight="@dimen/offset_5dp"
             android:layout_marginTop="@dimen/offset_5dp"
@@ -142,58 +153,181 @@
             app:cardCornerRadius="3dip"
             app:cardElevation="1.5dip">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/title_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|top"
+                    android:text="中间"
+                    android:textSize="18sp" />
+                <LinearLayout
+                    android:id="@+id/center1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/title_center">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/grid_view"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_below="@id/cvAddFireVideo"
+                        android:layout_marginLeft="@dimen/offset_5dp"
+                        android:layout_marginTop="@dimen/offset_5dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="3dip"
+                        app:cardElevation="1.5dip">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:text="格子点选"
+                            android:textSize="18sp" />
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/float_view"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_marginLeft="@dimen/offset_5dp"
+                        android:layout_marginRight="@dimen/offset_5dp"
+                        android:layout_marginTop="@dimen/offset_5dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="3dip"
+                        app:cardElevation="1.5dip">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:text="悬浮按钮"
+                            android:textSize="18sp" />
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/page_view"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_below="@id/cvAddFireVideo"
+                        android:layout_marginLeft="@dimen/offset_5dp"
+                        android:layout_marginRight="@dimen/offset_5dp"
+                        android:layout_marginTop="@dimen/offset_5dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="3dip"
+                        app:cardElevation="1.5dip">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:text="分页视图"
+                            android:textSize="18sp" />
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/center1">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/dialog_view"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_below="@id/cvAddFireVideo"
+                        android:layout_marginLeft="@dimen/offset_5dp"
+                        android:layout_marginRight="@dimen/offset_5dp"
+                        android:layout_marginTop="@dimen/offset_5dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="3dip"
+                        app:cardElevation="1.5dip">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:text="弹框"
+                            android:textSize="18sp" />
+                    </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/count_view"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_below="@id/cvAddFireVideo"
+                        android:layout_marginLeft="@dimen/offset_5dp"
+                        android:layout_marginRight="@dimen/offset_5dp"
+                        android:layout_marginTop="@dimen/offset_5dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="3dip"
+                        app:cardElevation="1.5dip">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:text="倒计时"
+                            android:textSize="18sp" />
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/bottom_view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/card_height"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/offset_5dp"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="#ffffff"
+            app:cardCornerRadius="3dip"
+            app:cardElevation="1.5dip">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="连续表头"
+                android:text="底部滑出"
                 android:textSize="18sp" />
         </android.support.v7.widget.CardView>
     </LinearLayout>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/bottom_view"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/card_height"
-        android:layout_below="@id/cvAddFireVideo"
-        android:layout_marginLeft="@dimen/offset_5dp"
-        android:layout_marginRight="@dimen/offset_5dp"
-        android:layout_marginTop="@dimen/offset_5dp"
-        android:clickable="true"
-        android:foreground="?attr/selectableItemBackground"
-        app:cardBackgroundColor="#ffffff"
-        app:cardCornerRadius="3dip"
-        app:cardElevation="1.5dip">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="底部弹出"
-            android:textSize="18sp" />
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        android:id="@+id/left_view"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/card_height"
-        android:layout_below="@id/cvAddFireVideo"
-        android:layout_marginLeft="@dimen/offset_5dp"
-        android:layout_marginRight="@dimen/offset_5dp"
-        android:layout_marginTop="@dimen/offset_5dp"
-        android:clickable="true"
-        android:foreground="?attr/selectableItemBackground"
-        app:cardBackgroundColor="#ffffff"
-        app:cardCornerRadius="3dip"
-        app:cardElevation="1.5dip">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="左侧滑出"
-            android:textSize="18sp" />
-    </android.support.v7.widget.CardView>
 </LinearLayout>

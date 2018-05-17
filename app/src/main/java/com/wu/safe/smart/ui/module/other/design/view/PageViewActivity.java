@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.wu.safe.base.utils.DialogUtils;
 import com.wu.safe.base.utils.ToolbarUtil;
@@ -30,6 +32,8 @@ public class PageViewActivity extends BaseCompatActivity {
 
     @BindView(R.id.user_vp)
     ViewPager userVp;
+    @BindView(R.id.ll_points)
+    LinearLayout llPoints;
 
     private List<GridView> gridList = new ArrayList<>();
     private List<User> userList = new ArrayList<>();
@@ -84,5 +88,31 @@ public class PageViewActivity extends BaseCompatActivity {
             }
         }
         mAdapter.add(gridList);
+
+        //添加小圆点
+        final ImageView[] ivPoints = new ImageView[pageCount];
+        for (int i = 0; i < pageCount; i++) {
+            //循坏加入点点图片组
+            ivPoints[i] = new ImageView(mContext);
+            if (i == 0) {
+                ivPoints[i].setImageResource(R.mipmap.ic_page_focuese);
+            } else {
+                ivPoints[i].setImageResource(R.mipmap.ic_page_unfocused);
+            }
+            ivPoints[i].setPadding(8, 8, 8, 8);
+            llPoints.addView(ivPoints[i]);
+        }
+        userVp.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+                for (int i = 0; i < pageCount; i++) {
+                    if (i == position) {
+                        ivPoints[i].setImageResource(R.mipmap.ic_page_focuese);
+                    } else {
+                        ivPoints[i].setImageResource(R.mipmap.ic_page_unfocused);
+                    }
+                }
+            }
+        });
     }
 }

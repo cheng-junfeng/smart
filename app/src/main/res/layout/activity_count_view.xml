@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_gray"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.wu.safe.base.ui.widget.CountDownView
+            android:id="@+id/cdv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="40dp"
+            app:cd_animator_time="3"
+            app:cd_animator_time_unit="秒"
+            app:cd_arc_color="@color/blackText"
+            app:cd_arc_width="2dp"
+            app:cd_bg_color="@color/white"
+            app:cd_circle_radius="20dp"
+            app:cd_location="top"
+            app:cd_retreat_type="forward"
+            app:cd_text_color="@color/blackText"
+            app:cd_text_size="9sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -22,16 +22,16 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class GridViewActivity extends BaseCompatActivity {
+public class GridFilterActivity extends BaseCompatActivity {
 
-    public final static String TAG = "GridViewActivity";
+    public final static String TAG = "GridFilterActivity";
 
     @BindView(R.id.tv_area_name)
     TextView tvAreaName;
     @BindView(R.id.gv_area)
     ScrollGridView gvArea;
 
-    private List<FilterAreaBean> areaListData;                         // 区域的list
+    private List<FilterAreaBean> areaListData;
     private GvFilterAdapter filterAreaAdapter;
 
     @Override
@@ -42,7 +42,7 @@ public class GridViewActivity extends BaseCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ToolbarUtil.setToolbarLeft(toolbar, "格子筛选", null, new View.OnClickListener() {
+        ToolbarUtil.setToolbarLeft(toolbar, "格子点选", null, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();

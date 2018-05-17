@@ -22,7 +22,7 @@ public class BottomViewActivity extends BaseCompatActivity {
     @BindView(R.id.bottomsheet)
     BottomSheetLayout bottomsheet;
 
-    private ImageView tvImg;
+    private TextView tvImg;
     private View resourcedataView;
 
     @Override

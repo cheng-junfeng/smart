@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:smart="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_light_gray"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:id="@+id/status_notif"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_button_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/offset_5dp"
+            android:text="通知状态"/>
+        <TextView
+            android:id="@+id/switch_notif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/offset_5dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="close"/>
+    </LinearLayout>
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/main_view"
+        android:layout_marginTop="@dimen/offset_5dp"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

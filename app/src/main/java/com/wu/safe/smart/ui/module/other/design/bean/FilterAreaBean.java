@@ -5,10 +5,10 @@ import android.os.Parcelable;
 
 public class FilterAreaBean implements Parcelable {
 
-    private String id;                              // 区域ID
+    private String id;
     private String parentId;                       // 父节点
-    private String name;                           // 区域名称
-    private int areaType;                          // 区域层级关系                1目前代表最底层
+    private String name;
+    private int areaType;                          // 类型
 
     public FilterAreaBean() {
     }

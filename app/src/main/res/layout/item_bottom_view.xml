@@ -20,11 +20,14 @@
         android:background="@drawable/all_item_gray_selector"
         android:layout_gravity="center"
         android:text="选择邮件"/>
-    <ImageView
+    <TextView
         android:id="@+id/iv_img"
         android:layout_marginTop="@dimen/offset_3dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:contentDescription="@string/app_name"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/blackText1"
+        android:padding="@dimen/offset_5dp"
+        android:text="基于BottomSheetLayout GroupView,设置底部布局，在适当的时候，弹出" />
 </LinearLayout>

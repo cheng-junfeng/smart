@@ -13,6 +13,7 @@
     <dimen name="offset_50dp">50dp</dimen>
     <dimen name="offset_60dp">60dp</dimen>
     <dimen name="offset_70dp">70dp</dimen>
+    <dimen name="offset_80dp">80dp</dimen>
 
     <!-- 字体大小 -->
     <dimen name="text_size_10">10sp</dimen>

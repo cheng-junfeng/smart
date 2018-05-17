@@ -8,9 +8,11 @@ import com.wu.safe.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.module.other.design.view.BottomViewActivity;
+import com.wu.safe.smart.ui.module.other.design.view.CountViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.DialogViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.FloatButtonActivity;
-import com.wu.safe.smart.ui.module.other.design.view.GridViewActivity;
+import com.wu.safe.smart.ui.module.other.design.view.GridFilterActivity;
+import com.wu.safe.smart.ui.module.other.design.view.LeftViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.MoreTabActivity;
 import com.wu.safe.smart.ui.module.other.design.view.PageViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.TabActivity;
@@ -37,14 +39,24 @@ public class DesignActivity extends BaseCompatActivity {
         });
     }
 
-    @OnClick({R.id.dialog_view, R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view, R.id.left_view})
+    @OnClick({R.id.dialog_view, R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view, R.id.left_view, R.id.count_view})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.stable_tab_view:
+                readGo(TabActivity.class);
+                break;
+            case R.id.more_tab_view:
+                readGo(MoreTabActivity.class);
+                break;
+            case R.id.left_view:
+                readGo(LeftViewActivity.class);
+                break;
+
             case R.id.dialog_view:
                 readGo(DialogViewActivity.class);
                 break;
             case R.id.grid_view:
-                readGo(GridViewActivity.class);
+                readGo(GridFilterActivity.class);
                 break;
             case R.id.float_view:
                 readGo(FloatButtonActivity.class);
@@ -52,16 +64,11 @@ public class DesignActivity extends BaseCompatActivity {
             case R.id.page_view:
                 readGo(PageViewActivity.class);
                 break;
-            case R.id.stable_tab_view:
-                readGo(TabActivity.class);
-                break;
-            case R.id.more_tab_view:
-                readGo(MoreTabActivity.class);
+            case R.id.count_view:
+                readGo(CountViewActivity.class);
                 break;
             case R.id.bottom_view:
                 readGo(BottomViewActivity.class);
-                break;
-            case R.id.left_view:
                 break;
         }
     }
