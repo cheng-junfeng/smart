@@ -17,6 +17,7 @@ import com.wu.safe.smart.ui.module.other.design.view.GridFilterActivity;
 import com.wu.safe.smart.ui.module.other.design.view.LeftViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.MoreTabActivity;
 import com.wu.safe.smart.ui.module.other.design.view.PageViewActivity;
+import com.wu.safe.smart.ui.module.other.design.view.PicChooseActivity;
 import com.wu.safe.smart.ui.module.other.design.view.TabActivity;
 import com.wu.safe.smart.ui.module.other.design.view.fragment.FragmentsActivity;
 
@@ -83,12 +84,11 @@ public class DesignActivity extends BaseCompatActivity {
                 bundle.putInt(Extra.FRAGMENT_POS, 1);
                 readGo(FragmentsActivity.class, bundle);
                 break;
+            case R.id.pic_choose_view:
+                readGo(PicChooseActivity.class);
+                break;
             case R.id.pic_gallery_view:
                 bundle.putInt(Extra.FRAGMENT_POS, 2);
-                readGo(FragmentsActivity.class, bundle);
-                break;
-            case R.id.pic_choose_view:
-                bundle.putInt(Extra.FRAGMENT_POS, 3);
                 readGo(FragmentsActivity.class, bundle);
                 break;
         }

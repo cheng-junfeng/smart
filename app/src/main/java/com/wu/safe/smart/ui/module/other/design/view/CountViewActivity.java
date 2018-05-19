@@ -57,4 +57,10 @@ public class CountViewActivity extends BaseCompatActivity {
         cdvTime.stop();
         finish();
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        cdvTime.stop();
+    }
 }

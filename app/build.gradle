@@ -20,6 +20,9 @@ android {
         multiDexEnabled true
         manifestPlaceholders = [APP_ID: rootProject.ext.applicationId]
     }
+    packagingOptions {
+        pickFirst 'META-INF/*'
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -80,6 +83,11 @@ dependencies {
     //bottomsheet
     compile 'com.flipboard:bottomsheet-core:1.5.2'
     compile 'com.flipboard:bottomsheet-commons:1.5.2'
+    //takePhoto框架
+    compile 'com.jph.takephoto:takephoto_library:4.0.3'
+    compile 'com.lzy.widget:imagepicker:0.5.0'
+    //picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
     //base
     implementation project(':base')

@@ -5,12 +5,10 @@ import com.wu.safe.smart.app.activity.BaseCompatFragment;
 public class BaseFragmentFactory {
 
     public static final int POS_CAROUSE = 1;
-    public static final int POS_CHOOSE = 2;
-    public static final int POS_GALLERY = 3;
+    public static final int POS_GALLERY = 2;
 
     private static BaseFragmentFactory mInstance;
     private PicCarouseFragment mCarouseFragment;
-    private PicChooseFragment mChooseFragment;
     private PicGalleryFragment mGalleryFragment;
 
     private BaseFragmentFactory() {
@@ -25,17 +23,6 @@ public class BaseFragmentFactory {
             }
         }
         return mCarouseFragment;
-    }
-
-    private PicChooseFragment getChooseFragment() {
-        if (mChooseFragment == null) {
-            synchronized (BaseFragmentFactory.class) {
-                if (mChooseFragment == null) {
-                    mChooseFragment = new PicChooseFragment();
-                }
-            }
-        }
-        return mChooseFragment;
     }
 
     private PicGalleryFragment getCamraFragment() {
@@ -65,9 +52,6 @@ public class BaseFragmentFactory {
         switch (pos) {
             case POS_CAROUSE:
                 fragment = getCarouseFragment();
-                break;
-            case POS_CHOOSE:
-                fragment = getChooseFragment();
                 break;
             case POS_GALLERY:
                 fragment = getCamraFragment();
