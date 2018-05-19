@@ -196,7 +196,7 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
         if(viewId == R.id.bt_login){
             String user = etPhone.getText().toString().trim();
             String pwd = etPsw.getText().toString().trim();
-            presenter.login(mContext, user, pwd, this);
+            presenter.login(mContext, "junfeng", "123", this);
         }else if(viewId == R.id.bt_register){
             readGo(MyRegistActivity.class);
         }

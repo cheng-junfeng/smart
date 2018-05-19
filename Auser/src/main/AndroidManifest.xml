@@ -23,5 +23,8 @@
         <activity android:name="com.wu.safe.user.ui.view.MyUpgradeActvity"
             android:theme="@style/Dialog"
             android:screenOrientation="portrait"/>
+        <activity android:name="com.wu.safe.user.ui.view.MyQrCodeActvity"
+            android:theme="@style/Dialog"
+            android:screenOrientation="portrait"/>
     </application>
 </manifest>

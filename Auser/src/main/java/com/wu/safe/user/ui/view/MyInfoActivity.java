@@ -98,7 +98,7 @@ public class MyInfoActivity extends UserBaseCompatActivity {
         tvUserEmail.setText(myEvent.getEmail());
     }
 
-    @OnClick({R2.id.rl_user_name, R2.id.rl_user_email, R2.id.rl_change_pwd, R2.id.tv_comm_footer})
+    @OnClick({R2.id.rl_user_name, R2.id.rl_user_email, R2.id.rl_change_pwd, R2.id.rl_qrcode, R2.id.tv_comm_footer})
     public void onViewClicked(View view) {
         Bundle bundle = new Bundle();
         int viewId = view.getId();
@@ -110,6 +110,8 @@ public class MyInfoActivity extends UserBaseCompatActivity {
             readGo(MyModifyActivity.class, bundle);
         }else if(viewId == R.id.rl_change_pwd){
             readGo(MyModifyPswActivity.class);
+        }else if(viewId == R.id.rl_qrcode){
+            readGo(MyQrCodeActvity.class);
         }else if(viewId == R.id.tv_comm_footer){
             exitApp();
         }

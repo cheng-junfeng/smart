@@ -51,4 +51,6 @@ dependencies {
     implementation project(':base')
     //jpush
     implementation project(':Apush')
+    //zxinglib
+    implementation project(':zxinglib')
 }

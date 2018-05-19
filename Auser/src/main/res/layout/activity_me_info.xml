@@ -132,6 +132,25 @@
                     android:layout_centerVertical="true"
                     android:background="@mipmap/ic_back_right" />
             </RelativeLayout>
+            <View style="@style/DeepUnderLine" />
+            <!--我的二维码-->
+            <RelativeLayout
+                android:id="@+id/rl_qrcode"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_height"
+                android:background="@drawable/all_item_gray_selector"
+                android:padding="10dp">
+                <TextView
+                    style="@style/MeInfoTextLeftStyle"
+                    android:text="我的二维码" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_height"
+                    android:layout_height="@dimen/icon_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/ic_back_right" />
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/color_dark_gray"
-            android:text="星球科技股份有限公司"/>
+            android:text="武汉远古星球科技集团有限公司"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

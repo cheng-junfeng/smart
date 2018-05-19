@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:singleLine="false"
-                android:text="星球科技股份有限公司-1号楼-1层-产品展示厅"
+                android:text="武汉远古星球科技集团有限公司-1号楼-1层-产品展示厅"
                 android:textColor="#989898"
                 android:textSize="@dimen/text_size" />
         </LinearLayout>
