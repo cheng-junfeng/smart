@@ -1,10 +1,16 @@
 package com.wu.safe.smart.ui.module.other.design.view;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.wu.safe.base.app.listener.OnInputClickListener;
 import com.wu.safe.base.app.listener.OnPositionSelectListener;
@@ -17,11 +23,24 @@ import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+/**
+ * AlertDialog和Popupwindow的区别：
+ 1）AlertDialog是非阻塞线程的，Popupwindow是阻塞线程的。
+ 2）Dialog没法设置宽为整个屏幕宽，总有点边界。Popupwindow可以。
+ 3)PopupWindow 更方便设置显示位置
 
+ 全局的，显示正中间的，主要是提示作用的，用Dialog
+ 局部的，特定位置显示的，需要全屏的，用PopWindows
+ * */
 public class DialogViewActivity extends BaseCompatActivity {
     private final static String TAG = "DialogViewActivity";
     @BindView(R.id.progress_view)
     Button progressView;
+
+    @BindView(R.id.test1)
+    TextView test1;
+    @BindView(R.id.test2)
+    TextView test2;
 
     private Context mContext;
 
@@ -42,7 +61,7 @@ public class DialogViewActivity extends BaseCompatActivity {
         });
     }
 
-    @OnClick({R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.choose_view, R.id.input_view, R.id.toast_view})
+    @OnClick({R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.choose_view, R.id.input_view, R.id.toast_view, R.id.test1, R.id.test2})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.progress_view:
@@ -93,6 +112,12 @@ public class DialogViewActivity extends BaseCompatActivity {
             case R.id.toast_view:
                 DialogUtils.showToast(mContext, "提示");
                 break;
+            case R.id.test1:
+                showPopupWindow(1);
+                break;
+            case R.id.test2:
+                showPopupWindow(2);
+                break;
         }
         progressView.postDelayed(new Runnable() {
             @Override
@@ -101,5 +126,35 @@ public class DialogViewActivity extends BaseCompatActivity {
                 DialogUtils.dismissDialog();
             }
         }, 5000);
+    }
+
+    PopupWindow typePopupWindow;
+    private void showPopupWindow(int pos) {
+        if (typePopupWindow == null) {
+            View view = LayoutInflater.from(this).inflate(R.layout.dialog_popwinow, null);
+            ((TextView) view.findViewById(R.id.tvTitle)).setText("PopWindow");
+
+            view.findViewById(R.id.tvSure).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    typePopupWindow.dismiss();
+                }
+            });
+            view.findViewById(R.id.tvCancel).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    typePopupWindow.dismiss();
+                }
+            });
+            typePopupWindow = new PopupWindow(view, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            typePopupWindow.setOutsideTouchable(true);
+            typePopupWindow.setFocusable(true);
+            typePopupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
+        if(pos == 1){
+            typePopupWindow.showAsDropDown(test1);
+        }else{
+            typePopupWindow.showAsDropDown(test2);
+        }
     }
 }

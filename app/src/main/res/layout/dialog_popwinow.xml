@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/blackText1"
+        android:textSize="@dimen/offset_15dp" />
+
+    <View style="@style/DeepUnderLine"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/all_item_gray_selector"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="取 消"
+            android:textColor="@color/blackText1"
+            android:textSize="@dimen/offset_15dp" />
+
+        <TextView
+            android:id="@+id/tvSure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/all_item_blue_selector"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="确 定"
+            android:textColor="@color/white"
+            android:textSize="@dimen/offset_15dp" />
+    </LinearLayout>
+</LinearLayout>
