@@ -82,7 +82,6 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
                 DialogUtils.showInputDialog(mContext, "服务器地址", NetConfig.IP_ADDRESS, new OnInputClickListener() {
                     @Override
                     public void onClickPositive(String inputStr) {
-                        DialogUtils.dismissDialog();
                         String oldAddress = NetConfig.IP_ADDRESS;
                         if(oldAddress.equals(inputStr)){
                             DialogUtils.showToast(mContext, "地址未做任何修改");
@@ -105,7 +104,6 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
 
                     @Override
                     public void onClickNegative() {
-                        DialogUtils.dismissDialog();
                     }
                 });
             }

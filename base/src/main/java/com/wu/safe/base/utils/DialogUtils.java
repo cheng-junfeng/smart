@@ -86,18 +86,21 @@ public class DialogUtils {
             deleteBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    dismissDialog();
                     listener.onPositiveSelect(0);
                 }
             });
             deleteTypeBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    dismissDialog();
                     listener.onPositiveSelect(1);
                 }
             });
             clearAllBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    dismissDialog();
                     listener.onPositiveSelect(2);
                 }
             });
@@ -126,13 +129,43 @@ public class DialogUtils {
             confirmBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    dismissDialog();
                     listener.onClickPositive();
                 }
             });
             cancelBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    dismissDialog();
                     listener.onClickNegative();
+                }
+            });
+        }
+        if (null != dialog && !dialog.isShowing()) {
+            dialog.show();
+            Window window = dialog.getWindow();
+            window.setGravity(Gravity.CENTER);
+        }
+    }
+
+    public static void showConfirmDialog(Context context, String message, final View.OnClickListener listener) {
+        dismissDialog();
+        if (dialog == null) {
+            dialog = new Dialog(context, R.style.Theme_AppCompat_Light_Dialog);
+            dialog.setCanceledOnTouchOutside(true);
+            dialog.setCancelable(true);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            View view = LayoutInflater.from(context).inflate(R.layout.dialog_confirm, null);
+            Button confirmBtn = view.findViewById(R.id.btn_confirm);
+            TextView messageTv = view.findViewById(R.id.tv_message);
+            messageTv.setText(message);
+            dialog.setContentView(view);
+
+            confirmBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dismissDialog();
+                    listener.onClick(view);
                 }
             });
         }
@@ -167,12 +200,14 @@ public class DialogUtils {
                         DialogUtils.showToast(context, "输入不能为空");
                         return;
                     }
+                    dismissDialog();
                     listener.onClickPositive(inputStr);
                 }
             });
             cancelBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    dismissDialog();
                     listener.onClickNegative();
                 }
             });

@@ -121,7 +121,6 @@ public class MyInfoActivity extends UserBaseCompatActivity {
         DialogUtils.showConfirmDialog(this, "确定退出当前账号？", new OnSelectClickListener() {
             @Override
             public void onClickPositive() {
-                DialogUtils.dismissDialog();
                 new LoginPresenter().logout(mContext);
                 readGoFinishAnim(MyLoginActivity.class);
                 finishAll();
@@ -129,7 +128,6 @@ public class MyInfoActivity extends UserBaseCompatActivity {
 
             @Override
             public void onClickNegative() {
-                DialogUtils.dismissDialog();
             }
         });
     }

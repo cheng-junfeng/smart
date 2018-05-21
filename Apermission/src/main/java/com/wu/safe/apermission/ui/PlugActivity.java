@@ -70,7 +70,6 @@ public class PlugActivity extends PermissBaseCompatActivity {
                 DialogUtils.showConfirmDialog(mContext, "尚未安装单位视频插件，立即安装", new OnSelectClickListener() {
                     @Override
                     public void onClickPositive() {
-                        DialogUtils.dismissDialog();
                         String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + HAIAPK_NAME;
                         if (FileUtil.copyFile(mContext, HAIAPK_NAME, path)) {
                             AppUtils.installUpdate(mContext, path);
@@ -79,7 +78,6 @@ public class PlugActivity extends PermissBaseCompatActivity {
 
                     @Override
                     public void onClickNegative() {
-                        DialogUtils.dismissDialog();
                     }
                 });
             }

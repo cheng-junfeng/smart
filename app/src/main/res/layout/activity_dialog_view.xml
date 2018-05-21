@@ -32,7 +32,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/offset_3dp"
             android:background="@drawable/all_item_gray_selector"
-            android:text="确认框" />
+            android:text="确认框1" />
+
+        <Button
+            android:id="@+id/confirm_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="确认框2" />
 
         <Button
             android:id="@+id/choose_view"
@@ -57,18 +65,28 @@
             android:layout_marginTop="@dimen/offset_3dp"
             android:background="@drawable/all_item_gray_selector"
             android:text="提示" />
-        <TextView
-            android:id="@+id/test1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/offset_3dp"
-            android:text="弹框1" />
 
-        <TextView
-            android:id="@+id/test2"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/offset_30dp"
-            android:text="弹框2" />
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/test1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_3dp"
+                android:text="弹框1" />
+
+            <TextView
+                android:id="@+id/test2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_30dp"
+                android:layout_gravity="end"
+                android:text="弹框2" />
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

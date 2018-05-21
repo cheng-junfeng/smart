@@ -168,7 +168,6 @@ public class MsgFragment extends PushBaseCompatFragment implements MsgContract.V
                         @Override
                         public void onPositiveSelect(int pos) {
                             LogUtil.d(TAG, "click:" + pos);
-                            DialogUtils.dismissDialog();
                         }
                     });
                 }

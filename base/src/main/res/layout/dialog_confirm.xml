@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="@dimen/dialog_200dp"
+        android:layout_height="@dimen/dialog_150dp"
+        android:orientation="vertical"
+        android:background="@drawable/dialog_bg">
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size_16"
+            android:background="@color/color_light_white"
+            android:textColor="@color/color_light_black"
+            android:gravity="center"
+            android:paddingTop="@dimen/offset_10dp"
+            android:paddingBottom="@dimen/offset_10dp"
+            android:paddingRight="25dp"
+            android:paddingLeft="25dp" />
+
+        <View style="@style/DeepUnderLine" />
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/color_light_white"
+                android:textSize="@dimen/text_size_large"
+                android:padding="@dimen/offset_7dp"
+                android:background="@drawable/all_item_blue_selector"
+                android:text="确定" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

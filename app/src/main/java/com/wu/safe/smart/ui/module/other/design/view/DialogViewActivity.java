@@ -61,7 +61,7 @@ public class DialogViewActivity extends BaseCompatActivity {
         });
     }
 
-    @OnClick({R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.choose_view, R.id.input_view, R.id.toast_view, R.id.test1, R.id.test2})
+    @OnClick({R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.confirm_view2, R.id.choose_view, R.id.input_view, R.id.toast_view, R.id.test1, R.id.test2})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.progress_view:
@@ -74,14 +74,20 @@ public class DialogViewActivity extends BaseCompatActivity {
                 DialogUtils.showConfirmDialog(mContext, "确认？", new OnSelectClickListener() {
                     @Override
                     public void onClickPositive() {
-                        DialogUtils.dismissDialog();
                         DialogUtils.showToast(mContext, "confirm:确认");
                     }
 
                     @Override
                     public void onClickNegative() {
-                        DialogUtils.dismissDialog();
                         DialogUtils.showToast(mContext, "choose:取消");
+                    }
+                });
+                break;
+            case R.id.confirm_view2:
+                DialogUtils.showConfirmDialog(mContext, "确认2 ？", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        DialogUtils.showToast(mContext, "confirm2:确认");
                     }
                 });
                 break;
@@ -89,7 +95,6 @@ public class DialogViewActivity extends BaseCompatActivity {
                 DialogUtils.showChooseDialog(mContext, new OnPositionSelectListener() {
                     @Override
                     public void onPositiveSelect(int pos) {
-                        DialogUtils.dismissDialog();
                         DialogUtils.showToast(mContext, "choose:" + pos);
                     }
                 });
@@ -98,13 +103,11 @@ public class DialogViewActivity extends BaseCompatActivity {
                 DialogUtils.showInputDialog(mContext, "输入地址", "www.baidu.com", new OnInputClickListener() {
                     @Override
                     public void onClickPositive(String inputStr) {
-                        DialogUtils.dismissDialog();
                         DialogUtils.showToast(mContext, "confirm:确认");
                     }
 
                     @Override
                     public void onClickNegative() {
-                        DialogUtils.dismissDialog();
                         DialogUtils.showToast(mContext, "choose:取消");
                     }
                 });

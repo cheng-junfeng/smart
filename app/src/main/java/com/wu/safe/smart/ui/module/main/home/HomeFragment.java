@@ -24,6 +24,7 @@ import com.wu.safe.smart.ui.module.main.home.bean.HomeListBean;
 import com.wu.safe.smart.ui.module.other.data.DataActivity;
 import com.wu.safe.smart.ui.module.other.design.DesignActivity;
 import com.wu.safe.smart.ui.module.other.info.InfoActivity;
+import com.wu.safe.smart.ui.module.other.nfc.NfcActivity;
 import com.wu.safe.smart.ui.module.other.notification.NotificationActivity;
 import com.wu.safe.smart.ui.widget.BGABadgeTextView;
 
@@ -73,7 +74,7 @@ public class HomeFragment extends BaseCompatFragment {
         HomeListBean bean24 = new HomeListBean.Builder().content("视频").build();
 
         HomeListBean bean31 = new HomeListBean.Builder().content("插件").build();
-        HomeListBean bean32 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean32 = new HomeListBean.Builder().content("NFC").build();
         HomeListBean bean33 = new HomeListBean.Builder().content("More").build();
         HomeListBean bean34 = new HomeListBean.Builder().content("More").build();
 
@@ -141,6 +142,10 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 8: {
                             readGo(PlugActivity.class);
+                        }
+                        break;
+                        case 9: {
+                            readGo(NfcActivity.class);
                         }
                         break;
                         default: {

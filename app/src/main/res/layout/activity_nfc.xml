@@ -1,0 +1,151 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="请将标签靠近设备背面......"
+            android:textColor="#002389"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#000000" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="标签的UID序列号为:"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#000000" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioGroup
+                android:id="@+id/rdgb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/rb_read"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    
+                    android:text="读取存储" />
+
+                <RadioButton
+                    android:id="@+id/rb_Change"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:text="转换为ASCll" />
+
+                <RadioButton
+                    android:id="@+id/rb_write"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"/>
+            </RadioGroup>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#000000" />
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow>
+
+                <TextView
+                    android:text="Sector"
+                    android:width="60dp" />
+
+                <EditText
+                    android:id="@+id/etSector"
+                    android:focusable="true"
+                    android:numeric="integer"
+                    android:width="120dp" android:inputType=""/>
+
+                <TextView
+                    android:text="(starting at 1 To 15)"
+                    android:textColor="#FF00FF"
+                    android:width="150dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:text="Block"
+                    android:width="60dp" />
+
+                <EditText
+                    android:id="@+id/etBlock"
+                    android:digits="012"
+                    android:focusableInTouchMode="true"
+                    android:maxLength="1"
+                    android:numeric="integer"
+                    android:width="120dp" />
+
+                <TextView
+                    android:text="(starting at 0 To 2)"
+                    android:textColor="#FF00FF"
+                    android:width="150dp" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow>
+
+                <TextView
+                    android:text="Data"
+                    android:width="60dp" />
+
+                <EditText
+                    android:id="@+id/etData"
+                    android:layout_width="match_parent"
+                    android:hint="HEX,16 bytes(e.g.0CF6...)" />
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#000000" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="内存详细存储信息......"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</ScrollView>
