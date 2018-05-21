@@ -19,6 +19,7 @@ import com.wu.safe.smart.ui.module.other.design.view.MoreTabActivity;
 import com.wu.safe.smart.ui.module.other.design.view.PageViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.PicChooseActivity;
 import com.wu.safe.smart.ui.module.other.design.view.TabActivity;
+import com.wu.safe.smart.ui.module.other.design.view.TopDraggerActivity;
 import com.wu.safe.smart.ui.module.other.design.view.fragment.FragmentsActivity;
 
 import butterknife.OnClick;
@@ -43,11 +44,14 @@ public class DesignActivity extends BaseCompatActivity {
         });
     }
 
-    @OnClick({R.id.dialog_view, R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view, R.id.bottom_dialog
+    @OnClick({R.id.top_dragger_view, R.id.dialog_view, R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view, R.id.bottom_dialog
             , R.id.left_view, R.id.count_view, R.id.pic_carouse_view, R.id.pic_gallery_view, R.id.pic_choose_view})
     public void onViewClicked(View view) {
         Bundle bundle = new Bundle();
         switch (view.getId()) {
+            case R.id.top_dragger_view:
+                readGo(TopDraggerActivity.class);
+                break;
             case R.id.stable_tab_view:
                 readGo(TabActivity.class);
                 break;

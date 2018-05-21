@@ -33,6 +33,30 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_below="@id/title_top">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/top_dragger_view"
+                    android:layout_width="@dimen/offset_70dp"
+                    android:layout_height="@dimen/offset_70dp"
+                    android:layout_marginLeft="@dimen/offset_5dp"
+                    android:layout_marginRight="@dimen/offset_5dp"
+                    android:layout_marginTop="@dimen/offset_5dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="3dip"
+                    app:cardElevation="1.5dip">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:text="向上缩进"
+                        android:textSize="18sp" />
+                </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/stable_tab_view"
                     android:layout_width="@dimen/offset_70dp"
