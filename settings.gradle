@@ -1,1 +1,1 @@
-include ':base', ':app', ':Apush', ':Auser', ':Amap', ':Apermission', ':zxinglib', ':videoAudio', ':webview'
+include ':base', ':app', ':Apush', ':Auser', ':Amap', ':Apermission', ':zxinglib', ':videoAudio', ':webview', ':Artmp'

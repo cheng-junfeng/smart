@@ -51,6 +51,11 @@ android {
             }
         }
     }
+    repositories {
+        flatDir {
+            dirs 'libs', '../Artmp/libs'
+        }
+    }
 }
 
 dependencies {
@@ -99,6 +104,8 @@ dependencies {
     api project(':Amap')
     //permission
     implementation project(':Apermission')
+    //rtmp
+    api project(':Artmp')
 
     //webview
     implementation project(':webview')

@@ -27,6 +27,7 @@ import com.wu.safe.smart.ui.module.other.info.InfoActivity;
 import com.wu.safe.smart.ui.module.other.nfc.NfcActivity;
 import com.wu.safe.smart.ui.module.other.notification.NotificationActivity;
 import com.wu.safe.smart.ui.widget.BGABadgeTextView;
+import com.wutos.safe.rtmp.ui.view.RtmpMainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,8 +76,8 @@ public class HomeFragment extends BaseCompatFragment {
 
         HomeListBean bean31 = new HomeListBean.Builder().content("插件").build();
         HomeListBean bean32 = new HomeListBean.Builder().content("NFC").build();
-        HomeListBean bean33 = new HomeListBean.Builder().content("More").build();
-        HomeListBean bean34 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean33 = new HomeListBean.Builder().content("Rtmp").build();
+        HomeListBean bean34 = new HomeListBean.Builder().content("WS").build();
 
         allData.add(bean1);
         allData.add(bean2);
@@ -146,6 +147,16 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 9: {
                             readGo(NfcActivity.class);
+                        }
+                        break;
+                        case 10: {
+                            readGo(RtmpMainActivity.class);
+                        }
+                        break;
+                        case 11: {
+                            Bundle bundle = new Bundle();
+                            bundle.putString(JSConfig.JS_URL, "file:///android_asset/video/video.html");
+                            readGo(JSWebViewNormalActivity.class, bundle);
                         }
                         break;
                         default: {

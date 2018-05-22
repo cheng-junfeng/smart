@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="flowplayer-3.2.8.min.js"></script>
+    <title>RTMP Player</title>
+</head>
+<body>
+<a
+        href="#"
+        style="display:block;width:520px;height:330px"
+        id="player">
+</a>
+<!-- this will install flowplayer inside previous A- tag. -->
+<script>
+    flowplayer("player", "flowplayer-3.2.18.swf",{  
+        clip: {  
+          url: 'rtmp://www.chengjunfeng.cn:10000/hls/test',
+          provider: 'rtmp', 
+          live: true,  
+        },   
+        plugins: {   
+           rtmp: {   
+             url: 'flowplayer.rtmp-3.2.8.swf',   
+             netConnectionUrl: 'rtmp://www.chengjunfeng.cn:10000/hls/test'
+           }  
+       }  
+    }); 
+    </script>
+</body>
+</html> 
