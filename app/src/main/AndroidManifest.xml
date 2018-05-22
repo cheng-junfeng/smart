@@ -20,6 +20,7 @@
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <application
         android:name=".SmartApplication"
         android:allowBackup="true"
@@ -120,5 +121,7 @@
                 <!--android:resource="@xml/provider_paths"-->
                 <!--tools:replace="android:resource"/>-->
         <!--</provider>-->
+        <service android:name=".ui.module.floatwindows.FloatWindowService"
+            android:process=":float"/>
     </application>
 </manifest>

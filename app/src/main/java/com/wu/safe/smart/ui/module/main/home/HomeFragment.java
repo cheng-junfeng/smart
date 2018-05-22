@@ -1,13 +1,19 @@
 package com.wu.safe.smart.ui.module.main.home;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.baidu.track.activity.MapMainActivity;
 import com.jmolsmobile.videocapture.ui.view.VideoMainActivity;
@@ -17,8 +23,10 @@ import com.wu.safe.base.app.listener.OnClickLongListener;
 import com.wu.safe.base.utils.DialogUtils;
 import com.wu.safe.jsbridge.config.JSConfig;
 import com.wu.safe.jsbridge.ui.view.JSWebViewNormalActivity;
+import com.wu.safe.smart.BuildConfig;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatFragment;
+import com.wu.safe.smart.ui.module.floatwindows.FloatWindowService;
 import com.wu.safe.smart.ui.module.main.home.adapter.HomeListAdapter;
 import com.wu.safe.smart.ui.module.main.home.bean.HomeListBean;
 import com.wu.safe.smart.ui.module.other.data.DataActivity;
@@ -79,6 +87,11 @@ public class HomeFragment extends BaseCompatFragment {
         HomeListBean bean33 = new HomeListBean.Builder().content("Rtmp").build();
         HomeListBean bean34 = new HomeListBean.Builder().content("WS").build();
 
+        HomeListBean bean41 = new HomeListBean.Builder().content("悬浮窗").build();
+        HomeListBean bean42 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean43 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean44 = new HomeListBean.Builder().content("More").build();
+
         allData.add(bean1);
         allData.add(bean2);
         allData.add(bean3);
@@ -93,6 +106,11 @@ public class HomeFragment extends BaseCompatFragment {
         allData.add(bean32);
         allData.add(bean33);
         allData.add(bean34);
+
+        allData.add(bean41);
+        allData.add(bean42);
+        allData.add(bean43);
+        allData.add(bean44);
     }
 
     private void initView() {
@@ -159,6 +177,21 @@ public class HomeFragment extends BaseCompatFragment {
                             readGo(JSWebViewNormalActivity.class, bundle);
                         }
                         break;
+                        case 12: {
+                            FragmentActivity activity = getActivity();
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                if (!Settings.canDrawOverlays(activity)) {
+                                    Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                                            Uri.parse("package:" + BuildConfig.APPLICATION_ID));
+                                    startActivity(intent);
+                                } else {
+                                    startFloat(activity);
+                                }
+                            }else{
+                                startFloat(activity);
+                            }
+                        }
+                        break;
                         default: {
                             DialogUtils.showToast(mContext, "no more");
                         }
@@ -180,6 +213,12 @@ public class HomeFragment extends BaseCompatFragment {
             mAdapter.setDatas(allData);
             mAdapter.notifyDataSetChanged();
         }
+    }
+
+    private void startFloat(FragmentActivity activity){
+        Intent intent = new Intent(activity, FloatWindowService.class);
+        activity.startService(intent);
+        activity.finish();
     }
 
     private int unReadCount = 0;
