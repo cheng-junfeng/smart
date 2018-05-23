@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+        <ImageView
+            android:layout_margin="10dp"
+            android:id="@+id/iv_exchange"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/route_icon_exchange"
+            android:background="@drawable/all_item_gray_selector"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitCenter"/>
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_toLeftOf="@id/iv_exchange"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvstarting"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/base_button_height"
+                    android:gravity="center_vertical"
+                    android:text="安普顿小镇"
+                    android:textColor="@color/blackText1"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <View style="@style/DeepUnderLine" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvending"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/base_button_height"
+                    android:gravity="center_vertical"
+                    android:text="光谷广场"
+                    android:textColor="@color/blackText1"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/start_navi"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_button_height"
+        android:layout_marginTop="@dimen/offset_10dp"
+        android:text="开始"
+        android:background="@drawable/all_item_gray_selector"/>
+</LinearLayout>

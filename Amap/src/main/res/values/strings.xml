@@ -24,7 +24,8 @@
     <string name="base_title">BaseActivity</string>
     <string name="login_title">LoginActivity</string>
     <string name="map_title">基础地图</string>
-    <string name="map_route">路线地图</string>
+    <string name="map_route">路线</string>
+    <string name="map_navi">导航</string>
     <string name="tracing_title">轨迹追踪</string>
     <string name="tracing_options_title">追踪设置</string>
     <string name="track_query_title">轨迹查询</string>
@@ -37,7 +38,8 @@
 
     <!-- Activity说明 -->
     <string name="map_desc">基础地图应用，地图，定位，图层</string>
-    <string name="map_route_desc">进阶应用，路线，小窗，导航</string>
+    <string name="map_route_desc">进阶应用，路线，小窗</string>
+    <string name="map_navi_desc">高级应用，导航</string>
     <string name="tracing_desc">室内、外高精度连续追踪</string>
     <string name="track_query_desc">查询被追踪者的历史轨迹</string>
     <string name="fence_desc">本地、云端围栏双重监控</string>
