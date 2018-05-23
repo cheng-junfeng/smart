@@ -20,6 +20,8 @@ import com.wu.safe.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -61,7 +63,7 @@ public class DialogViewActivity extends BaseCompatActivity {
         });
     }
 
-    @OnClick({R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.confirm_view2, R.id.choose_view, R.id.input_view, R.id.toast_view, R.id.test1, R.id.test2})
+    @OnClick({R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.confirm_view2, R.id.choose_view, R.id.delete_view, R.id.input_view, R.id.toast_view, R.id.test1, R.id.test2})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.progress_view:
@@ -91,8 +93,21 @@ public class DialogViewActivity extends BaseCompatActivity {
                     }
                 });
                 break;
+            case R.id.delete_view:
+                DialogUtils.showDeleteDialog(mContext, new OnPositionSelectListener() {
+                    @Override
+                    public void onPositiveSelect(int pos) {
+                        DialogUtils.showToast(mContext, "choose:" + pos);
+                    }
+                });
+                break;
             case R.id.choose_view:
-                DialogUtils.showChooseDialog(mContext, new OnPositionSelectListener() {
+                ArrayList<String> allStr = new ArrayList<>();
+                allStr.add("choose1");
+                allStr.add("choose2");
+                allStr.add("choose3");
+                allStr.add("choose3");
+                DialogUtils.showChooseDialog(mContext, allStr, new OnPositionSelectListener() {
                     @Override
                     public void onPositiveSelect(int pos) {
                         DialogUtils.showToast(mContext, "choose:" + pos);
@@ -126,7 +141,6 @@ public class DialogViewActivity extends BaseCompatActivity {
             @Override
             public void run() {
                 DialogUtils.dismissProgressDialog();
-                DialogUtils.dismissDialog();
             }
         }, 5000);
     }
@@ -159,5 +173,13 @@ public class DialogViewActivity extends BaseCompatActivity {
         }else{
             typePopupWindow.showAsDropDown(test2);
         }
+    }
+
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        DialogUtils.dismissProgressDialog();
+        DialogUtils.dismissDialog();
     }
 }

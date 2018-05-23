@@ -2,6 +2,9 @@ package com.wu.safe.base.utils;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -10,15 +13,21 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.wu.safe.base.R;
+import com.wu.safe.base.app.listener.OnClickLongListener;
 import com.wu.safe.base.net.helper.ApiExceptionHelper;
 import com.wu.safe.base.app.listener.OnInputClickListener;
 import com.wu.safe.base.app.listener.OnPositionSelectListener;
 import com.wu.safe.base.app.listener.OnSelectClickListener;
+import com.wu.safe.base.ui.adapter.BaseListAdapter;
+
+import java.io.File;
+import java.util.List;
 
 public class DialogUtils {
 
@@ -69,8 +78,41 @@ public class DialogUtils {
     }
 
     private static Dialog dialog = null;
+    public static void showChooseDialog(Context context, List<String> allStr, final OnPositionSelectListener listener) {
+        dismissDialog();
+        if (dialog == null) {
+            dialog = new Dialog(context, R.style.Theme_AppCompat_Light_Dialog);
+            dialog.setCanceledOnTouchOutside(true);
+            dialog.setCancelable(true);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            View view = LayoutInflater.from(context).inflate(R.layout.dialog_choose, null);
+            RecyclerView mainView = view.findViewById(R.id.main_view);
+            BaseListAdapter mAdapter = new BaseListAdapter(allStr);
+            mAdapter.setOnListener(new OnClickLongListener() {
+                @Override
+                public void onItemClick(int position) {
+                    dismissDialog();
+                    listener.onPositiveSelect(position);
+                }
 
-    public static void showChooseDialog(Context context, final OnPositionSelectListener listener) {
+                @Override
+                public void onItemLongClick(int position) {
+                }
+            });
+
+            mainView.setLayoutManager(new LinearLayoutManager(context));
+            mainView.setHasFixedSize(true);
+            mainView.setAdapter(mAdapter);
+            dialog.setContentView(view);
+        }
+        if (null != dialog && !dialog.isShowing()) {
+            dialog.show();
+            Window window = dialog.getWindow();
+            window.setGravity(Gravity.CENTER);
+        }
+    }
+
+    public static void showDeleteDialog(Context context, final OnPositionSelectListener listener) {
         dismissDialog();
         if (dialog == null) {
             dialog = new Dialog(context, R.style.Theme_AppCompat_Light_Dialog);

@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.wu.safe.base.R;
 import com.wu.safe.base.app.listener.OnClickLongListener;
-import com.wu.safe.base.ui.bean.ListBean;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +17,13 @@ import java.util.List;
 public class BaseListAdapter extends BaseRecyAdapter<BaseListAdapter.ViewHolder> {
 
     OnClickLongListener mOnClickListener;
-    List<ListBean> data;
+    List<String> data;
 
-    public BaseListAdapter(List<ListBean> data) {
+    public BaseListAdapter(List<String> data) {
         this.data = data;
     }
 
-    public void setDatas(List<ListBean> datas) {
+    public void setDatas(List<String> datas) {
         if (datas == null) {
             datas = new ArrayList<>();
         }
@@ -39,8 +37,8 @@ public class BaseListAdapter extends BaseRecyAdapter<BaseListAdapter.ViewHolder>
     @Override
     public void myBindViewHolder(final ViewHolder holder, final int position) {
 
-        ListBean userModel = data.get(position);
-        holder.hmContent.setText(userModel.getContent());
+        String userModel = data.get(position);
+        holder.hmContent.setText(userModel);
 
         holder.hmRoot.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -67,7 +65,7 @@ public class BaseListAdapter extends BaseRecyAdapter<BaseListAdapter.ViewHolder>
         return data.size();
     }
 
-    public ListBean getItem(int pos) {
+    public String getItem(int pos) {
         if (data == null || pos >= data.size()) {
             return null;
         }
@@ -82,7 +80,7 @@ public class BaseListAdapter extends BaseRecyAdapter<BaseListAdapter.ViewHolder>
         data.clear();
     }
 
-    public List<ListBean> getData() {
+    public List<String> getData() {
         return data;
     }
 

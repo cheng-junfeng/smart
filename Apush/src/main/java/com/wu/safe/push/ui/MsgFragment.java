@@ -164,7 +164,7 @@ public class MsgFragment extends PushBaseCompatFragment implements MsgContract.V
 
                 @Override
                 public void onItemLongClick(int position) {
-                    DialogUtils.showChooseDialog(getActivity(), new OnPositionSelectListener() {
+                    DialogUtils.showDeleteDialog(getActivity(), new OnPositionSelectListener() {
                         @Override
                         public void onPositiveSelect(int pos) {
                             LogUtil.d(TAG, "click:" + pos);

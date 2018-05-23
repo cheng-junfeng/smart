@@ -28,6 +28,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.baidu.map.ui.MapBaseActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name="com.baidu.map.ui.MapRouteActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".activity.TracingActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.TrackQueryActivity"

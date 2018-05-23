@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <com.baidu.mapapi.map.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"/>
+
+    <LinearLayout
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginRight="@dimen/offset_15dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/btn_mark"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/offset_5dp"
+            android:text="路况"
+            android:background="@drawable/all_item_gray_selector"/>
+
+        <Button
+            android:id="@+id/btn_route"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:text="路线"
+            android:background="@drawable/all_item_gray_selector"/>
+    </LinearLayout>
+</RelativeLayout>

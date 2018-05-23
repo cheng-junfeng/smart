@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.wu.safe.base.app.listener.OnClickLongListener;
 import com.wu.safe.base.ui.adapter.BaseListAdapter;
-import com.wu.safe.base.ui.bean.ListBean;
 import com.wu.safe.base.utils.NotificationUtil;
 import com.wu.safe.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
@@ -35,7 +34,7 @@ public class NotificationActivity extends BaseCompatActivity {
     RecyclerView mainView;
 
     Context mContext;
-    List<ListBean> allData;
+    List<String> allData;
     BaseListAdapter mAdapter;
     @BindView(R.id.switch_notif)
     TextView switchNotif;
@@ -73,19 +72,12 @@ public class NotificationActivity extends BaseCompatActivity {
 
     private void initData() {
         allData = new ArrayList<>();
-        ListBean bean1 = new ListBean.Builder().content("1 sendDefaultNotice").build();
-        ListBean bean2 = new ListBean.Builder().content("2 cancel").build();
-        ListBean bean3 = new ListBean.Builder().content("3 showNotification").build();
-        ListBean bean4 = new ListBean.Builder().content("4 showProgressNotification").build();
-        ListBean bean5 = new ListBean.Builder().content("5 showDoneNotification").build();
-        ListBean bean6 = new ListBean.Builder().content("6 showErrorNotification").build();
-
-        allData.add(bean1);
-        allData.add(bean2);
-        allData.add(bean3);
-        allData.add(bean4);
-        allData.add(bean5);
-        allData.add(bean6);
+        allData.add("1 sendDefaultNotice");
+        allData.add("2 cancel");
+        allData.add("3 showNotification");
+        allData.add("4 showProgressNotification");
+        allData.add("5 showDoneNotification");
+        allData.add("6 showErrorNotification");
     }
 
     private void initView() {
