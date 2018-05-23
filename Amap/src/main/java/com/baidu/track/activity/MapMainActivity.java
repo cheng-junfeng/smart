@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.baidu.map.ui.MapBaseActivity;
 import com.baidu.map.ui.MapNaviActivity;
+import com.baidu.map.ui.MapOverLayActivity;
 import com.baidu.map.ui.MapRouteActivity;
 import com.baidu.track.R;
 import com.baidu.track.R2;
@@ -64,6 +65,8 @@ public class MapMainActivity extends BmapBaseCompatActivity {
                 MapRouteActivity.class);
         ItemInfo navi = new ItemInfo(R.mipmap.icon_tracing, R.string.map_navi, R.string.map_navi_desc,
                 MapNaviActivity.class);
+        ItemInfo overlay = new ItemInfo(R.mipmap.icon_tracing, R.string.map_overlay, R.string.map_overlay_desc,
+                MapOverLayActivity.class);
         ItemInfo tracing = new ItemInfo(R.mipmap.icon_track_query, R.string.tracing_title, R.string.tracing_desc,
                 TracingActivity.class);
         ItemInfo trackQuery = new ItemInfo(R.mipmap.icon_track_query, R.string.track_query_title,
@@ -71,6 +74,7 @@ public class MapMainActivity extends BmapBaseCompatActivity {
         itemInfos.add(base);
         itemInfos.add(route);
         itemInfos.add(navi);
+        itemInfos.add(overlay);
         itemInfos.add(tracing);
         itemInfos.add(trackQuery);
 
