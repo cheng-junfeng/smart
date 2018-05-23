@@ -1,6 +1,10 @@
 package com.baidu.map.ui;
 
 import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -35,7 +39,7 @@ import butterknife.OnClick;
  * 地图基础应用
  * 2018-05-23
  */
-public class MapBaseActivity extends BmapBaseCompatActivity implements BDLocationListener {
+public class MapBaseActivity extends BmapBaseCompatActivity implements BDLocationListener, SensorEventListener {
 
     private final static String TAG = "MapBaseActivity";
     @BindView(R2.id.mapView)
@@ -57,16 +61,24 @@ public class MapBaseActivity extends BmapBaseCompatActivity implements BDLocatio
     private BDLocation curBDLocation;
     //定位客户端
     private LocationClient mLocClient;
+    //定位数据
+    private MyLocationData mLocationData;
     //当前点击点
     private LatLng currentPoint;
+    //方位
+    private int mCurrentDirection = 0;
     //标记
     BitmapDescriptor tempMarker = BitmapDescriptorFactory
             .fromResource(R.mipmap.icon_mark1);
     BitmapDescriptor mLocationMarker = BitmapDescriptorFactory
             .fromResource(R.mipmap.icon_point);
 
-    private Context mContext;
+
     private boolean isRequestLocation;
+    private Context mContext;
+    //方位
+    private Double lastX = 0.0;
+    private SensorManager mSensorManager;
 
     @Override
     protected int setContentView() {
@@ -86,11 +98,26 @@ public class MapBaseActivity extends BmapBaseCompatActivity implements BDLocatio
         setListener();
     }
 
+    private void init() {
+        mContext = this;
+        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);//获取传感器管理服务
+
+        mBaiduMap = mapView.getMap();
+        mUiSettings = mBaiduMap.getUiSettings();
+        //开启定位图层
+        mBaiduMap.setMyLocationEnabled(true);
+        //不显示放大放小按钮
+        mapView.showZoomControls(false);
+        getLocation();
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
         // activity 恢复时同时恢复地图控件
         mapView.onResume();
+        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
+                SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
@@ -101,19 +128,10 @@ public class MapBaseActivity extends BmapBaseCompatActivity implements BDLocatio
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // activity 销毁时同时销毁地图控件
-        mapView.onDestroy();
-    }
-
-    private void init() {
-        mContext = this;
-        mBaiduMap = mapView.getMap();
-        mUiSettings = mBaiduMap.getUiSettings();
-        //不显示放大放小按钮
-        mapView.showZoomControls(false);
-        getLocation();
+    protected void onStop() {
+        //取消注册传感器监听
+        mSensorManager.unregisterListener(this);
+        super.onStop();
     }
 
     private void setListener() {
@@ -201,6 +219,26 @@ public class MapBaseActivity extends BmapBaseCompatActivity implements BDLocatio
         setLocationView(location);
     }
 
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        double x = sensorEvent.values[SensorManager.DATA_X];
+        if (Math.abs(x - lastX) > 1.0) {
+            mCurrentDirection = (int) x;
+            mLocationData = new MyLocationData.Builder()
+                    .accuracy(curBDLocation.getRadius())
+                    // 此处设置开发者获取到的方向信息，顺时针0-360
+                    .direction(mCurrentDirection)
+                    .latitude(curBDLocation.getLatitude())
+                    .longitude(curBDLocation.getLongitude()).build();
+            mBaiduMap.setMyLocationData(mLocationData);
+        }
+        lastX = x;
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {
+    }
+
     private void setLocationView(BDLocation location) {
         LogUtil.d(TAG, "onReceiveLocation:" + location);
         if (location == null || mapView == null) {
@@ -208,16 +246,13 @@ public class MapBaseActivity extends BmapBaseCompatActivity implements BDLocatio
         }
         curBDLocation = location;
         LogUtil.d(TAG, "onReceiveLocation:" + location.getLatitude() + ":" + location.getLongitude());
-        MyLocationData data = new MyLocationData.Builder()
+        mLocationData = new MyLocationData.Builder()
                 .accuracy(location.getRadius())
                 .direction(location.getDirection())
                 .latitude(location.getLatitude())
                 .longitude(location.getLongitude()).build();
-        mBaiduMap.setMyLocationData(data);
+        mBaiduMap.setMyLocationData(mLocationData);
         MyLocationConfiguration.LocationMode mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
-        MarkerOptions locationMarker = new MarkerOptions().position(new LatLng(location.getLatitude(), location.getLongitude())).icon(mLocationMarker);
-        mBaiduMap.addOverlay(locationMarker);
-
         MyLocationConfiguration config = new MyLocationConfiguration(mCurrentMode, true, mLocationMarker);
         mBaiduMap.setMyLocationConfiguration(config);
         if (isRequestLocation) {
@@ -228,5 +263,17 @@ public class MapBaseActivity extends BmapBaseCompatActivity implements BDLocatio
     private void setMarkerView() {
         MarkerOptions ooA = new MarkerOptions().position(currentPoint).icon(tempMarker);
         mBaiduMap.addOverlay(ooA);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 退出时销毁定位
+        mLocClient.stop();
+        // 关闭定位图层
+        mBaiduMap.setMyLocationEnabled(false);
+        // activity 销毁时同时销毁地图控件
+        mapView.onDestroy();
+        mapView = null;
     }
 }
