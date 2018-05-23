@@ -2,7 +2,10 @@
     package="com.baidu.track" >
 
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!--允许程序访问CellID或WiFi热点来获取粗略的位置-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
@@ -22,6 +25,8 @@
             android:value="R4v7pHu8Cd3RvsWjXCGnrhiW4sKgEmu2"/>
 
         <activity android:name=".activity.MapMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.baidu.map.ui.MapBaseActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.TracingActivity"
             android:screenOrientation="portrait"/>

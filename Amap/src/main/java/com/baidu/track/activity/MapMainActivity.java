@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.baidu.map.ui.MapBaseActivity;
 import com.baidu.track.R;
 import com.baidu.track.R2;
 import com.baidu.track.adapter.MyAdapter;
@@ -55,10 +56,13 @@ public class MapMainActivity extends BmapBaseCompatActivity {
     }
 
     private void initView() {
-        ItemInfo tracing = new ItemInfo(R.mipmap.icon_tracing, R.string.tracing_title, R.string.tracing_desc,
+        ItemInfo base = new ItemInfo(R.mipmap.icon_tracing, R.string.map_title, R.string.map_desc,
+                MapBaseActivity.class);
+        ItemInfo tracing = new ItemInfo(R.mipmap.icon_track_query, R.string.tracing_title, R.string.tracing_desc,
                 TracingActivity.class);
         ItemInfo trackQuery = new ItemInfo(R.mipmap.icon_track_query, R.string.track_query_title,
                 R.string.track_query_desc, TrackQueryActivity.class);
+        itemInfos.add(base);
         itemInfos.add(tracing);
         itemInfos.add(trackQuery);
 
