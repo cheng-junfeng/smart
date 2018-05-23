@@ -22,4 +22,46 @@
                 android:layout_height="wrap_content"
                 android:background="@mipmap/navi_idle_gps_locked" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginRight="@dimen/offset_15dp"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/btn_zoom"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/offset_5dp"
+            android:checked="true"
+            android:text="缩"
+            android:background="@drawable/all_item_gray_selector"/>
+
+        <CheckBox
+            android:id="@+id/btn_other"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/offset_5dp"
+            android:checked="true"
+            android:text="移"
+            android:background="@drawable/all_item_gray_selector"/>
+
+        <CheckBox
+            android:id="@+id/btn_star"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/offset_5dp"
+            android:text="卫"
+            android:background="@drawable/all_item_gray_selector"/>
+
+        <CheckBox
+            android:id="@+id/btn_traffic"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:text="路"
+            android:background="@drawable/all_item_gray_selector"/>
+    </LinearLayout>
 </RelativeLayout>
