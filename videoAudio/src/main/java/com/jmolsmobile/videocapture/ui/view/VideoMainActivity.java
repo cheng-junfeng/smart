@@ -33,7 +33,6 @@ import com.jmolsmobile.videocapture.ui.adapter.AudioAdapter;
 import com.jmolsmobile.videocapture.ui.adapter.VideoInfoGridAdapter;
 import com.jmolsmobile.videocapture.ui.bean.AudioInfoBean;
 import com.jmolsmobile.videocapture.ui.bean.ImageInfo;
-import com.jmolsmobile.videocapture.ui.view.VideoCaptureActivity;
 import com.jmolsmobile.videocapture.ui.widget.ScrollGridView;
 import com.jmolsmobile.videocapture.utils.AudioRecoderUtils;
 import com.jmolsmobile.videocapture.utils.LogUtil;
@@ -41,6 +40,10 @@ import com.jmolsmobile.videocapture.utils.PopupWindowFactory;
 import com.jmolsmobile.videocapture.utils.TimeUtils;
 import com.jmolsmobile.videocapture.utils.ToolbarUtil;
 import com.jmolsmobile.videocapture.utils.VideoUtil;
+import com.jmolsmobile.videoplay.view.SurfaceViewActivity;
+import com.jmolsmobile.videoplay.view.TextureViewActivity;
+import com.jmolsmobile.videoplay.view.VideoViewActivity;
+import com.jmolsmobile.videoplay.view.WebViewActivity;
 
 import java.util.ArrayList;
 
@@ -280,13 +283,25 @@ public class VideoMainActivity extends VideoBaseCompatActivity {
         });
     }
 
-    @OnClick({R2.id.ibAudioRecorder, R2.id.tvVideoTag})
+    @OnClick({R2.id.ibAudioRecorder, R2.id.tvVideoTag, R2.id.cv_surface, R2.id.cv_texture, R2.id.cv_videoview, R2.id.cv_webview})
     public void onViewClicked(View view) {
         int viewId = view.getId();
         if (viewId == R.id.ibAudioRecorder) {
 
         } else if (viewId == R.id.tvVideoTag) {
             startVideoCaptureActivity();
+        } else if (viewId == R.id.cv_surface) {
+            Intent intent = new Intent(this, SurfaceViewActivity.class);
+            startActivity(intent);
+        } else if (viewId == R.id.cv_texture) {
+            Intent intent = new Intent(this, TextureViewActivity.class);
+            startActivity(intent);
+        } else if (viewId == R.id.cv_videoview) {
+            Intent intent = new Intent(this, VideoViewActivity.class);
+            startActivity(intent);
+        } else if (viewId == R.id.cv_webview) {
+            Intent intent = new Intent(this, WebViewActivity.class);
+            startActivity(intent);
         }
     }
 

@@ -13,6 +13,14 @@
             android:name=".ui.view.VideoCaptureActivity"
             android:configChanges="orientation|screenSize">
         </activity>
+        <activity android:name="com.jmolsmobile.videoplay.view.SurfaceViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.jmolsmobile.videoplay.view.TextureViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.jmolsmobile.videoplay.view.VideoViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.jmolsmobile.videoplay.view.WebViewActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

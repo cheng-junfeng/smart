@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+  
+	<div>
+        <video id="videoA" width="320" height="240" >
+            <source src="video.mp4" type="video/mp4">
+        </video>
+	</div>
+	<div>
+		<button onclick="play()">播放/暂停</button>
+	</div>  
+        <script>
+            var yaoVideo = document.getElementById("videoA")
+			yaoVideo.play()
+            function play(){
+                if (yaoVideo.paused)
+                yaoVideo.play()
+                else
+                yaoVideo.pause()
+            }
+        </script>
+    </body>
+</html>
