@@ -1,4 +1,4 @@
-package com.wutos.safe.rtmp.ui.view;
+package com.wu.safe.rtmp.ui.view;
 
 import android.os.Bundle;
 import android.view.View;
@@ -14,8 +14,8 @@ import com.tencent.rtmp.ui.TXCloudVideoView;
 import com.wu.safe.base.utils.DialogUtils;
 import com.wu.safe.base.utils.LogUtil;
 import com.wu.safe.base.utils.ToolbarUtil;
-import com.wutos.safe.rtmp.R;
-import com.wutos.safe.rtmp.app.activity.RtmpCompatActivity;
+import com.wu.safe.rtmp.R;
+import com.wu.safe.rtmp.app.activity.RtmpCompatActivity;
 
 public class LivePlayerActivity extends RtmpCompatActivity implements ITXLivePlayListener{
     private static final String TAG = LivePlayerActivity.class.getSimpleName();

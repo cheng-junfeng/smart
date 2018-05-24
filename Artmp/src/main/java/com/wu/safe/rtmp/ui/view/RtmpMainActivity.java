@@ -1,13 +1,13 @@
-package com.wutos.safe.rtmp.ui.view;
+package com.wu.safe.rtmp.ui.view;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.wu.safe.base.utils.DialogUtils;
 import com.wu.safe.base.utils.ToolbarUtil;
-import com.wutos.safe.rtmp.R;
-import com.wutos.safe.rtmp.R2;
-import com.wutos.safe.rtmp.app.activity.RtmpCompatActivity;
+import com.wu.safe.rtmp.R;
+import com.wu.safe.rtmp.R2;
+import com.wu.safe.rtmp.app.activity.RtmpCompatActivity;
 
 import butterknife.OnClick;
 

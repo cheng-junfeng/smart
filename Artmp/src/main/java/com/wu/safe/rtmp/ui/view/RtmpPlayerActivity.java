@@ -1,4 +1,4 @@
-package com.wutos.safe.rtmp.ui.view;
+package com.wu.safe.rtmp.ui.view;
 
 import android.graphics.Bitmap;
 import android.net.http.SslError;
@@ -11,11 +11,11 @@ import android.webkit.WebViewClient;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.wu.safe.base.utils.LogUtil;
 import com.wu.safe.base.utils.ToolbarUtil;
-import com.wutos.safe.rtmp.R;
-import com.wutos.safe.rtmp.R2;
-import com.wutos.safe.rtmp.app.activity.RtmpCompatActivity;
-import com.wutos.safe.rtmp.ui.contract.PlayContract;
-import com.wutos.safe.rtmp.ui.presenter.PlayPresenter;
+import com.wu.safe.rtmp.R;
+import com.wu.safe.rtmp.R2;
+import com.wu.safe.rtmp.app.activity.RtmpCompatActivity;
+import com.wu.safe.rtmp.ui.contract.PlayContract;
+import com.wu.safe.rtmp.ui.presenter.PlayPresenter;
 
 import butterknife.BindView;
 

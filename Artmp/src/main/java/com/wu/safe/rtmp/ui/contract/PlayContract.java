@@ -1,4 +1,4 @@
-package com.wutos.safe.rtmp.ui.contract;
+package com.wu.safe.rtmp.ui.contract;
 
 import android.webkit.WebView;
 

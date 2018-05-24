@@ -1,15 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wutos.safe.rtmp" >
+    package="com.wu.safe.rtmp" >
     <application>
-        <activity android:name=".ui.view.RtmpMainActivity"
+        <activity android:name="com.wu.safe.rtmp.ui.view.RtmpMainActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ui.view.RtmpPublisherActivity"
+        <activity android:name="com.wu.safe.rtmp.ui.view.RtmpPublisherActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ui.view.RtmpPlayerActivity"
+        <activity android:name="com.wu.safe.rtmp.ui.view.RtmpPlayerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="false"
             android:launchMode="singleTask"/>
-        <activity android:name=".ui.view.LivePlayerActivity"
+        <activity android:name="com.wu.safe.rtmp.ui.view.LivePlayerActivity"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

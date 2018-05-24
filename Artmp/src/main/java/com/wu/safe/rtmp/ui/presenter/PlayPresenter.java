@@ -1,4 +1,4 @@
-package com.wutos.safe.rtmp.ui.presenter;
+package com.wu.safe.rtmp.ui.presenter;
 
 import android.os.Build;
 import android.view.ViewGroup;
@@ -7,7 +7,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.wutos.safe.rtmp.ui.contract.PlayContract;
+import com.wu.safe.rtmp.ui.contract.PlayContract;
 
 
 public class PlayPresenter implements PlayContract.Presenter {

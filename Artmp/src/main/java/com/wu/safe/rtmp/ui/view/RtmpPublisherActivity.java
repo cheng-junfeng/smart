@@ -1,4 +1,4 @@
-package com.wutos.safe.rtmp.ui.view;
+package com.wu.safe.rtmp.ui.view;
 
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -19,8 +19,8 @@ import com.tencent.rtmp.TXLivePushConfig;
 import com.tencent.rtmp.TXLivePusher;
 import com.tencent.rtmp.ui.TXCloudVideoView;
 import com.wu.safe.base.utils.LogUtil;
-import com.wutos.safe.rtmp.R;
-import com.wutos.safe.rtmp.app.activity.RtmpCompatActivity;
+import com.wu.safe.rtmp.R;
+import com.wu.safe.rtmp.app.activity.RtmpCompatActivity;
 
 
 public class RtmpPublisherActivity extends RtmpCompatActivity implements CompoundButton.OnCheckedChangeListener, ITXLivePushListener {

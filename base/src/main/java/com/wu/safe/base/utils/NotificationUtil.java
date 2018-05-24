@@ -32,7 +32,7 @@ public final class NotificationUtil {
     private static final String DEFAULT_CHANNEL_NAME = "Update";
     private static final int NOTIFYID = 0X0101;
 
-    private static NotificationCompat.Builder builderNotification(Context context, int icon, String title, String content) {
+    public static NotificationCompat.Builder builderNotification(Context context, int icon, String title, String content) {
         String channelId = "";
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             channelId = DEFAULT_CHANNEL_ID;

@@ -6,8 +6,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.support.v4.app.NotificationCompat;
 
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.trace.LBSTraceClient;
@@ -24,6 +23,7 @@ import com.baidu.track.activity.TracingActivity;
 import com.baidu.track.utils.CommonUtil;
 import com.baidu.track.utils.NetUtil;
 import com.wu.safe.base.utils.LogUtil;
+import com.wu.safe.base.utils.NotificationUtil;
 import com.wu.safe.base.utils.ShareUtil;
 
 import java.util.HashMap;
@@ -32,17 +32,17 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Bmap {
     public final static String TAG = "Bmap";
-
+    public static final long serviceId = 165006;
     public static String entityName = "myTrace";
-    private AtomicInteger mSequenceGenerator = new AtomicInteger();
-
-    private LocRequest locRequest = null;
-    public LBSTraceClient mClient = null;
-    public Trace mTrace = null;
-    public long serviceId = 165006;
 
     public boolean isTraceStarted = false;
     public boolean isGatherStarted = false;
+    private AtomicInteger mSequenceGenerator = new AtomicInteger();
+
+    public Trace mTrace = null;
+    private LocRequest locRequest = null;
+    public LBSTraceClient mClient = null;
+
 
     private static Bmap map;
     public static Bmap getInstance(){
@@ -55,14 +55,13 @@ public class Bmap {
     public void init(Context mContext){
         entityName = CommonUtil.getImei(mContext);
         LogUtil.d(TAG, "init:"+entityName);
-
         SDKInitializer.initialize(mContext);
 
-        mClient = new LBSTraceClient(mContext);
         mTrace = new Trace(serviceId, entityName);
         mTrace.setNotification(getNotification(mContext));
-
         locRequest = new LocRequest(serviceId);
+
+        mClient = new LBSTraceClient(mContext);
         mClient.setOnCustomAttributeListener(new OnCustomAttributeListener() {
             @Override
             public Map<String, String> onTrackAttributeCallback() {
@@ -88,22 +87,11 @@ public class Bmap {
 
     @TargetApi(16)
     private Notification getNotification(Context mContext) {
-        Notification notification = null;
-        Notification.Builder builder = new Notification.Builder(mContext);
         Intent notificationIntent = new Intent(mContext, TracingActivity.class);
+        NotificationCompat.Builder builder = NotificationUtil.builderNotification(mContext, R.mipmap.icon_tracing, "百度鹰眼", "服务正在运行...");
+        builder.setContentIntent(PendingIntent.getActivity(mContext, 0, notificationIntent, 0));
 
-        Bitmap icon = BitmapFactory.decodeResource(mContext.getResources(),
-                R.mipmap.icon_tracing);
-
-        // 设置PendingIntent
-        builder.setContentIntent(PendingIntent.getActivity(mContext, 0, notificationIntent, 0))
-                .setLargeIcon(icon)  // 设置下拉列表中的图标(大图标)
-                .setContentTitle("百度鹰眼") // 设置下拉列表里的标题
-                .setSmallIcon(R.mipmap.icon_tracing) // 设置状态栏内的小图标
-                .setContentText("服务正在运行...") // 设置上下文内容
-                .setWhen(System.currentTimeMillis()); // 设置该通知发生的时间
-
-        notification = builder.build(); // 获取构建好的Notification
+        Notification notification = builder.build(); // 获取构建好的Notification
         notification.defaults = Notification.DEFAULT_SOUND; //设置为默认的声音
         return notification;
     }

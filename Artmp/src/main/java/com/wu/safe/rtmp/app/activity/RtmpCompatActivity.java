@@ -1,4 +1,4 @@
-package com.wutos.safe.rtmp.app.activity;
+package com.wu.safe.rtmp.app.activity;
 
 import android.os.Bundle;
 
