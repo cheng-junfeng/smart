@@ -81,7 +81,6 @@
                 android:layout_height="40dip"
                 android:layout_below="@+id/TV_IP"
                 android:layout_toRightOf="@+id/TV_Psd"
-                android:inputType="textPassword"
                 android:text="" />
 
             <Button
@@ -120,7 +119,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/btn_ParamCfg"
                 android:layout_marginTop="78dp"
-                android:background="#0000ff00" />
+                android:background="#E5E5E5" />
 
             <Button
                 android:id="@+id/btn_ParamCfg"

@@ -35,6 +35,7 @@ import com.wu.safe.ahik.R;
 import com.wu.safe.ahik.R2;
 import com.wu.safe.ahik.test.JNATest;
 import com.wu.safe.ahik.test.VoiceTalk;
+import com.wu.safe.ahik.utils.ExceptionUtil;
 import com.wu.safe.ahik.view.contract.HikContract;
 import com.wu.safe.ahik.view.presenter.HikPresenter;
 import com.wu.safe.ahik.view.widget.PlaySurfaceView;
@@ -49,6 +50,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HikTestActivity extends Activity implements Callback, HikContract.View {
+
+    private final String TAG = "HikTestActivity";
 
     @BindView(R2.id.EDT_IPAddr)
     EditText m_oIPAddr;
@@ -91,8 +94,6 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
     private int m_iStartChan = 0; // start channel no
     private int m_iChanNum = 0; // channel number
     private static PlaySurfaceView[] playView = new PlaySurfaceView[4];
-
-    private final String TAG = "HikTestActivity";
 
     private boolean m_bTalkOn = false;
     private boolean m_bPTZL = false;
@@ -165,10 +166,8 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
                     if (m_bPTZL == false) {
                         if (!HCNetSDK.getInstance().NET_DVR_PTZControl_Other(
                                 m_iLogID, m_iStartChan, PTZCommand.PAN_LEFT, 0)) {
-                            Log.e(TAG,
-                                    "start PAN_LEFT failed with error code: "
-                                            + HCNetSDK.getInstance()
-                                            .NET_DVR_GetLastError());
+                            Log.e(TAG, "start PAN_LEFT failed with error code: " + HCNetSDK.getInstance().NET_DVR_GetLastError());
+                            showToast(ExceptionUtil.getErrorMsg(HCNetSDK.getInstance().NET_DVR_GetLastError()));
                         } else {
                             Log.i(TAG, "start PAN_LEFT succ");
                         }
@@ -176,10 +175,8 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
                         if (!HCNetSDK.getInstance()
                                 .NET_DVR_PTZControl_Other(m_iLogID,
                                         m_iStartChan, PTZCommand.PAN_RIGHT, 0)) {
-                            Log.e(TAG,
-                                    "start PAN_RIGHT failed with error code: "
-                                            + HCNetSDK.getInstance()
-                                            .NET_DVR_GetLastError());
+                            Log.e(TAG, "start PAN_RIGHT failed with error code: " + HCNetSDK.getInstance().NET_DVR_GetLastError());
+                            showToast(ExceptionUtil.getErrorMsg(HCNetSDK.getInstance().NET_DVR_GetLastError()));
                         } else {
                             Log.i(TAG, "start PAN_RIGHT succ");
                         }
@@ -188,9 +185,8 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
                     if (m_bPTZL == false) {
                         if (!HCNetSDK.getInstance().NET_DVR_PTZControl_Other(
                                 m_iLogID, m_iStartChan, PTZCommand.PAN_LEFT, 1)) {
-                            Log.e(TAG, "stop PAN_LEFT failed with error code: "
-                                    + HCNetSDK.getInstance()
-                                    .NET_DVR_GetLastError());
+                            Log.e(TAG, "stop PAN_LEFT failed with error code: " + HCNetSDK.getInstance().NET_DVR_GetLastError());
+                            showToast(ExceptionUtil.getErrorMsg(HCNetSDK.getInstance().NET_DVR_GetLastError()));
                         } else {
                             Log.i(TAG, "stop PAN_LEFT succ");
                         }
@@ -200,10 +196,8 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
                         if (!HCNetSDK.getInstance()
                                 .NET_DVR_PTZControl_Other(m_iLogID,
                                         m_iStartChan, PTZCommand.PAN_RIGHT, 1)) {
-                            Log.e(TAG,
-                                    "stop PAN_RIGHT failed with error code: "
-                                            + HCNetSDK.getInstance()
-                                            .NET_DVR_GetLastError());
+                            Log.e(TAG, "stop PAN_RIGHT failed with error code: " + HCNetSDK.getInstance().NET_DVR_GetLastError());
+                            showToast(ExceptionUtil.getErrorMsg(HCNetSDK.getInstance().NET_DVR_GetLastError()));
                         } else {
                             Log.i(TAG, "stop PAN_RIGHT succ");
                         }
@@ -248,23 +242,25 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
     private OnClickListener Record_Listener = new OnClickListener() {
         public void onClick(View v) {
             if (!m_bSaveRealData) {
-                if (!HCNetSDK.getInstance().NET_DVR_SaveRealData(m_iPlayID,
-                        "/sdcard/test.mp4")) {
-                    System.out.println("NET_DVR_SaveRealData failed! error: "
+                if (!HCNetSDK.getInstance().NET_DVR_SaveRealData(m_iPlayID, "/sdcard/test.mp4")) {
+                    Log.d(TAG, "NET_DVR_SaveRealData failed! error: "
                             + HCNetSDK.getInstance().NET_DVR_GetLastError());
+                    showToast("Record 保存失败"+ExceptionUtil.getErrorMsg(HCNetSDK.getInstance().NET_DVR_GetLastError()));
                     return;
                 } else {
-                    System.out.println("NET_DVR_SaveRealData succ!");
+                    Log.d(TAG,"NET_DVR_SaveRealData succ!");
+                    showToast("Record 保存成功");
                 }
                 m_bSaveRealData = true;
             } else {
                 if (!HCNetSDK.getInstance().NET_DVR_StopSaveRealData(m_iPlayID)) {
-                    System.out
-                            .println("NET_DVR_StopSaveRealData failed! error: "
+                    Log.d(TAG,"NET_DVR_StopSaveRealData failed! error: "
                                     + HCNetSDK.getInstance()
                                     .NET_DVR_GetLastError());
+                    showToast("Record 停止失败"+ExceptionUtil.getErrorMsg(HCNetSDK.getInstance().NET_DVR_GetLastError()));
                 } else {
-                    System.out.println("NET_DVR_StopSaveRealData succ!");
+                    Log.d(TAG,"NET_DVR_StopSaveRealData succ!");
+                    showToast("Record 停止成功");
                 }
                 m_bSaveRealData = false;
             }
@@ -368,8 +364,7 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
                                     nProgress = HCNetSDK.getInstance()
                                             .NET_DVR_GetPlayBackPos(
                                                     m_iPlaybackID);
-                                    System.out
-                                            .println("NET_DVR_GetPlayBackPos:"
+                                    Log.d(TAG, "NET_DVR_GetPlayBackPos:"
                                                     + nProgress);
                                     if (nProgress < 0 || nProgress >= 100) {
                                         break;
@@ -388,6 +383,7 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
                         Log.i(TAG, "NET_DVR_PlayBackByTime failed, error code: "
                                         + HCNetSDK.getInstance()
                                         .NET_DVR_GetLastError());
+                        showToast(ExceptionUtil.getErrorMsg(HCNetSDK.getInstance().NET_DVR_GetLastError()));
                     }
                 } else {
                     m_bStopPlayback = true;
@@ -416,7 +412,7 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
                         Log.e(TAG, "This device logins failed!");
                         return;
                     } else {
-                        System.out.println("m_iLogID=" + m_iLogID);
+                        Log.d(TAG,"m_iLogID=" + m_iLogID);
                     }
                     // get instance of exception callback and set
                     ExceptionCallBack oexceptionCbf = presenter.getExceptiongCbf();
@@ -520,6 +516,7 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
         if (m_iPlayID < 0) {
             Log.e(TAG, "NET_DVR_RealPlay is failed!Err:"
                     + HCNetSDK.getInstance().NET_DVR_GetLastError());
+            showToast(ExceptionUtil.getErrorMsg(HCNetSDK.getInstance().NET_DVR_GetLastError()));
             return;
         }
 
@@ -567,6 +564,7 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
         if (!HCNetSDK.getInstance().NET_DVR_StopRealPlay(m_iPlayID)) {
             Log.e(TAG, "StopRealPlay is failed!Err:"
                     + HCNetSDK.getInstance().NET_DVR_GetLastError());
+            showToast(ExceptionUtil.getErrorMsg(HCNetSDK.getInstance().NET_DVR_GetLastError()));
             return;
         }
 
@@ -608,8 +606,8 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
         int iLogID = HCNetSDK.getInstance().NET_DVR_Login_V30(strIP, nPort,
                 strUser, strPsd, m_oNetDvrDeviceInfoV30);
         if (iLogID < 0) {
-            Log.e(TAG, "NET_DVR_Login is failed!Err:"
-                    + HCNetSDK.getInstance().NET_DVR_GetLastError());
+            Log.e(TAG, "NET_DVR_Login is failed!Err:" + HCNetSDK.getInstance().NET_DVR_GetLastError());
+            showToast("登录失败："+ExceptionUtil.getErrorMsg(HCNetSDK.getInstance().NET_DVR_GetLastError()));
             return -1;
         }
         if (m_oNetDvrDeviceInfoV30.byChanNum > 0) {
@@ -621,7 +619,7 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
                     + m_oNetDvrDeviceInfoV30.byHighDChanNum * 256;
         }
         Log.i(TAG, "NET_DVR_Login is Successful!");
-
+        showToast("登录成功");
         return iLogID;
     }
 
@@ -739,6 +737,6 @@ public class HikTestActivity extends Activity implements Callback, HikContract.V
 
     @Override
     public void showToast(String str) {
-        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, str, Toast.LENGTH_LONG).show();
     }
 }
