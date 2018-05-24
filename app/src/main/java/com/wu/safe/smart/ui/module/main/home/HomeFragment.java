@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.baidu.track.activity.MapMainActivity;
 import com.jmolsmobile.videocapture.ui.view.VideoMainActivity;
+import com.wu.safe.ahik.view.HikTestActivity;
 import com.wu.safe.apermission.ui.PermissionActivity;
 import com.wu.safe.apermission.ui.PlugActivity;
 import com.wu.safe.base.app.listener.OnClickLongListener;
@@ -88,7 +89,7 @@ public class HomeFragment extends BaseCompatFragment {
         HomeListBean bean34 = new HomeListBean.Builder().content("WS").build();
 
         HomeListBean bean41 = new HomeListBean.Builder().content("悬浮窗").build();
-        HomeListBean bean42 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean42 = new HomeListBean.Builder().content("海康").build();
         HomeListBean bean43 = new HomeListBean.Builder().content("More").build();
         HomeListBean bean44 = new HomeListBean.Builder().content("More").build();
 
@@ -190,6 +191,10 @@ public class HomeFragment extends BaseCompatFragment {
                             }else{
                                 startFloat(activity);
                             }
+                        }
+                        break;
+                        case 13: {
+                            readGo(HikTestActivity.class);
                         }
                         break;
                         default: {

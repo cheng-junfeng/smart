@@ -113,4 +113,6 @@ dependencies {
     api project(':zxinglib')
     //video
     implementation project(':videoAudio')
+    //hikvison
+    implementation project(':hikvison')
 }
