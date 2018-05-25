@@ -45,4 +45,6 @@ dependencies {
 
     //base
     implementation project(':base')
+    //hint
+    implementation project(':hintlib')
 }

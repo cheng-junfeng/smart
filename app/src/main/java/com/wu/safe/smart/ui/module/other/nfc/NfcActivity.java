@@ -19,8 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.smart.base.app.listener.OnSelectClickListener;
-import com.smart.base.utils.DialogUtils;
+import com.hintlib.listener.OnConfirmListener;
+import com.hintlib.utils.DialogUtils;
 import com.smart.base.utils.LogUtil;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
@@ -116,7 +116,7 @@ public class NfcActivity extends BaseCompatActivity {
             });
         } else {
             if (!mNfcAdapter.isEnabled()) {
-                DialogUtils.showConfirmDialog(mContext, "现在去开启NFC功能!", new OnSelectClickListener() {
+                DialogUtils.showConfirmDialog(mContext, "现在去开启NFC功能!", new OnConfirmListener() {
                     @Override
                     public void onClickPositive() {
                         Intent setnfc = new Intent(

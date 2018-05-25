@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.ui.widget.CountDownView;
-import com.smart.base.utils.DialogUtils;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
@@ -46,7 +46,7 @@ public class CountViewActivity extends BaseCompatActivity {
         cdvTime.setOnLoadingFinishListener(new CountDownView.OnLoadingFinishListener() {
             @Override
             public void finish() {
-                DialogUtils.showToast(mContext, "完成倒计时");
+                ToastUtils.showToast(mContext, "完成倒计时");
                 finish();
             }
         });

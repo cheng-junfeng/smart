@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.app.event.RxBusHelper;
 import com.smart.base.ui.widget.CommEditText;
-import com.smart.base.utils.DialogUtils;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
@@ -89,14 +89,14 @@ public class MyRegistActivity extends UserBaseCompatActivity {
         } else if (viewId == R.id.bt_sendCode) {
             String phone = etPhone.getText().toString().trim();
             if (!PhoneCheckUtils.checkPhone(phone)) {
-                DialogUtils.showToast(mContext, "手机号不合法");
+                ToastUtils.showToast(mContext, "手机号不合法");
             } else {
                 //send code
-                DialogUtils.showToast(mContext, "短信已发送，请注意查收");
+                ToastUtils.showToast(mContext, "短信已发送，请注意查收");
             }
         } else if (viewId == R.id.bt_next) {
             //check code
-            DialogUtils.showToast(mContext, "验证码不正确");
+            ToastUtils.showToast(mContext, "验证码不正确");
         }
     }
 }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.SDCardUtils;
+import com.hintlib.utils.DialogUtils;
 import com.smart.base.app.thread.WeakHandler;
 import com.smart.base.utils.CacheUtil;
 import com.smart.base.utils.LogUtil;
@@ -76,7 +77,7 @@ public class MySettingActivity extends UserBaseCompatActivity {
     public void onViewClicked(View view) {
         int viewId = view.getId();
         if(viewId == R.id.rl_set_clean_cache){
-            showProgress("正在清除缓存");
+            DialogUtils.showProgressMsgDialog(this, "正在清除缓存");
             try {
                 LogUtil.d(TAG, "cache:" + this.getCacheDir().getCanonicalPath());
                 CacheUtil.cleanInternalCache(mContext);
@@ -88,16 +89,16 @@ public class MySettingActivity extends UserBaseCompatActivity {
                 @Override
                 public void run() {
                     initCacheSize();
-                    dismissProgress();
+                    DialogUtils.dismissProgressDialog();
                 }
             };
             handler.postDelayed(runnable, 1000);
         }else if(viewId == R.id.rl_set_bind){
-            showProgress("正在绑定");
+            DialogUtils.showProgressMsgDialog(this, "正在绑定");
             Runnable runnable3 = new Runnable() {
                 @Override
                 public void run() {
-                    dismissProgress();
+                    DialogUtils.dismissProgressDialog();
                 }
             };
             handler.postDelayed(runnable3, 2000);

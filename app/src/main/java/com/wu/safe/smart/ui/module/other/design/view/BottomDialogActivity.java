@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.smart.base.utils.DialogUtils;
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
@@ -55,10 +55,10 @@ public class BottomDialogActivity extends BaseCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:                 //拍照
-                        DialogUtils.showToast(mContext, "拍照");
+                        ToastUtils.showToast(mContext, "拍照");
                         break;
                     case 1:                 //相册
-                        DialogUtils.showToast(mContext, "相册");
+                        ToastUtils.showToast(mContext, "相册");
                         break;
                 }
             }

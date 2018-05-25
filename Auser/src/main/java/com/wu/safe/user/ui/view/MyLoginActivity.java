@@ -14,14 +14,14 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
+import com.hintlib.listener.OnInputListener;
+import com.hintlib.utils.DialogUtils;
+import com.hintlib.utils.ToastUtils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.smart.base.app.listener.OnInputClickListener;
 import com.smart.base.config.GlobalConfig;
 import com.wu.safe.user.config.NetConfig;
 import com.smart.base.ui.widget.CommEditText;
-import com.smart.base.utils.DialogUtils;
 import com.smart.base.utils.IPUtil;
 import com.smart.base.utils.ShareUtil;
 import com.smart.base.utils.ToolbarUtil;
@@ -79,18 +79,18 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
         ToolbarUtil.setToolbarRight(toolbar, R.mipmap.base_icon_setting, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogUtils.showInputDialog(mContext, "服务器地址", NetConfig.IP_ADDRESS, new OnInputClickListener() {
+                DialogUtils.showInputDialog(mContext, "服务器地址", NetConfig.IP_ADDRESS, new OnInputListener() {
                     @Override
                     public void onClickPositive(String inputStr) {
                         String oldAddress = NetConfig.IP_ADDRESS;
                         if(oldAddress.equals(inputStr)){
-                            DialogUtils.showToast(mContext, "地址未做任何修改");
+                            ToastUtils.showToast(mContext, "地址未做任何修改");
                             return;
                         }
                         if (IPUtil.isValidAddress(inputStr)) {
                             ShareUtil.put(NetConfig.PRE_SERVICE_IP, inputStr);
                             UserHelper.getInstance().clear();
-                            DialogUtils.showToast(mContext, "即将退出，请重新进入");
+                            ToastUtils.showToast(mContext, "即将退出，请重新进入");
                             toolbar.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -98,7 +98,7 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
                                 }
                             }, 1000);
                         } else {
-                            DialogUtils.showToast(mContext, "地址格式有误");
+                            ToastUtils.showToast(mContext, "地址格式有误");
                         }
                     }
 
@@ -206,7 +206,7 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
     public void onBackPressed() {
         long secondTime = System.currentTimeMillis();
         if (secondTime - firstTime > 2000) {
-            ToastUtils.showLong("再按一次退出程序");
+            ToastUtils.showToast(this, "再按一次退出程序");
             firstTime = secondTime;
         } else {
             appExit();
@@ -215,12 +215,12 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
 
     @Override
     public void loginProgress() {
-        showProgress("正在登录");
+        DialogUtils.showProgressMsgDialog(this, "正在登录");
     }
 
     @Override
     public void loginSuccess() {
-        dismissProgress();
+        DialogUtils.dismissProgressDialog();
         Intent intent = new Intent(GlobalConfig.MAIN_INTENT);
         startActivity(intent);
         finish();
@@ -228,8 +228,8 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
 
     @Override
     public void loginFail(String statusStr) {
-        dismissProgress();
-        DialogUtils.showToast(mContext, statusStr);
+        DialogUtils.dismissProgressDialog();
+        ToastUtils.showToast(mContext, statusStr);
     }
 
     @Override

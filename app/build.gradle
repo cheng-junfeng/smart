@@ -53,7 +53,7 @@ android {
     }
     repositories {
         flatDir {
-            dirs 'libs', '../Artmp/libs'
+            dirs '../Artmp/libs'
         }
     }
 }
@@ -117,4 +117,6 @@ dependencies {
     implementation project(':hikvison')
     //hyphenate
     api project(':hyphenate')
+    //hint
+    implementation project(':hintlib')
 }

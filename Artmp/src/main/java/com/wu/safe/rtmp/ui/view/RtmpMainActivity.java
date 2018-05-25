@@ -3,7 +3,7 @@ package com.wu.safe.rtmp.ui.view;
 import android.os.Bundle;
 import android.view.View;
 
-import com.smart.base.utils.DialogUtils;
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.rtmp.R;
 import com.wu.safe.rtmp.R2;
@@ -39,7 +39,7 @@ public class RtmpMainActivity extends RtmpCompatActivity {
         }else if(viewId == R.id.play_view){
             readGo(LivePlayerActivity.class);
         }else if(viewId == R.id.global_screen){
-            DialogUtils.showToast(this, "全屏录制待开发");
+            ToastUtils.showToast(this, "全屏录制待开发");
         }else if(viewId == R.id.play_h5){
             readGo(RtmpPlayerActivity.class);
         }

@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         minSdkVersion 18
-        targetSdkVersion 26
+        targetSdkVersion 25
         versionCode 2
         versionName '1.0.2'
 
@@ -36,6 +36,6 @@ dependencies {
     //butterknife
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterKnifeVer"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnifeVer"
-    //recycleView
-    implementation 'com.android.support:recyclerview-v7:26.1.0'
+
+    implementation project(path: ':hintlib')
 }

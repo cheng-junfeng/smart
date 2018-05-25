@@ -7,8 +7,8 @@ import android.view.View;
 
 import com.blankj.utilcode.util.EmptyUtils;
 import com.google.gson.reflect.TypeToken;
+import com.hintlib.listener.OnChooseListener;
 import com.smart.base.app.event.RxBusHelper;
-import com.smart.base.app.listener.OnPositionSelectListener;
 import com.smart.base.ui.widget.WaveSideBarView;
 import com.smart.base.utils.GsonUtil;
 import com.smart.base.utils.LogUtil;
@@ -85,7 +85,7 @@ public class MySelectCountryActivity extends UserBaseCompatActivity {
     private void setRecyclerData(List<CountryBean> data) {
         if (countryAdapter == null) {
             countryAdapter = new CountryAdapter(data);
-            countryAdapter.setOnItemClickListener(new OnPositionSelectListener() {
+            countryAdapter.setOnItemClickListener(new OnChooseListener() {
                 @Override
                 public void onPositiveSelect(int position) {
                     CountryBean bean = countryAdapter.getItem(position);

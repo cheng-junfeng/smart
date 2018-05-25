@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.smart.base.utils.DialogUtils;
+import com.hintlib.utils.ToastUtils;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatFragment;
 import com.wu.safe.smart.ui.module.other.design.adapter.ViewPagerAdapter;
@@ -88,16 +88,16 @@ public class PicCarouseFragment extends BaseCompatFragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.pager_image1:
-                    DialogUtils.showToast(mContext, "图片1被点击");
+                    ToastUtils.showToast(mContext, "图片1被点击");
                     break;
                 case R.id.pager_image2:
-                    DialogUtils.showToast(mContext, "图片2被点击");
+                    ToastUtils.showToast(mContext, "图片2被点击");
                     break;
                 case R.id.pager_image3:
-                    DialogUtils.showToast(mContext, "图片3被点击");
+                    ToastUtils.showToast(mContext, "图片3被点击");
                     break;
                 case R.id.pager_image4:
-                    DialogUtils.showToast(mContext, "图片4被点击");
+                    ToastUtils.showToast(mContext, "图片4被点击");
                     break;
             }
         }
@@ -114,7 +114,7 @@ public class PicCarouseFragment extends BaseCompatFragment {
         marqueeView.setOnItemClickListener(new MarqueeView.OnItemClickListener() {
             @Override
             public void onItemClick(int position, TextView textView) {
-                DialogUtils.showToast(mContext, "click:" + position);
+                ToastUtils.showToast(mContext, "click:" + position);
             }
         });
 

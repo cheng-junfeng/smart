@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.app.event.RxBusHelper;
 import com.smart.base.config.GlobalConfig;
-import com.smart.base.utils.DialogUtils;
+import com.smart.base.net.helper.ApiExceptionHelper;
 import com.smart.base.utils.LogUtil;
 import com.smart.base.utils.ShareUtil;
 import com.smart.base.utils.ToolbarUtil;
@@ -80,7 +81,7 @@ public class MyModifyActivity extends UserBaseCompatActivity {
     public void onViewClicked() {
         final String modify = etModify.getText().toString();
         if (TextUtils.isEmpty(modify)) {
-            DialogUtils.showToast(mContext, "输入不能为空");
+            ToastUtils.showToast(mContext, "输入不能为空");
             return;
         }
 
@@ -104,18 +105,18 @@ public class MyModifyActivity extends UserBaseCompatActivity {
                                         .email(email).build();
                                 RxBusHelper.post(event);
                                 ShareUtil.put(GlobalConfig.MY_USERNAME, modify);
-                                DialogUtils.showToast(mContext, "修改用户名成功");
+                                ToastUtils.showToast(mContext, "修改用户名成功");
                                 finish();
                             } else {
                                 LogUtil.e(TAG, "change password null");
-                                DialogUtils.showToast(mContext, "修改用户名失败，请稍后再试");
+                                ToastUtils.showToast(mContext, "修改用户名失败，请稍后再试");
                             }
                         }
                     }, new Consumer<Throwable>() {
                         @Override
                         public void accept(Throwable throwable) throws Exception {
                             LogUtil.e(TAG, "change password fail");
-                            DialogUtils.showThrowable(mContext, throwable, true);
+                            ToastUtils.showToast(mContext, ApiExceptionHelper.getMessage(throwable));
                         }
                     });
 
@@ -124,7 +125,7 @@ public class MyModifyActivity extends UserBaseCompatActivity {
             Matcher m = p.matcher(modify);
             if (!m.matches()) {
                 etModify.getText().clear();
-                DialogUtils.showToast(mContext, "格式不合法");
+                ToastUtils.showToast(mContext, "格式不合法");
                 return;
             }
 
@@ -145,18 +146,18 @@ public class MyModifyActivity extends UserBaseCompatActivity {
                                         .email(modify).build();
                                 RxBusHelper.post(event);
 
-                                DialogUtils.showToast(mContext, "修改邮箱成功");
+                                ToastUtils.showToast(mContext, "修改邮箱成功");
                                 finish();
                             } else {
                                 LogUtil.e(TAG, "change email null");
-                                DialogUtils.showToast(mContext, "修改邮箱失败，请稍后再试");
+                                ToastUtils.showToast(mContext, "修改邮箱失败，请稍后再试");
                             }
                         }
                     }, new Consumer<Throwable>() {
                         @Override
                         public void accept(Throwable throwable) throws Exception {
                             LogUtil.e(TAG, "change email fail");
-                            DialogUtils.showThrowable(mContext, throwable, true);
+                            ToastUtils.showToast(mContext, ApiExceptionHelper.getMessage(throwable));
                         }
                     });
         }

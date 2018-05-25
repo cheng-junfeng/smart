@@ -29,7 +29,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class WebViewCustomActivity extends WebBaseCompatActivity {
+class WebViewCustomActivity extends WebBaseCompatActivity {
 
     public static final String TAG = "WebViewCustomActivity";
 

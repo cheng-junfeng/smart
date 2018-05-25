@@ -43,4 +43,6 @@ dependencies {
     //base
     implementation project(':base')
     implementation files('libs/BaiduNaviSDK_3.3.1.jar')
+
+    implementation project(':hintlib')
 }

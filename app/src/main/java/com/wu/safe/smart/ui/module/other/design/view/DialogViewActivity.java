@@ -12,10 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.smart.base.app.listener.OnInputClickListener;
-import com.smart.base.app.listener.OnPositionSelectListener;
-import com.smart.base.app.listener.OnSelectClickListener;
-import com.smart.base.utils.DialogUtils;
+import com.hintlib.listener.OnChooseListener;
+import com.hintlib.listener.OnConfirmListener;
+import com.hintlib.listener.OnInputListener;
+import com.hintlib.utils.DialogUtils;
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
@@ -73,15 +74,15 @@ public class DialogViewActivity extends BaseCompatActivity {
                 DialogUtils.showProgressMsgDialog(mContext, "正在进行");
                 break;
             case R.id.confirm_view:
-                DialogUtils.showConfirmDialog(mContext, "确认？", new OnSelectClickListener() {
+                DialogUtils.showConfirmDialog(mContext, "确认？", new OnConfirmListener() {
                     @Override
                     public void onClickPositive() {
-                        DialogUtils.showToast(mContext, "confirm:确认");
+                        ToastUtils.showToast(mContext, "confirm:确认");
                     }
 
                     @Override
                     public void onClickNegative() {
-                        DialogUtils.showToast(mContext, "choose:取消");
+                        ToastUtils.showToast(mContext, "choose:取消");
                     }
                 });
                 break;
@@ -89,7 +90,7 @@ public class DialogViewActivity extends BaseCompatActivity {
                 DialogUtils.showConfirmAlertDialog(mContext, "确认2 ？", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        DialogUtils.showToast(mContext, "confirm2:确认");
+                        ToastUtils.showToast(mContext, "confirm2:确认");
                     }
                 });
                 break;
@@ -99,28 +100,28 @@ public class DialogViewActivity extends BaseCompatActivity {
                 allStr.add("choose2");
                 allStr.add("choose3");
                 allStr.add("choose3");
-                DialogUtils.showChooseDialog(mContext, allStr, new OnPositionSelectListener() {
+                DialogUtils.showChooseDialog(mContext, allStr, new OnChooseListener() {
                     @Override
                     public void onPositiveSelect(int pos) {
-                        DialogUtils.showToast(mContext, "choose:" + pos);
+                        ToastUtils.showToast(mContext, "choose:" + pos);
                     }
                 });
                 break;
             case R.id.input_view:
-                DialogUtils.showInputDialog(mContext, "输入地址", "www.baidu.com", new OnInputClickListener() {
+                DialogUtils.showInputDialog(mContext, "输入地址", "www.baidu.com", new OnInputListener() {
                     @Override
                     public void onClickPositive(String inputStr) {
-                        DialogUtils.showToast(mContext, "confirm:确认");
+                        ToastUtils.showToast(mContext, "confirm:确认");
                     }
 
                     @Override
                     public void onClickNegative() {
-                        DialogUtils.showToast(mContext, "choose:取消");
+                        ToastUtils.showToast(mContext, "choose:取消");
                     }
                 });
                 break;
             case R.id.toast_view:
-                DialogUtils.showToast(mContext, "提示");
+                ToastUtils.showToast(mContext, "提示");
                 break;
             case R.id.test1:
                 showPopupWindow(1);

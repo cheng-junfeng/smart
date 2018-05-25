@@ -14,8 +14,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.utils.DensityUtils;
-import com.smart.base.utils.DialogUtils;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
@@ -80,7 +80,7 @@ public class ScanActivity extends BaseCompatActivity {
 
             @Override
             public void onException(Exception exception) {
-                DialogUtils.showToast(mContext, "出现异常");
+                ToastUtils.showToast(mContext, "出现异常");
             }
         });
 

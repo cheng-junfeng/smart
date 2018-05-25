@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.smart.base.app.listener.OnPositionSelectListener;
+import com.hintlib.listener.OnChooseListener;
 import com.wu.safe.user.R;
 import com.wu.safe.user.ui.bean.CountryBean;
 
@@ -17,13 +17,13 @@ import java.util.List;
 public class CountryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<CountryBean> data;
-    private OnPositionSelectListener mOnClickListener;
+    private OnChooseListener mOnClickListener;
 
     public CountryAdapter(List<CountryBean> data) {
         this.data = data;
     }
 
-    public void setOnItemClickListener(OnPositionSelectListener mOnItemClickListener) {
+    public void setOnItemClickListener(OnChooseListener mOnItemClickListener) {
         this.mOnClickListener = mOnItemClickListener;
     }
 

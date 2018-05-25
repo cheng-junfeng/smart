@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.trello.rxlifecycle2.components.support.RxAppCompatDialogFragment;
 import com.smart.base.R;
 import com.smart.base.app.listener.OnRetryListener;
-import com.smart.base.utils.DialogUtils;
 
 public abstract class BaseAppCompatFragment extends RxAppCompatDialogFragment {
 
@@ -39,7 +38,6 @@ public abstract class BaseAppCompatFragment extends RxAppCompatDialogFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        dismissProgress();
     }
 
     protected void showErrorView(final OnRetryListener onRetryListener){
@@ -73,14 +71,6 @@ public abstract class BaseAppCompatFragment extends RxAppCompatDialogFragment {
     protected void hideErrorView(){
         frameBody_view.removeAllViews();
         frameBody_view.addView(frameMainView);
-    }
-
-    protected void showProgress(String progressStr){
-        DialogUtils.showProgressMsgDialog(getActivity(), progressStr);
-    }
-
-    protected void dismissProgress(){
-        DialogUtils.dismissProgressDialog();
     }
 
     protected void readGo(Class<?> cls){

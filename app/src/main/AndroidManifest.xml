@@ -47,6 +47,7 @@
             <intent-filter>
                 <action android:name="android.intent.smart.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="${APP_ID}" />
             </intent-filter>
         </activity>
         <activity android:name=".ui.module.other.scan.ScanActivity"

@@ -10,6 +10,8 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.hintlib.utils.DialogUtils;
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.utils.LogUtil;
 import com.smart.base.utils.ShareUtil;
 import com.wu.safe.push.R;
@@ -19,13 +21,11 @@ import com.smart.base.app.event.RxBusHelper;
 import com.wu.safe.push.app.event.MsgEvent;
 import com.wu.safe.push.app.event.MsgType;
 import com.smart.base.app.listener.OnClickLongListener;
-import com.smart.base.app.listener.OnPositionSelectListener;
 import com.wu.safe.push.app.control.Push;
 import com.wu.safe.push.config.PushSharePre;
 import com.wu.safe.push.ui.adapter.MessageListAdapter;
 import com.wu.safe.push.ui.bean.MessageListBean;
 import com.wu.safe.push.ui.contract.MsgContract;
-import com.smart.base.utils.DialogUtils;
 import com.wu.safe.push.ui.presenter.MsgPresenter;
 import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 
@@ -159,7 +159,7 @@ public class MsgFragment extends PushBaseCompatFragment implements MsgContract.V
                     presenter.setRead(bean.mess_id);
                     bean.read = true;
                     mAdapter.notifyDataSetChanged();
-                    DialogUtils.showToast(mContext, "已读 Line"+(position+1)+":"+ShareUtil.getBoolean(PushSharePre.MQTT_IS_LOGIN, false));
+                    ToastUtils.showToast(mContext, "已读 Line"+(position+1)+":"+ShareUtil.getBoolean(PushSharePre.MQTT_IS_LOGIN, false));
                 }
 
                 @Override

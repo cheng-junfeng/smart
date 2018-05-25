@@ -1,8 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.webview" >
     <application>
-        <activity android:name=".ui.view.WebViewCustomActivity"
-            android:screenOrientation="portrait" />
         <activity android:name=".ui.view.WebViewNormalActivity"
             android:screenOrientation="portrait" />
     </application>

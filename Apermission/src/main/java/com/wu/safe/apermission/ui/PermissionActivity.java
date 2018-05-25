@@ -8,10 +8,10 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.view.View;
 
+import com.hintlib.utils.ToastUtils;
 import com.wu.safe.apermission.R;
 import com.wu.safe.apermission.app.acitvity.PermissBaseCompatActivity;
 import com.wu.safe.apermission.utils.PermissionsCheckerUtils;
-import com.smart.base.utils.DialogUtils;
 import com.smart.base.utils.LogUtil;
 import com.smart.base.utils.ToolbarUtil;
 
@@ -60,10 +60,10 @@ public class PermissionActivity extends PermissBaseCompatActivity {
                 ActivityCompat.requestPermissions(this, mPermission, REQUEST_CODE_STORAGE);
                 LogUtil.d(TAG, "permission onResume 1");
             } else {
-                DialogUtils.showToast(mContext, "已有权限");
+                ToastUtils.showToast(mContext, "已有权限");
             }
         } else {
-            DialogUtils.showToast(mContext, "SDK <23");
+            ToastUtils.showToast(mContext, "SDK <23");
         }
     }
 
@@ -73,10 +73,10 @@ public class PermissionActivity extends PermissBaseCompatActivity {
             case REQUEST_CODE_STORAGE:{
                 if (requestCode == REQUEST_CODE_STORAGE && checkerUtils.lacksPermissions(mPermission)) {
                     LogUtil.d(TAG, "delay");
-                    DialogUtils.showToast(mContext, "权限申请失败");
+                    ToastUtils.showToast(mContext, "权限申请失败");
                 } else {
                     LogUtil.d(TAG, "grant");
-                    DialogUtils.showToast(mContext, "权限申请成功");
+                    ToastUtils.showToast(mContext, "权限申请成功");
                 }
             }break;
             default:break;

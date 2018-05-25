@@ -1,4 +1,4 @@
-package com.smart.base.utils;
+package com.hintlib.utils;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -11,18 +11,14 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
-import com.smart.base.R;
-import com.smart.base.app.listener.OnClickLongListener;
-import com.smart.base.net.helper.ApiExceptionHelper;
-import com.smart.base.app.listener.OnInputClickListener;
-import com.smart.base.app.listener.OnPositionSelectListener;
-import com.smart.base.app.listener.OnSelectClickListener;
-import com.smart.base.ui.adapter.BaseListAdapter;
+import com.hintlib.R;
+import com.hintlib.adapter.BaseListAdapter;
+import com.hintlib.listener.OnChooseListener;
+import com.hintlib.listener.OnConfirmListener;
+import com.hintlib.listener.OnInputListener;
 
 import java.util.List;
 
@@ -75,7 +71,7 @@ public class DialogUtils {
     }
 
     private static Dialog dialog = null;
-    public static void showChooseDialog(Context context, List<String> allStr, final OnPositionSelectListener listener) {
+    public static void showChooseDialog(Context context, List<String> allStr, final OnChooseListener listener) {
         dismissDialog();
         if (dialog == null) {
             dialog = new Dialog(context, R.style.Theme_AppCompat_Light_Dialog);
@@ -85,17 +81,7 @@ public class DialogUtils {
             View view = LayoutInflater.from(context).inflate(R.layout.dialog_choose, null);
             RecyclerView mainView = view.findViewById(R.id.main_view);
             BaseListAdapter mAdapter = new BaseListAdapter(allStr);
-            mAdapter.setOnListener(new OnClickLongListener() {
-                @Override
-                public void onItemClick(int position) {
-                    dismissDialog();
-                    listener.onPositiveSelect(position);
-                }
-
-                @Override
-                public void onItemLongClick(int position) {
-                }
-            });
+            mAdapter.setOnListener(listener);
 
             mainView.setLayoutManager(new LinearLayoutManager(context));
             mainView.setHasFixedSize(true);
@@ -109,7 +95,7 @@ public class DialogUtils {
         }
     }
 
-    public static void showConfirmDialog(Context context, String message, final OnSelectClickListener listener) {
+    public static void showConfirmDialog(Context context, String message, final OnConfirmListener listener) {
         dismissDialog();
         if (dialog == null) {
             dialog = new Dialog(context, R.style.Theme_AppCompat_Light_Dialog);
@@ -173,7 +159,7 @@ public class DialogUtils {
         }
     }
 
-    public static void showInputDialog(final Context context, String title, String defaultStr, final OnInputClickListener listener) {
+    public static void showInputDialog(final Context context, String title, String defaultStr, final OnInputListener listener) {
         dismissDialog();
         if (dialog == null) {
             dialog = new Dialog(context, R.style.Theme_AppCompat_Light_Dialog);
@@ -194,7 +180,7 @@ public class DialogUtils {
                 public void onClick(View view) {
                     String inputStr = inputTv.getText().toString();
                     if(TextUtils.isEmpty(inputStr)){
-                        DialogUtils.showToast(context, "输入不能为空");
+                        ToastUtils.showToast(context, "输入不能为空");
                         return;
                     }
                     dismissDialog();
@@ -224,45 +210,5 @@ public class DialogUtils {
             }
             dialog = null;
         }
-    }
-
-    public static void showToast(Context context, String toastStr) {
-        if (context == null) {
-            return;
-        }
-        final Toast toast = Toast.makeText(context, "", Toast.LENGTH_SHORT);
-        View view = LayoutInflater.from(context).inflate(R.layout.dialog_toast, null, false);
-        LinearLayout llToast = (LinearLayout) view.findViewById(R.id.toast);
-        TextView lltext = (TextView) view.findViewById(R.id.toast_tv);
-        lltext.setText(toastStr);
-
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setView(view);
-        toast.show();
-    }
-
-    public static void showThrowable(Context context, Throwable e) {
-        showThrowable(context, e, false);
-    }
-
-    public static void showThrowable(Context context, Throwable e, boolean isFocus) {
-        if (context == null) {
-            return;
-        }
-        if(!isFocus){
-            if(!ApiExceptionHelper.isBadNetwork(e)){
-                return;
-            }
-        }
-        String errorMsg = ApiExceptionHelper.getMessage(e);
-        final Toast toast = Toast.makeText(context, "", Toast.LENGTH_SHORT);
-        View view = LayoutInflater.from(context).inflate(R.layout.dialog_toast,null,false);
-        LinearLayout llToast = (LinearLayout) view.findViewById(R.id.toast);
-        TextView lltext = (TextView) view.findViewById(R.id.toast_tv);
-        lltext.setText(errorMsg);
-
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setView(view);
-        toast.show();
     }
 }

@@ -36,13 +36,6 @@
     <dimen name="margin_progress">60dp</dimen>
 
     <dimen name="fail_icon_height">80dp</dimen>
-    <dimen name="dialog_width">120dp</dimen>
-    <dimen name="dialog_height">120dp</dimen>
-    <dimen name="dialog_108dp">108dp</dimen>
-    <dimen name="dialog_130dp">130dp</dimen>
-    <dimen name="dialog_150dp">150dp</dimen>
-    <dimen name="dialog_200dp">200dp</dimen>
-    <dimen name="dialog_250dp">250dp</dimen>
 
     <dimen name="type_width">50dp</dimen>
     <dimen name="type_height">15dp</dimen>

@@ -7,6 +7,7 @@ import android.webkit.WebView;
 
 import com.github.lzyzsd.jsbridge.BridgeWebView;
 
+import com.hintlib.widget.ViewLoading;
 import com.webview.R;
 import com.webview.R2;
 import com.webview.app.activity.WebBaseCompatActivity;
@@ -44,6 +45,7 @@ public class WebViewNormalActivity extends WebBaseCompatActivity {
         initView();
     }
 
+    ViewLoading mLoading;
     private void initView() {
         webView = (BridgeWebView) findViewById(R.id.webView);
         ToolbarUtil.setToolbarLeft(toolbar, "WebView", null, new View.OnClickListener() {
@@ -59,20 +61,35 @@ public class WebViewNormalActivity extends WebBaseCompatActivity {
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
                 LogUtil.d(TAG, "onPageFinished:" + url);
+                if (mLoading != null && mLoading.isShowing()) {
+                    mLoading.dismiss();
+                }
             }
 
             @Override
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 super.onReceivedError(view, errorCode, description, failingUrl);
                 LogUtil.d(TAG, "onReceivedError:" + description + ":" + failingUrl);
+                if (mLoading != null && mLoading.isShowing()) {
+                    mLoading.dismiss();
+                }
             }
         });
 
+        // 添加Loading
+        mLoading = new ViewLoading(this, 1,"") {
+            @Override
+            public void loadCancel() {
+
+            }
+        };
+        if (!mLoading.isShowing()) {
+            mLoading.show();
+        }
         getNetData();
     }
 
     private void getNetData() {
-        //"http://172.16.93.111:8090/index.html"
         Bundle bundle = getIntent().getExtras();
         String urlString = (bundle == null) ? null : bundle.getString(WebConfig.JS_URL);
         webView.loadUrl(urlString);

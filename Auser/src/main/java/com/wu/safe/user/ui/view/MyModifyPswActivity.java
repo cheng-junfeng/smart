@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 
+import com.hintlib.utils.ToastUtils;
+import com.smart.base.net.helper.ApiExceptionHelper;
 import com.smart.base.utils.LogUtil;
 import com.smart.base.utils.ToolbarUtil;
-import com.smart.base.utils.DialogUtils;
 import com.smart.base.ui.widget.CommEditText;
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
@@ -63,22 +64,22 @@ public class MyModifyPswActivity extends UserBaseCompatActivity {
         String newPsw = etPsw.getText().toString();
         String confirmPsw = etPswConfirm.getText().toString();
         if (TextUtils.isEmpty(oldPsw)) {
-            DialogUtils.showToast(mContext, "旧密码不能为空");
+            ToastUtils.showToast(mContext, "旧密码不能为空");
             return;
         }
 
         if (TextUtils.isEmpty(newPsw)) {
-            DialogUtils.showToast(mContext, "新密码不能为空");
+            ToastUtils.showToast(mContext, "新密码不能为空");
             return;
         }
 
         if (TextUtils.isEmpty(confirmPsw)) {
-            DialogUtils.showToast(mContext, "请确认新密码");
+            ToastUtils.showToast(mContext, "请确认新密码");
             return;
         }
 
         if (!newPsw.equals(confirmPsw)) {
-            DialogUtils.showToast(mContext, "两次密码不一致");
+            ToastUtils.showToast(mContext, "两次密码不一致");
             return;
         }
         HashMap params = new HashMap<String, String>();
@@ -93,7 +94,7 @@ public class MyModifyPswActivity extends UserBaseCompatActivity {
                             MyChangeOutput output = value.getData();
                             if ((output != null) && (output.state == 200)) {
                                 LogUtil.d(TAG, "change password success");
-                                DialogUtils.showToast(mContext, "修改成功，请重新登录");
+                                ToastUtils.showToast(mContext, "修改成功，请重新登录");
                                 readGoFinish(MyLoginActivity.class);
                             } else if (output.state == 402) {
                                 etOldPsw.getText().clear();
@@ -101,14 +102,14 @@ public class MyModifyPswActivity extends UserBaseCompatActivity {
                             }
                         } else {
                             LogUtil.e(TAG, "change pwd fail");
-                            DialogUtils.showToast(mContext, "修改密码失败，请稍后再试！");
+                            ToastUtils.showToast(mContext, "修改密码失败，请稍后再试！");
                         }
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
                         LogUtil.e(TAG, "change password fail");
-                        DialogUtils.showThrowable(mContext, throwable, true);
+                        ToastUtils.showToast(mContext, ApiExceptionHelper.getMessage(throwable));
                     }
                 });
     }

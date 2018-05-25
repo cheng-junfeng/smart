@@ -7,8 +7,8 @@
     tools:context="com.wu.safe.user.ui.view.MyUpgradeActvity">
 
     <LinearLayout
-        android:layout_width="@dimen/dialog_250dp"
-        android:layout_height="@dimen/dialog_250dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerInParent="true"
         android:background="@color/color_light_white"
         android:orientation="vertical">

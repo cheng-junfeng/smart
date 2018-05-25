@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.smart.base.app.listener.OnSelectClickListener;
-import com.smart.base.utils.DialogUtils;
+import com.hintlib.listener.OnConfirmListener;
+import com.hintlib.utils.DialogUtils;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.user.ui.presenter.LoginPresenter;
@@ -80,7 +80,7 @@ public class LeftViewActivity extends BaseCompatActivity {
                 break;
             case R.id.quit:
                 drawerLayout.closeDrawer(GravityCompat.START);
-                DialogUtils.showConfirmDialog(this, "确定退出当前账号？", new OnSelectClickListener() {
+                DialogUtils.showConfirmDialog(this, "确定退出当前账号？", new OnConfirmListener() {
                     @Override
                     public void onClickPositive() {
                         new LoginPresenter().logout(mContext);

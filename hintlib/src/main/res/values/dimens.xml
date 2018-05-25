@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="offset_3dp">3dp</dimen>
+    <dimen name="offset_5dp">5dp</dimen>
+    <dimen name="offset_7dp">7dp</dimen>
+    <dimen name="offset_10dp">10dp</dimen>
+    <dimen name="offset_15dp">15dp</dimen>
+    <dimen name="offset_20dp">20dp</dimen>
+    <dimen name="offset_25dp">25dp</dimen>
+    <dimen name="offset_30dp">30dp</dimen>
+    <dimen name="offset_35dp">35dp</dimen>
+    <dimen name="offset_40dp">40dp</dimen>
+    <dimen name="offset_50dp">50dp</dimen>
+    <dimen name="offset_60dp">60dp</dimen>
+    <dimen name="offset_70dp">70dp</dimen>
+    <dimen name="offset_80dp">80dp</dimen>
+
+    <!-- 字体大小 -->
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size">14sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_20">20dp</dimen>
+    <dimen name="text_size_28">28dp</dimen>
+
+    <dimen name="base_toolbar_height">50dp</dimen>
+    <dimen name="base_margin_left">15dp</dimen>
+    <dimen name="base_button_height">50dp</dimen>
+
+    <dimen name="margin_diver">6dp</dimen>
+    <dimen name="margin_top">6dp</dimen>
+    <dimen name="margin_left_small">12dp</dimen>
+    <dimen name="margin_left">18dp</dimen>
+    <dimen name="margin_left_big">25dp</dimen>
+    <dimen name="margin_progress">60dp</dimen>
+
+    <dimen name="fail_icon_height">80dp</dimen>
+    <dimen name="dialog_width">120dp</dimen>
+    <dimen name="dialog_height">120dp</dimen>
+    <dimen name="dialog_108dp">108dp</dimen>
+    <dimen name="dialog_130dp">130dp</dimen>
+    <dimen name="dialog_150dp">150dp</dimen>
+    <dimen name="dialog_200dp">200dp</dimen>
+    <dimen name="dialog_250dp">250dp</dimen>
+</resources>

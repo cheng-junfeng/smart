@@ -11,7 +11,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.smart.base.utils.DialogUtils;
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
@@ -81,7 +81,7 @@ public class PageViewActivity extends BaseCompatActivity {
                 gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        DialogUtils.showToast(mContext, position + "");
+                        ToastUtils.showToast(mContext, position + "");
                     }
                 });
                 gridList.add(gridView);

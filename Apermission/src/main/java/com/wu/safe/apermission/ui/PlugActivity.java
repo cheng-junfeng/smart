@@ -9,12 +9,12 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 
+import com.hintlib.listener.OnConfirmListener;
+import com.hintlib.utils.DialogUtils;
 import com.wu.safe.apermission.R;
 import com.wu.safe.apermission.R2;
 import com.wu.safe.apermission.app.acitvity.PermissBaseCompatActivity;
 import com.wu.safe.apermission.utils.AppUtils;
-import com.smart.base.app.listener.OnSelectClickListener;
-import com.smart.base.utils.DialogUtils;
 import com.smart.base.utils.FileUtil;
 import com.smart.base.utils.LogUtil;
 import com.smart.base.utils.ToolbarUtil;
@@ -67,7 +67,7 @@ public class PlugActivity extends PermissBaseCompatActivity {
                 }
 
             } else {
-                DialogUtils.showConfirmDialog(mContext, "尚未安装单位视频插件，立即安装", new OnSelectClickListener() {
+                DialogUtils.showConfirmDialog(mContext, "尚未安装单位视频插件，立即安装", new OnConfirmListener() {
                     @Override
                     public void onClickPositive() {
                         String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + HAIAPK_NAME;

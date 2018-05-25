@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.trello.rxlifecycle2.components.RxActivity;
 import com.smart.base.R;
 import com.smart.base.app.listener.OnRetryListener;
-import com.smart.base.utils.DialogUtils;
 
 
 public abstract class BaseAppActivity extends RxActivity {
@@ -107,7 +106,6 @@ public abstract class BaseAppActivity extends RxActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        dismissProgress();
         AppManager.getAppManager().removeActivity(this);
     }
 
@@ -117,14 +115,6 @@ public abstract class BaseAppActivity extends RxActivity {
 
     protected void appExit(){
         AppManager.getAppManager().appExit();
-    }
-
-    protected void showProgress(String progressStr){
-        DialogUtils.showProgressMsgDialog(this, progressStr);
-    }
-
-    protected void dismissProgress(){
-        DialogUtils.dismissProgressDialog();
     }
 
     protected void readGo(Class<?> cls){

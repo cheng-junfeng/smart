@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="base_default">#3F8FFF</color>
+    <color name="base_light_default">#3F8FFF</color>
+
+    <color name="color_background">#EEEEEE</color>
+
+    <color name="item_gray_color_normal">#FFFFFF</color>
+    <color name="item_gray_color_pressed">#f5f5f5</color>
+
+    <!--字体的颜色，纯黑色-->
+    <color name="blackText">#000000</color>
+    <!--字体的颜色 黑色1 -->
+    <color name="blackText1">#464C56</color>
+    <!--字体的颜色 黑色2 -->
+    <color name="blackText2">#464C4E</color>
+    <!--字体的颜色 黑色3-->
+    <color name="blackText3">#212121</color>
+    <!--字体的颜色 黑色4-->
+    <color name="blackText4">#323232</color>
+
+    <color name="color_light_gray">#EEEEEE</color>
+    <color name="color_asserts_gray">#666666</color>
+    <color name="color_dark_gray">#999999</color>
+    <color name="color_gray">#E5E5E5</color>
+    <color name="color_light_white">#FFFFFF</color>
+    <color name="color_light_black">#333333</color>
+    <color name="color_dark_black">#222222</color>
+    <color name="color_alpha_light_black">#7F333333</color>
+    <color name="color_dark_gray6">#666666</color>
+    <color name="color_alpha_blue">#7001577F</color>
+    <color name="color_black">#000000</color>
+    <color name="color_black_settings">#313131</color>
+    <color name="color_alpha_black">#7F000000</color>
+    <color name="color_blue">#3F80CC</color>
+    <color name="color_light_blue">#01AEFF</color>
+    <color name="color_red">#FF0000</color>
+    <color name="color_red_logout">#EC5050</color>
+    <color name="color_shadow">#3300ACFF</color>
+</resources>

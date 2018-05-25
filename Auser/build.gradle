@@ -53,4 +53,6 @@ dependencies {
     implementation project(':Apush')
     //zxinglib
     implementation project(':zxinglib')
+    //hintlib
+    implementation project(':hintlib')
 }

@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.github.clans.fab.FloatingActionMenu;
-import com.smart.base.utils.DialogUtils;
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
@@ -41,11 +41,11 @@ public class FloatButtonActivity extends BaseCompatActivity {
         switch (view.getId()) {
             case R.id.float_A:
                 floatButton.toggle(true);
-                DialogUtils.showToast(this, "A");
+                ToastUtils.showToast(this, "A");
                 break;
             case R.id.float_B:
                 floatButton.toggle(true);
-                DialogUtils.showToast(this, "B");
+                ToastUtils.showToast(this, "B");
                 break;
         }
     }

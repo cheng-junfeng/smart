@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.baidu.track.activity.MapMainActivity;
+import com.hintlib.utils.ToastUtils;
 import com.media.videocapture.ui.view.VideoMainActivity;
 import com.webview.ui.view.WebViewNormalActivity;
 import com.hikvison.view.HikTestActivity;
@@ -22,7 +23,6 @@ import com.hyphenate.demo.MainEaseActivity;
 import com.wu.safe.apermission.ui.PermissionActivity;
 import com.wu.safe.apermission.ui.PlugActivity;
 import com.smart.base.app.listener.OnClickLongListener;
-import com.smart.base.utils.DialogUtils;
 import com.webview.config.WebConfig;
 import com.wu.safe.smart.BuildConfig;
 import com.wu.safe.smart.R;
@@ -202,7 +202,7 @@ public class HomeFragment extends BaseCompatFragment {
                         }
                         break;
                         default: {
-                            DialogUtils.showToast(mContext, "no more");
+                            ToastUtils.showToast(mContext, "no more");
                         }
                         break;
                     }

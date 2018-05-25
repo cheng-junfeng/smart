@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.hintlib.utils.DialogUtils;
 import com.tencent.bugly.beta.Beta;
-import com.smart.base.utils.DialogUtils;
 import com.smart.base.utils.LogUtil;
 import com.smart.base.utils.ShareUtil;
 import com.smart.base.utils.ToolbarUtil;

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 
+import com.hintlib.utils.ToastUtils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.smart.base.utils.LogUtil;
 import com.smart.base.utils.ToolbarUtil;
@@ -17,7 +18,6 @@ import com.wu.safe.smart.ui.module.other.data.adapter.DataListAdapter;
 import com.wu.safe.smart.ui.module.other.data.bean.DataListBean;
 import com.wu.safe.smart.ui.module.other.data.contract.DataContract;
 import com.wu.safe.smart.ui.module.other.data.presenter.DataPresenter;
-import com.smart.base.utils.DialogUtils;
 import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 
 import java.util.List;
@@ -124,7 +124,7 @@ public class DataActivity extends BaseCompatActivity implements DataContract.Vie
 
     @Override
     public void showStatus(String toastStr) {
-        DialogUtils.showToast(mContext, toastStr);
+        ToastUtils.showToast(mContext, toastStr);
     }
 
     @Override

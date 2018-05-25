@@ -6,12 +6,13 @@ import android.view.WindowManager;
 import android.widget.Toast;
 import java.util.HashMap;
 
+import com.hintlib.utils.DialogUtils;
+import com.hintlib.utils.ToastUtils;
 import com.tencent.rtmp.ITXLivePlayListener;
 import com.tencent.rtmp.TXLiveConstants;
 import com.tencent.rtmp.TXLivePlayConfig;
 import com.tencent.rtmp.TXLivePlayer;
 import com.tencent.rtmp.ui.TXCloudVideoView;
-import com.smart.base.utils.DialogUtils;
 import com.smart.base.utils.LogUtil;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.rtmp.R;
@@ -60,7 +61,7 @@ public class LivePlayerActivity extends RtmpCompatActivity implements ITXLivePla
         }
         mPlayerView = (TXCloudVideoView) findViewById(R.id.video);
 
-        showProgress("正在加载");
+        DialogUtils.showProgressMsgDialog(this, "正在加载");
         startPlay();
         setCacheStrategy(CACHE_STRATEGY_AUTO);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -110,11 +111,11 @@ public class LivePlayerActivity extends RtmpCompatActivity implements ITXLivePla
         LogUtil.d(TAG, playEventLog);
 
         if (event == TXLiveConstants.PLAY_EVT_PLAY_BEGIN) {
-            dismissProgress();
+            DialogUtils.dismissProgressDialog();
             LogUtil.d("AutoMonitor", "PlayFirstRender,cost=" +(System.currentTimeMillis()-mStartPlayTS));
         } else if (event == TXLiveConstants.PLAY_ERR_NET_DISCONNECT || event == TXLiveConstants.PLAY_EVT_PLAY_END) {
-            dismissProgress();
-            DialogUtils.showToast(this, "连接失败");
+            DialogUtils.dismissProgressDialog();
+            ToastUtils.showToast(this, "连接失败");
             stopPlay();
         } else if (event == TXLiveConstants.PLAY_EVT_PLAY_LOADING){
         } else if (event == TXLiveConstants.PLAY_EVT_RCV_FIRST_I_FRAME) {

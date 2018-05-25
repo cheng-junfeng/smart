@@ -29,8 +29,9 @@ import com.baidu.mapapi.search.route.WalkingRouteResult;
 import com.baidu.track.R;
 import com.baidu.track.R2;
 import com.baidu.track.activity.BmapBaseCompatActivity;
-import com.smart.base.app.listener.OnPositionSelectListener;
-import com.smart.base.utils.DialogUtils;
+import com.hintlib.listener.OnChooseListener;
+import com.hintlib.utils.DialogUtils;
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.utils.ToolbarUtil;
 
 import java.util.ArrayList;
@@ -141,7 +142,7 @@ public class MapRouteActivity extends BmapBaseCompatActivity implements OnGetRou
     @Override
     public void onGetDrivingRouteResult(DrivingRouteResult result) {
         if (result == null || result.error != SearchResult.ERRORNO.NO_ERROR) {
-            DialogUtils.showToast(mContext, "抱歉，未找到结果");
+            ToastUtils.showToast(mContext, "抱歉，未找到结果");
         }
         if (result.error == SearchResult.ERRORNO.AMBIGUOUS_ROURE_ADDR) {
             // 起终点或途经点地址有岐义，通过以下接口获取建议查询信息
@@ -155,7 +156,7 @@ public class MapRouteActivity extends BmapBaseCompatActivity implements OnGetRou
                     DrivingRouteLine line = allLines.get(i);
                     allTitle.add((i+1)+". "+getRouteTitle(line.getDuration()));
                 }
-                DialogUtils.showChooseDialog(mContext, allTitle, new OnPositionSelectListener() {
+                DialogUtils.showChooseDialog(mContext, allTitle, new OnChooseListener() {
                     @Override
                     public void onPositiveSelect(int pos) {
                         DrivingRouteOverlay overlay = new MyDrivingRouteOverlay(mBaiduMap);
@@ -172,7 +173,7 @@ public class MapRouteActivity extends BmapBaseCompatActivity implements OnGetRou
                 overlay.addToMap();
                 overlay.zoomToSpan();
             } else {
-                DialogUtils.showToast(mContext, "无有效路径");
+                ToastUtils.showToast(mContext, "无有效路径");
                 return;
             }
         }

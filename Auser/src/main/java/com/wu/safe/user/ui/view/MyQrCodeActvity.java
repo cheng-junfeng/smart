@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.hintlib.utils.ToastUtils;
 import com.smart.base.config.GlobalConfig;
 import com.smart.base.ui.widget.CommEditText;
-import com.smart.base.utils.DialogUtils;
 import com.smart.base.utils.NotNull;
 import com.smart.base.utils.ShareUtil;
 import com.wu.safe.user.R;
@@ -42,7 +42,7 @@ public class MyQrCodeActvity extends UserBaseActivity {
         String userName = ShareUtil.getString(GlobalConfig.MY_USERNAME, "");
         dialogContent.setText(userName);
         if(!NotNull.isNotNull(userName)){
-            DialogUtils.showToast(this, "输入不能为空");
+            ToastUtils.showToast(this, "输入不能为空");
         }else{
             qrcodeImg.setImageBitmap(QRCodeUtil.createQRCodeBitmap(userName, 120));
         }
@@ -56,7 +56,7 @@ public class MyQrCodeActvity extends UserBaseActivity {
         } else if (viewId == R.id.start) {
             String input = dialogContent.getText().toString();
             if(!NotNull.isNotNull(input)){
-                DialogUtils.showToast(this, "输入不能为空");
+                ToastUtils.showToast(this, "输入不能为空");
             }else{
                 qrcodeImg.setImageBitmap(QRCodeUtil.createQRCodeBitmap(input, 100));
             }
