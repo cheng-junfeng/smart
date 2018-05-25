@@ -115,4 +115,6 @@ dependencies {
     implementation project(':videoAudio')
     //hikvison
     implementation project(':hikvison')
+    //hyphenate
+    api project(':hyphenate')
 }

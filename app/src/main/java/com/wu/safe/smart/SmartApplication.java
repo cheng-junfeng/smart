@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.baidu.track.control.Bmap;
 import com.blankj.utilcode.util.Utils;
+import com.hyphenate.easeui.EaseUI;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
 import com.tencent.bugly.beta.UpgradeInfo;
@@ -62,6 +63,7 @@ public class SmartApplication extends MultiDexApplication {
         //module
         Push.init(mContext);
         Bmap.getInstance().init(mContext);
+        EaseUI.getInstance().init(this, null);
 
         //upgrade
         initUpgrade();

@@ -13,11 +13,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.baidu.track.activity.MapMainActivity;
 import com.jmolsmobile.videocapture.ui.view.VideoMainActivity;
 import com.wu.safe.ahik.view.HikTestActivity;
+import com.wu.safe.ahyphenate.ui.MainEaseActivity;
 import com.wu.safe.apermission.ui.PermissionActivity;
 import com.wu.safe.apermission.ui.PlugActivity;
 import com.wu.safe.base.app.listener.OnClickLongListener;
@@ -90,7 +90,7 @@ public class HomeFragment extends BaseCompatFragment {
 
         HomeListBean bean41 = new HomeListBean.Builder().content("悬浮窗").build();
         HomeListBean bean42 = new HomeListBean.Builder().content("海康").build();
-        HomeListBean bean43 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean43 = new HomeListBean.Builder().content("环信").build();
         HomeListBean bean44 = new HomeListBean.Builder().content("More").build();
 
         allData.add(bean1);
@@ -195,6 +195,10 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 13: {
                             readGo(HikTestActivity.class);
+                        }
+                        break;
+                        case 14: {
+                            readGo(MainEaseActivity.class);
                         }
                         break;
                         default: {
