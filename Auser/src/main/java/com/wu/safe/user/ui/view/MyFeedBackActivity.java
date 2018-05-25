@@ -11,9 +11,9 @@ import android.widget.Toast;
 
 import com.blankj.utilcode.util.BarUtils;
 import com.blankj.utilcode.util.IntentUtils;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
-import com.wu.safe.base.ui.widget.MultiEditInputView;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.ToolbarUtil;
+import com.smart.base.ui.widget.MultiEditInputView;
 
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
@@ -42,7 +42,7 @@ public class MyFeedBackActivity extends UserBaseCompatActivity {
 
     @Override
     protected int setFootView() {
-        return R.layout.base_footer_bar;
+        return R.layout.base_bar_footer;
     }
 
     @Override

@@ -5,7 +5,7 @@
     android:background="@color/color_light_gray"
     android:orientation="vertical">
 
-    <com.wu.safe.base.ui.widget.MultiEditInputView
+    <com.smart.base.ui.widget.MultiEditInputView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mev_view"
         android:layout_width="match_parent"

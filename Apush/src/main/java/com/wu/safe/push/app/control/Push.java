@@ -8,10 +8,10 @@ import android.content.Intent;
 import android.os.Build;
 import android.text.TextUtils;
 
-import com.wu.safe.base.config.GlobalConfig;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.NotificationUtil;
-import com.wu.safe.base.utils.ShareUtil;
+import com.smart.base.config.GlobalConfig;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.NotificationUtil;
+import com.smart.base.utils.ShareUtil;
 import com.wu.safe.push.R;
 import com.wu.safe.push.config.PushConfig;
 import com.wu.safe.push.config.PushSharePre;

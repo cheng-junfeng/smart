@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.wu.safe.base.utils.DialogUtils;
+import com.smart.base.utils.DialogUtils;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatFragment;
 import com.wu.safe.smart.ui.module.other.design.adapter.ViewPagerAdapter;

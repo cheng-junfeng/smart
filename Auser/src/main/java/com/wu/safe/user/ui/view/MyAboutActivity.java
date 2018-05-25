@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.tencent.bugly.beta.Beta;
-import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.ShareUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.utils.DialogUtils;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.ShareUtil;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.user.BuildConfig;
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
@@ -63,7 +63,7 @@ public class MyAboutActivity extends UserBaseCompatActivity {
 
     @OnClick(R2.id.ly_checkVersion)
     public void onViewClicked() {
-        DialogUtils.showProgressDialog(mContext, "正在检测更新");
+        DialogUtils.showProgressMsgDialog(mContext, "正在检测更新");
         Beta.checkUpgrade();
         tvVersion.postDelayed(new Runnable() {
             @Override

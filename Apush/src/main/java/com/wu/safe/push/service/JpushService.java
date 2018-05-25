@@ -8,9 +8,9 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
-import com.wu.safe.base.config.GlobalConfig;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.ShareUtil;
+import com.smart.base.config.GlobalConfig;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.ShareUtil;
 import com.wu.safe.push.app.control.Push;
 
 public class JpushService extends IntentService {

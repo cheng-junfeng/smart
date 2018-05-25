@@ -75,7 +75,7 @@
             android:layout_height="@dimen/icon_height"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:background="@mipmap/ic_back_right"/>
+            android:background="@mipmap/base_icon_back_right"/>
     </RelativeLayout>
 
     <LinearLayout

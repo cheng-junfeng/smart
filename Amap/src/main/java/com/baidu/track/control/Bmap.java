@@ -22,9 +22,9 @@ import com.baidu.track.R;
 import com.baidu.track.activity.TracingActivity;
 import com.baidu.track.utils.CommonUtil;
 import com.baidu.track.utils.NetUtil;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.NotificationUtil;
-import com.wu.safe.base.utils.ShareUtil;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.NotificationUtil;
+import com.smart.base.utils.ShareUtil;
 
 import java.util.HashMap;
 import java.util.Map;

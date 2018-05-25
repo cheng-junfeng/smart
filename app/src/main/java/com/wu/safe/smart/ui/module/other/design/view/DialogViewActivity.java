@@ -12,11 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.wu.safe.base.app.listener.OnInputClickListener;
-import com.wu.safe.base.app.listener.OnPositionSelectListener;
-import com.wu.safe.base.app.listener.OnSelectClickListener;
-import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.app.listener.OnInputClickListener;
+import com.smart.base.app.listener.OnPositionSelectListener;
+import com.smart.base.app.listener.OnSelectClickListener;
+import com.smart.base.utils.DialogUtils;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 
@@ -63,14 +63,14 @@ public class DialogViewActivity extends BaseCompatActivity {
         });
     }
 
-    @OnClick({R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.confirm_view2, R.id.choose_view, R.id.delete_view, R.id.input_view, R.id.toast_view, R.id.test1, R.id.test2})
+    @OnClick({R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.confirm_view2, R.id.choose_view, R.id.input_view, R.id.toast_view, R.id.test1, R.id.test2})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.progress_view:
                 DialogUtils.showProgressDialog(mContext);
                 break;
             case R.id.progress2_view:
-                DialogUtils.showProgressDialog(mContext, "正在进行");
+                DialogUtils.showProgressMsgDialog(mContext, "正在进行");
                 break;
             case R.id.confirm_view:
                 DialogUtils.showConfirmDialog(mContext, "确认？", new OnSelectClickListener() {
@@ -86,18 +86,10 @@ public class DialogViewActivity extends BaseCompatActivity {
                 });
                 break;
             case R.id.confirm_view2:
-                DialogUtils.showConfirmDialog(mContext, "确认2 ？", new View.OnClickListener() {
+                DialogUtils.showConfirmAlertDialog(mContext, "确认2 ？", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         DialogUtils.showToast(mContext, "confirm2:确认");
-                    }
-                });
-                break;
-            case R.id.delete_view:
-                DialogUtils.showDeleteDialog(mContext, new OnPositionSelectListener() {
-                    @Override
-                    public void onPositiveSelect(int pos) {
-                        DialogUtils.showToast(mContext, "choose:" + pos);
                     }
                 });
                 break;

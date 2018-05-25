@@ -12,10 +12,8 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         if(rootProject.ext.releaseVer){
             buildConfigField "boolean", "RELEASE",   "true"
-            buildConfigField "String", "APP_ID",   rootProject.ext.packageNam
         }else{
             buildConfigField "boolean", "RELEASE",   "false"
-            buildConfigField "String", "APP_ID",   rootProject.ext.packageNam
         }
     }
 
@@ -25,7 +23,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -43,8 +40,6 @@ dependencies {
     api 'com.blankj:utilcode:1.7.1'
     //recycleView
     implementation 'com.android.support:recyclerview-v7:26.1.0'
-    //refresh
-    api 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
     //lifecycle
     api 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
     api 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'

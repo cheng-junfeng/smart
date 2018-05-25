@@ -12,7 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.webview.ui.view.WebViewNormalFragment;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.module.other.design.bean.GroupData;

@@ -14,7 +14,7 @@
             android:layout_width="@dimen/fail_icon_height"
             android:layout_height="@dimen/fail_icon_height"
             android:layout_gravity="center"
-            android:src="@mipmap/loading_fail" />
+            android:src="@mipmap/base_icon_loading_fail" />
 
         <TextView
             android:layout_width="wrap_content"

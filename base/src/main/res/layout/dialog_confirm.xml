@@ -5,9 +5,9 @@
 
     <LinearLayout
         android:layout_width="@dimen/dialog_200dp"
-        android:layout_height="@dimen/dialog_150dp"
+        android:layout_height="@dimen/dialog_height"
         android:orientation="vertical"
-        android:background="@drawable/dialog_bg">
+        android:background="@drawable/dialog_shape_bg">
         <TextView
             android:id="@+id/tv_message"
             android:layout_width="match_parent"
@@ -33,6 +33,17 @@
             android:gravity="center_horizontal">
 
             <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/base_default"
+                android:padding="@dimen/offset_7dp"
+                android:textSize="@dimen/text_size_large"
+                android:background="@color/color_light_white"
+                android:text="取消" />
+
+            <Button
                 android:id="@+id/btn_confirm"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -40,7 +51,7 @@
                 android:textColor="@color/color_light_white"
                 android:textSize="@dimen/text_size_large"
                 android:padding="@dimen/offset_7dp"
-                android:background="@drawable/all_item_blue_selector"
+                android:background="@color/base_default"
                 android:text="确定" />
 
         </LinearLayout>

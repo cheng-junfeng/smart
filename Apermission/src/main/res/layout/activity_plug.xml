@@ -59,7 +59,7 @@
                         android:layout_height="wrap_content"
                         android:layout_above="@id/tvDisasterLive"
                         android:layout_centerInParent="true"
-                        app:srcCompat="@mipmap/ic_back_left" />
+                        app:srcCompat="@mipmap/base_icon_back_left" />
 
                 </RelativeLayout>
 

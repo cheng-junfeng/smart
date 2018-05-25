@@ -4,11 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.flipboard.bottomsheet.BottomSheetLayout;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 

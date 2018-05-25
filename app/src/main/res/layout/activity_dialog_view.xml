@@ -51,14 +51,6 @@
             android:text="选择框" />
 
         <Button
-            android:id="@+id/delete_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/offset_3dp"
-            android:background="@drawable/all_item_gray_selector"
-            android:text="删除框" />
-
-        <Button
             android:id="@+id/input_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

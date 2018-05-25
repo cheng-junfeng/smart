@@ -8,12 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.wu.safe.base.app.event.RxBusHelper;
-import com.wu.safe.base.app.listener.OnSelectClickListener;
-import com.wu.safe.base.config.GlobalConfig;
-import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.base.utils.ShareUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.app.event.RxBusHelper;
+import com.smart.base.app.listener.OnSelectClickListener;
+import com.smart.base.config.GlobalConfig;
+import com.smart.base.utils.DialogUtils;
+import com.smart.base.utils.ShareUtil;
+import com.smart.base.utils.ToolbarUtil;
 
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
@@ -49,7 +49,7 @@ public class MyInfoActivity extends UserBaseCompatActivity {
 
     @Override
     protected int setFootView() {
-        return R.layout.base_footer_bar;
+        return R.layout.base_bar_footer;
     }
 
     @Override

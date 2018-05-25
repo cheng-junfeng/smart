@@ -48,8 +48,8 @@ import com.baidu.track.utils.CommonUtil;
 import com.baidu.track.utils.Constants;
 import com.baidu.track.utils.MapUtil;
 import com.baidu.track.utils.ViewUtil;
-import com.wu.safe.base.app.activity.BaseAppCompatActivity;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.app.activity.BaseAppCompatActivity;
+import com.smart.base.utils.ToolbarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -227,7 +227,7 @@ public class TrackQueryActivity extends BmapBaseCompatActivity
                 onBackPressed();
             }
         });
-        ToolbarUtil.setToolbarRight(toolbar, R.mipmap.base_setting, new View.OnClickListener() {
+        ToolbarUtil.setToolbarRight(toolbar, R.mipmap.base_icon_setting, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ViewUtil.startActivityForResult((BaseAppCompatActivity)mContext, TrackQueryOptionsActivity.class, Constants.REQUEST_CODE);

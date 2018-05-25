@@ -7,12 +7,12 @@ import android.view.View;
 
 import com.blankj.utilcode.util.EmptyUtils;
 import com.google.gson.reflect.TypeToken;
-import com.wu.safe.base.app.event.RxBusHelper;
-import com.wu.safe.base.app.listener.OnPositionSelectListener;
-import com.wu.safe.base.ui.widget.WaveSideBarView;
-import com.wu.safe.base.utils.GsonUtil;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.app.event.RxBusHelper;
+import com.smart.base.app.listener.OnPositionSelectListener;
+import com.smart.base.ui.widget.WaveSideBarView;
+import com.smart.base.utils.GsonUtil;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
 import com.wu.safe.user.app.acitvity.UserBaseCompatActivity;

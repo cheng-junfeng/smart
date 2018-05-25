@@ -10,22 +10,22 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.ShareUtil;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.ShareUtil;
 import com.wu.safe.push.R;
 import com.wu.safe.push.R2;
 import com.wu.safe.push.app.activity.PushBaseCompatFragment;
-import com.wu.safe.base.app.event.RxBusHelper;
+import com.smart.base.app.event.RxBusHelper;
 import com.wu.safe.push.app.event.MsgEvent;
 import com.wu.safe.push.app.event.MsgType;
-import com.wu.safe.base.app.listener.OnClickLongListener;
-import com.wu.safe.base.app.listener.OnPositionSelectListener;
+import com.smart.base.app.listener.OnClickLongListener;
+import com.smart.base.app.listener.OnPositionSelectListener;
 import com.wu.safe.push.app.control.Push;
 import com.wu.safe.push.config.PushSharePre;
 import com.wu.safe.push.ui.adapter.MessageListAdapter;
 import com.wu.safe.push.ui.bean.MessageListBean;
 import com.wu.safe.push.ui.contract.MsgContract;
-import com.wu.safe.base.utils.DialogUtils;
+import com.smart.base.utils.DialogUtils;
 import com.wu.safe.push.ui.presenter.MsgPresenter;
 import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 
@@ -125,7 +125,7 @@ public class MsgFragment extends PushBaseCompatFragment implements MsgContract.V
         ivMsgError.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogUtils.showProgressDialog(mContext, "正在刷新");
+                DialogUtils.showProgressMsgDialog(mContext, "正在刷新");
                 Push.resume(mContext);
                 Push.resumeMqtt(mContext);
                 recyclerView.postDelayed(new Runnable() {
@@ -164,12 +164,6 @@ public class MsgFragment extends PushBaseCompatFragment implements MsgContract.V
 
                 @Override
                 public void onItemLongClick(int position) {
-                    DialogUtils.showDeleteDialog(getActivity(), new OnPositionSelectListener() {
-                        @Override
-                        public void onPositiveSelect(int pos) {
-                            LogUtil.d(TAG, "click:" + pos);
-                        }
-                    });
                 }
             });
 

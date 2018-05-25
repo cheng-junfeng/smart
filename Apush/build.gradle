@@ -52,6 +52,8 @@ dependencies {
     implementation "org.greenrobot:greendao:$rootProject.ext.greendaoVer"
     //recycleView
     implementation 'com.android.support:recyclerview-v7:26.1.0'
+    //refresh
+    api 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
 
     //base
     implementation project(':base')

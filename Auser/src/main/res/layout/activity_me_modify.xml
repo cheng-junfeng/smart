@@ -14,7 +14,7 @@
         android:background="@color/color_white"
         android:orientation="vertical">
 
-        <com.wu.safe.base.ui.widget.CommEditText
+        <com.smart.base.ui.widget.CommEditText
             android:id="@+id/et_modify"
             style="@style/ModuleUserEditTextCommon"
             android:drawableLeft="@mipmap/login_phone_icon"

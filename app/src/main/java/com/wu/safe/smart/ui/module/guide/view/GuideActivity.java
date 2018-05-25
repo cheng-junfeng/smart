@@ -6,10 +6,10 @@ import android.support.annotation.Nullable;
 import android.view.KeyEvent;
 import android.view.WindowManager;
 
-import com.wu.safe.base.utils.LogUtil;
+import com.smart.base.utils.LogUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
-import com.wu.safe.base.app.thread.MyHandler;
+import com.smart.base.app.thread.WeakHandler;
 import com.wu.safe.smart.ui.module.main.MainActivity;
 import com.wu.safe.user.ui.view.MyLoginActivity;
 import com.wu.safe.user.ui.presenter.LoginPresenter;
@@ -40,7 +40,7 @@ public class GuideActivity extends BaseCompatActivity {
         presenter = new LoginPresenter();
 
         isLogin = presenter.isLogin(this);
-        MyHandler handler = new MyHandler(this);
+        WeakHandler handler = new WeakHandler(this);
         Runnable runnable = new Runnable() {
             @Override
             public void run() {

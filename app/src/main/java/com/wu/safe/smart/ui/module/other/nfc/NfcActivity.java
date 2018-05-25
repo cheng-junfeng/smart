@@ -19,10 +19,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.wu.safe.base.app.listener.OnSelectClickListener;
-import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.app.listener.OnSelectClickListener;
+import com.smart.base.utils.DialogUtils;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.module.other.nfc.utils.StringHexUtils;
@@ -108,7 +108,7 @@ public class NfcActivity extends BaseCompatActivity {
     private void checkNFCFunction() {
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mNfcAdapter == null) {
-            DialogUtils.showConfirmDialog(mContext, "没发现NFC设备，请确认您的设备支持NFC功能!", new View.OnClickListener() {
+            DialogUtils.showConfirmAlertDialog(mContext, "没发现NFC设备，请确认您的设备支持NFC功能!", new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     finish();

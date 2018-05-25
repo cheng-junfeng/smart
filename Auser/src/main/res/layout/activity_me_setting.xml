@@ -45,7 +45,7 @@
                     style="@style/MeInfoTextLeftStyle"
                     android:text="显示启动页" />
 
-                <com.wu.safe.base.ui.widget.SwitchButton
+                <com.smart.base.ui.widget.SwitchButton
                     android:id="@+id/switch_pic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                     style="@style/MeInfoTextLeftStyle"
                     android:text="推送开关" />
 
-                <com.wu.safe.base.ui.widget.SwitchButton
+                <com.smart.base.ui.widget.SwitchButton
                     android:id="@+id/switch_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -147,7 +147,7 @@
                     android:layout_height="@dimen/icon_height"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:background="@mipmap/ic_back_right" />
+                    android:background="@mipmap/base_icon_back_right" />
             </RelativeLayout>
 
             <LinearLayout
@@ -185,7 +185,7 @@
                     android:layout_height="@dimen/icon_height"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:background="@mipmap/ic_back_right" />
+                    android:background="@mipmap/base_icon_back_right" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

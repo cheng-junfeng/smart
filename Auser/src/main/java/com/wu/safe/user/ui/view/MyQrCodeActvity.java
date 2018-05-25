@@ -4,11 +4,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.wu.safe.base.config.GlobalConfig;
-import com.wu.safe.base.ui.widget.CommEditText;
-import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.base.utils.ShareUtil;
-import com.wu.safe.base.utils.TextUtil;
+import com.smart.base.config.GlobalConfig;
+import com.smart.base.ui.widget.CommEditText;
+import com.smart.base.utils.DialogUtils;
+import com.smart.base.utils.NotNull;
+import com.smart.base.utils.ShareUtil;
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
 import com.wu.safe.user.app.acitvity.UserBaseActivity;
@@ -41,7 +41,7 @@ public class MyQrCodeActvity extends UserBaseActivity {
         super.onCreate(savedInstanceState);
         String userName = ShareUtil.getString(GlobalConfig.MY_USERNAME, "");
         dialogContent.setText(userName);
-        if(TextUtil.isEmpty(userName)){
+        if(!NotNull.isNotNull(userName)){
             DialogUtils.showToast(this, "输入不能为空");
         }else{
             qrcodeImg.setImageBitmap(QRCodeUtil.createQRCodeBitmap(userName, 120));
@@ -55,7 +55,7 @@ public class MyQrCodeActvity extends UserBaseActivity {
             finish();
         } else if (viewId == R.id.start) {
             String input = dialogContent.getText().toString();
-            if(TextUtil.isEmpty(input)){
+            if(!NotNull.isNotNull(input)){
                 DialogUtils.showToast(this, "输入不能为空");
             }else{
                 qrcodeImg.setImageBitmap(QRCodeUtil.createQRCodeBitmap(input, 100));

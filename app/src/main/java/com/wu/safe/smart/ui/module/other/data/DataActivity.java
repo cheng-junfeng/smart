@@ -8,16 +8,16 @@ import android.widget.LinearLayout;
 
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
-import com.wu.safe.base.app.listener.OnClickLongListener;
+import com.smart.base.app.listener.OnClickLongListener;
 import com.wu.safe.smart.ui.module.other.data.adapter.DataListAdapter;
 import com.wu.safe.smart.ui.module.other.data.bean.DataListBean;
 import com.wu.safe.smart.ui.module.other.data.contract.DataContract;
 import com.wu.safe.smart.ui.module.other.data.presenter.DataPresenter;
-import com.wu.safe.base.utils.DialogUtils;
+import com.smart.base.utils.DialogUtils;
 import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 
 import java.util.List;

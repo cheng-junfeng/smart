@@ -10,14 +10,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.wu.safe.base.utils.ShareUtil;
+import com.smart.base.utils.ShareUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.config.SharePre;
 import com.wu.safe.smart.ui.module.guide.view.GuideActivity;
 import com.wu.safe.smart.ui.module.guide.adapter.SplashViewPagerAdapter;
 import com.wu.safe.user.ui.view.MyLoginActivity;
-import com.wu.safe.base.ui.widget.DotView;
+import com.smart.base.ui.widget.DotView;
 
 
 import java.util.ArrayList;

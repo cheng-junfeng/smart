@@ -17,14 +17,14 @@ import android.widget.ImageView;
 import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.wu.safe.base.app.listener.OnInputClickListener;
-import com.wu.safe.base.config.GlobalConfig;
+import com.smart.base.app.listener.OnInputClickListener;
+import com.smart.base.config.GlobalConfig;
 import com.wu.safe.user.config.NetConfig;
-import com.wu.safe.base.ui.widget.CommEditText;
-import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.base.utils.IPUtil;
-import com.wu.safe.base.utils.ShareUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.ui.widget.CommEditText;
+import com.smart.base.utils.DialogUtils;
+import com.smart.base.utils.IPUtil;
+import com.smart.base.utils.ShareUtil;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
 import com.wu.safe.user.app.acitvity.UserBaseCompatActivity;
@@ -76,7 +76,7 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
                 onBackPressed();
             }
         });
-        ToolbarUtil.setToolbarRight(toolbar, R.mipmap.base_setting, new View.OnClickListener() {
+        ToolbarUtil.setToolbarRight(toolbar, R.mipmap.base_icon_setting, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DialogUtils.showInputDialog(mContext, "服务器地址", NetConfig.IP_ADDRESS, new OnInputClickListener() {

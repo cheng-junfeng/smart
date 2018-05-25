@@ -4,7 +4,7 @@ package com.wu.safe.user.net.service;
 import com.wu.safe.user.net.bean.MyChangeOutput;
 import com.wu.safe.user.net.bean.MyInfoOutput;
 import com.wu.safe.user.net.bean.MyLoginOutput;
-import com.wu.safe.base.net.control.HttpResult;
+import com.smart.base.net.control.HttpResult;
 import com.wu.safe.user.net.bean.MyTokenOutput;
 
 import java.util.Map;

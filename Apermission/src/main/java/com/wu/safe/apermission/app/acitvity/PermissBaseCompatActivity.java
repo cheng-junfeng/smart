@@ -2,8 +2,8 @@ package com.wu.safe.apermission.app.acitvity;
 
 import android.os.Bundle;
 
-import com.wu.safe.base.app.activity.BaseAppCompatActivity;
-import com.wu.safe.base.app.event.RxBusHelper;
+import com.smart.base.app.activity.BaseAppCompatActivity;
+import com.smart.base.app.event.RxBusHelper;
 
 import butterknife.ButterKnife;
 

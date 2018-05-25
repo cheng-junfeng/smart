@@ -12,8 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.wu.safe.smart.R;
-import com.wu.safe.base.ui.adapter.BaseRecyAdapter;
-import com.wu.safe.base.app.listener.OnClickLongListener;
+import com.smart.base.ui.adapter.BaseRecyAdapter;
+import com.smart.base.app.listener.OnClickLongListener;
 import com.wu.safe.smart.ui.module.other.data.bean.DataListBean;
 
 import java.util.ArrayList;

@@ -12,10 +12,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.wu.safe.base.app.listener.OnClickLongListener;
-import com.wu.safe.base.ui.adapter.BaseListAdapter;
-import com.wu.safe.base.utils.NotificationUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.app.listener.OnClickLongListener;
+import com.smart.base.ui.adapter.BaseListAdapter;
+import com.smart.base.utils.NotificationUtil;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.user.ui.view.MySettingActivity;

@@ -18,7 +18,7 @@ import com.tencent.rtmp.TXLiveConstants;
 import com.tencent.rtmp.TXLivePushConfig;
 import com.tencent.rtmp.TXLivePusher;
 import com.tencent.rtmp.ui.TXCloudVideoView;
-import com.wu.safe.base.utils.LogUtil;
+import com.smart.base.utils.LogUtil;
 import com.wu.safe.rtmp.R;
 import com.wu.safe.rtmp.app.activity.RtmpCompatActivity;
 

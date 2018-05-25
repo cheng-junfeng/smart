@@ -1,7 +1,7 @@
 package com.wu.safe.user.config;
 
-import com.wu.safe.base.BuildConfig;
-import com.wu.safe.base.utils.ShareUtil;
+import com.smart.base.BuildConfig;
+import com.smart.base.utils.ShareUtil;
 
 
 public interface NetConfig {

@@ -13,7 +13,7 @@ import com.baidu.navisdk.adapter.BNaviBaseCallbackModel;
 import com.baidu.navisdk.adapter.BaiduNaviCommonModule;
 import com.baidu.navisdk.adapter.NaviModuleFactory;
 import com.baidu.navisdk.adapter.NaviModuleImpl;
-import com.wu.safe.base.utils.LogUtil;
+import com.smart.base.utils.LogUtil;
 
 
 public class BNGuideActivity extends Activity {

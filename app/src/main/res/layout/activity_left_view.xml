@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <include layout="@layout/base_tool_bar"/>
+        <include layout="@layout/base_bar_tool"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

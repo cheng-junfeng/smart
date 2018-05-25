@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color_background"
-    tools:context=".app.BaseAppCompatActivity">
+    android:background="@color/color_background">
 
-    <include layout="@layout/base_tool_bar"/>
+    <include layout="@layout/base_bar_tool"/>
 
     <FrameLayout
         android:id="@+id/base_body"

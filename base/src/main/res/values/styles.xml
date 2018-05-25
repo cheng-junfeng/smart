@@ -6,7 +6,7 @@
         <item name="colorAccent">@color/base_default</item>
         <item name="android:textColorSecondary">@color/color_light_white</item>
         <item name="android:windowAnimationStyle">@style/fade</item>
-        <item name="android:divider">@drawable/base_divider_bg</item>
+        <item name="android:divider">@drawable/all_shape_divider_bg</item>
     </style>
     <style name="fade" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/in_from_right</item>

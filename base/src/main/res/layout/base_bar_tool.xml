@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/base_toolbar_height"
+    android:background="@color/base_toolbar_color">
+
+    <!--左-->
+    <FrameLayout
+        android:id="@+id/ll_title_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginLeft="@dimen/base_margin_left"
+        android:layout_marginRight="@dimen/base_margin_left">
+        <ImageView
+            android:id="@+id/tv_image_left"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:src="@mipmap/base_icon_back_left" />
+        <TextView
+            android:id="@+id/tv_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="DEMO"
+            android:textColor="@color/color_light_white"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!--中间标题-->
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="标题"
+        android:textColor="@color/color_light_white"
+        android:textSize="18sp" />
+
+
+    <!--右边图片，例如搜索-->
+    <FrameLayout
+        android:id="@+id/ll_search"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_marginLeft="@dimen/base_margin_left"
+        android:layout_marginRight="@dimen/base_margin_left">
+        <ImageView
+            android:id="@+id/tv_image_right"
+            android:layout_width="@dimen/offset_20dp"
+            android:layout_height="@dimen/offset_20dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:background="@mipmap/base_icon_add" />
+        <TextView
+            android:id="@+id/tv_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?android:attr/selectableItemBackground"
+            android:singleLine="true"
+            android:text="编辑"
+            android:textColor="@color/color_light_white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+    </FrameLayout>
+</android.support.v7.widget.Toolbar>

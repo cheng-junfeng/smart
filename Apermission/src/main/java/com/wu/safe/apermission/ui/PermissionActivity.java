@@ -11,9 +11,9 @@ import android.view.View;
 import com.wu.safe.apermission.R;
 import com.wu.safe.apermission.app.acitvity.PermissBaseCompatActivity;
 import com.wu.safe.apermission.utils.PermissionsCheckerUtils;
-import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.utils.DialogUtils;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.ToolbarUtil;
 
 
 public class PermissionActivity extends PermissBaseCompatActivity {

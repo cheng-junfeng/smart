@@ -28,6 +28,7 @@ import com.baidu.trace.model.OnTraceListener;
 import com.baidu.trace.model.PushMessage;
 import com.baidu.trace.model.StatusCodes;
 import com.baidu.trace.model.TraceLocation;
+import com.baidu.track.BuildConfig;
 import com.baidu.track.R;
 import com.baidu.track.control.Bmap;
 import com.baidu.track.model.CurrentLocation;
@@ -35,10 +36,10 @@ import com.baidu.track.utils.CommonUtil;
 import com.baidu.track.utils.Constants;
 import com.baidu.track.utils.MapUtil;
 import com.baidu.track.utils.ViewUtil;
-import com.wu.safe.base.app.activity.BaseAppCompatActivity;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.ShareUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.app.activity.BaseAppCompatActivity;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.ShareUtil;
+import com.smart.base.utils.ToolbarUtil;
 
 /**
  * 轨迹追踪
@@ -85,7 +86,7 @@ public class TracingActivity extends BmapBaseCompatActivity implements View.OnCl
                 onBackPressed();
             }
         });
-        ToolbarUtil.setToolbarRight(toolbar, R.mipmap.base_setting, new View.OnClickListener() {
+        ToolbarUtil.setToolbarRight(toolbar, R.mipmap.base_icon_setting, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ViewUtil.startActivityForResult((BaseAppCompatActivity)mContext, TracingOptionsActivity.class, Constants
@@ -488,7 +489,7 @@ public class TracingActivity extends BmapBaseCompatActivity implements View.OnCl
 
         // 在Android 6.0及以上系统，若定制手机使用到doze模式，请求将应用添加到白名单。
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            String packageName = com.wu.safe.base.BuildConfig.APP_ID;;
+            String packageName = BuildConfig.APP_ID;;
             boolean isIgnoring = powerManager.isIgnoringBatteryOptimizations(packageName);
             if (!isIgnoring) {
                 Intent intent = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);

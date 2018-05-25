@@ -11,6 +11,7 @@ android {
         versionName rootProject.ext.versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "APP_ID",   rootProject.ext.packageNam
         ndk {
             abiFilters 'armeabi'
         }

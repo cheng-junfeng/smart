@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.SDCardUtils;
-import com.wu.safe.base.app.thread.MyHandler;
-import com.wu.safe.base.utils.CacheUtil;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.app.thread.WeakHandler;
+import com.smart.base.utils.CacheUtil;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
 import com.wu.safe.user.app.acitvity.UserBaseCompatActivity;
@@ -27,7 +27,7 @@ public class MySettingActivity extends UserBaseCompatActivity {
     TextView tvSetCacheSize;
 
     private Context mContext;
-    private MyHandler handler;
+    private WeakHandler handler;
 
     @Override
     protected int setContentView() {
@@ -38,7 +38,7 @@ public class MySettingActivity extends UserBaseCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
-        handler = new MyHandler(this);
+        handler = new WeakHandler(this);
 
         ToolbarUtil.setToolbarLeft(toolbar, "设置中心", null, new View.OnClickListener() {
             @Override

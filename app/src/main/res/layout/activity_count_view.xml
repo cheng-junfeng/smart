@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.wu.safe.base.ui.widget.CountDownView
+        <com.smart.base.ui.widget.CountDownView
             android:id="@+id/cdv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

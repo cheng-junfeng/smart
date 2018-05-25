@@ -2,8 +2,8 @@ package com.wu.safe.smart.app.activity;
 
 import android.os.Bundle;
 
-import com.wu.safe.base.app.activity.BaseAppActivity;
-import com.wu.safe.base.app.event.RxBusHelper;
+import com.smart.base.app.activity.BaseAppActivity;
+import com.smart.base.app.event.RxBusHelper;
 
 import butterknife.ButterKnife;
 

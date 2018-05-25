@@ -13,11 +13,11 @@ import com.wu.safe.apermission.R;
 import com.wu.safe.apermission.R2;
 import com.wu.safe.apermission.app.acitvity.PermissBaseCompatActivity;
 import com.wu.safe.apermission.utils.AppUtils;
-import com.wu.safe.base.app.listener.OnSelectClickListener;
-import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.base.utils.FileUtil;
-import com.wu.safe.base.utils.LogUtil;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.app.listener.OnSelectClickListener;
+import com.smart.base.utils.DialogUtils;
+import com.smart.base.utils.FileUtil;
+import com.smart.base.utils.LogUtil;
+import com.smart.base.utils.ToolbarUtil;
 
 import butterknife.OnClick;
 

@@ -6,13 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import com.wu.safe.base.config.GlobalConfig;
-import com.wu.safe.base.utils.LogUtil;
+import com.smart.base.config.GlobalConfig;
+import com.smart.base.utils.LogUtil;
 import com.wu.safe.push.R;
 import com.wu.safe.push.app.control.Push;
 import com.wu.safe.push.config.PushConfig;
 import com.wu.safe.push.utils.PrintUtil;
-import com.wu.safe.base.app.event.RxBusHelper;
+import com.smart.base.app.event.RxBusHelper;
 import com.wu.safe.push.app.event.MsgEvent;
 import com.wu.safe.push.app.event.MsgType;
 import com.wu.safe.push.utils.MessageUtil;

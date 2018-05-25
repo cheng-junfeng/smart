@@ -3,8 +3,8 @@ package com.wu.safe.rtmp.ui.view;
 import android.os.Bundle;
 import android.view.View;
 
-import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.utils.DialogUtils;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.rtmp.R;
 import com.wu.safe.rtmp.R2;
 import com.wu.safe.rtmp.app.activity.RtmpCompatActivity;

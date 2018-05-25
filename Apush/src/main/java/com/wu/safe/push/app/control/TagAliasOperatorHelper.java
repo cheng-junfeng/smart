@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.SparseArray;
 
-import com.wu.safe.base.utils.LogUtil;
+import com.smart.base.utils.LogUtil;
 import com.wu.safe.push.utils.CommonUtil;
 
 import java.util.Locale;

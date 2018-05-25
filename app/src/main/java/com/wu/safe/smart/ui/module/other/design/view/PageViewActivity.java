@@ -11,8 +11,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.utils.DialogUtils;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.module.other.design.adapter.GridViewAdapter;

@@ -1,16 +1,12 @@
 package com.wu.safe.smart.ui.module.other.design.view;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.trello.rxlifecycle2.android.ActivityEvent;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.module.other.design.adapter.GvFilterAdapter;

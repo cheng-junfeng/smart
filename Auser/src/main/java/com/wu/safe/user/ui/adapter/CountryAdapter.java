@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.wu.safe.base.app.listener.OnPositionSelectListener;
+import com.smart.base.app.listener.OnPositionSelectListener;
 import com.wu.safe.user.R;
 import com.wu.safe.user.ui.bean.CountryBean;
 

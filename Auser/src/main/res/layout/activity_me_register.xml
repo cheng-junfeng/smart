@@ -42,7 +42,7 @@
                 android:layout_height="@dimen/icon_height"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:src="@mipmap/ic_back_right" />
+                android:src="@mipmap/base_icon_back_right" />
 
         </RelativeLayout>
 
@@ -64,7 +64,7 @@
                 android:text="+86"
                 android:textColor="#333333" />
 
-            <com.wu.safe.base.ui.widget.CommEditText
+            <com.smart.base.ui.widget.CommEditText
                 android:id="@+id/et_phone"
                 style="@style/ModuleUserEditTextCommon"
                 android:hint="请输入手机号"
@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/base_button_height">
 
-            <com.wu.safe.base.ui.widget.CommEditText
+            <com.smart.base.ui.widget.CommEditText
                 android:id="@+id/et_authCode"
                 style="@style/ModuleUserEditTextCommon"
                 android:layout_toLeftOf="@+id/bt_sendCode"
@@ -104,7 +104,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/all_button_blue_selector"
+                android:background="@drawable/all_item_blue_state_selector"
                 android:text="发送验证码"
                 android:enabled="false"
                 android:textColor="@color/color_white"

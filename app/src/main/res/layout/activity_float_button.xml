@@ -21,7 +21,7 @@
             android:id="@+id/float_A"
             android:layout_width="@dimen/offset_30dp"
             android:layout_height="@dimen/offset_30dp"
-            android:src="@mipmap/ic_back_left"
+            android:src="@mipmap/base_icon_back_left"
             fab:fab_label="AAAAAA"
             fab:fab_size="mini" />
 
@@ -29,7 +29,7 @@
             android:id="@+id/float_B"
             android:layout_width="@dimen/offset_30dp"
             android:layout_height="@dimen/offset_30dp"
-            android:src="@mipmap/base_setting"
+            android:src="@mipmap/base_icon_setting"
             android:visibility="visible"
             fab:fab_label="BBBBBBB"
             fab:fab_size="mini" />

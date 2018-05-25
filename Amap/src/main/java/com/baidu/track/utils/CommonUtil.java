@@ -6,7 +6,7 @@ import android.telephony.TelephonyManager;
 
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.track.model.CurrentLocation;
-import com.wu.safe.base.utils.ShareUtil;
+import com.smart.base.utils.ShareUtil;
 
 import java.sql.Timestamp;
 import java.text.DecimalFormat;

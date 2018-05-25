@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--全清自定义控件-->
     <declare-styleable name="CommEditText">
         <attr name="ce_psw_visible_enable" format="reference|boolean"/>
         <attr name="ce_account_visible_enable" format="reference|boolean"/>
@@ -28,6 +29,7 @@
         <attr name="sb_background" format="reference|color"/>
         <attr name="sb_enable_effect" format="reference|boolean"/>
     </declare-styleable>
+    <!--倒计字数输入自定义控件-->
     <declare-styleable name="MultiEditInputView">
         <attr name="maxCount" format="integer"/>
         <attr name="IgnoreCnOrEn" format="boolean"/>
@@ -35,6 +37,7 @@
         <attr name="contentText" format="string"/>
         <attr name="contentHeight" format="dimension"/>
     </declare-styleable>
+    <!--波浪条自定义控件-->
     <declare-styleable name="WaveSideBarView">
         <attr name="sidebarTextColor" format="color|reference"/>
         <attr name="sidebarBackgroundColor" format="color|reference"/>
@@ -44,6 +47,7 @@
         <attr name="sidebarRadius" format="dimension"/>
         <attr name="sidebarBallRadius" format="dimension"/>
     </declare-styleable>
+    <!--倒计时自定义控件-->
     <declare-styleable name="CountDownView">
         <!--view半径-->
         <attr name="cd_circle_radius" format="dimension" />

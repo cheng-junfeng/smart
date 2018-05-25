@@ -14,9 +14,9 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.wu.safe.base.utils.DensityUtils;
-import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.base.utils.ToolbarUtil;
+import com.smart.base.utils.DensityUtils;
+import com.smart.base.utils.DialogUtils;
+import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.zxinglib.control.decode.DecodeType;

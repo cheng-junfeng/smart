@@ -6,8 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.wu.safe.base.app.activity.BaseAppCompatFragment;
-import com.wu.safe.base.app.event.RxBusHelper;
+import com.smart.base.app.activity.BaseAppCompatFragment;
+import com.smart.base.app.event.RxBusHelper;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
