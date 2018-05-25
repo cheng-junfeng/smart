@@ -43,6 +43,7 @@
 
         <activity android:name=".ui.module.main.MainActivity"
             android:screenOrientation="portrait"
+            android:exported="false"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.smart.MAIN" />

@@ -2,6 +2,9 @@ package com.wu.safe.user.ui.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.ListPopupWindow;
@@ -18,8 +21,10 @@ import com.bumptech.glide.Glide;
 import com.hintlib.listener.OnInputListener;
 import com.hintlib.utils.DialogUtils;
 import com.hintlib.utils.ToastUtils;
+import com.smart.base.utils.NotNull;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.smart.base.config.GlobalConfig;
+import com.wu.safe.user.BuildConfig;
 import com.wu.safe.user.config.NetConfig;
 import com.smart.base.ui.widget.CommEditText;
 import com.smart.base.utils.IPUtil;
@@ -222,8 +227,15 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
     public void loginSuccess() {
         DialogUtils.dismissProgressDialog();
         Intent intent = new Intent(GlobalConfig.MAIN_INTENT);
-        startActivity(intent);
-        finish();
+        String className = queryPkgName(intent);
+        if(NotNull.isNotNull(className)){
+            intent.setClassName(BuildConfig.APP_ID, className);
+            startActivity(intent);
+            finish();
+        }else{
+            ToastUtils.showToast(this, "应用内部错误，请清除数据");
+
+        }
     }
 
     @Override
@@ -235,5 +247,19 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
     @Override
     public RxAppCompatActivity getRxActivity() {
         return this;
+    }
+
+    private String queryPkgName(Intent intent){
+        PackageManager packageManager = getPackageManager();
+        List<ResolveInfo> activitis = packageManager.queryIntentActivities(intent, 0);
+        for(ResolveInfo info : activitis){
+            ActivityInfo activityInfo = info.activityInfo;
+            if(activityInfo != null){
+                if(BuildConfig.APP_ID.equals(activityInfo.packageName)){
+                    return activityInfo.name;
+                }
+            }
+        }
+        return null;
     }
 }

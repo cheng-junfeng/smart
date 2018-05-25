@@ -144,6 +144,7 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 4: {
                             Bundle bundle = new Bundle();
+                            bundle.putString(WebConfig.JS_NAME, "百度");
                             bundle.putString(WebConfig.JS_URL, "http://www.baidu.com");
                             readGo(WebViewNormalActivity.class, bundle);
                         }
@@ -174,6 +175,7 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 11: {
                             Bundle bundle = new Bundle();
+                            bundle.putString(WebConfig.JS_NAME, "WS");
                             bundle.putString(WebConfig.JS_URL, "file:///android_asset/video/video.html");
                             readGo(WebViewNormalActivity.class, bundle);
                         }

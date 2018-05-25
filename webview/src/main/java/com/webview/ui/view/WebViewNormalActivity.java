@@ -23,6 +23,7 @@ import butterknife.BindView;
 public class WebViewNormalActivity extends WebBaseCompatActivity {
 
     public static final String TAG = "WebViewNormalActivity";
+    public static final String DEFAULT_TITLE = "WebView";
 
     @BindView(R2.id.webView)
     BridgeWebView webView;
@@ -48,7 +49,10 @@ public class WebViewNormalActivity extends WebBaseCompatActivity {
     ViewLoading mLoading;
     private void initView() {
         webView = (BridgeWebView) findViewById(R.id.webView);
-        ToolbarUtil.setToolbarLeft(toolbar, "WebView", null, new View.OnClickListener() {
+        Bundle bundle = getIntent().getExtras();
+        String urlString = (bundle == null) ? null : bundle.getString(WebConfig.JS_URL);
+        String urlName = (bundle == null) ? DEFAULT_TITLE : bundle.getString(WebConfig.JS_NAME, DEFAULT_TITLE);
+        ToolbarUtil.setToolbarLeft(toolbar, urlName, null, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
@@ -86,12 +90,6 @@ public class WebViewNormalActivity extends WebBaseCompatActivity {
         if (!mLoading.isShowing()) {
             mLoading.show();
         }
-        getNetData();
-    }
-
-    private void getNetData() {
-        Bundle bundle = getIntent().getExtras();
-        String urlString = (bundle == null) ? null : bundle.getString(WebConfig.JS_URL);
         webView.loadUrl(urlString);
     }
 
