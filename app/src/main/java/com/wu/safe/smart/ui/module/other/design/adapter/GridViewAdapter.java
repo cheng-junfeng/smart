@@ -7,18 +7,18 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.wu.safe.jsbridge.ui.bean.User;
 import com.wu.safe.smart.R;
+import com.wu.safe.smart.ui.module.other.design.bean.PageBean;
 
 import java.util.List;
 
 
 public class GridViewAdapter extends BaseAdapter {
-    private List<User> dataList;
+    private List<PageBean> dataList;
     private int page;
     private int pageSize;
 
-    public GridViewAdapter(List<User> datas, int page, int pageSize) {
+    public GridViewAdapter(List<PageBean> datas, int page, int pageSize) {
         dataList = datas;
         this.page = page;
         this.pageSize = pageSize;
@@ -52,7 +52,7 @@ public class GridViewAdapter extends BaseAdapter {
         } else {
             mHolder = (ViewHolder) itemView.getTag();
         }
-        User bean = dataList.get(i + page * pageSize);
+        PageBean bean = dataList.get(i + page * pageSize);
         mHolder.tv_text.setText(bean.name);
         return itemView;
     }

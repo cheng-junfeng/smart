@@ -1,9 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wu.safe.jsbridge" >
+    package="com.webview" >
     <application>
-        <activity android:name="com.wu.safe.jsbridge.ui.view.JSWebViewCustomActivity"
+        <activity android:name=".ui.view.WebViewCustomActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.wu.safe.jsbridge.ui.view.JSWebViewNormalActivity"
+        <activity android:name=".ui.view.WebViewNormalActivity"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

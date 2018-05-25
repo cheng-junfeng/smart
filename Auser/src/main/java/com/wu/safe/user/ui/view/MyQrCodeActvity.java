@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.tencent.bugly.beta.Beta;
-import com.tencent.bugly.beta.download.DownloadTask;
 import com.wu.safe.base.config.GlobalConfig;
 import com.wu.safe.base.ui.widget.CommEditText;
 import com.wu.safe.base.utils.DialogUtils;
@@ -14,7 +12,7 @@ import com.wu.safe.base.utils.TextUtil;
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
 import com.wu.safe.user.app.acitvity.UserBaseActivity;
-import com.wu.safe.zxinglib.utils.QRCodeUtil;
+import com.zxinglib.utils.QRCodeUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;

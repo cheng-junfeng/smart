@@ -8,8 +8,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
+import com.webview.ui.view.WebViewNormalFragment;
 import com.wu.safe.base.utils.ToolbarUtil;
-import com.wu.safe.jsbridge.ui.view.JSWebViewNormalFragment;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.module.other.design.adapter.TabAdapter;
@@ -29,9 +29,9 @@ public class TabActivity extends BaseCompatActivity {
     ViewPager viewPager;
 
     Context mContext;
-    JSWebViewNormalFragment toDoFragment1;
-    JSWebViewNormalFragment toDoFragment2;
-    JSWebViewNormalFragment toDoFragment3;
+    WebViewNormalFragment toDoFragment1;
+    WebViewNormalFragment toDoFragment2;
+    WebViewNormalFragment toDoFragment3;
     private List<Fragment> fragmentList = new ArrayList<>();
     private List<String> titleList = new ArrayList<>();
     private TabAdapter mAdapter;
@@ -59,9 +59,9 @@ public class TabActivity extends BaseCompatActivity {
         fragmentList = new ArrayList<>();
         titleList = new ArrayList<>();
 
-        toDoFragment1 = JSWebViewNormalFragment.newInstance("http://www.baidu.com/");
-        toDoFragment2 = JSWebViewNormalFragment.newInstance("http://www.baidu.com/");
-        toDoFragment3 = JSWebViewNormalFragment.newInstance("http://www.baidu.com/");
+        toDoFragment1 = WebViewNormalFragment.newInstance("http://www.baidu.com/");
+        toDoFragment2 = WebViewNormalFragment.newInstance("http://www.baidu.com/");
+        toDoFragment3 = WebViewNormalFragment.newInstance("http://www.baidu.com/");
         fragmentList.add(toDoFragment1);
         fragmentList.add(toDoFragment2);
         fragmentList.add(toDoFragment3);

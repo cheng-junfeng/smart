@@ -13,11 +13,11 @@ import android.widget.LinearLayout;
 
 import com.wu.safe.base.utils.DialogUtils;
 import com.wu.safe.base.utils.ToolbarUtil;
-import com.wu.safe.jsbridge.ui.bean.User;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.module.other.design.adapter.GridViewAdapter;
 import com.wu.safe.smart.ui.module.other.design.adapter.GridViewPagerAdapter;
+import com.wu.safe.smart.ui.module.other.design.bean.PageBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,7 @@ public class PageViewActivity extends BaseCompatActivity {
     LinearLayout llPoints;
 
     private List<GridView> gridList = new ArrayList<>();
-    private List<User> userList = new ArrayList<>();
+    private List<PageBean> userList = new ArrayList<>();
 
     private GridViewPagerAdapter mAdapter;
     private Context mContext;
@@ -64,7 +64,7 @@ public class PageViewActivity extends BaseCompatActivity {
         userVp.setAdapter(mAdapter);
 
         for (int i = 0; i < 20; i++) {
-            User tempUser = new User();
+            PageBean tempUser = new PageBean();
             tempUser.name = "Name" + i;
             userList.add(tempUser);
         }

@@ -112,7 +112,7 @@ dependencies {
     //zxing
     api project(':zxinglib')
     //video
-    implementation project(':videoAudio')
+    implementation project(':media')
     //hikvison
     implementation project(':hikvison')
     //hyphenate

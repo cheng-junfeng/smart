@@ -15,15 +15,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.baidu.track.activity.MapMainActivity;
-import com.jmolsmobile.videocapture.ui.view.VideoMainActivity;
-import com.wu.safe.ahik.view.HikTestActivity;
-import com.wu.safe.ahyphenate.ui.MainEaseActivity;
+import com.media.videocapture.ui.view.VideoMainActivity;
+import com.webview.ui.view.WebViewNormalActivity;
+import com.hikvison.view.HikTestActivity;
+import com.hyphenate.demo.MainEaseActivity;
 import com.wu.safe.apermission.ui.PermissionActivity;
 import com.wu.safe.apermission.ui.PlugActivity;
 import com.wu.safe.base.app.listener.OnClickLongListener;
 import com.wu.safe.base.utils.DialogUtils;
-import com.wu.safe.jsbridge.config.JSConfig;
-import com.wu.safe.jsbridge.ui.view.JSWebViewNormalActivity;
+import com.webview.config.WebConfig;
 import com.wu.safe.smart.BuildConfig;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatFragment;
@@ -144,8 +144,8 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 4: {
                             Bundle bundle = new Bundle();
-                            bundle.putString(JSConfig.JS_URL, "http://www.baidu.com");
-                            readGo(JSWebViewNormalActivity.class, bundle);
+                            bundle.putString(WebConfig.JS_URL, "http://www.baidu.com");
+                            readGo(WebViewNormalActivity.class, bundle);
                         }
                         break;
                         case 5: {
@@ -174,8 +174,8 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 11: {
                             Bundle bundle = new Bundle();
-                            bundle.putString(JSConfig.JS_URL, "file:///android_asset/video/video.html");
-                            readGo(JSWebViewNormalActivity.class, bundle);
+                            bundle.putString(WebConfig.JS_URL, "file:///android_asset/video/video.html");
+                            readGo(WebViewNormalActivity.class, bundle);
                         }
                         break;
                         case 12: {

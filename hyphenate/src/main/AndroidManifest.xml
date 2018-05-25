@@ -19,23 +19,23 @@
 
     <application>
         <activity
-            android:name="com.wu.safe.ahyphenate.ui.LoginEaseActivity"
+            android:name="com.hyphenate.demo.LoginEaseActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.wu.safe.ahyphenate.ui.MainEaseActivity"
+            android:name="com.hyphenate.demo.MainEaseActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
 
-        <activity android:name="com.wu.safe.ahyphenate.ui.ChatEaseActivity"
+        <activity android:name="com.hyphenate.demo.ChatEaseActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"
+            android:name=".ui.EaseShowBigImageActivity"
             android:screenOrientation="portrait" />
 
         <!-- 设置环信应用的appkey -->

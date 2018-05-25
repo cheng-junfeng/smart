@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.wu.safe.zxinglib.ui.ZxingView
+    <com.zxinglib.ui.ZxingView
         android:id="@+id/zxingView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

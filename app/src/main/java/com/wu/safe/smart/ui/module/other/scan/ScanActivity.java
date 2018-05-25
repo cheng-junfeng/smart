@@ -19,12 +19,12 @@ import com.wu.safe.base.utils.DialogUtils;
 import com.wu.safe.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
-import com.wu.safe.zxinglib.control.decode.DecodeType;
-import com.wu.safe.zxinglib.control.inter.CameraOpenCallBack;
-import com.wu.safe.zxinglib.control.inter.OnDiscernListener;
-import com.wu.safe.zxinglib.result.ErrorResult;
-import com.wu.safe.zxinglib.result.SuccessResult;
-import com.wu.safe.zxinglib.ui.ZxingView;
+import com.zxinglib.control.decode.DecodeType;
+import com.zxinglib.control.inter.CameraOpenCallBack;
+import com.zxinglib.control.inter.OnDiscernListener;
+import com.zxinglib.result.ErrorResult;
+import com.zxinglib.result.SuccessResult;
+import com.zxinglib.ui.ZxingView;
 
 import butterknife.BindView;
 

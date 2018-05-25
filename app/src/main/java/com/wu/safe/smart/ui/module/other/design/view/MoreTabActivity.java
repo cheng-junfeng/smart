@@ -11,8 +11,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
+import com.webview.ui.view.WebViewNormalFragment;
 import com.wu.safe.base.utils.ToolbarUtil;
-import com.wu.safe.jsbridge.ui.view.JSWebViewNormalFragment;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.module.other.design.bean.GroupData;
@@ -73,7 +73,7 @@ public class MoreTabActivity extends BaseCompatActivity {
         tabLayout.setTabTextColors(Color.parseColor("#b3ffffff"), Color.WHITE);
 
         for (GroupData data : groupDatas) {
-            JSWebViewNormalFragment f = JSWebViewNormalFragment.newInstance("http://www.baidu.com/");
+            WebViewNormalFragment f = WebViewNormalFragment.newInstance("http://www.baidu.com/");
             fragments.add(f);
         }
         adapter = new InnerAdapter(getSupportFragmentManager());
