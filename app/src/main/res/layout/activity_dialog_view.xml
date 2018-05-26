@@ -9,6 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <Button
+            android:id="@+id/progress0_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="进度条0" />
 
         <Button
             android:id="@+id/progress_view"

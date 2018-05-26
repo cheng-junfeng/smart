@@ -111,7 +111,7 @@ public abstract class BaseAppCompatActivity extends RxAppCompatActivity {
     }
 
     protected void finishAll(){
-        AppManager.getAppManager().finishActivity();
+        AppManager.getAppManager().finishAllActivity();
     }
 
     protected void appExit(){

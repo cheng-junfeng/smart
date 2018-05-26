@@ -17,6 +17,7 @@ import com.hintlib.listener.OnConfirmListener;
 import com.hintlib.listener.OnInputListener;
 import com.hintlib.utils.DialogUtils;
 import com.hintlib.utils.ToastUtils;
+import com.hintlib.widget.ViewLoading;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
@@ -64,9 +65,30 @@ public class DialogViewActivity extends BaseCompatActivity {
         });
     }
 
-    @OnClick({R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.confirm_view2, R.id.choose_view, R.id.input_view, R.id.toast_view, R.id.test1, R.id.test2})
+    ViewLoading mLoading;
+    @OnClick({R.id.progress0_view, R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.confirm_view2, R.id.choose_view, R.id.input_view, R.id.toast_view, R.id.test1, R.id.test2})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.progress0_view:
+                // 添加Loading
+                mLoading = new ViewLoading(this, 1,"") {
+                    @Override
+                    public void loadCancel() {
+                        ToastUtils.showToast(mContext, "progress0_view:取消");
+                    }
+                };
+                if (!mLoading.isShowing()) {
+                    mLoading.show();
+                }
+                progressView.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (mLoading != null && mLoading.isShowing()) {
+                            mLoading.dismiss();
+                        }
+                    }
+                }, 2000);
+                break;
             case R.id.progress_view:
                 DialogUtils.showProgressDialog(mContext);
                 break;
@@ -99,7 +121,7 @@ public class DialogViewActivity extends BaseCompatActivity {
                 allStr.add("choose1");
                 allStr.add("choose2");
                 allStr.add("choose3");
-                allStr.add("choose3");
+                allStr.add("choose4");
                 DialogUtils.showChooseDialog(mContext, allStr, new OnChooseListener() {
                     @Override
                     public void onPositiveSelect(int pos) {
@@ -135,7 +157,7 @@ public class DialogViewActivity extends BaseCompatActivity {
             public void run() {
                 DialogUtils.dismissProgressDialog();
             }
-        }, 5000);
+        }, 2000);
     }
 
     PopupWindow typePopupWindow;
