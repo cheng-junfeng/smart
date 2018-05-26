@@ -3,8 +3,8 @@ package com.wu.safe.rtmp.ui.view;
 import android.os.Bundle;
 import android.view.View;
 
-import com.hintlib.utils.ToastUtils;
-import com.smart.base.utils.ToolbarUtil;
+import com.hint.utils.ToastUtils;
+import com.base.utils.ToolbarUtil;
 import com.wu.safe.rtmp.R;
 import com.wu.safe.rtmp.R2;
 import com.wu.safe.rtmp.app.activity.RtmpCompatActivity;

@@ -4,7 +4,7 @@ package com.wu.safe.smart.net.service;
 
 import com.wu.safe.smart.net.bean.AreaInput;
 import com.wu.safe.smart.net.bean.AreaOutput;
-import com.smart.base.net.control.HttpResult;
+import com.base.net.control.HttpResult;
 
 import io.reactivex.Observable;
 import retrofit2.http.Body;

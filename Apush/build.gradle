@@ -56,7 +56,7 @@ dependencies {
     api 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
 
     //base
-    implementation project(':base')
+    implementation project(':baselib')
     //hint
     implementation project(':hintlib')
 }

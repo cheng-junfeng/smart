@@ -8,10 +8,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 
-import com.hintlib.utils.ToastUtils;
-import com.smart.base.utils.DensityUtils;
-import com.smart.base.utils.LogUtil;
-import com.smart.base.utils.ToolbarUtil;
+import com.hint.utils.ToastUtils;
+import com.base.utils.DensityUtils;
+import com.base.utils.LogUtil;
+import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.widget.swipemenu.SwipeMenuCreator;

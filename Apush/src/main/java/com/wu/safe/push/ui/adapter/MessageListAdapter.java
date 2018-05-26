@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.smart.base.app.listener.OnClickLongListener;
-import com.smart.base.ui.adapter.BaseRecyAdapter;
+import com.base.app.listener.OnClickLongListener;
+import com.base.app.adapter.BaseRecyAdapter;
 import com.wu.safe.push.R;
 import com.wu.safe.push.R2;
 import com.wu.safe.push.ui.bean.MessageListBean;

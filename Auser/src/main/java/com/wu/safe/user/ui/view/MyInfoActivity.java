@@ -8,12 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.hintlib.listener.OnConfirmListener;
-import com.hintlib.utils.DialogUtils;
-import com.smart.base.app.event.RxBusHelper;
-import com.smart.base.config.GlobalConfig;
-import com.smart.base.utils.ShareUtil;
-import com.smart.base.utils.ToolbarUtil;
+import com.hint.listener.OnConfirmListener;
+import com.hint.utils.DialogUtils;
+import com.base.app.event.RxBusHelper;
+import com.base.config.GlobalConfig;
+import com.base.utils.ShareUtil;
+import com.base.utils.ToolbarUtil;
 
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;

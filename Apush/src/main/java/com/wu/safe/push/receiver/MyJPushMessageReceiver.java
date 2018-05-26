@@ -2,11 +2,11 @@ package com.wu.safe.push.receiver;
 
 import android.content.Context;
 
-import com.smart.base.config.GlobalConfig;
-import com.smart.base.utils.LogUtil;
-import com.smart.base.utils.ShareUtil;
+import com.base.config.GlobalConfig;
+import com.base.utils.LogUtil;
+import com.base.utils.ShareUtil;
 import com.wu.safe.push.app.control.TagAliasOperatorHelper;
-import com.smart.base.app.event.RxBusHelper;
+import com.base.app.event.RxBusHelper;
 import com.wu.safe.push.app.event.MsgEvent;
 import com.wu.safe.push.app.event.MsgType;
 import com.wu.safe.push.config.PushSharePre;

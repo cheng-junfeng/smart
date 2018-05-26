@@ -9,9 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.smart.base.app.event.RxBusHelper;
-import com.smart.base.config.GlobalConfig;
-import com.smart.base.utils.ShareUtil;
+import com.base.app.event.RxBusHelper;
+import com.base.config.GlobalConfig;
+import com.base.utils.ShareUtil;
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
 import com.wu.safe.user.app.acitvity.UserBaseCompatFragment;

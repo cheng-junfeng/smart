@@ -33,7 +33,7 @@
                 android:textColor="@color/color_light_black"
                 android:textSize="10pt"/>
 
-            <com.smart.base.ui.widget.CommEditText
+            <com.custom.widget.CommEditText
                 android:id="@+id/dialog_content"
                 android:layout_toRightOf="@id/dialog_title"
                 android:layout_marginStart="@dimen/offset_5dp"

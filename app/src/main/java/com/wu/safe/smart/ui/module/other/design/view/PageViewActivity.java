@@ -11,8 +11,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.hintlib.utils.ToastUtils;
-import com.smart.base.utils.ToolbarUtil;
+import com.hint.utils.ToastUtils;
+import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.module.other.design.adapter.GridViewAdapter;

@@ -7,13 +7,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 
-import com.hintlib.utils.ToastUtils;
+import com.hint.utils.ToastUtils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.smart.base.utils.LogUtil;
-import com.smart.base.utils.ToolbarUtil;
+import com.base.utils.LogUtil;
+import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
-import com.smart.base.app.listener.OnClickLongListener;
+import com.base.app.listener.OnClickLongListener;
 import com.wu.safe.smart.ui.module.other.data.adapter.DataListAdapter;
 import com.wu.safe.smart.ui.module.other.data.bean.DataListBean;
 import com.wu.safe.smart.ui.module.other.data.contract.DataContract;

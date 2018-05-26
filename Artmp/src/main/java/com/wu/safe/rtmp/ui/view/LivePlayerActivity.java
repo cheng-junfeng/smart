@@ -6,15 +6,15 @@ import android.view.WindowManager;
 import android.widget.Toast;
 import java.util.HashMap;
 
-import com.hintlib.utils.DialogUtils;
-import com.hintlib.utils.ToastUtils;
+import com.hint.utils.DialogUtils;
+import com.hint.utils.ToastUtils;
 import com.tencent.rtmp.ITXLivePlayListener;
 import com.tencent.rtmp.TXLiveConstants;
 import com.tencent.rtmp.TXLivePlayConfig;
 import com.tencent.rtmp.TXLivePlayer;
 import com.tencent.rtmp.ui.TXCloudVideoView;
-import com.smart.base.utils.LogUtil;
-import com.smart.base.utils.ToolbarUtil;
+import com.base.utils.LogUtil;
+import com.base.utils.ToolbarUtil;
 import com.wu.safe.rtmp.R;
 import com.wu.safe.rtmp.app.activity.RtmpCompatActivity;
 

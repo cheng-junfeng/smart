@@ -9,8 +9,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.smart.base.utils.LogUtil;
-import com.smart.base.utils.ToolbarUtil;
+import com.base.utils.LogUtil;
+import com.base.utils.ToolbarUtil;
 import com.wu.safe.rtmp.R;
 import com.wu.safe.rtmp.R2;
 import com.wu.safe.rtmp.app.activity.RtmpCompatActivity;

@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
-import com.smart.base.utils.LogUtil;
-import com.smart.base.utils.ToolbarUtil;
+import com.base.utils.LogUtil;
+import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 

@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.hintlib.listener.OnConfirmListener;
-import com.hintlib.utils.DialogUtils;
+import com.hint.listener.OnConfirmListener;
+import com.hint.utils.DialogUtils;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.user.ui.presenter.LoginPresenter;

@@ -2,15 +2,15 @@ package com.wu.safe.smart.ui.module.main.main.presenter;
 
 
 import com.blankj.utilcode.util.LogUtils;
-import com.smart.base.config.GlobalConfig;
-import com.smart.base.utils.LogUtil;
-import com.smart.base.utils.ShareUtil;
+import com.base.config.GlobalConfig;
+import com.base.utils.LogUtil;
+import com.base.utils.ShareUtil;
 
 import com.wu.safe.user.db.entity.UserEntity;
 import com.wu.safe.user.db.helper.UserHelper;
 import com.wu.safe.user.net.bean.MyInfoOutput;
-import com.smart.base.net.helper.HttpHelper;
-import com.smart.base.net.control.HttpResult;
+import com.base.net.helper.HttpHelper;
+import com.base.net.control.HttpResult;
 import com.wu.safe.smart.net.control.RetrofitHelper;
 import com.wu.safe.user.net.service.UserService;
 import com.wu.safe.smart.ui.module.main.main.contract.MainContract;

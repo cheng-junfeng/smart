@@ -1,6 +1,6 @@
 package com.wu.safe.push.ui.presenter;
 
-import com.smart.base.utils.TimeUtil;
+import com.base.utils.TimeUtil;
 import com.wu.safe.push.db.entity.MessagesEntity;
 import com.wu.safe.push.db.helper.MessageHelper;
 import com.wu.safe.push.ui.bean.MessageListBean;

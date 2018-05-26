@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
 import android.support.multidex.MultiDexApplication;
-import android.widget.Toast;
 
 import com.baidu.track.control.Bmap;
 import com.blankj.utilcode.util.Utils;
@@ -14,8 +13,8 @@ import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
 import com.tencent.bugly.beta.UpgradeInfo;
 import com.tencent.bugly.beta.upgrade.UpgradeListener;
-import com.smart.base.config.GlobalConfig;
-import com.smart.base.utils.LogUtil;
+import com.base.config.GlobalConfig;
+import com.base.utils.LogUtil;
 import com.wu.safe.push.app.control.Push;
 import com.wu.safe.push.db.control.PushDbManager;
 import com.wu.safe.smart.db.control.AppDbManager;

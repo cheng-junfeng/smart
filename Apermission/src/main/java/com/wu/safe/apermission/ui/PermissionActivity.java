@@ -8,12 +8,12 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.view.View;
 
-import com.hintlib.utils.ToastUtils;
+import com.hint.utils.ToastUtils;
 import com.wu.safe.apermission.R;
 import com.wu.safe.apermission.app.acitvity.PermissBaseCompatActivity;
 import com.wu.safe.apermission.utils.PermissionsCheckerUtils;
-import com.smart.base.utils.LogUtil;
-import com.smart.base.utils.ToolbarUtil;
+import com.base.utils.LogUtil;
+import com.base.utils.ToolbarUtil;
 
 
 public class PermissionActivity extends PermissBaseCompatActivity {

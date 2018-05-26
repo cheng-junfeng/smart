@@ -24,7 +24,7 @@ import com.baidu.trace.model.SortType;
 import com.baidu.trace.model.TraceLocation;
 import com.baidu.track.control.Bmap;
 import com.baidu.track.model.CurrentLocation;
-import com.smart.base.utils.ShareUtil;
+import com.base.utils.ShareUtil;
 
 import java.util.List;
 

@@ -99,7 +99,7 @@ dependencies {
     }
 
     //base
-    implementation project(':base')
+    implementation project(':baselib')
     //jpush
     implementation project(':Apush')
     //user
@@ -123,4 +123,6 @@ dependencies {
     api project(':hyphenate')
     //hint
     implementation project(':hintlib')
+    //customlib
+    implementation project(':customlib')
 }

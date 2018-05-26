@@ -4,15 +4,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.hintlib.utils.ToastUtils;
-import com.smart.base.config.GlobalConfig;
-import com.smart.base.ui.widget.CommEditText;
-import com.smart.base.utils.NotNull;
-import com.smart.base.utils.ShareUtil;
+import com.custom.widget.CommEditText;
+import com.hint.utils.ToastUtils;
+import com.base.config.GlobalConfig;
+import com.base.utils.NotNull;
+import com.base.utils.ShareUtil;
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
 import com.wu.safe.user.app.acitvity.UserBaseActivity;
-import com.zxinglib.utils.QRCodeUtil;
+import com.zxing.utils.QRCodeUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;

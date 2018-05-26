@@ -14,17 +14,17 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.hintlib.utils.ToastUtils;
-import com.smart.base.utils.DensityUtils;
-import com.smart.base.utils.ToolbarUtil;
+import com.hint.utils.ToastUtils;
+import com.base.utils.DensityUtils;
+import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
-import com.zxinglib.control.decode.DecodeType;
-import com.zxinglib.control.inter.CameraOpenCallBack;
-import com.zxinglib.control.inter.OnDiscernListener;
-import com.zxinglib.result.ErrorResult;
-import com.zxinglib.result.SuccessResult;
-import com.zxinglib.ui.ZxingView;
+import com.zxing.control.decode.DecodeType;
+import com.zxing.control.inter.CameraOpenCallBack;
+import com.zxing.control.inter.OnDiscernListener;
+import com.zxing.result.ErrorResult;
+import com.zxing.result.SuccessResult;
+import com.zxing.widget.ZxingView;
 
 import butterknife.BindView;
 

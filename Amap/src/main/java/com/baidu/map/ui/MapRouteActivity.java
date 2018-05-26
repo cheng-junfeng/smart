@@ -29,10 +29,10 @@ import com.baidu.mapapi.search.route.WalkingRouteResult;
 import com.baidu.track.R;
 import com.baidu.track.R2;
 import com.baidu.track.activity.BmapBaseCompatActivity;
-import com.hintlib.listener.OnChooseListener;
-import com.hintlib.utils.DialogUtils;
-import com.hintlib.utils.ToastUtils;
-import com.smart.base.utils.ToolbarUtil;
+import com.hint.listener.OnChooseListener;
+import com.hint.utils.DialogUtils;
+import com.hint.utils.ToastUtils;
+import com.base.utils.ToolbarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -158,7 +158,7 @@ public class MapRouteActivity extends BmapBaseCompatActivity implements OnGetRou
                 }
                 DialogUtils.showChooseDialog(mContext, allTitle, new OnChooseListener() {
                     @Override
-                    public void onPositiveSelect(int pos) {
+                    public void onPositive(int pos) {
                         DrivingRouteOverlay overlay = new MyDrivingRouteOverlay(mBaiduMap);
                         mBaiduMap.setOnMarkerClickListener(overlay);
                         overlay.setData(allLines.get(pos));

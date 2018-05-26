@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.hintlib.listener.OnChooseListener;
+import com.hint.listener.OnChooseListener;
 import com.wu.safe.user.R;
 import com.wu.safe.user.ui.bean.CountryBean;
 
@@ -82,7 +82,7 @@ public class CountryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 @Override
                 public void onClick(View v) {
                     int pos = holder.getLayoutPosition();
-                    mOnClickListener.onPositiveSelect(pos);
+                    mOnClickListener.onPositive(pos);
                 }
             });
         }

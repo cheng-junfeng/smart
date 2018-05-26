@@ -12,7 +12,7 @@ import com.baidu.trace.model.LocationMode;
 
 import com.baidu.track.R;
 import com.baidu.track.utils.Constants;
-import com.smart.base.utils.ToolbarUtil;
+import com.base.utils.ToolbarUtil;
 
 import static com.baidu.trace.model.LocationMode.High_Accuracy;
 

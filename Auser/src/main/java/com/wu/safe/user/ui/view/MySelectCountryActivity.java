@@ -6,13 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.blankj.utilcode.util.EmptyUtils;
+import com.custom.widget.WaveSideBarView;
 import com.google.gson.reflect.TypeToken;
-import com.hintlib.listener.OnChooseListener;
-import com.smart.base.app.event.RxBusHelper;
-import com.smart.base.ui.widget.WaveSideBarView;
-import com.smart.base.utils.GsonUtil;
-import com.smart.base.utils.LogUtil;
-import com.smart.base.utils.ToolbarUtil;
+import com.hint.listener.OnChooseListener;
+import com.base.app.event.RxBusHelper;
+import com.base.utils.GsonUtil;
+import com.base.utils.LogUtil;
+import com.base.utils.ToolbarUtil;
 import com.wu.safe.user.R;
 import com.wu.safe.user.R2;
 import com.wu.safe.user.app.acitvity.UserBaseCompatActivity;
@@ -87,7 +87,7 @@ public class MySelectCountryActivity extends UserBaseCompatActivity {
             countryAdapter = new CountryAdapter(data);
             countryAdapter.setOnItemClickListener(new OnChooseListener() {
                 @Override
-                public void onPositiveSelect(int position) {
+                public void onPositive(int position) {
                     CountryBean bean = countryAdapter.getItem(position);
                     if (EmptyUtils.isEmpty(bean.code)) {
                         LogUtil.d(TAG, "do nothing");

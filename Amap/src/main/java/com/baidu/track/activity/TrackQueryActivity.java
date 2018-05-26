@@ -48,8 +48,8 @@ import com.baidu.track.utils.CommonUtil;
 import com.baidu.track.utils.Constants;
 import com.baidu.track.utils.MapUtil;
 import com.baidu.track.utils.ViewUtil;
-import com.smart.base.app.activity.BaseAppCompatActivity;
-import com.smart.base.utils.ToolbarUtil;
+import com.base.app.activity.BaseAppCompatActivity;
+import com.base.utils.ToolbarUtil;
 
 import java.util.ArrayList;
 import java.util.List;

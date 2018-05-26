@@ -64,7 +64,7 @@
                 android:text="+86"
                 android:textColor="#333333" />
 
-            <com.smart.base.ui.widget.CommEditText
+            <com.custom.widget.CommEditText
                 android:id="@+id/et_phone"
                 style="@style/ModuleUserEditTextCommon"
                 android:hint="请输入手机号"
@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/base_button_height">
 
-            <com.smart.base.ui.widget.CommEditText
+            <com.custom.widget.CommEditText
                 android:id="@+id/et_authCode"
                 style="@style/ModuleUserEditTextCommon"
                 android:layout_toLeftOf="@+id/bt_sendCode"

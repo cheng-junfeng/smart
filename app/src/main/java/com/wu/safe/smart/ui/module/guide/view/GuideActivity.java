@@ -6,10 +6,10 @@ import android.support.annotation.Nullable;
 import android.view.KeyEvent;
 import android.view.WindowManager;
 
-import com.smart.base.utils.LogUtil;
+import com.base.utils.LogUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
-import com.smart.base.app.thread.WeakHandler;
+import com.base.app.thread.WeakHandler;
 import com.wu.safe.smart.ui.module.main.MainActivity;
 import com.wu.safe.user.ui.view.MyLoginActivity;
 import com.wu.safe.user.ui.presenter.LoginPresenter;

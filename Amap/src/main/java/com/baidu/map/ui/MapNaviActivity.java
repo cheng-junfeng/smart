@@ -13,7 +13,7 @@ import com.baidu.navisdk.adapter.BNRoutePlanNode;
 import com.baidu.track.R;
 import com.baidu.track.R2;
 import com.baidu.track.activity.BmapBaseCompatActivity;
-import com.smart.base.utils.ToolbarUtil;
+import com.base.utils.ToolbarUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;

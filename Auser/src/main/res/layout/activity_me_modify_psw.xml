@@ -15,7 +15,7 @@
         android:background="@color/color_white"
         android:orientation="vertical">
 
-        <com.smart.base.ui.widget.CommEditText
+        <com.custom.widget.CommEditText
             android:id="@+id/et_old_psw"
             style="@style/ModuleUserEditTextCommon"
             android:drawableLeft="@mipmap/login_psw_icon"
@@ -26,7 +26,7 @@
 
         <View style="@style/DeepUnderLine" />
 
-        <com.smart.base.ui.widget.CommEditText
+        <com.custom.widget.CommEditText
             android:id="@+id/et_psw"
             style="@style/ModuleUserEditTextCommon"
             android:drawableLeft="@mipmap/login_psw_icon"
@@ -75,7 +75,7 @@
 
         <View style="@style/DeepUnderLine" />
 
-        <com.smart.base.ui.widget.CommEditText
+        <com.custom.widget.CommEditText
             android:id="@+id/et_pswConfirm"
             style="@style/ModuleUserEditTextCommon"
             android:drawableLeft="@mipmap/login_psw_icon"

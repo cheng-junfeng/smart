@@ -3,7 +3,7 @@ package com.wu.safe.push.utils;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import com.smart.base.utils.LogUtil;
+import com.base.utils.LogUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;

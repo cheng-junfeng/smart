@@ -44,7 +44,7 @@ dependencies {
     implementation "com.android.support:cardview-v7:26.1.0"
 
     //base
-    implementation project(':base')
+    implementation project(':baselib')
     //hint
     implementation project(':hintlib')
 }

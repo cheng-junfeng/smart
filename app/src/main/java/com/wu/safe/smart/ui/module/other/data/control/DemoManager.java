@@ -3,7 +3,7 @@ package com.wu.safe.smart.ui.module.other.data.control;
 import android.content.Context;
 import android.content.res.Resources;
 
-import com.smart.base.utils.LogUtil;
+import com.base.utils.LogUtil;
 import com.wu.safe.smart.db.entity.DataEntity;
 import com.wu.safe.smart.db.helper.DataHelper;
 import com.wu.safe.push.db.helper.MessageHelper;

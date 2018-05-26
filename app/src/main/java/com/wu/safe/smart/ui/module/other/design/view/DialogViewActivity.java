@@ -12,12 +12,12 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.hintlib.listener.OnChooseListener;
-import com.hintlib.listener.OnConfirmListener;
-import com.hintlib.listener.OnInputListener;
-import com.hintlib.utils.DialogUtils;
-import com.hintlib.utils.ToastUtils;
-import com.smart.base.utils.ToolbarUtil;
+import com.hint.listener.OnChooseListener;
+import com.hint.listener.OnConfirmListener;
+import com.hint.listener.OnInputListener;
+import com.hint.utils.DialogUtils;
+import com.hint.utils.ToastUtils;
+import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 
@@ -109,7 +109,7 @@ public class DialogViewActivity extends BaseCompatActivity {
                 allStr.add("choose4");
                 DialogUtils.showChooseDialog(mContext, allStr, new OnChooseListener() {
                     @Override
-                    public void onPositiveSelect(int pos) {
+                    public void onPositive(int pos) {
                         ToastUtils.showToast(mContext, "choose:" + pos);
                     }
                 });

@@ -10,7 +10,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import com.smart.base.utils.LogUtil;
+import com.base.utils.LogUtil;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -8,8 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wu.safe.smart.R;
-import com.smart.base.ui.adapter.BaseRecyAdapter;
-import com.smart.base.app.listener.OnClickLongListener;
+import com.base.app.adapter.BaseRecyAdapter;
+import com.base.app.listener.OnClickLongListener;
 import com.wu.safe.smart.ui.module.main.home.bean.HomeListBean;
 
 import java.util.ArrayList;

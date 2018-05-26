@@ -7,7 +7,7 @@ import android.webkit.WebView;
 
 import com.github.lzyzsd.jsbridge.BridgeWebView;
 
-import com.hintlib.utils.DialogUtils;
+import com.hint.utils.DialogUtils;
 import com.webview.R;
 import com.webview.R2;
 import com.webview.app.activity.WebBaseCompatActivity;

@@ -11,8 +11,8 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 
 import com.google.gson.Gson;
-import com.smart.base.utils.LogUtil;
-import com.smart.base.utils.ShareUtil;
+import com.base.utils.LogUtil;
+import com.base.utils.ShareUtil;
 import com.wu.safe.push.config.PushConfig;
 import com.wu.safe.push.config.PushSharePre;
 import com.wu.safe.push.ui.bean.MqttBean;

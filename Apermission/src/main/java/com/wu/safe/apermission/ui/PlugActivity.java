@@ -9,15 +9,15 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 
-import com.hintlib.listener.OnConfirmListener;
-import com.hintlib.utils.DialogUtils;
+import com.hint.listener.OnConfirmListener;
+import com.hint.utils.DialogUtils;
 import com.wu.safe.apermission.R;
 import com.wu.safe.apermission.R2;
 import com.wu.safe.apermission.app.acitvity.PermissBaseCompatActivity;
 import com.wu.safe.apermission.utils.AppUtils;
-import com.smart.base.utils.FileUtil;
-import com.smart.base.utils.LogUtil;
-import com.smart.base.utils.ToolbarUtil;
+import com.base.utils.FileUtil;
+import com.base.utils.LogUtil;
+import com.base.utils.ToolbarUtil;
 
 import butterknife.OnClick;
 

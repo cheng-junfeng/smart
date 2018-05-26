@@ -45,7 +45,7 @@
                     style="@style/MeInfoTextLeftStyle"
                     android:text="显示启动页" />
 
-                <com.smart.base.ui.widget.SwitchButton
+                <com.custom.widget.SwitchButton
                     android:id="@+id/switch_pic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                     style="@style/MeInfoTextLeftStyle"
                     android:text="推送开关" />
 
-                <com.smart.base.ui.widget.SwitchButton
+                <com.custom.widget.SwitchButton
                     android:id="@+id/switch_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

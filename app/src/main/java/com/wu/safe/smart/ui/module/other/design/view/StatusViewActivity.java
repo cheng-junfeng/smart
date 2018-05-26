@@ -1,6 +1,5 @@
 package com.wu.safe.smart.ui.module.other.design.view;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -8,7 +7,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.jaeger.library.StatusBarUtil;
-import com.smart.base.utils.ToolbarUtil;
+import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 
