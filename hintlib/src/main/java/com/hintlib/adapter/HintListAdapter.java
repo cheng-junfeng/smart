@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BaseListAdapter extends BaseRecyAdapter<BaseListAdapter.ViewHolder> {
+public class HintListAdapter extends HintRecyAdapter<HintListAdapter.ViewHolder> {
 
     OnChooseListener mOnClickListener;
     List<String> data;
 
-    public BaseListAdapter(List<String> data) {
+    public HintListAdapter(List<String> data) {
         this.data = data;
     }
 
@@ -58,7 +58,7 @@ public class BaseListAdapter extends BaseRecyAdapter<BaseListAdapter.ViewHolder>
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.base_list_item, parent, false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.hint_list_item, parent, false));
     }
 
     @Override

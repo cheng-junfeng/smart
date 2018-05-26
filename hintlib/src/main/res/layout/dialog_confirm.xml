@@ -7,7 +7,7 @@
         android:layout_width="@dimen/dialog_200dp"
         android:layout_height="@dimen/dialog_height"
         android:orientation="vertical"
-        android:background="@drawable/dialog_shape_bg">
+        android:background="@drawable/dialog_shape_bg_white">
         <TextView
             android:id="@+id/tv_message"
             android:layout_width="match_parent"
@@ -17,6 +17,8 @@
             android:background="@color/color_light_white"
             android:textColor="@color/color_light_black"
             android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
             android:paddingTop="@dimen/offset_10dp"
             android:paddingBottom="@dimen/offset_10dp"
             android:paddingRight="25dp"

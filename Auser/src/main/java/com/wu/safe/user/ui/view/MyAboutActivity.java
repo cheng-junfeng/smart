@@ -63,7 +63,7 @@ public class MyAboutActivity extends UserBaseCompatActivity {
 
     @OnClick(R2.id.ly_checkVersion)
     public void onViewClicked() {
-        DialogUtils.showProgressMsgDialog(mContext, "正在检测更新");
+        DialogUtils.showProgressDialog(mContext, "正在检测更新");
         Beta.checkUpgrade();
         tvVersion.postDelayed(new Runnable() {
             @Override

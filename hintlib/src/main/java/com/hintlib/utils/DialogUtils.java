@@ -2,6 +2,7 @@ package com.hintlib.utils;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.os.CountDownTimer;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -15,7 +16,7 @@ import android.widget.TextView;
 
 
 import com.hintlib.R;
-import com.hintlib.adapter.BaseListAdapter;
+import com.hintlib.adapter.HintListAdapter;
 import com.hintlib.listener.OnChooseListener;
 import com.hintlib.listener.OnConfirmListener;
 import com.hintlib.listener.OnInputListener;
@@ -24,12 +25,38 @@ import java.util.List;
 
 public class DialogUtils {
 
+    private static HintLoadingDialog loadingDialog = null;
+
+    public static void showLoading(Context context) {
+        loadingDialog = new HintLoadingDialog(context, 0,"");
+        if (null != loadingDialog && !loadingDialog.isShowing()) {
+            loadingDialog.show();
+        }
+    }
+
+    public static void showLoading(Context context, String msg) {
+        loadingDialog = new HintLoadingDialog(context, 1, msg);
+        if (null != loadingDialog && !loadingDialog.isShowing()) {
+            loadingDialog.show();
+        }
+    }
+
+    public static void dismissLoading() {
+        if (null != loadingDialog) {
+            if (loadingDialog.isShowing()) {
+                loadingDialog.cancel();
+                loadingDialog.dismiss();
+            }
+            loadingDialog = null;
+        }
+    }
+
     private static Dialog progressdialog = null;
 
     public static void showProgressDialog(Context context) {
         dismissProgressDialog();
         if (null == progressdialog) {
-            progressdialog = new Dialog(context, R.style.Theme_AppCompat_Light_Dialog);
+            progressdialog = new Dialog(context, R.style.Loading);
             progressdialog.setCanceledOnTouchOutside(false);
             progressdialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             View view = LayoutInflater.from(context).inflate(R.layout.dialog_progress, null);
@@ -42,10 +69,10 @@ public class DialogUtils {
         }
     }
 
-    public static void showProgressMsgDialog(Context context, String msg) {
+    public static void showProgressDialog(Context context, String msg) {
         dismissProgressDialog();
         if (null == progressdialog) {
-            progressdialog = new Dialog(context, R.style.Theme_AppCompat_Light_Dialog);
+            progressdialog = new Dialog(context, R.style.Loading);
             progressdialog.setCanceledOnTouchOutside(false);
             progressdialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             View view = LayoutInflater.from(context).inflate(R.layout.dialog_progress_msg, null);
@@ -80,8 +107,14 @@ public class DialogUtils {
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             View view = LayoutInflater.from(context).inflate(R.layout.dialog_choose, null);
             RecyclerView mainView = view.findViewById(R.id.main_view);
-            BaseListAdapter mAdapter = new BaseListAdapter(allStr);
-            mAdapter.setOnListener(listener);
+            HintListAdapter mAdapter = new HintListAdapter(allStr);
+            mAdapter.setOnListener(new OnChooseListener() {
+                @Override
+                public void onPositiveSelect(int pos) {
+                    dismissDialog();
+                    listener.onPositiveSelect(pos);
+                }
+            });
 
             mainView.setLayoutManager(new LinearLayoutManager(context));
             mainView.setHasFixedSize(true);

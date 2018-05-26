@@ -2,7 +2,7 @@
 
     <item>
         <rotate
-            android:drawable="@drawable/dialog_progress_icon"
+            android:drawable="@drawable/hint_loading"
             android:fromDegrees="0"
             android:pivotX="50%"
             android:pivotY="50%"

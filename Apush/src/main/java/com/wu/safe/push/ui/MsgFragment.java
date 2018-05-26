@@ -125,7 +125,7 @@ public class MsgFragment extends PushBaseCompatFragment implements MsgContract.V
         ivMsgError.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogUtils.showProgressMsgDialog(mContext, "正在刷新");
+                DialogUtils.showProgressDialog(mContext, "正在刷新");
                 Push.resume(mContext);
                 Push.resumeMqtt(mContext);
                 recyclerView.postDelayed(new Runnable() {

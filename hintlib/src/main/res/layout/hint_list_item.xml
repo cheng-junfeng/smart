@@ -19,6 +19,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="start|center_vertical"
             android:gravity="center_vertical"
+            android:textColor="@color/blackText3"
             android:text="null" />
     </LinearLayout>
     <View

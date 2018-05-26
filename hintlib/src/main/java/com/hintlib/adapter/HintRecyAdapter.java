@@ -3,7 +3,7 @@ package com.hintlib.adapter;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-public abstract class BaseRecyAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
+public abstract class HintRecyAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
 
     public interface OnItemClickListener {
         void onItemClick(View view, int position);

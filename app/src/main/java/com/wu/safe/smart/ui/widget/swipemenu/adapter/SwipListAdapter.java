@@ -50,7 +50,7 @@ public class SwipListAdapter extends BaseAdapter {
         ViewHolder holder;
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = LayoutInflater.from(context).inflate(R.layout.base_list_item, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.hint_list_item, null);
             holder.tvName = (TextView) convertView.findViewById(R.id.hm_content);
             convertView.setTag(holder);
         } else {

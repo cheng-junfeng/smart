@@ -17,7 +17,6 @@ import com.hintlib.listener.OnConfirmListener;
 import com.hintlib.listener.OnInputListener;
 import com.hintlib.utils.DialogUtils;
 import com.hintlib.utils.ToastUtils;
-import com.hintlib.widget.ViewLoading;
 import com.smart.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
@@ -65,51 +64,37 @@ public class DialogViewActivity extends BaseCompatActivity {
         });
     }
 
-    ViewLoading mLoading;
-    @OnClick({R.id.progress0_view, R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.confirm_view2, R.id.choose_view, R.id.input_view, R.id.toast_view, R.id.test1, R.id.test2})
+    @OnClick({R.id.progress0_view, R.id.progress00_view, R.id.progress_view, R.id.progress2_view, R.id.confirm_view, R.id.confirm_view2,
+            R.id.choose_view, R.id.input_view, R.id.toast_view, R.id.test1, R.id.test2})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.progress0_view:
-                // 添加Loading
-                mLoading = new ViewLoading(this, 1,"") {
-                    @Override
-                    public void loadCancel() {
-                        ToastUtils.showToast(mContext, "progress0_view:取消");
-                    }
-                };
-                if (!mLoading.isShowing()) {
-                    mLoading.show();
-                }
-                progressView.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (mLoading != null && mLoading.isShowing()) {
-                            mLoading.dismiss();
-                        }
-                    }
-                }, 2000);
+                DialogUtils.showLoading(mContext);
+                break;
+            case R.id.progress00_view:
+                DialogUtils.showLoading(mContext, "拼命加载中");
                 break;
             case R.id.progress_view:
                 DialogUtils.showProgressDialog(mContext);
                 break;
             case R.id.progress2_view:
-                DialogUtils.showProgressMsgDialog(mContext, "正在进行");
+                DialogUtils.showProgressDialog(mContext, "正在玩命加载加载中");
                 break;
             case R.id.confirm_view:
-                DialogUtils.showConfirmDialog(mContext, "确认？", new OnConfirmListener() {
+                DialogUtils.showConfirmDialog(mContext, "这是一个确认框？", new OnConfirmListener() {
                     @Override
                     public void onClickPositive() {
-                        ToastUtils.showToast(mContext, "confirm:确认");
+                        ToastUtils.showToast(mContext, "确认");
                     }
 
                     @Override
                     public void onClickNegative() {
-                        ToastUtils.showToast(mContext, "choose:取消");
+                        ToastUtils.showToast(mContext, "取消");
                     }
                 });
                 break;
             case R.id.confirm_view2:
-                DialogUtils.showConfirmAlertDialog(mContext, "确认2 ？", new View.OnClickListener() {
+                DialogUtils.showConfirmAlertDialog(mContext, "这是一个确认框？", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         ToastUtils.showToast(mContext, "confirm2:确认");
@@ -143,8 +128,9 @@ public class DialogViewActivity extends BaseCompatActivity {
                 });
                 break;
             case R.id.toast_view:
-                ToastUtils.showToast(mContext, "提示");
+                ToastUtils.showToast(mContext, "这是一个很长很长的提示!...");
                 break;
+
             case R.id.test1:
                 showPopupWindow(1);
                 break;
@@ -156,6 +142,7 @@ public class DialogViewActivity extends BaseCompatActivity {
             @Override
             public void run() {
                 DialogUtils.dismissProgressDialog();
+                DialogUtils.dismissLoading();
             }
         }, 2000);
     }

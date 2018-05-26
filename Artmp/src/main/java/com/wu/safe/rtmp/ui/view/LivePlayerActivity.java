@@ -61,7 +61,7 @@ public class LivePlayerActivity extends RtmpCompatActivity implements ITXLivePla
         }
         mPlayerView = (TXCloudVideoView) findViewById(R.id.video);
 
-        DialogUtils.showProgressMsgDialog(this, "正在加载");
+        DialogUtils.showProgressDialog(this, "正在加载");
         startPlay();
         setCacheStrategy(CACHE_STRATEGY_AUTO);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);

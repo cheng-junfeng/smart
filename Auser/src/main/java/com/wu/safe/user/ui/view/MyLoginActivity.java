@@ -220,7 +220,7 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
 
     @Override
     public void loginProgress() {
-        DialogUtils.showProgressMsgDialog(this, "正在登录");
+        DialogUtils.showProgressDialog(this, "正在登录");
     }
 
     @Override

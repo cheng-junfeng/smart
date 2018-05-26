@@ -84,7 +84,7 @@ public class MapOverLayActivity extends BmapBaseCompatActivity {
         mBaiduMap.setOnMarkerClickListener(new BaiduMap.OnMarkerClickListener() {
             public boolean onMarkerClick(final Marker marker) {
                 Button button = new Button(getApplicationContext());
-                button.setBackgroundResource(R.drawable.dialog_shape_bg);
+                button.setBackgroundResource(R.drawable.dialog_shape_bg_white);
                 InfoWindow.OnInfoWindowClickListener listener = null;
                 if (marker == mMarkerA || marker == mMarkerD) {
                     button.setText("更改位置");
