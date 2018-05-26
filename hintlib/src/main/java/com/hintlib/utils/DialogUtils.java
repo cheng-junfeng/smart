@@ -2,9 +2,6 @@ package com.hintlib.utils;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.os.CountDownTimer;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -12,11 +9,11 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
 import com.hintlib.R;
-import com.hintlib.adapter.HintListAdapter;
 import com.hintlib.listener.OnChooseListener;
 import com.hintlib.listener.OnConfirmListener;
 import com.hintlib.listener.OnInputListener;
@@ -106,8 +103,8 @@ public class DialogUtils {
             dialog.setCancelable(true);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             View view = LayoutInflater.from(context).inflate(R.layout.dialog_choose, null);
-            RecyclerView mainView = view.findViewById(R.id.main_view);
-            HintListAdapter mAdapter = new HintListAdapter(allStr);
+            ListView mainView = view.findViewById(R.id.main_view);
+            HintListAdapter mAdapter = new HintListAdapter(context, allStr);
             mAdapter.setOnListener(new OnChooseListener() {
                 @Override
                 public void onPositiveSelect(int pos) {
@@ -115,9 +112,6 @@ public class DialogUtils {
                     listener.onPositiveSelect(pos);
                 }
             });
-
-            mainView.setLayoutManager(new LinearLayoutManager(context));
-            mainView.setHasFixedSize(true);
             mainView.setAdapter(mAdapter);
             dialog.setContentView(view);
         }
