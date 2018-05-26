@@ -92,7 +92,7 @@ public class SmartApplication extends MultiDexApplication {
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(i);
                 } else {
-                    Toast.makeText(getApplicationContext(), "没有更新", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "没有更新", Toast.LENGTH_SHORT).show();
                 }
             }
         };

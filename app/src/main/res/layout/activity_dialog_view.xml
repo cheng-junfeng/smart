@@ -82,7 +82,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/offset_3dp"
+                android:layout_marginTop="@dimen/offset_30dp"
+                android:textColor="@color/white"
+                android:background="@drawable/type_blue"
                 android:text="弹框1" />
 
             <TextView
@@ -92,6 +94,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/offset_30dp"
                 android:layout_gravity="end"
+                android:textColor="@color/white"
+                android:background="@drawable/type_com"
                 android:text="弹框2" />
         </LinearLayout>
 

@@ -18,6 +18,8 @@ import com.wu.safe.smart.ui.module.other.design.view.LeftViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.MoreTabActivity;
 import com.wu.safe.smart.ui.module.other.design.view.PageViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.PicChooseActivity;
+import com.wu.safe.smart.ui.module.other.design.view.StatusViewActivity;
+import com.wu.safe.smart.ui.module.other.design.view.SwipeMenuActivity;
 import com.wu.safe.smart.ui.module.other.design.view.TabActivity;
 import com.wu.safe.smart.ui.module.other.design.view.TopDraggerActivity;
 import com.wu.safe.smart.ui.module.other.design.view.fragment.FragmentsActivity;
@@ -44,11 +46,14 @@ public class DesignActivity extends BaseCompatActivity {
         });
     }
 
-    @OnClick({R.id.top_dragger_view, R.id.dialog_view, R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view, R.id.bottom_dialog
-            , R.id.left_view, R.id.count_view, R.id.pic_carouse_view, R.id.pic_gallery_view, R.id.pic_choose_view})
+    @OnClick({R.id.top_status_view, R.id.top_dragger_view, R.id.dialog_view, R.id.grid_view, R.id.float_view, R.id.page_view, R.id.stable_tab_view, R.id.more_tab_view, R.id.bottom_view, R.id.bottom_dialog
+            , R.id.left_view, R.id.count_view, R.id.pic_carouse_view, R.id.pic_gallery_view, R.id.pic_choose_view, R.id.swpe_delete_view})
     public void onViewClicked(View view) {
         Bundle bundle = new Bundle();
         switch (view.getId()) {
+            case R.id.top_status_view:
+                readGo(StatusViewActivity.class);
+                break;
             case R.id.top_dragger_view:
                 readGo(TopDraggerActivity.class);
                 break;
@@ -94,6 +99,9 @@ public class DesignActivity extends BaseCompatActivity {
             case R.id.pic_gallery_view:
                 bundle.putInt(Extra.FRAGMENT_POS, 2);
                 readGo(FragmentsActivity.class, bundle);
+                break;
+            case R.id.swpe_delete_view:
+                readGo(SwipeMenuActivity.class);
                 break;
         }
     }
