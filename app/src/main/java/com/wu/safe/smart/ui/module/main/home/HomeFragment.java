@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import com.baidu.track.activity.MapMainActivity;
 import com.hint.utils.ToastUtils;
 import com.media.videocapture.ui.view.VideoMainActivity;
-import com.webview.ui.view.WebViewNormalActivity;
+import com.webview.WebViewNormalActivity;
 import com.hikvison.view.HikTestActivity;
 import com.hyphenate.demo.MainEaseActivity;
 import com.wu.safe.apermission.ui.PermissionActivity;
@@ -35,6 +35,7 @@ import com.wu.safe.smart.ui.module.other.design.DesignActivity;
 import com.wu.safe.smart.ui.module.other.info.InfoActivity;
 import com.wu.safe.smart.ui.module.other.nfc.NfcActivity;
 import com.wu.safe.smart.ui.module.other.notification.NotificationActivity;
+import com.wu.safe.smart.ui.module.other.thread.ThreadActivity;
 import com.wu.safe.smart.ui.widget.BGABadgeTextView;
 import com.wu.safe.rtmp.ui.view.RtmpMainActivity;
 
@@ -91,7 +92,7 @@ public class HomeFragment extends BaseCompatFragment {
         HomeListBean bean41 = new HomeListBean.Builder().content("悬浮窗").build();
         HomeListBean bean42 = new HomeListBean.Builder().content("海康").build();
         HomeListBean bean43 = new HomeListBean.Builder().content("环信").build();
-        HomeListBean bean44 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean44 = new HomeListBean.Builder().content("线程").build();
 
         allData.add(bean1);
         allData.add(bean2);
@@ -201,6 +202,10 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 14: {
                             readGo(MainEaseActivity.class);
+                        }
+                        break;
+                        case 15: {
+                            readGo(ThreadActivity.class);
                         }
                         break;
                         default: {
