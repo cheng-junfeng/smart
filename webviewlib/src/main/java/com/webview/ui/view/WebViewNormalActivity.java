@@ -4,10 +4,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.FrameLayout;
 
 import com.github.lzyzsd.jsbridge.BridgeWebView;
-
-import com.hint.utils.DialogUtils;
 import com.webview.R;
 import com.webview.R2;
 import com.webview.app.activity.WebBaseCompatActivity;
@@ -18,6 +17,7 @@ import com.webview.utils.LogUtil;
 import com.webview.utils.ToolbarUtil;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 
 public class WebViewNormalActivity extends WebBaseCompatActivity {
@@ -25,11 +25,17 @@ public class WebViewNormalActivity extends WebBaseCompatActivity {
     public static final String TAG = "WebViewNormalActivity";
     public static final String DEFAULT_TITLE = "WebView";
 
-    @BindView(R2.id.webView)
-    BridgeWebView webView;
     @BindView(R2.id.toolbar)
     Toolbar toolbar;
+    @BindView(R2.id.webView)
+    BridgeWebView webView;
+    @BindView(R2.id.ly_empty)
+    FrameLayout lyEmpty;
 
+    private String urlStr;
+    private String loadingStr;
+
+    private ViewLoading loading;
     private WebViewPresenter presenter;
 
     @Override
@@ -49,9 +55,10 @@ public class WebViewNormalActivity extends WebBaseCompatActivity {
     private void initView() {
         webView = (BridgeWebView) findViewById(R.id.webView);
         Bundle bundle = getIntent().getExtras();
-        String urlString = (bundle == null) ? null : bundle.getString(WebConfig.JS_URL);
-        String urlName = (bundle == null) ? DEFAULT_TITLE : bundle.getString(WebConfig.JS_NAME, DEFAULT_TITLE);
-        ToolbarUtil.setToolbarLeft(toolbar, urlName, null, new View.OnClickListener() {
+        urlStr = (bundle == null) ? null : bundle.getString(WebConfig.JS_URL);
+        String titleStr = (bundle == null) ? DEFAULT_TITLE : bundle.getString(WebConfig.JS_NAME, DEFAULT_TITLE);
+        loadingStr = (bundle == null) ? "" : bundle.getString(WebConfig.JS_LOADING, "");
+        ToolbarUtil.setToolbarLeft(toolbar, titleStr, null, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
@@ -64,20 +71,59 @@ public class WebViewNormalActivity extends WebBaseCompatActivity {
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
                 LogUtil.d(TAG, "onPageFinished:" + url);
-                DialogUtils.dismissLoading();
+                if (loading != null && loading.isShowing()) {
+                    loading.dismiss();
+                }
             }
 
             @Override
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 super.onReceivedError(view, errorCode, description, failingUrl);
                 LogUtil.d(TAG, "onReceivedError:" + description + ":" + failingUrl);
-                DialogUtils.dismissLoading();
+                showEmpty();
+                if (loading != null && loading.isShowing()) {
+                    loading.dismiss();
+                }
             }
         });
 
         // 添加Loading
-        DialogUtils.showLoading(this);
-        webView.loadUrl(urlString);
+        showLoading();
+    }
+
+    private void showLoading(){
+        lyEmpty.setVisibility(View.GONE);
+        webView.setVisibility(View.VISIBLE);
+        loading = new ViewLoading(this, loadingStr) {
+            @Override
+            protected void loadCancel() {
+                if (loading != null && !loading.isShowing()) {
+                    loading.dismiss();
+                }
+            }
+        };
+        if (loading != null && !loading.isShowing()) {
+            loading.show();
+        }
+        webView.loadUrl(urlStr);
+    }
+
+    private void showEmpty(){
+        webView.setVisibility(View.GONE);
+        lyEmpty.setVisibility(View.VISIBLE);
+    }
+
+    @OnClick(R2.id.ly_retry)
+    public void onViewClicked() {
+        showLoading();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (loading != null && loading.isShowing()) {
+            loading.cancel();
+        }
     }
 
     @Override

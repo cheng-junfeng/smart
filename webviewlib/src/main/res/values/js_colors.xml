@@ -4,6 +4,7 @@
     <color name="base_light_default">#3F8FFF</color>
     <color name="base_toolbar_color">#3F80CC</color>
 
+    <color name="color_gray">#E5E5E5</color>
     <color name="color_light_white">#FFFFFF</color>
-
+    <color name="color_alpha_light_black">#7F333333</color>
 </resources>

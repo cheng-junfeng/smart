@@ -36,6 +36,4 @@ dependencies {
     //butterknife
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterKnifeVer"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnifeVer"
-
-    implementation project(path: ':hintlib')
 }

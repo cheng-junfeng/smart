@@ -112,7 +112,7 @@ dependencies {
     api project(':Artmp')
 
     //webview
-    implementation project(':webview')
+    implementation project(':webviewlib')
     //zxing
     api project(':zxinglib')
     //video
