@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.webview.R;
 
 
-abstract class ViewLoading extends Dialog {
+public abstract class ViewLoading extends Dialog {
 
     public ViewLoading(Context context, String content) {
         super(context, R.style.Loading);

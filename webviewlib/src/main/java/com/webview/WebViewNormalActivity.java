@@ -1,4 +1,4 @@
-package com.webview.ui.view;
+package com.webview;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -7,12 +7,11 @@ import android.webkit.WebView;
 import android.widget.FrameLayout;
 
 import com.github.lzyzsd.jsbridge.BridgeWebView;
-import com.webview.R;
-import com.webview.R2;
 import com.webview.app.activity.WebBaseCompatActivity;
 import com.webview.app.control.MyWebViewClient;
 import com.webview.config.WebConfig;
 import com.webview.ui.presenter.WebViewPresenter;
+import com.webview.ui.view.ViewLoading;
 import com.webview.utils.LogUtil;
 import com.webview.utils.ToolbarUtil;
 
@@ -23,7 +22,7 @@ import butterknife.OnClick;
 public class WebViewNormalActivity extends WebBaseCompatActivity {
 
     public static final String TAG = "WebViewNormalActivity";
-    public static final String DEFAULT_TITLE = "WebView";
+    private static final String DEFAULT_TITLE = "WebView";
 
     @BindView(R2.id.toolbar)
     Toolbar toolbar;
