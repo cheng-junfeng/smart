@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.wu.safe.smart.R;
-import com.wu.safe.smart.ui.module.floatwindows.FloatWindowService;
+import com.wu.safe.smart.service.FloatWindowService;
 import com.wu.safe.smart.ui.module.floatwindows.control.MyWindowManager;
 import com.wu.safe.smart.ui.module.guide.view.GuideActivity;
 import com.custom.widget.WatcherBoard;

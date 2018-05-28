@@ -27,7 +27,8 @@ import com.webview.config.WebConfig;
 import com.wu.safe.smart.BuildConfig;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatFragment;
-import com.wu.safe.smart.ui.module.floatwindows.FloatWindowService;
+import com.wu.safe.smart.service.AlarmService;
+import com.wu.safe.smart.service.FloatWindowService;
 import com.wu.safe.smart.ui.module.main.home.adapter.HomeListAdapter;
 import com.wu.safe.smart.ui.module.main.home.bean.HomeListBean;
 import com.wu.safe.smart.ui.module.other.data.DataActivity;
@@ -94,6 +95,11 @@ public class HomeFragment extends BaseCompatFragment {
         HomeListBean bean43 = new HomeListBean.Builder().content("环信").build();
         HomeListBean bean44 = new HomeListBean.Builder().content("线程").build();
 
+        HomeListBean bean51 = new HomeListBean.Builder().content("进程").build();
+        HomeListBean bean52 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean53 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean54 = new HomeListBean.Builder().content("More").build();
+
         allData.add(bean1);
         allData.add(bean2);
         allData.add(bean3);
@@ -113,6 +119,12 @@ public class HomeFragment extends BaseCompatFragment {
         allData.add(bean42);
         allData.add(bean43);
         allData.add(bean44);
+
+        allData.add(bean51);
+        allData.add(bean52);
+        allData.add(bean53);
+        allData.add(bean54);
+
     }
 
     private void initView() {
@@ -206,6 +218,10 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 15: {
                             readGo(ThreadActivity.class);
+                        }
+                        break;
+                        case 16: {
+                            AlarmService.startAutoCheck(mContext);
                         }
                         break;
                         default: {

@@ -130,7 +130,14 @@
                 <!--android:resource="@xml/provider_paths"-->
                 <!--tools:replace="android:resource"/>-->
         <!--</provider>-->
-        <service android:name=".ui.module.floatwindows.FloatWindowService"
+        <service android:name=".service.FloatWindowService"
             android:process=":float"/>
+        <service android:name=".service.AlarmService"
+            android:process=":alarm"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.action.check.alarm" />
+            </intent-filter>
+        </service>
     </application>
 </manifest>

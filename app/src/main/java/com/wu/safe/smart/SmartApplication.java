@@ -49,7 +49,7 @@ public class SmartApplication extends MultiDexApplication {
         //util
         Utils.init(mContext);
         if(!shouldInit()){
-            LogUtil.d(TAG, "return for not main process");
+            LogUtil.d(TAG, "return while not main process");
             return;
         }
         LogUtil.d(TAG, "init");
