@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget.swipemenu.view;
+package com.custom.swipemenu.view;
 
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.wu.safe.smart.ui.widget.swipemenu.model.SwipeMenu;
-import com.wu.safe.smart.ui.widget.swipemenu.model.SwipeMenuItem;
+import com.custom.swipemenu.model.SwipeMenu;
+import com.custom.swipemenu.model.SwipeMenuItem;
 
 import java.util.List;
 

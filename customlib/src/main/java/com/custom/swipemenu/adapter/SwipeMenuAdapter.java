@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget.swipemenu.adapter;
+package com.custom.swipemenu.adapter;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.WrapperListAdapter;
 
-import com.wu.safe.smart.ui.widget.swipemenu.view.SwipeMenuLayout;
-import com.wu.safe.smart.ui.widget.swipemenu.view.SwipeMenuListView;
-import com.wu.safe.smart.ui.widget.swipemenu.view.SwipeMenuView;
-import com.wu.safe.smart.ui.widget.swipemenu.model.SwipeMenu;
-import com.wu.safe.smart.ui.widget.swipemenu.model.SwipeMenuItem;
+import com.custom.swipemenu.view.SwipeMenuLayout;
+import com.custom.swipemenu.view.SwipeMenuListView;
+import com.custom.swipemenu.view.SwipeMenuView;
+import com.custom.swipemenu.model.SwipeMenu;
+import com.custom.swipemenu.model.SwipeMenuItem;
 
 public class SwipeMenuAdapter implements WrapperListAdapter,
         SwipeMenuView.OnSwipeItemClickListener {

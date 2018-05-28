@@ -7,11 +7,11 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.base.utils.ToolbarUtil;
+import com.custom.widget.ScrollGridView;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.ui.module.other.design.adapter.GvFilterAdapter;
 import com.wu.safe.smart.ui.module.other.design.bean.FilterAreaBean;
-import com.wu.safe.smart.ui.widget.ScrollGridView;
 
 import java.util.ArrayList;
 import java.util.List;

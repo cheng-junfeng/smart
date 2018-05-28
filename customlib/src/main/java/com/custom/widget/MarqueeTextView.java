@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget;
+package com.custom.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,13 +13,13 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 
-import com.wu.safe.smart.R;
+import com.custom.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class MarqueeView extends ViewFlipper {
+public class MarqueeTextView extends ViewFlipper {
 
     private Context mContext;
     private List<? extends CharSequence> notices;
@@ -35,7 +35,7 @@ public class MarqueeView extends ViewFlipper {
     private int gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
     private static final int TEXT_GRAVITY_LEFT = 0, TEXT_GRAVITY_CENTER = 1, TEXT_GRAVITY_RIGHT = 2;
 
-    public MarqueeView(Context context, AttributeSet attrs) {
+    public MarqueeTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs, 0);
     }

@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget.swipemenu.view;
+package com.custom.swipemenu.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -9,9 +9,9 @@ import android.view.animation.Interpolator;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.wu.safe.smart.ui.widget.swipemenu.SwipeMenuCreator;
-import com.wu.safe.smart.ui.widget.swipemenu.adapter.SwipeMenuAdapter;
-import com.wu.safe.smart.ui.widget.swipemenu.model.SwipeMenu;
+import com.custom.swipemenu.SwipeMenuCreator;
+import com.custom.swipemenu.adapter.SwipeMenuAdapter;
+import com.custom.swipemenu.model.SwipeMenu;
 
 public class SwipeMenuListView extends ListView {
 

@@ -12,7 +12,7 @@ import com.wu.safe.smart.R;
 import com.wu.safe.smart.ui.module.floatwindows.FloatWindowService;
 import com.wu.safe.smart.ui.module.floatwindows.control.MyWindowManager;
 import com.wu.safe.smart.ui.module.guide.view.GuideActivity;
-import com.wu.safe.smart.ui.widget.WatcherBoard;
+import com.custom.widget.WatcherBoard;
 
 public class FloatWindowBigView extends LinearLayout {
 

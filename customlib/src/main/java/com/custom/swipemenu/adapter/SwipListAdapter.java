@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget.swipemenu.adapter;
+package com.custom.swipemenu.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,22 +7,22 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.wu.safe.smart.R;
-import com.wu.safe.smart.ui.widget.swipemenu.model.ListItem;
+import com.custom.R;
+import com.custom.swipemenu.model.SwipListItem;
 
 import java.util.List;
 
 
 public class SwipListAdapter extends BaseAdapter {
-    private List<ListItem> layers;
+    private List<SwipListItem> layers;
     private Context context;
 
-    public SwipListAdapter(Context context, List<ListItem> layers){
+    public SwipListAdapter(Context context, List<SwipListItem> layers){
         this.context = context;
         this.layers = layers;
     }
     public interface ItemClickListener{
-        void onMapItemClick(ListItem layer);
+        void onMapItemClick(SwipListItem layer);
     }
     ItemClickListener itemClickListener;
     public void setItemClickListener(ItemClickListener itemClickListener){
@@ -36,7 +36,7 @@ public class SwipListAdapter extends BaseAdapter {
     }
 
     @Override
-    public ListItem getItem(int position) {
+    public SwipListItem getItem(int position) {
         return layers.get(position);
     }
 
@@ -50,13 +50,13 @@ public class SwipListAdapter extends BaseAdapter {
         ViewHolder holder;
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = LayoutInflater.from(context).inflate(R.layout.hint_list_item, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.custom_list_item, null);
             holder.tvName = (TextView) convertView.findViewById(R.id.hm_content);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        final ListItem layer = getItem(position);
+        final SwipListItem layer = getItem(position);
         holder.tvName.setText(layer.name);
         return convertView;
     }
@@ -64,5 +64,4 @@ public class SwipListAdapter extends BaseAdapter {
     class ViewHolder {
         TextView tvName;
     }
-
 }

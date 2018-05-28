@@ -42,7 +42,7 @@
                 android:background="@drawable/type_blue" />
         </LinearLayout>
 
-        <com.wu.safe.smart.ui.widget.ScrollGridView
+        <com.custom.widget.ScrollGridView
             android:id="@+id/gv_area"
             android:paddingStart="@dimen/offset_7dp"
             android:paddingEnd="@dimen/offset_7dp"

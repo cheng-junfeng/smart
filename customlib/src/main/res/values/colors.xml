@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="item_gray_color_normal">#FFFFFF</color>
+    <color name="item_gray_color_pressed">#f5f5f5</color>
+
+    <!--字体的颜色，纯黑色-->
+    <color name="blackText">#000000</color>
+    <!--字体的颜色 黑色1 -->
+    <color name="blackText1">#464C56</color>
+</resources>

@@ -17,7 +17,7 @@ import com.hint.utils.ToastUtils;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatFragment;
 import com.wu.safe.smart.ui.module.other.design.adapter.ViewPagerAdapter;
-import com.wu.safe.smart.ui.widget.MarqueeView;
+import com.custom.widget.MarqueeTextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ import butterknife.BindView;
 public class PicCarouseFragment extends BaseCompatFragment {
     private final static String TAG = "PicCarouseFragment";
     @BindView(R.id.marqueeView)
-    MarqueeView marqueeView;
+    MarqueeTextView marqueeView;
 
     @BindView(R.id.viewPager)
     ViewPager viewPager;
@@ -111,7 +111,7 @@ public class PicCarouseFragment extends BaseCompatFragment {
         info1.add("4.学习！");
         marqueeView.startWithList(info1);
         // 在代码里设置自己的动画
-        marqueeView.setOnItemClickListener(new MarqueeView.OnItemClickListener() {
+        marqueeView.setOnItemClickListener(new MarqueeTextView.OnItemClickListener() {
             @Override
             public void onItemClick(int position, TextView textView) {
                 ToastUtils.showToast(mContext, "click:" + position);

@@ -6,7 +6,7 @@
     android:background="@color/color_light_gray"
     android:orientation="vertical">
 
-    <com.wu.safe.smart.ui.widget.WatcherBoard
+    <com.custom.widget.WatcherBoard
         android:id="@+id/watch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

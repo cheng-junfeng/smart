@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget;
+package com.custom.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,8 +10,7 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.blankj.utilcode.util.SizeUtils;
-import com.wu.safe.smart.R;
+import com.custom.R;
 
 import java.util.Calendar;
 
@@ -86,12 +85,12 @@ public class WatcherBoard extends View {
 
     //Dp转px
     private float DpToPx(int value) {
-        return SizeUtils.dp2px(value);
+        return dp2px(value);
     }
 
     //sp转px
     private float SpToPx(int value) {
-        return SizeUtils.sp2px(value);
+        return sp2px(value);
     }
 
     //画笔初始化
@@ -214,11 +213,11 @@ public class WatcherBoard extends View {
 
     //绘制刻度
     private void paintScale(Canvas canvas) {
-        mPaint.setStrokeWidth(SizeUtils.dp2px(1));
+        mPaint.setStrokeWidth(dp2px(1));
         int lineWidth = 0;
         for (int i = 0; i < 60; i++) {
             if (i % 5 == 0) { //整点
-                mPaint.setStrokeWidth(SizeUtils.dp2px(1.5f));
+                mPaint.setStrokeWidth(dp2px(1.5f));
                 mPaint.setColor(mColorLong);
                 lineWidth = 40;
                 mPaint.setTextSize(mTextSize);
@@ -235,7 +234,7 @@ public class WatcherBoard extends View {
             } else { //非整点
                 lineWidth = 30;
                 mPaint.setColor(mColorShort);
-                mPaint.setStrokeWidth(SizeUtils.dp2px(1));
+                mPaint.setStrokeWidth(dp2px(1));
             }
             canvas.drawLine(0, -mRadius + mPadding, 0, -mRadius + mPadding + lineWidth, mPaint);
             canvas.rotate(6);
@@ -246,5 +245,15 @@ public class WatcherBoard extends View {
         NoDetermineSizeException(String message) {
             super(message);
         }
+    }
+
+    private int sp2px(float spValue) {
+        final float fontScale = getContext().getResources().getDisplayMetrics().scaledDensity;
+        return (int) (spValue * fontScale + 0.5f);
+    }
+
+    private int dp2px(float dpValue) {
+        final float scale = getContext().getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
     }
 }

@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget.swipemenu.adapter;
+package com.custom.swipemenu.adapter;
 
 import android.widget.BaseAdapter;
 

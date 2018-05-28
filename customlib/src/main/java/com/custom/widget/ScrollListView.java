@@ -4,17 +4,17 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ListView;
 
-public class NoScrollListView extends ListView {
+public class ScrollListView extends ListView {
 
-    public NoScrollListView(Context context) {
+    public ScrollListView(Context context) {
         super(context);
     }
 
-    public NoScrollListView(Context context, AttributeSet attrs) {
+    public ScrollListView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public NoScrollListView(Context context, AttributeSet attrs, int defStyle) {
+    public ScrollListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 

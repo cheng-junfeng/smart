@@ -217,7 +217,6 @@ public class HomeFragment extends BaseCompatFragment {
             });
 
             mainView.setLayoutManager(new GridLayoutManager(getContext(), 4));
-//            mainView.addItemDecoration(new DividerGridItemDecoration(getContext()));
             mainView.setHasFixedSize(true);
             mainView.setAdapter(mAdapter);
         } else {

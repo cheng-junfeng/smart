@@ -18,7 +18,7 @@
 			android:src="@mipmap/bg_btn_close"/>
 	</RelativeLayout>
 
-	<com.wu.safe.smart.ui.widget.WatcherBoard
+	<com.custom.widget.WatcherBoard
 		android:id="@+id/watch"
 		android:layout_width="200dp"
 		android:layout_height="200dp"

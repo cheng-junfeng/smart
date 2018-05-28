@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatFragment;
-import com.wu.safe.smart.ui.widget.WatcherBoard;
+import com.custom.widget.WatcherBoard;
 
 import java.util.Calendar;
 

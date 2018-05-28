@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget.swipemenu.view;
+package com.custom.swipemenu.view;
 
 import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;

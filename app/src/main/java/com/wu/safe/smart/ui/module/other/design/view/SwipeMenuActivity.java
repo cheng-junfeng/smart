@@ -14,13 +14,13 @@ import com.base.utils.LogUtil;
 import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
-import com.wu.safe.smart.ui.widget.swipemenu.SwipeMenuCreator;
-import com.wu.safe.smart.ui.widget.swipemenu.adapter.SwipListAdapter;
-import com.wu.safe.smart.ui.widget.swipemenu.model.ListItem;
-import com.wu.safe.smart.ui.widget.swipemenu.model.SwipeMenu;
-import com.wu.safe.smart.ui.widget.swipemenu.model.SwipeMenuItem;
-import com.wu.safe.smart.ui.widget.swipemenu.view.SwipeMenuListView;
-import com.wu.safe.smart.ui.widget.swipemenu.view.SwipeVerticalRefreshLayout;
+import com.custom.swipemenu.SwipeMenuCreator;
+import com.custom.swipemenu.adapter.SwipListAdapter;
+import com.custom.swipemenu.model.SwipListItem;
+import com.custom.swipemenu.model.SwipeMenu;
+import com.custom.swipemenu.model.SwipeMenuItem;
+import com.custom.swipemenu.view.SwipeMenuListView;
+import com.custom.swipemenu.view.SwipeVerticalRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,10 +57,10 @@ public class SwipeMenuActivity extends BaseCompatActivity {
     }
 
     private void initView() {
-        List<ListItem> allItems = new ArrayList<>();
-        allItems.add(new ListItem("List1"));
-        allItems.add(new ListItem("List2"));
-        allItems.add(new ListItem("List3"));
+        List<SwipListItem> allItems = new ArrayList<>();
+        allItems.add(new SwipListItem("List1"));
+        allItems.add(new SwipListItem("List2"));
+        allItems.add(new SwipListItem("List3"));
         swipListView.setAdapter(new SwipListAdapter(this, allItems));
 
         swipeLayout.setColorSchemeResources(android.R.color.holo_blue_bright,

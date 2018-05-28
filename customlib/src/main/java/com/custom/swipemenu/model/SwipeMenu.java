@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget.swipemenu.model;
+package com.custom.swipemenu.model;
 
 import android.content.Context;
 
