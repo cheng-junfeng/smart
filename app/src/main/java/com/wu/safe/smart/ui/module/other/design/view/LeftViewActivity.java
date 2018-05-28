@@ -14,9 +14,9 @@ import com.hint.listener.OnConfirmListener;
 import com.hint.utils.DialogUtils;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
-import com.wu.safe.user.ui.presenter.LoginPresenter;
-import com.wu.safe.user.ui.view.MyLoginActivity;
-import com.wu.safe.user.ui.view.MySettingActivity;
+import com.user.ui.presenter.LoginPresenter;
+import com.user.ui.view.MyLoginActivity;
+import com.user.ui.view.MySettingActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;

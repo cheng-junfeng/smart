@@ -11,8 +11,8 @@ import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.base.app.thread.WeakHandler;
 import com.wu.safe.smart.ui.module.main.MainActivity;
-import com.wu.safe.user.ui.view.MyLoginActivity;
-import com.wu.safe.user.ui.presenter.LoginPresenter;
+import com.user.ui.view.MyLoginActivity;
+import com.user.ui.presenter.LoginPresenter;
 
 public class GuideActivity extends BaseCompatActivity {
     private final static String TAG = "GuideActivity";

@@ -1,4 +1,4 @@
-package com.wu.safe.smart.net.control;
+package com.user.net.control;
 
 
 import android.text.TextUtils;
@@ -43,6 +43,7 @@ public class RetrofitHelper {
                 .baseUrl(ipAddress).build().create(service);
     }
 
+    // 自定义解析byte[]的Converter
     public static <T> T byteCreate(final Class<T> service) {
         return new Retrofit.Builder()
                 .client(getClient())
@@ -72,7 +73,7 @@ public class RetrofitHelper {
                         if(userEntity != null){
                             token = userEntity.getUser_token();
                         }
-                        if (TextUtils.isEmpty(token)) {   // �״ε�½
+                        if (TextUtils.isEmpty(token)) {   // 首次登陆
                             return chain.proceed(originalRequest);
                         }else{
                             Request authorised = originalRequest.newBuilder()

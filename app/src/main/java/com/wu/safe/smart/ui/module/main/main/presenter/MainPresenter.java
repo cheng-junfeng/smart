@@ -6,13 +6,13 @@ import com.base.config.GlobalConfig;
 import com.base.utils.LogUtil;
 import com.base.utils.ShareUtil;
 
-import com.wu.safe.user.db.entity.UserEntity;
-import com.wu.safe.user.db.helper.UserHelper;
-import com.wu.safe.user.net.bean.MyInfoOutput;
+import com.user.db.entity.UserEntity;
+import com.user.db.helper.UserHelper;
+import com.user.net.bean.MyInfoOutput;
 import com.base.net.helper.HttpHelper;
 import com.base.net.control.HttpResult;
 import com.wu.safe.smart.net.control.RetrofitHelper;
-import com.wu.safe.user.net.service.UserService;
+import com.user.net.service.UserService;
 import com.wu.safe.smart.ui.module.main.main.contract.MainContract;
 
 import io.reactivex.Observable;

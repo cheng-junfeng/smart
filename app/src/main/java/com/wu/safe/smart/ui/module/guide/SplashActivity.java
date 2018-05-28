@@ -17,7 +17,7 @@ import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.wu.safe.smart.config.SharePre;
 import com.wu.safe.smart.ui.module.guide.view.GuideActivity;
 import com.wu.safe.smart.ui.module.guide.adapter.SplashViewPagerAdapter;
-import com.wu.safe.user.ui.view.MyLoginActivity;
+import com.user.ui.view.MyLoginActivity;
 
 
 import java.util.ArrayList;

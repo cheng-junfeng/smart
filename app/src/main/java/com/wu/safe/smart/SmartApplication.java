@@ -19,9 +19,9 @@ import com.wu.safe.push.app.control.Push;
 import com.wu.safe.push.db.control.PushDbManager;
 import com.wu.safe.smart.db.control.AppDbManager;
 import com.wu.safe.smart.ui.module.other.data.control.DemoManager;
-import com.wu.safe.user.db.control.UserDbManager;
-import com.wu.safe.user.ui.view.MyAboutActivity;
-import com.wu.safe.user.ui.view.MyUpgradeActvity;
+import com.user.db.control.UserDbManager;
+import com.user.ui.view.MyAboutActivity;
+import com.user.ui.view.MyUpgradeActvity;
 
 import java.util.List;
 

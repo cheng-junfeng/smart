@@ -14,14 +14,14 @@ import com.base.utils.LogUtil;
 import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
-import com.wu.safe.user.config.NetConfig;
+import com.user.config.NetConfig;
 import com.wu.safe.smart.ui.module.main.main.contract.MainContract;
 import com.wu.safe.smart.ui.module.main.home.HomeFragment;
 import com.wu.safe.smart.ui.module.main.home.adapter.ViewPagerAdapter;
 import com.wu.safe.push.ui.MsgFragment;
 import com.wu.safe.smart.ui.module.main.main.presenter.MainPresenter;
 import com.wu.safe.smart.ui.module.main.time.TimeFragment;
-import com.wu.safe.user.ui.MyFragment;
+import com.user.ui.MyFragment;
 import com.wu.safe.smart.ui.module.other.scan.ScanActivity;
 
 import butterknife.BindView;

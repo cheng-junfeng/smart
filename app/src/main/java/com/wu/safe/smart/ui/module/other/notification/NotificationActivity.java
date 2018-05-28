@@ -18,7 +18,7 @@ import com.base.utils.NotificationUtil;
 import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
-import com.wu.safe.user.ui.view.MySettingActivity;
+import com.user.ui.view.MySettingActivity;
 
 import java.io.File;
 import java.util.ArrayList;

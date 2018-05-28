@@ -103,7 +103,7 @@ dependencies {
     //jpush
     implementation project(':Apush')
     //user
-    implementation project(':Auser')
+    implementation project(':user')
     //map
     api project(':Amap')
     //permission
