@@ -1,4 +1,4 @@
-package com.wu.safe.apermission.utils;
+package com.wu.safe.smart.utils;
 
 import android.content.Context;
 import android.content.Intent;

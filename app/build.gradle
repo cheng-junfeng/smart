@@ -117,7 +117,7 @@ dependencies {
     //map
     api project(':Amap')
     //permission
-    implementation project(':Apermission')
+    implementation project(':permission')
     //rtmp
     api project(':Artmp')
 

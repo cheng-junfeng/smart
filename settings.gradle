@@ -1,1 +1,1 @@
-include ':baselib', ':app', ':Apush', ':user', ':Amap', ':Apermission', ':zxinglib', ':media', ':webviewlib', ':hikvison', ':hyphenate', ':Artmp', ':hintlib', ':customlib'
+include ':baselib', ':app', ':Apush', ':user', ':Amap', ':permission', ':zxinglib', ':media', ':webviewlib', ':hikvison', ':hyphenate', ':Artmp', ':hintlib', ':customlib'

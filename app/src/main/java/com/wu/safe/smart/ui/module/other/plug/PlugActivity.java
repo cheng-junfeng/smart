@@ -1,4 +1,4 @@
-package com.wu.safe.apermission.ui;
+package com.wu.safe.smart.ui.module.other.plug;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -11,18 +11,17 @@ import android.view.View;
 
 import com.hint.listener.OnConfirmListener;
 import com.hint.utils.DialogUtils;
-import com.wu.safe.apermission.R;
-import com.wu.safe.apermission.R2;
-import com.wu.safe.apermission.app.acitvity.PermissBaseCompatActivity;
-import com.wu.safe.apermission.utils.AppUtils;
 import com.base.utils.FileUtil;
 import com.base.utils.LogUtil;
 import com.base.utils.ToolbarUtil;
+import com.wu.safe.smart.R;
+import com.wu.safe.smart.app.activity.BaseCompatActivity;
+import com.wu.safe.smart.utils.AppUtils;
 
 import butterknife.OnClick;
 
 
-public class PlugActivity extends PermissBaseCompatActivity {
+public class PlugActivity extends BaseCompatActivity {
     private static final String HIKON_PKG_NAME = "com.linkstart.hikvisionsdk";
     private static final String HAIAPK_NAME = "hikvisionsdk-release.apk";
 
@@ -46,7 +45,7 @@ public class PlugActivity extends PermissBaseCompatActivity {
         });
     }
 
-    @OnClick({R2.id.cvDisasterLive})
+    @OnClick({R.id.cvDisasterLive})
     public void onViewClicked(View view) {
         int viewId = view.getId();
         if (viewId == R.id.cvDisasterLive) {

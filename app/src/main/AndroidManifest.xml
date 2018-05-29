@@ -23,6 +23,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:name=".SmartApplication"
         android:allowBackup="true"
@@ -100,6 +101,10 @@
         <activity android:name=".ui.module.other.bind.BindActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".jni.JniActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.module.other.plug.PlugActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.module.other.permission.PermissionActivity"
             android:screenOrientation="portrait" />
 
         <activity
