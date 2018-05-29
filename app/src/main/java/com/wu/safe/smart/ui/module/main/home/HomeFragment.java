@@ -27,6 +27,7 @@ import com.webview.config.WebConfig;
 import com.wu.safe.smart.BuildConfig;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatFragment;
+import com.wu.safe.smart.jni.JniActivity;
 import com.wu.safe.smart.service.AlarmService;
 import com.wu.safe.smart.service.FloatWindowService;
 import com.wu.safe.smart.ui.module.main.home.adapter.HomeListAdapter;
@@ -100,7 +101,7 @@ public class HomeFragment extends BaseCompatFragment {
         HomeListBean bean51 = new HomeListBean.Builder().content("进程").build();
         HomeListBean bean52 = new HomeListBean.Builder().content("AIDL").build();
         HomeListBean bean53 = new HomeListBean.Builder().content("Bind").build();
-        HomeListBean bean54 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean54 = new HomeListBean.Builder().content("Jni").build();
 
         allData.add(bean1);
         allData.add(bean2);
@@ -232,6 +233,10 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 18: {
                             readGo(BindActivity.class);
+                        }
+                        break;
+                        case 19: {
+                            readGo(JniActivity.class);
                         }
                         break;
                         default: {

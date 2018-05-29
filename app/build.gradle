@@ -19,6 +19,11 @@ android {
 
         multiDexEnabled true
         manifestPlaceholders = [APP_ID: rootProject.ext.applicationId]
+        ndk {
+            moduleName "JniCount"
+            ldLibs "log", "z", "m"
+            abiFilters "armeabi", "armeabi-v7a", "x86"
+        }
     }
     packagingOptions {
         pickFirst 'META-INF/*'
@@ -54,6 +59,11 @@ android {
     repositories {
         flatDir {
             dirs '../Artmp/libs'
+        }
+    }
+    sourceSets {
+        main {
+            jni.srcDirs = []
         }
     }
 }
