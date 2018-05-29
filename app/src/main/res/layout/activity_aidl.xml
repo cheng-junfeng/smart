@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/aidl_text"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"/>
+    </RelativeLayout>
+    <Button
+        android:id="@+id/aidl_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取值"/>
+    <Button
+        android:id="@+id/aidl_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="停止线程"/>
+</LinearLayout>

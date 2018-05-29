@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 
 import com.base.utils.LogUtil;
+import com.hint.utils.ToastUtils;
 import com.wu.safe.smart.ui.module.guide.view.GuideActivity;
 
 import java.util.concurrent.TimeUnit;
@@ -40,6 +41,7 @@ public class AlarmService extends IntentService {
     public void onStart(@Nullable Intent intent, int startId) {
         super.onStart(intent, startId);
         mContext = this;
+        ToastUtils.showToast(mContext, "从服务onStart中弹出提示");
         LogUtil.d(TAG, "onStart: ");
 
         long alarmTime = System.currentTimeMillis() + 30*60*1000;

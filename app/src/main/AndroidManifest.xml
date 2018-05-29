@@ -93,6 +93,8 @@
             android:screenOrientation="portrait" />
         <activity android:name=".ui.module.other.thread.ThreadActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.module.other.aidl.AidlActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.module.other.nfc.NfcActivity"
@@ -139,5 +141,9 @@
                 <action android:name="com.action.check.alarm" />
             </intent-filter>
         </service>
+        <service
+            android:name=".service.AidlService"
+            android:enabled="true"
+            android:process=":aidl"/>
     </application>
 </manifest>
