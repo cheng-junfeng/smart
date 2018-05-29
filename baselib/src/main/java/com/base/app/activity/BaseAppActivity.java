@@ -104,6 +104,12 @@ public abstract class BaseAppActivity extends RxActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        AppManager.getAppManager().finishActivity();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         AppManager.getAppManager().removeActivity(this);

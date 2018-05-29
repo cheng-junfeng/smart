@@ -68,4 +68,14 @@ public class AidlService extends Service {
         };
         timer.schedule(task, 0, 1*1000);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        LogUtil.d(TAG, "onDestroy:"+mCount);
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
+    }
 }

@@ -78,6 +78,7 @@ public class ThreadActivity extends BaseCompatActivity {
         handler1.sendMessage(new Message());
     }
 
+    Handler tempHandler;
     private void holdThread() {
         LogUtil.d(TAG, "[Thread]holdThread:");
         Runnable runnable = new Runnable() {
@@ -91,13 +92,14 @@ public class ThreadActivity extends BaseCompatActivity {
                 }
             }
         };
-        Handler tempHandler = new Handler();
+        tempHandler = new Handler();
         tempHandler.post(runnable);
     }
 
+    ExecutorService executorService;
     private void holdThreadPool() {
         LogUtil.d(TAG, "[ThreadPool]holdThreadPool:");
-        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        executorService = Executors.newFixedThreadPool(2);
         for (int i = 0; i < 3; i++) {
             Runnable syncRunnable = new Runnable() {
                 @Override
@@ -118,6 +120,7 @@ public class ThreadActivity extends BaseCompatActivity {
         Observable.interval(0, 1, TimeUnit.SECONDS) //30 min
                 .take((int) (count)) //设置总共发送的次数
                 .observeOn(AndroidSchedulers.mainThread())
+                .compose(this.<Long>bindToLifecycle())
                 .subscribe(new Observer<Long>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -205,6 +208,36 @@ public class ThreadActivity extends BaseCompatActivity {
             case R.id.count_view:
                 holdCount();
                 break;
+        }
+    }
+
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        LogUtil.d(TAG, "onDestroy");
+        if(handler1 != null){
+            handler1.removeCallbacks(null);
+            handler1 = null;
+        }
+
+        if(tempHandler != null){
+            tempHandler.removeCallbacks(null);
+            tempHandler = null;
+        }
+
+        if(executorService != null){
+            executorService.shutdown();
+        }
+
+        if(timer != null){
+            timer.cancel();
+            timer = null;
+        }
+
+        if(countDownTimer != null){
+            countDownTimer.cancel();
+            countDownTimer = null;
         }
     }
 }

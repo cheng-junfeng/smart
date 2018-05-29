@@ -98,6 +98,7 @@ public class AidlActivity extends BaseCompatActivity {
     @Override
     public void onDestroy(){
         super.onDestroy();
+        LogUtil.d(TAG, "onDestroy");
         unbindService(mConnection);
     }
 }
