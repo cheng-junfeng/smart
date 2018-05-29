@@ -16,10 +16,10 @@ import android.view.ViewGroup;
 
 import com.baidu.track.activity.MapMainActivity;
 import com.hint.utils.ToastUtils;
+import com.hyphenate.demo.EaseMainActivity;
 import com.media.videocapture.ui.view.VideoMainActivity;
 import com.webview.WebViewNormalActivity;
 import com.hikvison.view.HikTestActivity;
-import com.hyphenate.demo.MainEaseActivity;
 import com.wu.safe.smart.ui.module.other.permission.PermissionActivity;
 import com.wu.safe.smart.ui.module.other.plug.PlugActivity;
 import com.base.app.listener.OnClickLongListener;
@@ -216,7 +216,7 @@ public class HomeFragment extends BaseCompatFragment {
                         }
                         break;
                         case 14: {
-                            readGo(MainEaseActivity.class);
+                            readGo(EaseMainActivity.class);
                         }
                         break;
                         case 15: {

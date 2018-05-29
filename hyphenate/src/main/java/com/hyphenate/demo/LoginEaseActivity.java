@@ -21,16 +21,14 @@ public class LoginEaseActivity extends EaseBaseActivity{
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
         if(EMClient.getInstance().isLoggedInBefore()){
-            //enter to main activity directly if you logged in before.
-            startActivity(new Intent(this, MainEaseActivity.class));
+            startActivity(new Intent(this, EaseMainActivity.class));
             finish();
         }
-        
         setContentView(R.layout.activity_ease_login);
+
         usernameView = (EditText) findViewById(R.id.et_username);
         pwdView = (EditText) findViewById(R.id.et_password);
         Button loginBtn = (Button) findViewById(R.id.btn_login);
-        
         loginBtn.setOnClickListener(new OnClickListener() {
             
             @Override
@@ -40,7 +38,7 @@ public class LoginEaseActivity extends EaseBaseActivity{
                     
                     @Override
                     public void onSuccess() {
-                        startActivity(new Intent(LoginEaseActivity.this, MainEaseActivity.class));
+                        startActivity(new Intent(LoginEaseActivity.this, EaseMainActivity.class));
                         finish();
                     }
                     
@@ -60,6 +58,5 @@ public class LoginEaseActivity extends EaseBaseActivity{
                 });
             }
         });
-        
     }
 }

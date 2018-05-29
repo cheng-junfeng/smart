@@ -19,15 +19,14 @@
 
     <application>
         <activity
-            android:name="com.hyphenate.demo.LoginEaseActivity"
+            android:name="com.hyphenate.demo.EaseMainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.hyphenate.demo.MainEaseActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
+            android:name="com.hyphenate.demo.LoginEaseActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
 
         <activity android:name="com.hyphenate.demo.ChatEaseActivity"
             android:launchMode="singleTask"

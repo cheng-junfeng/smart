@@ -9,22 +9,33 @@
         android:id="@+id/easeTitleBar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:titleBarTitle="设置" />
-    
-    <ImageView 
-        android:layout_width="wrap_content"
+        app:titleBarTitle="环信" />
+
+    <Button
+        android:id="@+id/main_login"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/image"
-        />
-    
-    <Button 
-        android:id="@+id/btn_logout"
+        android:text="登录"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp" />
+
+    <Button
+        android:id="@+id/main_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="聊天界面"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp" />
+
+    <Button
+        android:id="@+id/main_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="退出登录"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
-        />
+        android:layout_marginRight="6dp" />
 
 </LinearLayout>

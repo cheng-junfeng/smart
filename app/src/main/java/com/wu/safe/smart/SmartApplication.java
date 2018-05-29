@@ -8,7 +8,9 @@ import android.support.multidex.MultiDexApplication;
 
 import com.baidu.track.control.Bmap;
 import com.blankj.utilcode.util.Utils;
+import com.hyphenate.chat.EMOptions;
 import com.hyphenate.easeui.EaseUI;
+import com.hyphenate.easeui.domain.EaseAvatarOptions;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
 import com.tencent.bugly.beta.UpgradeInfo;
@@ -62,13 +64,29 @@ public class SmartApplication extends MultiDexApplication {
         //module
         Push.init(mContext);
         Bmap.getInstance().init(mContext);
-        EaseUI.getInstance().init(this, null);
+        initEaseUI();
 
         //upgrade
         initUpgrade();
 
         //demo
         DemoManager.init(mContext);//for datas
+    }
+
+    private void initEaseUI(){
+        EMOptions options = new EMOptions();
+        // 默认添加好友时，是不需要验证的，改成需要验证
+        options.setAcceptInvitationAlways(false);
+        LogUtil.d(TAG, "initEaseUI");
+        if (EaseUI.getInstance().init(this, options)){
+            EaseAvatarOptions easeAvatarOptions=new EaseAvatarOptions();
+            //圆形头像
+            easeAvatarOptions.setAvatarShape(1);
+            LogUtil.d(TAG, "setAvatarShape");
+            EaseUI.getInstance().setAvatarOptions(easeAvatarOptions);
+        }else{
+            LogUtil.d(TAG, "initEaseUI fail");
+        }
     }
 
     private void initUpgrade(){

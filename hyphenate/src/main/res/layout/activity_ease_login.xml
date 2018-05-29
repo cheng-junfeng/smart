@@ -2,8 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
-    android:orientation="vertical" >
+    android:orientation="vertical">
+
+    <com.hyphenate.easeui.widget.EaseTitleBar
+        android:id="@+id/easeTitleBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleBarTitle="登录" />
 
     <EditText
         android:id="@+id/et_username"
@@ -20,15 +27,6 @@
         android:hint="密码"
         android:inputType="textPassword" />
 
-    
-    <TextView 
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
-        android:text="使用uidemo中的账户登录即可"
-        android:textColor="@android:color/darker_gray" />
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
