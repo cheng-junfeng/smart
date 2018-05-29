@@ -95,6 +95,8 @@
             android:screenOrientation="portrait" />
         <activity android:name=".ui.module.other.aidl.AidlActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.module.other.bind.BindActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.module.other.nfc.NfcActivity"
@@ -145,5 +147,7 @@
             android:name=".service.AidlService"
             android:enabled="true"
             android:process=":aidl"/>
+        <service
+            android:name=".service.BindService" />
     </application>
 </manifest>

@@ -32,6 +32,7 @@ import com.wu.safe.smart.service.FloatWindowService;
 import com.wu.safe.smart.ui.module.main.home.adapter.HomeListAdapter;
 import com.wu.safe.smart.ui.module.main.home.bean.HomeListBean;
 import com.wu.safe.smart.ui.module.other.aidl.AidlActivity;
+import com.wu.safe.smart.ui.module.other.bind.BindActivity;
 import com.wu.safe.smart.ui.module.other.data.DataActivity;
 import com.wu.safe.smart.ui.module.other.design.DesignActivity;
 import com.wu.safe.smart.ui.module.other.info.InfoActivity;
@@ -98,7 +99,7 @@ public class HomeFragment extends BaseCompatFragment {
 
         HomeListBean bean51 = new HomeListBean.Builder().content("进程").build();
         HomeListBean bean52 = new HomeListBean.Builder().content("AIDL").build();
-        HomeListBean bean53 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean53 = new HomeListBean.Builder().content("Bind").build();
         HomeListBean bean54 = new HomeListBean.Builder().content("More").build();
 
         allData.add(bean1);
@@ -227,6 +228,10 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 17: {
                             readGo(AidlActivity.class);
+                        }
+                        break;
+                        case 18: {
+                            readGo(BindActivity.class);
                         }
                         break;
                         default: {
