@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -14,9 +15,13 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.hint.listener.OnChooseListener;
+import com.hint.utils.DialogUtils;
 import com.hint.utils.ToastUtils;
 import com.base.utils.DensityUtils;
 import com.base.utils.ToolbarUtil;
+import com.webview.WebViewNormalActivity;
+import com.webview.config.WebConfig;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.zxing.control.decode.DecodeType;
@@ -25,6 +30,9 @@ import com.zxing.control.inter.OnDiscernListener;
 import com.zxing.result.ErrorResult;
 import com.zxing.result.SuccessResult;
 import com.zxing.widget.ZxingView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -128,16 +136,36 @@ public class ScanActivity extends BaseCompatActivity {
             }
         }, 1000);
 
-        new AlertDialog.Builder(this).setTitle("Scan").setMessage(barcodes).setPositiveButton("sure", new DialogInterface.OnClickListener() {
+        List<String> allStr = new ArrayList<String>();
+        allStr.add("复制到剪切板");
+        allStr.add("网页打开");
+        allStr.add("分享");
+        DialogUtils.showChooseDialog(this, allStr, new OnChooseListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                ClipboardManager cm = (ClipboardManager) getApplicationContext().getSystemService(Context.CLIPBOARD_SERVICE);
-                // 将文本内容放到系统剪贴板里。
-                cm.setText(barcodes);
-                Toast.makeText(getApplicationContext(), "已复制到剪切板", Toast.LENGTH_LONG).show();
-                restartPreviewAfterDelay(1000);
+            public void onPositive(int pos) {
+                switch (pos){
+                    case 0:{
+                        ClipboardManager cm = (ClipboardManager) getApplicationContext().getSystemService(Context.CLIPBOARD_SERVICE);
+                        // 将文本内容放到系统剪贴板里。
+                        cm.setText(barcodes);
+                        ToastUtils.showToast(getApplicationContext(), "已复制到剪切板");
+                        restartPreviewAfterDelay(1000);
+                    }break;
+                    case 1:{
+                        Bundle bundle = new Bundle();
+                        bundle.putString(WebConfig.JS_URL, barcodes);
+                        readGo(WebViewNormalActivity.class, bundle);
+                    }break;
+                    case 2:{
+                        Intent textIntent = new Intent(Intent.ACTION_SEND);
+                        textIntent.setType("text/plain");
+                        textIntent.putExtra(Intent.EXTRA_TEXT, barcodes);
+                        startActivity(Intent.createChooser(textIntent, "分享"));
+                    }break;
+                    default:break;
+                }
             }
-        }).show();
+        });
     }
 
     public void restartPreviewAfterDelay(long delayMS) {

@@ -39,6 +39,7 @@ import com.wu.safe.smart.ui.module.other.design.DesignActivity;
 import com.wu.safe.smart.ui.module.other.info.InfoActivity;
 import com.wu.safe.smart.ui.module.other.nfc.NfcActivity;
 import com.wu.safe.smart.ui.module.other.notification.NotificationActivity;
+import com.wu.safe.smart.ui.module.other.share.ShareActivity;
 import com.wu.safe.smart.ui.module.other.thread.ThreadActivity;
 import com.wu.safe.smart.ui.widget.BGABadgeTextView;
 import com.wu.safe.rtmp.ui.view.RtmpMainActivity;
@@ -103,6 +104,11 @@ public class HomeFragment extends BaseCompatFragment {
         HomeListBean bean53 = new HomeListBean.Builder().content("Bind").build();
         HomeListBean bean54 = new HomeListBean.Builder().content("Jni").build();
 
+        HomeListBean bean61 = new HomeListBean.Builder().content("分享").build();
+        HomeListBean bean62 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean63 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean64 = new HomeListBean.Builder().content("More").build();
+
         allData.add(bean1);
         allData.add(bean2);
         allData.add(bean3);
@@ -128,6 +134,10 @@ public class HomeFragment extends BaseCompatFragment {
         allData.add(bean53);
         allData.add(bean54);
 
+        allData.add(bean61);
+        allData.add(bean62);
+        allData.add(bean63);
+        allData.add(bean64);
     }
 
     private void initView() {
@@ -237,6 +247,10 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 19: {
                             readGo(JniActivity.class);
+                        }
+                        break;
+                        case 20: {
+                            readGo(ShareActivity.class);
                         }
                         break;
                         default: {

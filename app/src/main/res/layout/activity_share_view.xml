@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="文本" />
+
+        <Button
+            android:id="@+id/pic_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="图片" />
+
+        <Button
+            android:id="@+id/file_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="文件" />
+
+        <Button
+            android:id="@+id/wechat_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="指定微信" />
+
+        <Button
+            android:id="@+id/qq_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:text="指定QQ" />
+    </LinearLayout>
+</ScrollView>
