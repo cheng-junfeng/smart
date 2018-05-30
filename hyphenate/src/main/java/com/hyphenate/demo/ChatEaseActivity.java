@@ -26,7 +26,7 @@ public class ChatEaseActivity extends EaseBaseActivity{
     
     @Override
     protected void onNewIntent(Intent intent) {
-        String username = intent.getStringExtra("userId");
+        String username = intent.getStringExtra(EaseConstant.EXTRA_USER_ID);
         if (toChatUsername.equals(username))
             super.onNewIntent(intent);
         else {

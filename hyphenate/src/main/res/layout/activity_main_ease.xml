@@ -11,6 +11,18 @@
         android:layout_height="wrap_content"
         app:titleBarTitle="环信" />
 
+
+    <AutoCompleteTextView
+        android:id="@+id/main_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="chengjunfeng"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/main_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="123456"/>
     <Button
         android:id="@+id/main_login"
         android:layout_width="match_parent"
@@ -20,11 +32,26 @@
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp" />
 
+    <AutoCompleteTextView
+        android:id="@+id/main_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="50622663557121"/>
+
     <Button
         android:id="@+id/main_chat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="聊天界面"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp" />
+
+    <Button
+        android:id="@+id/main_chat2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="聊天界面Custom"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp" />

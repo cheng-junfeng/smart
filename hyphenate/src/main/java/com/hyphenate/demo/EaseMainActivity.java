@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -19,8 +20,15 @@ import com.hyphenate.exceptions.HyphenateException;
 public class EaseMainActivity extends EaseBaseActivity {
 
     private final static String TAG = "EaseMainActivity";
+
+    AutoCompleteTextView user;
+    AutoCompleteTextView pwd;
+
+    AutoCompleteTextView groupId;
+
     private Button logoutButton;
     private Button chatButton;
+    private Button chatButton2;
     private Button loginButton;
 
     private Context mContext;
@@ -31,6 +39,10 @@ public class EaseMainActivity extends EaseBaseActivity {
         mContext = this;
         setContentView(R.layout.activity_main_ease);
 
+        user = (AutoCompleteTextView)findViewById(R.id.main_user);
+        pwd = (AutoCompleteTextView)findViewById(R.id.main_pwd);
+        groupId = (AutoCompleteTextView)findViewById(R.id.main_group);
+
         loginButton = (Button) findViewById(R.id.main_login);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +50,9 @@ public class EaseMainActivity extends EaseBaseActivity {
                 if (EMClient.getInstance().isLoggedInBefore()) {
                     Toast.makeText(mContext, "已经登录", Toast.LENGTH_LONG).show();
                 } else {
-                    EMClient.getInstance().login("fireman1", "123456", new EMCallBack() {
+                    String username = user.getText().toString();
+                    String password = pwd.getText().toString();
+                    EMClient.getInstance().login(username, password, new EMCallBack() {
                         @Override
                         public void onSuccess() {
                             Log.d(TAG, "login: onSuccess");
@@ -94,7 +108,22 @@ public class EaseMainActivity extends EaseBaseActivity {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                bundle.putString(EaseConstant.EXTRA_USER_ID, "49251080011778");
+                String group  = groupId.getText().toString();
+                bundle.putString(EaseConstant.EXTRA_USER_ID, group);
+                bundle.putInt(EaseConstant.EXTRA_CHAT_TYPE, EaseConstant.CHATTYPE_GROUP);
+                Intent intent = new Intent(mContext, ChatActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
+        chatButton2 = (Button) findViewById(R.id.main_chat2);
+        chatButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                String group  = groupId.getText().toString();
+                bundle.putString(EaseConstant.EXTRA_USER_ID, group);
                 bundle.putInt(EaseConstant.EXTRA_CHAT_TYPE, EaseConstant.CHATTYPE_GROUP);
                 Intent intent = new Intent(mContext, ChatEaseActivity.class);
                 intent.putExtras(bundle);
