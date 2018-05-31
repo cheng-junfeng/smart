@@ -1,1 +1,1 @@
-include ':baselib', ':app', ':push', ':user', ':baidumap', ':permissionlib', ':zxinglib', ':media', ':webviewlib', ':hikvison', ':hyphenate', ':txlive', ':hintlib', ':customlib'
+include ':baselib', ':app', ':push', ':user', ':baidumap', ':permissionlib', ':zxinglib', ':webviewlib', ':hikvison', ':hyphenate', ':txlive', ':hintlib', ':customlib', ':video', ':audio'

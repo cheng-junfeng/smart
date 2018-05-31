@@ -126,7 +126,9 @@ dependencies {
     //zxing
     api project(':zxinglib')
     //video
-    implementation project(':media')
+    implementation project(':video')
+    //audio
+    implementation project(':audio')
     //hikvison
     implementation project(':hikvison')
     //hyphenate

@@ -14,10 +14,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.audio.view.AudioMainActivity;
 import com.baidu.track.activity.MapMainActivity;
 import com.hint.utils.ToastUtils;
 import com.hyphenate.demo.EaseMainActivity;
-import com.media.videocapture.ui.view.VideoMainActivity;
+import com.video.ui.view.VideoMainActivity;
 import com.webview.WebViewNormalActivity;
 import com.hikvison.view.HikTestActivity;
 import com.wu.safe.smart.ui.module.other.permission.PermissionActivity;
@@ -91,7 +92,7 @@ public class HomeFragment extends BaseCompatFragment {
 
         HomeListBean bean31 = new HomeListBean.Builder().content("插件").build();
         HomeListBean bean32 = new HomeListBean.Builder().content("NFC").build();
-        HomeListBean bean33 = new HomeListBean.Builder().content("Rtmp").build();
+        HomeListBean bean33 = new HomeListBean.Builder().content("直播").build();
         HomeListBean bean34 = new HomeListBean.Builder().content("WS").build();
 
         HomeListBean bean41 = new HomeListBean.Builder().content("悬浮窗").build();
@@ -105,7 +106,7 @@ public class HomeFragment extends BaseCompatFragment {
         HomeListBean bean54 = new HomeListBean.Builder().content("Jni").build();
 
         HomeListBean bean61 = new HomeListBean.Builder().content("分享").build();
-        HomeListBean bean62 = new HomeListBean.Builder().content("More").build();
+        HomeListBean bean62 = new HomeListBean.Builder().content("音频").build();
         HomeListBean bean63 = new HomeListBean.Builder().content("More").build();
         HomeListBean bean64 = new HomeListBean.Builder().content("More").build();
 
@@ -251,6 +252,10 @@ public class HomeFragment extends BaseCompatFragment {
                         break;
                         case 20: {
                             readGo(ShareActivity.class);
+                        }
+                        break;
+                        case 21: {
+                            readGo(AudioMainActivity.class);
                         }
                         break;
                         default: {
