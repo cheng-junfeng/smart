@@ -10,11 +10,14 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.hyphenate.EMCallBack;
+import com.hyphenate.EMConnectionListener;
+import com.hyphenate.EMError;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.R;
 import com.hyphenate.easeui.ui.EaseBaseActivity;
 import com.hyphenate.exceptions.HyphenateException;
+import com.hyphenate.util.NetUtils;
 
 
 public class EaseMainActivity extends EaseBaseActivity {
@@ -30,6 +33,8 @@ public class EaseMainActivity extends EaseBaseActivity {
     private Button chatButton;
     private Button chatButton2;
     private Button loginButton;
+
+    private Button logoutOnlyButton;
 
     private Context mContext;
 
@@ -171,5 +176,65 @@ public class EaseMainActivity extends EaseBaseActivity {
                 }
             }
         });
+
+        logoutOnlyButton = (Button) findViewById(R.id.main_logout_only);
+        logoutOnlyButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (EMClient.getInstance().isLoggedInBefore()) {
+                    EMClient.getInstance().logout(false, new EMCallBack() {
+
+                        @Override
+                        public void onSuccess() {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(mContext.getApplicationContext(), "退出成功", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                        }
+
+                        @Override
+                        public void onProgress(int progress, String status) {
+
+                        }
+
+                        @Override
+                        public void onError(int code, String error) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(mContext.getApplicationContext(), "退出失败", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                        }
+                    });
+                } else {
+                    Toast.makeText(mContext.getApplicationContext(), "尚未登录", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        EMClient.getInstance().addConnectionListener(new MyConnectionListener());
+    }
+
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        Log.d(TAG, "onresume"+EMClient.getInstance().isConnected());
+    }
+
+    private class MyConnectionListener implements EMConnectionListener {
+        @Override
+        public void onConnected() {
+            Log.d(TAG, "onConnected");
+        }
+        @Override
+        public void onDisconnected(final int error) {
+            Log.d(TAG, "onDisconnected");
+        }
     }
 }
+

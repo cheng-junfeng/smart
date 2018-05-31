@@ -65,4 +65,13 @@
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp" />
 
+    <Button
+        android:id="@+id/main_logout_only"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="退出登录不跳转"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp" />
+
 </LinearLayout>
