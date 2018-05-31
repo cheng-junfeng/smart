@@ -6,8 +6,8 @@ import android.content.res.Resources;
 import com.base.utils.LogUtil;
 import com.wu.safe.smart.db.entity.DataEntity;
 import com.wu.safe.smart.db.helper.DataHelper;
-import com.wu.safe.push.db.helper.MessageHelper;
-import com.wu.safe.push.db.entity.MessagesEntity;
+import com.push.db.helper.MessageHelper;
+import com.push.db.entity.MessagesEntity;
 
 import java.util.List;
 import java.util.Random;

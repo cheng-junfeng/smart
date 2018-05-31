@@ -18,7 +18,7 @@ import com.user.config.NetConfig;
 import com.wu.safe.smart.ui.module.main.main.contract.MainContract;
 import com.wu.safe.smart.ui.module.main.home.HomeFragment;
 import com.wu.safe.smart.ui.module.main.home.adapter.ViewPagerAdapter;
-import com.wu.safe.push.ui.MsgFragment;
+import com.push.ui.MsgFragment;
 import com.wu.safe.smart.ui.module.main.main.presenter.MainPresenter;
 import com.wu.safe.smart.ui.module.main.time.TimeFragment;
 import com.user.ui.MyFragment;

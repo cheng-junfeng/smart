@@ -42,7 +42,7 @@ import com.wu.safe.smart.ui.module.other.notification.NotificationActivity;
 import com.wu.safe.smart.ui.module.other.share.ShareActivity;
 import com.wu.safe.smart.ui.module.other.thread.ThreadActivity;
 import com.wu.safe.smart.ui.widget.BGABadgeTextView;
-import com.wu.safe.rtmp.ui.view.RtmpMainActivity;
+import com.txlive.ui.view.RtmpMainActivity;
 
 import java.util.ArrayList;
 import java.util.List;

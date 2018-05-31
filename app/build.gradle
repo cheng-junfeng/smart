@@ -58,7 +58,7 @@ android {
     }
     repositories {
         flatDir {
-            dirs '../Artmp/libs'
+            dirs '../txlive/libs'
         }
     }
     sourceSets {
@@ -111,15 +111,15 @@ dependencies {
     //base
     implementation project(':baselib')
     //jpush
-    implementation project(':Apush')
+    implementation project(':push')
     //user
     implementation project(':user')
     //map
-    api project(':Amap')
+    api project(':baidumap')
     //permission
     implementation project(':permissionlib')
     //rtmp
-    api project(':Artmp')
+    api project(':txlive')
 
     //webview
     implementation project(':webviewlib')
