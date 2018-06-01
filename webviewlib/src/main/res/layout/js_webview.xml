@@ -26,7 +26,8 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Android-To-Js"
+            android:text="Sure"
+            android:background="@color/base_default"
             android:textColor="@color/color_light_white"
             android:textSize="16sp"
             android:visibility="visible" />
