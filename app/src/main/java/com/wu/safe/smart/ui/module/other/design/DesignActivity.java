@@ -17,12 +17,10 @@ import com.wu.safe.smart.ui.module.other.design.view.GridFilterActivity;
 import com.wu.safe.smart.ui.module.other.design.view.LeftViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.MoreTabActivity;
 import com.wu.safe.smart.ui.module.other.design.view.PageViewActivity;
-import com.wu.safe.smart.ui.module.other.design.view.PicChooseActivity;
 import com.wu.safe.smart.ui.module.other.design.view.StatusViewActivity;
 import com.wu.safe.smart.ui.module.other.design.view.SwipeMenuActivity;
 import com.wu.safe.smart.ui.module.other.design.view.TabActivity;
 import com.wu.safe.smart.ui.module.other.design.view.TopDraggerActivity;
-import com.wu.safe.smart.ui.module.other.design.view.fragment.FragmentsActivity;
 
 import butterknife.OnClick;
 
@@ -87,18 +85,6 @@ public class DesignActivity extends BaseCompatActivity {
                 break;
             case R.id.bottom_dialog:
                 readGo(BottomDialogActivity.class);
-                break;
-
-            case R.id.pic_carouse_view:
-                bundle.putInt(Extra.FRAGMENT_POS, 1);
-                readGo(FragmentsActivity.class, bundle);
-                break;
-            case R.id.pic_choose_view:
-                readGo(PicChooseActivity.class);
-                break;
-            case R.id.pic_gallery_view:
-                bundle.putInt(Extra.FRAGMENT_POS, 2);
-                readGo(FragmentsActivity.class, bundle);
                 break;
             case R.id.swpe_delete_view:
                 readGo(SwipeMenuActivity.class);

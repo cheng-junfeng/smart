@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.module.other.design.adapter;
+package com.photo.ui.widget.adapter;
 
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;

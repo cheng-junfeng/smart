@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget.loader;
+package com.photo.ui.widget.loader;
 
 import android.content.Context;
 import android.widget.ImageView;

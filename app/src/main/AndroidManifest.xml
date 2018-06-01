@@ -84,10 +84,6 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.module.other.design.view.LeftViewActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ui.module.other.design.view.fragment.FragmentsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.module.other.design.view.PicChooseActivity"
-            android:screenOrientation="portrait"/>
         <activity android:name=".ui.module.other.design.view.TopDraggerActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.module.other.design.view.StatusViewActivity"

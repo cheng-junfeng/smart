@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget;
+package com.photo.ui.widget;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -19,10 +19,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 
-import com.wu.safe.smart.R;
-import com.wu.safe.smart.ui.widget.adapter.ViewPagerAdapter;
-import com.wu.safe.smart.ui.widget.loader.MediaLoader;
-import com.wu.safe.smart.ui.widget.model.MediaInfo;
+import com.photo.R;
+import com.photo.ui.widget.adapter.GalleryPagerAdapter;
+import com.photo.ui.widget.loader.MediaLoader;
+import com.photo.ui.widget.model.MediaInfo;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,7 +33,7 @@ public class GalleryImageView extends LinearLayout {
     private FragmentManager fragmentManager;
     private Context context;
     private Point displayProps;
-    private PagerAdapter pagerAdapter;
+    private GalleryPagerAdapter pagerAdapter;
     private List<MediaInfo> mListOfMedia;
 
     // Options
@@ -167,7 +167,7 @@ public class GalleryImageView extends LinearLayout {
     }
 
     private Bitmap getDefaultThumbnail() {
-        return ((BitmapDrawable) getContext().getResources().getDrawable(R.mipmap.placeholder_image)).getBitmap();
+        return ((BitmapDrawable) getContext().getResources().getDrawable(R.drawable.photo_default_image)).getBitmap();
     }
 
     private Point getDisplaySize() {
@@ -208,7 +208,7 @@ public class GalleryImageView extends LinearLayout {
 
     private void initializeViewPager() {
         viewPager = (CustomViewPager) findViewById(R.id.viewPager);
-        pagerAdapter = new ViewPagerAdapter(fragmentManager, mListOfMedia, zoomEnabled);
+        pagerAdapter = new GalleryPagerAdapter(fragmentManager, mListOfMedia, zoomEnabled);
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerChangeListener);
     }

@@ -1,12 +1,12 @@
-package com.wu.safe.smart.ui.widget.loader;
+package com.photo.ui.widget.loader;
 
 import android.content.Context;
 import android.widget.ImageView;
 
+import com.photo.R;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
-import com.wu.safe.smart.R;
-import com.wu.safe.smart.ui.widget.loader.MediaLoader;
+import com.photo.ui.widget.loader.MediaLoader;
 
 
 public class PicassoImageLoader implements MediaLoader {
@@ -26,7 +26,7 @@ public class PicassoImageLoader implements MediaLoader {
     public void loadMedia(Context context, final ImageView imageView, final MediaLoader.SuccessCallback callback) {
         Picasso.with(context)
                 .load(url)
-                .placeholder(R.mipmap.placeholder_image)
+                .placeholder(R.drawable.photo_default_image)
                 .into(imageView, new ImageCallback(callback));
     }
 
@@ -35,7 +35,7 @@ public class PicassoImageLoader implements MediaLoader {
         Picasso.with(context)
                 .load(url)
                 .resize(100, 100)
-                .placeholder(R.mipmap.placeholder_image)
+                .placeholder(R.drawable.photo_default_image)
                 .centerInside()
                 .into(thumbnailView, new ImageCallback(callback));
     }

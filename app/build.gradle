@@ -98,11 +98,6 @@ dependencies {
     //bottomsheet
     compile 'com.flipboard:bottomsheet-core:1.5.2'
     compile 'com.flipboard:bottomsheet-commons:1.5.2'
-    //takePhoto框架
-    compile 'com.jph.takephoto:takephoto_library:4.0.3'
-    compile 'com.lzy.widget:imagepicker:0.5.0'
-    //picasso
-    compile 'com.squareup.picasso:picasso:2.5.2'
     //statusBarUtil
     compile('com.jaeger.statusbarutil:library:1.5.0') {
         exclude group: 'com.android.support'

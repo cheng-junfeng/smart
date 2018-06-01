@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.module.other.design.view.fragment;
+package com.photo.ui.fragment;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -11,13 +11,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.blankj.utilcode.util.SizeUtils;
-import com.wu.safe.smart.R;
-import com.wu.safe.smart.app.activity.BaseCompatFragment;
-import com.wu.safe.smart.ui.widget.GalleryImageView;
-import com.wu.safe.smart.ui.widget.loader.DefaultImageLoader;
-import com.wu.safe.smart.ui.widget.model.MediaInfo;
-import com.wu.safe.smart.ui.widget.loader.MediaLoader;
-import com.wu.safe.smart.ui.widget.loader.PicassoImageLoader;
+import com.photo.R;
+import com.photo.R2;
+import com.photo.app.PhotoBaseCompatFragment;
+import com.photo.ui.widget.GalleryImageView;
+import com.photo.ui.widget.loader.DefaultImageLoader;
+import com.photo.ui.widget.loader.MediaLoader;
+import com.photo.ui.widget.loader.PicassoImageLoader;
+import com.photo.ui.widget.model.MediaInfo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,10 +26,10 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class PicGalleryFragment extends BaseCompatFragment {
+public class PicGalleryFragment extends PhotoBaseCompatFragment {
     private final static String TAG = "PicGalleryFragment";
 
-    @BindView(R.id.gallery_view)
+    @BindView(R2.id.gallery_view)
     GalleryImageView galleryView;
 
     private static final ArrayList<String> images = new ArrayList<>(Arrays.asList(

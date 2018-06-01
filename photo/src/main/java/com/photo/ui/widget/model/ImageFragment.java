@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.widget.model;
+package com.photo.ui.widget.model;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -11,9 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.wu.safe.smart.R;
-import com.wu.safe.smart.ui.widget.CustomViewPager;
-import com.wu.safe.smart.ui.widget.loader.MediaLoader;
+
+import com.photo.R;
+import com.photo.ui.widget.CustomViewPager;
+import com.photo.ui.widget.loader.MediaLoader;
 
 
 import uk.co.senab.photoview.PhotoViewAttacher;

@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.module.other.design.view;
+package com.photo.ui;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.blankj.utilcode.util.SizeUtils;
+import com.hint.utils.ToastUtils;
 import com.jph.takephoto.app.TakePhoto;
 import com.jph.takephoto.app.TakePhotoImpl;
 import com.jph.takephoto.compress.CompressConfig;
@@ -25,8 +26,10 @@ import com.jph.takephoto.permission.PermissionManager;
 import com.jph.takephoto.permission.TakePhotoInvocationHandler;
 import com.base.utils.LogUtil;
 import com.base.utils.ToolbarUtil;
-import com.wu.safe.smart.R;
-import com.wu.safe.smart.app.activity.BaseCompatActivity;
+import com.photo.R;
+import com.photo.R2;
+import com.photo.app.PhotoBaseCompatActivity;
+
 
 import java.io.File;
 
@@ -34,10 +37,10 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class PicChooseActivity extends BaseCompatActivity implements TakePhoto.TakeResultListener, InvokeListener {
-    private final static String TAG = "PicChooseActivity";
+public class PhotoChooseActivity extends PhotoBaseCompatActivity implements TakePhoto.TakeResultListener, InvokeListener {
+    private final static String TAG = "PhotoChooseActivity";
 
-    @BindView(R.id.get_img)
+    @BindView(R2.id.get_img)
     ImageView getImg;
 
     private Uri imageUri;
@@ -74,7 +77,7 @@ public class PicChooseActivity extends BaseCompatActivity implements TakePhoto.T
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         getTakePhoto().onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
-        ToolbarUtil.setToolbarLeft(toolbar, "图选", null, new View.OnClickListener() {
+        ToolbarUtil.setToolbarLeft(toolbar, "选图", null, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
@@ -131,7 +134,7 @@ public class PicChooseActivity extends BaseCompatActivity implements TakePhoto.T
     public TakePhoto getTakePhoto() {
         if (takePhoto == null) {
             takePhoto = (TakePhoto) TakePhotoInvocationHandler.of(this)
-                    .bind(new TakePhotoImpl(PicChooseActivity.this, this));
+                    .bind(new TakePhotoImpl(PhotoChooseActivity.this, this));
         }
         return takePhoto;
     }
@@ -155,23 +158,21 @@ public class PicChooseActivity extends BaseCompatActivity implements TakePhoto.T
 
     @Override
     public void takeFail(TResult result, String msg) {
-
+        ToastUtils.showToast(this, "拍照失败");
     }
 
     @Override
     public void takeCancel() {
-
+        ToastUtils.showToast(this, "拍照取消");
     }
 
-    @OnClick({R.id.camera_view, R.id.choose_view})
+    @OnClick({R2.id.camera_view, R2.id.choose_view})
     public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.camera_view:
-                startGetCamPhoto();
-                break;
-            case R.id.choose_view:
-                startGetPhotoFromFile();
-                break;
+        int viewId = view.getId();
+        if(viewId == R.id.camera_view){
+            startGetCamPhoto();
+        }else if(viewId == R.id.choose_view){
+            startGetPhotoFromFile();
         }
     }
 }

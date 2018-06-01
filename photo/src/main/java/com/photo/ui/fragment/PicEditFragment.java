@@ -1,4 +1,4 @@
-package com.photo.ui;
+package com.photo.ui.fragment;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -6,11 +6,13 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.base.utils.LogUtil;
-import com.base.utils.ToolbarUtil;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
@@ -18,8 +20,7 @@ import com.hint.utils.DialogUtils;
 import com.hint.utils.ToastUtils;
 import com.photo.R;
 import com.photo.R2;
-import com.photo.app.PhotoBaseCompatActivity;
-import com.photo.config.PhotoConfig;
+import com.photo.app.PhotoBaseCompatFragment;
 import com.photo.ui.widget.EditImageView;
 import com.photo.ui.widget.model.DrawPoint;
 
@@ -34,50 +35,39 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class PhotoEditActivity extends PhotoBaseCompatActivity {
-    private static final String TAG = "PhotoEditActivity";
+public class PicEditFragment extends PhotoBaseCompatFragment {
+    private static final String TAG = "PicEditFragment";
 
     @BindView(R2.id.edit_view)
     EditImageView editView;
 
-    private int default_res = R.drawable.photo_default_image;
-
-    Paint paint;
+    private Paint paint;
     private Canvas bitCanvas;
     private Context mContext;
 
-    String urlStr;
-    String titleStr;
-
     @Override
     protected int setContentView() {
-        return R.layout.photo_activity_edit_pic;
+        return R.layout.fragment_edit_pic;
     }
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mContext = this;
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View containerView = super.onCreateView(inflater, container, savedInstanceState);
+        mContext = getContext();
+        initView();//初始化View
 
-        Bundle bundle = getIntent().getExtras();
-        urlStr = "/storage/emulated/0/PIC/1527825287793.jpg";
-//		urlStr = (bundle == null) ? null : bundle.getString(PhotoConfig.PHOTO_URL);
-        titleStr = (bundle == null) ? PhotoConfig.DEFAULT_TITLE : bundle.getString(PhotoConfig.PHOTO_NAME, PhotoConfig.DEFAULT_TITLE);
-        ToolbarUtil.setToolbarLeft(toolbar, titleStr, null, new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
-
-        initView();
+        return containerView;
     }
 
     protected void initView() {
+        if(myPath == null){
+            ToastUtils.showToast(getActivity(), "地址为空");
+            return;
+        }
         editView.setIsEdit(true);
         paint = editView.getPaint();
 
-        File file = new File(urlStr);
-        //show the image if it exist in local path
+        File file = new File(myPath);
         if (file != null && file.exists()) {
             Glide.with(this)
                     .load(file)
@@ -91,18 +81,22 @@ public class PhotoEditActivity extends PhotoBaseCompatActivity {
 
     @OnClick({R2.id.btnSave})
     public void onViewClicked(View view) {
+        if(myPath == null){
+            ToastUtils.showToast(getActivity(), "地址为空");
+            return;
+        }
         int viewId = view.getId();
-        if(viewId == R.id.btnSave){
+        if (viewId == R.id.btnSave) {
             LogUtil.d(TAG, "save:onViewClicked");
             DialogUtils.showLoading(mContext, "正在保存");
             //现在是主线程，需要优化
             Glide.with(mContext)
-                    .load(urlStr)
+                    .load(myPath)
                     .asBitmap() //必须
                     .into(new SimpleTarget<Bitmap>() {
                         @Override
                         public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                            LogUtil.d(TAG, "save:onResourceReady:"+Thread.currentThread());
+                            LogUtil.d(TAG, "save:onResourceReady:" + Thread.currentThread());
                             drawLine(resource);
                         }
                     });
@@ -111,6 +105,7 @@ public class PhotoEditActivity extends PhotoBaseCompatActivity {
 
     int bitmapWidth;
     int bitmapHeight;
+
     private void drawLine(final Bitmap bitmap) {
         bitmapWidth = bitmap.getWidth();
         bitmapHeight = bitmap.getHeight();
@@ -129,18 +124,13 @@ public class PhotoEditActivity extends PhotoBaseCompatActivity {
             }
         }
         final String filePath = saveImg(bitmap);
-        LogUtil.d(TAG, "filePath:"+filePath);
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                DialogUtils.dismissLoading();
-                if(filePath == null){
-                    ToastUtils.showToast(mContext, "保存失败");
-                }else{
-                    ToastUtils.showToast(mContext, "成功保存："+filePath);
-                }
-            }
-        });
+        LogUtil.d(TAG, "filePath:" + filePath);
+        DialogUtils.dismissLoading();
+        if (filePath == null) {
+            ToastUtils.showToast(mContext, "保存失败");
+        } else {
+            ToastUtils.showToast(mContext, "成功保存：" + filePath);
+        }
     }
 
     private List<DrawPoint> pointsChange() {
@@ -190,7 +180,7 @@ public class PhotoEditActivity extends PhotoBaseCompatActivity {
             dirFile.mkdirs();
         }
         File f = new File(sdCardDir + System.currentTimeMillis() + ".jpg");
-        LogUtil.d(TAG, "saveImg:"+f.getAbsolutePath());
+        LogUtil.d(TAG, "saveImg:" + f.getAbsolutePath());
         try {
             f.createNewFile();
             FileOutputStream fOut = new FileOutputStream(f);

@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_light_gray"
+    android:background="@color/color_gray"
     android:orientation="vertical">
 
-    <com.wu.safe.smart.ui.widget.GalleryImageView
-        android:id="@+id/gallery_view"
+    <FrameLayout
+        android:id="@+id/main_frame_layout"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/blackText1" />
+        android:layout_height="0dp">
+    </FrameLayout>
 
 </LinearLayout>

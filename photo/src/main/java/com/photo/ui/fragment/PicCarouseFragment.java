@@ -1,4 +1,4 @@
-package com.wu.safe.smart.ui.module.other.design.view.fragment;
+package com.photo.ui.fragment;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -14,26 +14,24 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hint.utils.ToastUtils;
-import com.wu.safe.smart.R;
-import com.wu.safe.smart.app.activity.BaseCompatFragment;
-import com.wu.safe.smart.ui.module.other.design.adapter.ViewPagerAdapter;
-import com.custom.widget.MarqueeTextView;
+import com.photo.R;
+import com.photo.R2;
+import com.photo.app.PhotoBaseCompatFragment;
+import com.photo.ui.widget.adapter.ViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 
-public class PicCarouseFragment extends BaseCompatFragment {
+public class PicCarouseFragment extends PhotoBaseCompatFragment {
     private final static String TAG = "PicCarouseFragment";
-    @BindView(R.id.marqueeView)
-    MarqueeTextView marqueeView;
 
-    @BindView(R.id.viewPager)
+    @BindView(R2.id.viewPager)
     ViewPager viewPager;
-    @BindView(R.id.tv_pager_title)
+    @BindView(R2.id.tv_pager_title)
     TextView tvPagerTitle;
-    @BindView(R.id.lineLayout_dot)
+    @BindView(R2.id.lineLayout_dot)
     LinearLayout lineLayoutDot;
 
     private List<ImageView> mImageList; //轮播的图片集合
@@ -86,38 +84,20 @@ public class PicCarouseFragment extends BaseCompatFragment {
     private class pagerImageOnClick implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.pager_image1:
-                    ToastUtils.showToast(mContext, "图片1被点击");
-                    break;
-                case R.id.pager_image2:
-                    ToastUtils.showToast(mContext, "图片2被点击");
-                    break;
-                case R.id.pager_image3:
-                    ToastUtils.showToast(mContext, "图片3被点击");
-                    break;
-                case R.id.pager_image4:
-                    ToastUtils.showToast(mContext, "图片4被点击");
-                    break;
+            int viewId = v.getId();
+            if(viewId == R.id.pager_image1){
+                ToastUtils.showToast(mContext, "图片1被点击");
+            }else if(viewId == R.id.pager_image2){
+                ToastUtils.showToast(mContext, "图片2被点击");
+            }else if(viewId == R.id.pager_image3){
+                ToastUtils.showToast(mContext, "图片3被点击");
+            }else if(viewId == R.id.pager_image4){
+                ToastUtils.showToast(mContext, "图片4被点击");
             }
         }
     }
 
     public void initView() {
-        List<String> info1 = new ArrayList<>();
-        info1.add("1.坚持读书，写作，源于内心的动力！");
-        info1.add("2.坚持锻炼！");
-        info1.add("3.早睡！");
-        info1.add("4.学习！");
-        marqueeView.startWithList(info1);
-        // 在代码里设置自己的动画
-        marqueeView.setOnItemClickListener(new MarqueeTextView.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position, TextView textView) {
-                ToastUtils.showToast(mContext, "click:" + position);
-            }
-        });
-
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(mImageList, viewPager);
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

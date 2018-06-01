@@ -1,24 +1,24 @@
-package com.wu.safe.smart.ui.widget.adapter;
+package com.photo.ui.widget.adapter;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.wu.safe.smart.ui.widget.model.ImageFragment;
-import com.wu.safe.smart.ui.widget.model.MediaInfo;
-import com.wu.safe.smart.ui.widget.loader.MediaLoader;
+import com.photo.ui.widget.model.ImageFragment;
+import com.photo.ui.widget.model.MediaInfo;
+import com.photo.ui.widget.loader.MediaLoader;
 
 import java.util.List;
 
 
-public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+public class GalleryPagerAdapter extends FragmentStatePagerAdapter {
 
     private List<MediaInfo> mListOfMedia;
     private boolean isZoom = false;
 
-    public ViewPagerAdapter(FragmentManager fm, List<MediaInfo> listOfMedia,
-                     boolean isZoom) {
+    public GalleryPagerAdapter(FragmentManager fm, List<MediaInfo> listOfMedia,
+                               boolean isZoom) {
         super(fm);
         this.mListOfMedia = listOfMedia;
         this.isZoom = isZoom;

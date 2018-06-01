@@ -1,17 +1,40 @@
-package com.wu.safe.smart.ui.module.other.design.view.fragment;
+package com.photo.ui.fragment;
 
-import com.wu.safe.smart.app.activity.BaseCompatFragment;
+
+import com.photo.app.PhotoBaseCompatFragment;
+import com.photo.config.PhotoConfig;
+
 
 public class BaseFragmentFactory {
-
-    public static final int POS_CAROUSE = 1;
-    public static final int POS_GALLERY = 2;
-
     private static BaseFragmentFactory mInstance;
+    private PicViewFragment mViewFragment;
+    private PicEditFragment mEditFragment;
     private PicCarouseFragment mCarouseFragment;
     private PicGalleryFragment mGalleryFragment;
 
     private BaseFragmentFactory() {
+    }
+
+    private PicViewFragment getViewFragment() {
+        if (mViewFragment == null) {
+            synchronized (BaseFragmentFactory.class) {
+                if (mViewFragment == null) {
+                    mViewFragment = new PicViewFragment();
+                }
+            }
+        }
+        return mViewFragment;
+    }
+
+    private PicEditFragment getEditFragment() {
+        if (mEditFragment == null) {
+            synchronized (BaseFragmentFactory.class) {
+                if (mEditFragment == null) {
+                    mEditFragment = new PicEditFragment();
+                }
+            }
+        }
+        return mEditFragment;
     }
 
     private PicCarouseFragment getCarouseFragment() {
@@ -47,13 +70,19 @@ public class BaseFragmentFactory {
         return mInstance;
     }
 
-    public BaseCompatFragment getFragment(int pos) {
-        BaseCompatFragment fragment = null;
+    public PhotoBaseCompatFragment getFragment(int pos) {
+        PhotoBaseCompatFragment fragment = null;
         switch (pos) {
-            case POS_CAROUSE:
+            case PhotoConfig.POS_VIEW:
+                fragment = getViewFragment();
+                break;
+            case PhotoConfig.POS_EDIT:
+                fragment = getEditFragment();
+                break;
+            case PhotoConfig.POS_CAROUSE:
                 fragment = getCarouseFragment();
                 break;
-            case POS_GALLERY:
+            case PhotoConfig.POS_GALLERY:
                 fragment = getCamraFragment();
                 break;
         }

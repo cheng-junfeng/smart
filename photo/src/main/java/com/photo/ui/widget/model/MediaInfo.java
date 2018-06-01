@@ -1,7 +1,7 @@
-package com.wu.safe.smart.ui.widget.model;
+package com.photo.ui.widget.model;
 
 
-import com.wu.safe.smart.ui.widget.loader.MediaLoader;
+import com.photo.ui.widget.loader.MediaLoader;
 
 public class MediaInfo {
 
