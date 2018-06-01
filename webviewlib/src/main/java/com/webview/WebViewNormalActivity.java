@@ -22,7 +22,6 @@ import butterknife.OnClick;
 public class WebViewNormalActivity extends WebBaseCompatActivity {
 
     public static final String TAG = "WebViewNormalActivity";
-    private static final String DEFAULT_TITLE = "WebView";
 
     @BindView(R2.id.toolbar)
     Toolbar toolbar;
@@ -55,7 +54,7 @@ public class WebViewNormalActivity extends WebBaseCompatActivity {
         webView = (BridgeWebView) findViewById(R.id.webView);
         Bundle bundle = getIntent().getExtras();
         urlStr = (bundle == null) ? null : bundle.getString(WebConfig.JS_URL);
-        String titleStr = (bundle == null) ? DEFAULT_TITLE : bundle.getString(WebConfig.JS_NAME, DEFAULT_TITLE);
+        String titleStr = (bundle == null) ? WebConfig.DEFAULT_TITLE : bundle.getString(WebConfig.JS_NAME, WebConfig.DEFAULT_TITLE);
         loadingStr = (bundle == null) ? "" : bundle.getString(WebConfig.JS_LOADING, "");
         ToolbarUtil.setToolbarLeft(toolbar, titleStr, null, new View.OnClickListener() {
             @Override
