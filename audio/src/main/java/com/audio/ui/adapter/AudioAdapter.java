@@ -1,4 +1,4 @@
-package com.audio.view.adapter;
+package com.audio.ui.adapter;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -20,10 +20,9 @@ import android.widget.Toast;
 
 
 import com.audio.R;
-import com.audio.view.bean.AudioInfoBean;
+import com.audio.ui.bean.AudioInfoBean;
 import com.base.utils.LogUtil;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;

@@ -48,7 +48,7 @@ public class NotificationActivity extends BaseCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
-        ToolbarUtil.setToolbarLeft(toolbar, "Notification", null, new View.OnClickListener() {
+        ToolbarUtil.setToolbarLeft(toolbar, "通知", null, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();

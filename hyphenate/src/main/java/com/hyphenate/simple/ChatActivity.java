@@ -1,10 +1,9 @@
-package com.hyphenate.demo;
+package com.hyphenate.simple;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import com.hyphenate.demo.Fragment.ChatFragment;
+import com.hyphenate.simple.Fragment.ChatFragment;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.EaseUI;
 import com.hyphenate.easeui.R;

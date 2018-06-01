@@ -28,7 +28,7 @@ public class InfoActivity extends BaseCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ToolbarUtil.setToolbarLeft(toolbar, "Info", null, new View.OnClickListener() {
+        ToolbarUtil.setToolbarLeft(toolbar, "信息", null, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();

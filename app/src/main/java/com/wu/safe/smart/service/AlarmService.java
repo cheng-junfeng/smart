@@ -41,7 +41,7 @@ public class AlarmService extends IntentService {
     public void onStart(@Nullable Intent intent, int startId) {
         super.onStart(intent, startId);
         mContext = this;
-        ToastUtils.showToast(mContext, "从服务onStart中弹出提示");
+        ToastUtils.showToast(mContext, "从进程AlarmService onStart中弹出提示");
         LogUtil.d(TAG, "onStart: ");
 
         long alarmTime = System.currentTimeMillis() + 30*60*1000;

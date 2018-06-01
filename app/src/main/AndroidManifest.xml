@@ -64,8 +64,6 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.module.other.info.InfoActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ui.module.other.design.DesignActivity"
-            android:screenOrientation="portrait"/>
         <activity android:name=".ui.module.other.design.view.MoreTabActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.module.other.design.view.FloatButtonActivity"

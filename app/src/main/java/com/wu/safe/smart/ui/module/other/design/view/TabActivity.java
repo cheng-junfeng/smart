@@ -8,7 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
-import com.webview.WebViewNormalFragment;
+import com.webview.ui.WebViewNormalFragment;
 import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;

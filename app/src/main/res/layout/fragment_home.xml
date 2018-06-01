@@ -1,77 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:smart="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_light_gray"
     android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/main_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <View style="@style/DeepUnderLine" />
-
-    <RelativeLayout
-        android:id="@+id/re_itemview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/all_item_gray_selector"
-        android:clickable="true"
-        android:minHeight="@dimen/msg_home_height">
-
-        <LinearLayout
-            android:id="@+id/re_first_layout"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/margin_left"
-            android:background="@drawable/all_item_gray_selector"
-            android:gravity="center">
-
-            <com.wu.safe.smart.ui.widget.BGABadgeTextView
-                android:id="@+id/re_front_icon"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@mipmap/ic_launcher"
-                android:gravity="center"
-                smart:badge_gravity="rightTop"
-                smart:badge_horizontalMargin="1dp"
-                smart:badge_verticalMargin="1dp" />
-        </LinearLayout>
-
-        <LinearLayout
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/re_itemview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="@dimen/margin_left"
-            android:layout_marginRight="@dimen/margin_left"
-            android:layout_toRightOf="@+id/re_first_layout"
-            android:orientation="vertical">
+            android:background="@drawable/all_item_gray_selector"
+            android:clickable="true"
+            android:minHeight="@dimen/msg_home_height">
 
-            <TextView
-                android:id="@+id/re_name"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/re_first_layout"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:background="@drawable/all_item_gray_selector"
+                android:gravity="center">
+
+                <com.wu.safe.smart.ui.widget.BGABadgeTextView
+                    android:id="@+id/re_front_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/ic_launcher"
+                    android:gravity="center"
+                    smart:badge_gravity="rightTop"
+                    smart:badge_horizontalMargin="1dp"
+                    smart:badge_verticalMargin="1dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:text="公告"
-                android:textColor="#333333"
-                android:textSize="@dimen/text_size_16" />
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_left"
+                android:layout_toRightOf="@+id/re_first_layout"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/re_details"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/re_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="公告"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/text_size_16" />
+
+                <TextView
+                    android:id="@+id/re_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="武汉远古星球科技集团有限公司-1号楼-1层-产品展示厅"
+                    android:textColor="#989898"
+                    android:textSize="@dimen/text_size" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_button_height"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:clickable="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:singleLine="false"
-                android:text="武汉远古星球科技集团有限公司-1号楼-1层-产品展示厅"
-                android:textColor="#989898"
-                android:textSize="@dimen/text_size" />
-        </LinearLayout>
-    </RelativeLayout>
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_left"
+                android:orientation="vertical">
 
-    <View style="@style/DeepUnderLine" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="环境相关"
+                    android:textColor="#989898"
+                    android:textSize="@dimen/text_size_16" />
+            </LinearLayout>
+        </RelativeLayout>
+        <View style="@style/DeepUnderLine" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/context_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-</LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_button_height"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:clickable="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="应用相关"
+                    android:textColor="#989898"
+                    android:textSize="@dimen/text_size_16" />
+            </LinearLayout>
+        </RelativeLayout>
+        <View style="@style/DeepUnderLine" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/app_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_button_height"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:clickable="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="界面相关"
+                    android:textColor="#989898"
+                    android:textSize="@dimen/text_size_16" />
+            </LinearLayout>
+        </RelativeLayout>
+        <View style="@style/DeepUnderLine" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/widget_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_button_height"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:background="@drawable/all_item_gray_selector"
+            android:clickable="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="功能相关"
+                    android:textColor="#989898"
+                    android:textSize="@dimen/text_size_16" />
+            </LinearLayout>
+        </RelativeLayout>
+        <View style="@style/DeepUnderLine" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/function_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

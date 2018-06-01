@@ -1,4 +1,4 @@
-package com.hikvison.view.presenter;
+package com.hikvison.ui.presenter;
 
 import android.util.Log;
 
@@ -7,8 +7,7 @@ import com.hikvision.netsdk.HCNetSDK;
 import com.hikvision.netsdk.NET_DVR_COMPRESSIONCFG_V30;
 import com.hikvision.netsdk.PlaybackCallBack;
 import com.hikvision.netsdk.RealPlayCallBack;
-import com.hikvison.view.HikTestActivity;
-import com.hikvison.view.contract.HikContract;
+import com.hikvison.ui.contract.HikContract;
 
 import org.MediaPlayer.PlayM4.Player;
 

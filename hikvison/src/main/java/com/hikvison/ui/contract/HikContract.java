@@ -1,4 +1,4 @@
-package com.hikvison.view.contract;
+package com.hikvison.ui.contract;
 
 
 import com.hikvision.netsdk.ExceptionCallBack;

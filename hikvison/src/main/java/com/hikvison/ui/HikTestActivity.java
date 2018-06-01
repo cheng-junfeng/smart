@@ -1,4 +1,4 @@
-package com.hikvison.view;
+package com.hikvison.ui;
 
 import android.app.Activity;
 import android.content.Context;
@@ -36,9 +36,9 @@ import com.hikvison.R2;
 import com.hikvison.test.JNATest;
 import com.hikvison.test.VoiceTalk;
 import com.hikvison.utils.ExceptionUtil;
-import com.hikvison.view.contract.HikContract;
-import com.hikvison.view.presenter.HikPresenter;
-import com.hikvison.view.widget.PlaySurfaceView;
+import com.hikvison.ui.contract.HikContract;
+import com.hikvison.ui.presenter.HikPresenter;
+import com.hikvison.ui.widget.PlaySurfaceView;
 
 import org.MediaPlayer.PlayM4.Player;
 

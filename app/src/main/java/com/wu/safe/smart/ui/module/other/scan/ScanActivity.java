@@ -1,9 +1,7 @@
 package com.wu.safe.smart.ui.module.other.scan;
 
-import android.app.AlertDialog;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.hardware.Camera;
 import android.os.Bundle;
@@ -13,14 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.hint.listener.OnChooseListener;
 import com.hint.utils.DialogUtils;
 import com.hint.utils.ToastUtils;
 import com.base.utils.DensityUtils;
 import com.base.utils.ToolbarUtil;
-import com.webview.WebViewNormalActivity;
+import com.webview.ui.WebViewNormalActivity;
 import com.webview.config.WebConfig;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;

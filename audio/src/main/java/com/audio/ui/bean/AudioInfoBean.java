@@ -1,4 +1,4 @@
-package com.audio.view.bean;
+package com.audio.ui.bean;
 
 import java.io.Serializable;
 

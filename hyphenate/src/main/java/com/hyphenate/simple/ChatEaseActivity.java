@@ -1,4 +1,4 @@
-package com.hyphenate.demo;
+package com.hyphenate.simple;
 
 import android.content.Intent;
 import android.os.Bundle;

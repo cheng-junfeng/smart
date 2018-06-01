@@ -3,17 +3,17 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <application>
-        <activity android:name=".WebViewNormalActivity"
+        <activity android:name=".ui.WebViewNormalActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat"/>
+            android:theme="@style/BaseTheme"/>
 
-        <activity android:name=".TestActivity"
+        <activity android:name=".simple.TestActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:theme="@style/BaseTheme">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
     </application>
 </manifest>

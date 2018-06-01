@@ -1,4 +1,4 @@
-package com.audio.view;
+package com.audio.ui;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -23,8 +23,8 @@ import com.audio.app.AudioBaseCompatActivity;
 import com.audio.utils.AudioRecoderUtils;
 import com.audio.utils.PopupWindowFactory;
 import com.audio.utils.TimeUtils;
-import com.audio.view.adapter.AudioAdapter;
-import com.audio.view.bean.AudioInfoBean;
+import com.audio.ui.adapter.AudioAdapter;
+import com.audio.ui.bean.AudioInfoBean;
 import com.base.utils.LogUtil;
 import com.base.utils.ToolbarUtil;
 

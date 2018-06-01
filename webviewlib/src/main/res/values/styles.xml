@@ -1,4 +1,11 @@
 <resources>
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/base_default</item>
+        <item name="colorPrimaryDark">@color/base_default</item>
+        <item name="colorAccent">@color/base_default</item>
+        <item name="android:textColorSecondary">@color/color_light_white</item>
+    </style>
     <style name="Loading" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>

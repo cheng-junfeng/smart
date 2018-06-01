@@ -1,4 +1,4 @@
-package com.webview;
+package com.webview.simple;
 
 import android.content.Context;
 import android.os.Build;
@@ -15,6 +15,8 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.github.lzyzsd.jsbridge.BridgeWebView;
+import com.webview.R;
+import com.webview.R2;
 import com.webview.app.activity.WebBaseCompatActivity;
 import com.webview.utils.LogUtil;
 import com.webview.utils.ToolbarUtil;

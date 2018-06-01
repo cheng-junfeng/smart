@@ -3,7 +3,7 @@
     <!-- 录音 录制声音通过手机或耳机的麦克 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <application>
-        <activity android:name=".view.AudioMainActivity"
+        <activity android:name=".ui.AudioMainActivity"
             android:screenOrientation="portrait"/>
     </application>
 </manifest>

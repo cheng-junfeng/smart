@@ -1,11 +1,11 @@
-package com.hikvison.view.widget;
+package com.hikvison.ui.widget;
 
 import org.MediaPlayer.PlayM4.Player;
 
 import com.hikvision.netsdk.HCNetSDK;
 import com.hikvision.netsdk.NET_DVR_PREVIEWINFO;
 import com.hikvision.netsdk.RealPlayCallBack;
-import com.hikvison.view.HikTestActivity;
+import com.hikvison.ui.HikTestActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

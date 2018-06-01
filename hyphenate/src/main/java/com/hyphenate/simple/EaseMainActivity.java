@@ -1,4 +1,4 @@
-package com.hyphenate.demo;
+package com.hyphenate.simple;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,13 +11,11 @@ import android.widget.Toast;
 
 import com.hyphenate.EMCallBack;
 import com.hyphenate.EMConnectionListener;
-import com.hyphenate.EMError;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.R;
 import com.hyphenate.easeui.ui.EaseBaseActivity;
 import com.hyphenate.exceptions.HyphenateException;
-import com.hyphenate.util.NetUtils;
 
 
 public class EaseMainActivity extends EaseBaseActivity {

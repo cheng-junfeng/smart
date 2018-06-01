@@ -47,7 +47,7 @@ public class DataActivity extends BaseCompatActivity implements DataContract.Vie
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
-        ToolbarUtil.setToolbarLeft(toolbar, "Data", null, new View.OnClickListener() {
+        ToolbarUtil.setToolbarLeft(toolbar, "分页", null, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();

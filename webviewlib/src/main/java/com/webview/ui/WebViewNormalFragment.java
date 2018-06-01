@@ -1,4 +1,4 @@
-package com.webview;
+package com.webview.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +10,8 @@ import android.widget.FrameLayout;
 
 import com.github.lzyzsd.jsbridge.BridgeWebView;
 
+import com.webview.R;
+import com.webview.R2;
 import com.webview.app.activity.WebBaseCompatFragment;
 import com.webview.app.control.MyWebViewClient;
 import com.webview.config.WebConfig;

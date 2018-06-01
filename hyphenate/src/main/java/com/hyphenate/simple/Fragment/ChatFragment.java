@@ -1,4 +1,4 @@
-package com.hyphenate.demo.Fragment;
+package com.hyphenate.simple.Fragment;
 
 import android.support.v4.content.ContextCompat;
 import android.view.View;
