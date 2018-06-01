@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.word" >
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application>
+        <activity android:name=".ui.PdfViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme"/>
+
+        <activity android:name=".ui.WordViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme"/>
+
+        <activity android:name=".simple.TestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+    </application>
+</manifest>
