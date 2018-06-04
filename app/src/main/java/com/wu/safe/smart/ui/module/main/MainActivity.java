@@ -15,12 +15,12 @@ import com.base.utils.ToolbarUtil;
 import com.wu.safe.smart.R;
 import com.wu.safe.smart.app.activity.BaseCompatActivity;
 import com.user.config.NetConfig;
+import com.wu.safe.smart.ui.module.main.find.FindFragment;
 import com.wu.safe.smart.ui.module.main.main.contract.MainContract;
 import com.wu.safe.smart.ui.module.main.home.HomeFragment;
 import com.wu.safe.smart.ui.module.main.home.adapter.ViewPagerAdapter;
 import com.push.ui.MsgFragment;
 import com.wu.safe.smart.ui.module.main.main.presenter.MainPresenter;
-import com.wu.safe.smart.ui.module.main.time.TimeFragment;
 import com.user.ui.MyFragment;
 import com.wu.safe.smart.ui.module.other.scan.ScanActivity;
 
@@ -95,19 +95,19 @@ public class MainActivity extends BaseCompatActivity implements MainContract.Vie
         });
     }
 
+    FindFragment findFragment;
     HomeFragment homeFragment;
-    TimeFragment timeFragment;
     MsgFragment msgFragment;
     MyFragment meFragment;
     Fragment[] mFragments;
 
     // 初始化数据
     private void initViewPager() {
+        findFragment = new FindFragment();
         homeFragment = new HomeFragment();
-        timeFragment = new TimeFragment();
         msgFragment = new MsgFragment();
         meFragment = new MyFragment();
-        mFragments = new Fragment[]{homeFragment, timeFragment, msgFragment, meFragment};
+        mFragments = new Fragment[]{findFragment, homeFragment, msgFragment, meFragment};
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), mFragments);
         vpMain.setAdapter(adapter);
         vpMain.addOnPageChangeListener(this);

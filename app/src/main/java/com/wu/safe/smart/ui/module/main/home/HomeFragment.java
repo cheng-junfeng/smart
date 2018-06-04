@@ -55,7 +55,6 @@ import com.wu.safe.smart.ui.module.other.permission.PermissionActivity;
 import com.wu.safe.smart.ui.module.other.plug.PlugActivity;
 import com.wu.safe.smart.ui.module.other.share.ShareActivity;
 import com.wu.safe.smart.ui.module.other.thread.ThreadActivity;
-import com.wu.safe.smart.ui.widget.BGABadgeTextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,9 +63,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 public class HomeFragment extends BaseCompatFragment {
-
-    @BindView(R.id.re_front_icon)
-    BGABadgeTextView reFrontIcon;
 
     @BindView(R.id.context_view)
     RecyclerView contextView;
@@ -429,26 +425,5 @@ public class HomeFragment extends BaseCompatFragment {
         Intent intent = new Intent(activity, FloatWindowService.class);
         activity.startService(intent);
         activity.finish();
-    }
-
-    private int unReadCount = 0;
-    private void addBadge() {
-        unReadCount++;
-        if (unReadCount > 0) {
-            if (unReadCount > 99) {
-                reFrontIcon.showTextBadge("a");
-                reFrontIcon.showTextBadge("99+");
-            } else {
-
-                reFrontIcon.showTextBadge(String.valueOf(unReadCount));
-            }
-        } else {
-            reFrontIcon.hiddenBadge();
-        }
-    }
-
-    @OnClick(R.id.re_itemview)
-    public void onViewClicked() {
-        addBadge();
     }
 }

@@ -11,65 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <RelativeLayout
-            android:id="@+id/re_itemview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/all_item_gray_selector"
-            android:clickable="true"
-            android:minHeight="@dimen/msg_home_height">
-
-            <LinearLayout
-                android:id="@+id/re_first_layout"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:background="@drawable/all_item_gray_selector"
-                android:gravity="center">
-
-                <com.wu.safe.smart.ui.widget.BGABadgeTextView
-                    android:id="@+id/re_front_icon"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@mipmap/ic_launcher"
-                    android:gravity="center"
-                    smart:badge_gravity="rightTop"
-                    smart:badge_horizontalMargin="1dp"
-                    smart:badge_verticalMargin="1dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginRight="@dimen/margin_left"
-                android:layout_toRightOf="@+id/re_first_layout"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/re_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:text="公告"
-                    android:textColor="#333333"
-                    android:textSize="@dimen/text_size_16" />
-
-                <TextView
-                    android:id="@+id/re_details"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:singleLine="false"
-                    android:text="武汉远古星球科技集团有限公司-1号楼-1层-产品展示厅"
-                    android:textColor="#989898"
-                    android:textSize="@dimen/text_size" />
-            </LinearLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/base_button_height"
             android:layout_marginTop="@dimen/offset_5dp"

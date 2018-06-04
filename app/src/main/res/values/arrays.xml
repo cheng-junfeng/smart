@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--发现页图片-->
+    <integer-array name="find_gv_image1">
+        <item>@mipmap/ic_category_0</item>
+        <item>@mipmap/ic_category_1</item>
+        <item>@mipmap/ic_category_2</item>
+        <item>@mipmap/ic_category_3</item>
+        <item>@mipmap/ic_category_4</item>
+    </integer-array>
+    <!--发现页图片对应的位子-->
+    <string-array name="find_gv_title1">
+        <item>信息</item>
+        <item>权限</item>
+        <item>通知</item>
+        <item>插件</item>
+        <item>悬浮窗</item>
+    </string-array>
+
+    <integer-array name="find_gv_image2">
+        <item>@mipmap/ic_category_0</item>
+        <item>@mipmap/ic_category_1</item>
+        <item>@mipmap/ic_category_2</item>
+        <item>@mipmap/ic_category_3</item>
+        <item>@mipmap/ic_category_4</item>
+        <item>@mipmap/ic_category_5</item>
+    </integer-array>
+    <string-array name="find_gv_title2">
+        <item>线程</item>
+        <item>进程</item>
+        <item>Jni</item>
+        <item>Bind</item>
+        <item>Aidl</item>
+        <item>分享</item>
+    </string-array>
+
+    <integer-array name="find_gv_image3">
+        <item>@mipmap/ic_category_1</item>
+        <item>@mipmap/ic_category_2</item>
+        <item>@mipmap/ic_category_3</item>
+        <item>@mipmap/ic_category_4</item>
+        <item>@mipmap/ic_category_5</item>
+        <item>@mipmap/ic_category_6</item>
+        <item>@mipmap/ic_category_7</item>
+        <item>@mipmap/ic_category_8</item>
+        <item>@mipmap/ic_category_9</item>
+        <item>@mipmap/ic_category_10</item>
+        <item>@mipmap/ic_category_11</item>
+        <item>@mipmap/ic_category_12</item>
+        <item>@mipmap/ic_category_13</item>
+        <item>@mipmap/ic_category_14</item>
+    </integer-array>
+    <string-array name="find_gv_title3">
+        <item>分页</item>
+        <item>向上缩进</item>
+        <item>状态栏</item>
+        <item>侧滑</item>
+        <item>左滑</item>
+        <item>Tab</item>
+        <item>连续Tab</item>
+        <item>提示框</item>
+        <item>点选</item>
+        <item>悬浮键</item>
+        <item>多页</item>
+        <item>倒计时</item>
+        <item>底部栏</item>
+        <item>底部框</item>
+    </string-array>
+
+    <integer-array name="find_gv_image4">
+        <item>@mipmap/ic_category_1</item>
+        <item>@mipmap/ic_category_2</item>
+        <item>@mipmap/ic_category_3</item>
+        <item>@mipmap/ic_category_4</item>
+        <item>@mipmap/ic_category_5</item>
+        <item>@mipmap/ic_category_6</item>
+        <item>@mipmap/ic_category_7</item>
+        <item>@mipmap/ic_category_8</item>
+        <item>@mipmap/ic_category_9</item>
+    </integer-array>
+    <string-array name="find_gv_title4">
+        <item>音频</item>
+        <item>视频</item>
+        <item>环信</item>
+        <item>海康</item>
+        <item>直播</item>
+        <item>网页</item>
+        <item>WS</item>
+        <item>NFC</item>
+        <item>地图</item>
+    </string-array>
+</resources>

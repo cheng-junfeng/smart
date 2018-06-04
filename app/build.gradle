@@ -79,6 +79,9 @@ dependencies {
 
     //recycleView
     implementation 'com.android.support:recyclerview-v7:26.1.0'
+    compile('com.alibaba.android:vlayout:1.2.2@aar') {
+        transitive = true
+    }
     //butterknife
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterKnifeVer"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnifeVer"
