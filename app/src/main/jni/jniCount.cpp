@@ -3,8 +3,8 @@
 
 /* Header for class lab_sodino_jnitest_MainActivity */
 
-#ifndef _Included_com_wu_safe_smart_jni_Count
-#define _Included_com_wu_safe_smart_jni_Count
+#ifndef _Included_com_smart_jni_Count
+#define _Included_com_smart_jni_Count
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -13,7 +13,7 @@ extern "C" {
  * Method: getStringFromNative
  * Signature: ()Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_com_wu_safe_smart_jni_JniCount_getFromNative
+JNIEXPORT jstring JNICALL Java_com_smart_jni_JniCount_getFromNative
   (JNIEnv * env, jobject jObj){
       return env->NewStringUTF("this is jni");
   }

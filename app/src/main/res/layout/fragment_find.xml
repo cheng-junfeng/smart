@@ -23,7 +23,7 @@
                 android:background="@drawable/all_item_gray_selector"
                 android:gravity="center">
 
-                <com.wu.safe.smart.ui.widget.BGABadgeTextView
+                <com.smart.ui.widget.BGABadgeTextView
                     android:id="@+id/re_front_icon"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
