@@ -93,18 +93,10 @@
 
  
 ### 6.功能展示
-<img src="http://i2.bvimg.com/645352/e1d78dd538c3271c.png" width = "270" height = "480" align=center />
-<img src="http://i2.bvimg.com/645352/f50f921e5b7fd1b9.png" width = "270" height = "480" align=center />
-<img src="http://i2.bvimg.com/645352/bbe5ada28baf395b.png" width = "270" height = "480" align=center />
+<img src='http://i1.bvimg.com/645352/41426ca33a2ddeb9.png' width = "270" height = "480" align=center />
 <img src="http://i2.bvimg.com/645352/a224d91ff8d07552.png" width = "270" height = "480" align=center />
-<img src="http://i2.bvimg.com/645352/673eece31a7da525.png" width = "270" height = "480" align=center />
 <img src="http://i2.bvimg.com/645352/063b415c6c896ce4.png" width = "270" height = "480" align=center />
 <img src="http://i2.bvimg.com/645352/7ed595d20a80ed9a.png" width = "270" height = "480" align=center />
-<img src="http://i2.bvimg.com/645352/a7c896ce221d01af.png" width = "270" height = "480" align=center />
-<img src="http://i2.bvimg.com/645352/71acd6e6b23b3108.png" width = "270" height = "480" align=center />
-<img src="http://i2.bvimg.com/645352/bce8eaa76591609f.png" width = "270" height = "480" align=center />
-<img src="http://i2.bvimg.com/645352/de0cfb75caf413f9.png" width = "270" height = "480" align=center />
-<img src="http://i4.bvimg.com/645352/03bf03315d8a1d93.png" width = "270" height = "480" align=center />
 <img src="http://i4.bvimg.com/645352/8e49fdf8c5678540.png" width = "270" height = "480" align=center />
 <img src="http://i4.bvimg.com/645352/496945712f86291b.png" width = "270" height = "480" align=center />
 
