@@ -1,17 +1,21 @@
 package com.user.ui;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.base.app.event.RxBusHelper;
 import com.base.config.GlobalConfig;
+import com.base.utils.LogUtil;
 import com.base.utils.ShareUtil;
+import com.bumptech.glide.Glide;
 import com.user.R;
 import com.user.R2;
 import com.user.app.acitvity.UserBaseCompatFragment;
@@ -29,19 +33,28 @@ import butterknife.OnClick;
 
 
 public class MyFragment extends UserBaseCompatFragment {
-    @BindView(R2.id.tv_person_name)
-    TextView tvPersonName;
+    private final static String TAG = "MyFragment";
+
+    @BindView(R2.id.ll_main)
+    FrameLayout llMain;
     @BindView(R2.id.iv_person_image)
     ImageView ivPersonImage;
+    @BindView(R2.id.tv_person_name)
+    Toolbar tvPersonName;
+    @BindView(R2.id.app_bar)
+    AppBarLayout appBar;
+
+    private Context mContext;
 
     @Override
     protected int setContentView() {
-        return R.layout.fragment_me;
+        return R.layout.fragment_me_new;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View containerView = super.onCreateView(inflater, container, savedInstanceState);
+        mContext = this.getContext();
         RxBusHelper.doOnMainThread(this, MyEvent.class, new RxBusHelper.OnEventListener<MyEvent>() {
             @Override
             public void onEvent(MyEvent myEvent) {
@@ -55,7 +68,7 @@ public class MyFragment extends UserBaseCompatFragment {
     }
 
     private void updateStatus(MyEvent myEvent) {
-        tvPersonName.setText(myEvent.getUserName());
+        tvPersonName.setTitle(myEvent.getUserName());
     }
 
     public void initView() {
@@ -69,7 +82,21 @@ public class MyFragment extends UserBaseCompatFragment {
                 ivPersonImage.setBackgroundResource(R.mipmap.avatar_default);
             }
         }
-        tvPersonName.setText(userName);
+        tvPersonName.setTitle(userName);
+
+        appBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                LogUtil.d(TAG, "verticalOffset:" + verticalOffset);
+                if (verticalOffset < -200) {
+                    ivPersonImage.setVisibility(View.GONE);
+                    llMain.setBackgroundColor(mContext.getResources().getColor(R.color.colorPrimary));
+                } else {
+                    ivPersonImage.setVisibility(View.VISIBLE);
+                    llMain.setBackgroundResource(R.mipmap.bg_1);
+                }
+            }
+        });
     }
 
     @OnClick({R2.id.ll_person, R2.id.rl_setting, R2.id.rl_feedback, R2.id.ml_aboutUs})

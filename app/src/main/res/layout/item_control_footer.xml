@@ -47,7 +47,7 @@
             android:drawablePadding="@dimen/offset_5dp"
             android:textSize="@dimen/text_size_small"
             android:checked="false"
-            android:text="时间"
+            android:text="布局"
             android:textColor="@color/tab_host_text_normal"
             android:layout_weight="1"/>
 

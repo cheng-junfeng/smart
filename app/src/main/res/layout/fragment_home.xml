@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:smart="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_light_gray"
@@ -10,67 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <RelativeLayout
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/base_button_height"
-            android:layout_marginTop="@dimen/offset_5dp"
-            android:background="@drawable/all_item_gray_selector"
-            android:clickable="false">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginRight="@dimen/margin_left"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:singleLine="false"
-                    android:text="环境相关"
-                    android:textColor="#989898"
-                    android:textSize="@dimen/text_size_16" />
-            </LinearLayout>
-        </RelativeLayout>
-        <View style="@style/DeepUnderLine" />
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/context_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/base_button_height"
-            android:layout_marginTop="@dimen/offset_5dp"
-            android:background="@drawable/all_item_gray_selector"
-            android:clickable="false">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginRight="@dimen/margin_left"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:singleLine="false"
-                    android:text="应用相关"
-                    android:textColor="#989898"
-                    android:textSize="@dimen/text_size_16" />
-            </LinearLayout>
-        </RelativeLayout>
-        <View style="@style/DeepUnderLine" />
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/app_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="200dp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -100,37 +43,6 @@
         <View style="@style/DeepUnderLine" />
         <android.support.v7.widget.RecyclerView
             android:id="@+id/widget_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/base_button_height"
-            android:layout_marginTop="@dimen/offset_5dp"
-            android:background="@drawable/all_item_gray_selector"
-            android:clickable="false">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginRight="@dimen/margin_left"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:singleLine="false"
-                    android:text="功能相关"
-                    android:textColor="#989898"
-                    android:textSize="@dimen/text_size_16" />
-            </LinearLayout>
-        </RelativeLayout>
-        <View style="@style/DeepUnderLine" />
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/function_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

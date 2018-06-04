@@ -8,23 +8,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
+import com.alibaba.android.vlayout.layout.SingleLayoutHelper;
+import com.alibaba.android.vlayout.layout.StickyLayoutHelper;
 import com.smart.R;
 import com.smart.app.activity.BaseCompatFragment;
 import com.smart.app.adapter.BaseDelegateAdapter;
+import com.smart.ui.module.main.find.adapter.FindSingleAdapter;
+import com.smart.ui.module.main.find.adapter.FindStickyAdapter;
 import com.smart.ui.module.main.find.contract.FindFragmentContract;
 import com.smart.ui.module.main.find.presenter.FindFragmentPresenter;
-import com.smart.ui.widget.BGABadgeTextView;
 
 import java.util.LinkedList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 public class FindFragment extends BaseCompatFragment implements FindFragmentContract.View {
-
-    @BindView(R.id.re_front_icon)
-    BGABadgeTextView reFrontIcon;
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
@@ -56,37 +55,27 @@ public class FindFragment extends BaseCompatFragment implements FindFragmentCont
         BaseDelegateAdapter bannerAdapter = presenter.initMenu1();
         mAdapters.add(bannerAdapter);
 
+        //设置Sticky布局
+        StickyLayoutHelper stickyLayoutHelper = new StickyLayoutHelper();
+        stickyLayoutHelper.setStickyStart(true);
+        stickyLayoutHelper.setMarginTop(10);
+        mAdapters.add(new FindStickyAdapter(this.getContext(), stickyLayoutHelper, 1));
+
         BaseDelegateAdapter bannerAdapter2 = presenter.initMenu2();
         mAdapters.add(bannerAdapter2);
+
+        //设置通栏布局
+        SingleLayoutHelper singleLayoutHelper = new SingleLayoutHelper();
+        singleLayoutHelper.setMarginTop(10);
+        mAdapters.add(new FindSingleAdapter(this.getContext(), singleLayoutHelper, 1));
 
         BaseDelegateAdapter bannerAdapter3 = presenter.initMenu3();
         mAdapters.add(bannerAdapter3);
 
-        BaseDelegateAdapter bannerAdapter4 = presenter.initMenu4();
+        DelegateAdapter.Adapter bannerAdapter4 = presenter.initMenu4();
         mAdapters.add(bannerAdapter4);
 
         //设置适配器
         delegateAdapter.setAdapters(mAdapters);
-    }
-
-    private int unReadCount = 0;
-    private void addBadge() {
-        unReadCount++;
-        if (unReadCount > 0) {
-            if (unReadCount > 99) {
-                reFrontIcon.showTextBadge("a");
-                reFrontIcon.showTextBadge("99+");
-            } else {
-
-                reFrontIcon.showTextBadge(String.valueOf(unReadCount));
-            }
-        } else {
-            reFrontIcon.hiddenBadge();
-        }
-    }
-
-    @OnClick(R.id.re_itemview)
-    public void onViewClicked() {
-        addBadge();
     }
 }

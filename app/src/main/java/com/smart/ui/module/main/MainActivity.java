@@ -158,7 +158,7 @@ public class MainActivity extends BaseCompatActivity implements MainContract.Vie
                 ToolbarUtil.setToolbar(toolbar, "首页");
                 break;
             case 1:
-                ToolbarUtil.setToolbar(toolbar, "时间");
+                ToolbarUtil.setToolbar(toolbar, "布局");
                 break;
             case 2:
                 ToolbarUtil.setToolbar(toolbar, "消息");

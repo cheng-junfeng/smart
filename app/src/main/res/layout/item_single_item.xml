@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/base_button_height"
+    android:background="@drawable/all_item_gray_selector"
+    android:clickable="true"
+    android:layout_margin="@dimen/offset_3dp">
+
+    <LinearLayout
+        android:id="@+id/hm_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="false"
+            android:layout_gravity="start"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:background="@drawable/type_blue"
+            android:padding="@dimen/offset_5dp"
+            android:gravity="start"
+            android:text="笔记"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/hm_marquee"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="start|center_vertical"
+            android:text="美好的一天">
+        </TextView>
+    </LinearLayout>
+</RelativeLayout>

@@ -5,9 +5,11 @@ import android.content.res.Resources;
 
 import com.base.utils.LogUtil;
 import com.smart.db.entity.DataEntity;
+import com.smart.db.entity.NoteEntity;
 import com.smart.db.helper.DataHelper;
 import com.push.db.helper.MessageHelper;
 import com.push.db.entity.MessagesEntity;
+import com.smart.db.helper.NoteHelper;
 
 import java.util.List;
 import java.util.Random;
@@ -50,6 +52,36 @@ public class DemoManager {
             temp.setInTime(current + "");
             temp.setHadRead(0);
             msgHelper.insert(temp);
+        }
+
+        NoteHelper noteHelper = NoteHelper.getInstance();
+        List<NoteEntity> allData = noteHelper.queryList();
+        if(allData == null || allData.size() == 0){
+            NoteEntity entity1 = new NoteEntity();
+            entity1.set_id(System.currentTimeMillis());
+            entity1.setNote_content("今天天气好");
+            entity1.setNote_lasttime("5-1");
+            noteHelper.insert(entity1);
+
+            NoteEntity entity2 = new NoteEntity();
+            entity2.setNote_content("今天下雨");
+            entity2.setNote_lasttime("5-1");
+            noteHelper.insert(entity2);
+
+            NoteEntity entity3 = new NoteEntity();
+            entity3.setNote_content("今天起风");
+            entity3.setNote_lasttime("5-3");
+            noteHelper.insert(entity3);
+
+            NoteEntity entity4 = new NoteEntity();
+            entity4.setNote_content("今天出太阳");
+            entity4.setNote_lasttime("5-4");
+            noteHelper.insert(entity4);
+
+            NoteEntity entity5 = new NoteEntity();
+            entity5.setNote_content("今天休息");
+            entity5.setNote_lasttime("5-4");
+            noteHelper.insert(entity5);
         }
     }
 }

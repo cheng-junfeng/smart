@@ -19,6 +19,6 @@ public interface FindFragmentContract {
         BaseDelegateAdapter initMenu1();
         BaseDelegateAdapter initMenu2();
         BaseDelegateAdapter initMenu3();
-        BaseDelegateAdapter initMenu4();
+        DelegateAdapter.Adapter initMenu4();
     }
 }

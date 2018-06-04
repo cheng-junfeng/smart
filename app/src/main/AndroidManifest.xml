@@ -102,6 +102,10 @@
             android:screenOrientation="portrait" />
         <activity android:name=".ui.module.other.share.ShareActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.module.other.design.view.VlayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.module.other.time.TimeActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.module.other.nfc.NfcActivity"

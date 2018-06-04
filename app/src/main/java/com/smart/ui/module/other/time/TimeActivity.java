@@ -1,22 +1,21 @@
-package com.smart.ui.module.main.time;
+package com.smart.ui.module.other.time;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.base.utils.ToolbarUtil;
 import com.smart.R;
-import com.smart.app.activity.BaseCompatFragment;
+import com.smart.app.activity.BaseCompatActivity;
 import com.custom.widget.WatcherBoard;
 
 import java.util.Calendar;
 
 import butterknife.BindView;
 
-public class TimeFragment extends BaseCompatFragment {
-    private final static String TAG = "TimeFragment";
+public class TimeActivity extends BaseCompatActivity {
+    private final static String TAG = "TimeActivity";
     @BindView(R.id.watch)
     WatcherBoard watch;
     @BindView(R.id.time_hour)
@@ -32,11 +31,15 @@ public class TimeFragment extends BaseCompatFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View containerView = super.onCreateView(inflater, container, savedInstanceState);
-
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ToolbarUtil.setToolbarLeft(toolbar, "手表", null, new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         initView();
-        return containerView;
     }
 
     private void initView() {

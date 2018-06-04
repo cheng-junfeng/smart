@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/iv_itemview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/offset_60dp"
+        android:background="@drawable/all_item_gray_selector"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/iv_itemContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/offset_15dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:ellipsize="end"
+            android:paddingTop="@dimen/offset_10dp"
+            android:maxLines="2"
+            android:textColor="@color/color_dark_gray6"
+            android:textSize="@dimen/text_size"
+            tools:text="content"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/offset_15dp">
+
+            <TextView
+                android:id="@+id/iv_Time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/offset_15dp"
+                android:textColor="@color/color_dark_gray6"
+                android:textSize="@dimen/text_size_small"
+                tools:text="time" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <View style="@style/DeepUnderLine" />
+</RelativeLayout>
