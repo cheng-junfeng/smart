@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 
 import com.base.utils.LogUtil;
+import com.base.utils.TimeUtil;
 import com.smart.db.entity.DataEntity;
 import com.smart.db.entity.NoteEntity;
 import com.smart.db.helper.DataHelper;
@@ -57,30 +58,35 @@ public class DemoManager {
         NoteHelper noteHelper = NoteHelper.getInstance();
         List<NoteEntity> allData = noteHelper.queryList();
         if(allData == null || allData.size() == 0){
+            long curren = System.currentTimeMillis();
             NoteEntity entity1 = new NoteEntity();
-            entity1.set_id(System.currentTimeMillis());
+            entity1.setNote_id(curren+1000);
             entity1.setNote_content("今天天气好");
-            entity1.setNote_lasttime("5-1");
+            entity1.setNote_lasttime(TimeUtil.milliseconds2StringMsg(curren+1000));
             noteHelper.insert(entity1);
 
             NoteEntity entity2 = new NoteEntity();
+            entity2.setNote_id(curren+2000);
             entity2.setNote_content("今天下雨");
-            entity2.setNote_lasttime("5-1");
+            entity2.setNote_lasttime(TimeUtil.milliseconds2StringMsg(curren+2000));
             noteHelper.insert(entity2);
 
             NoteEntity entity3 = new NoteEntity();
+            entity3.setNote_id(curren+3000);
             entity3.setNote_content("今天起风");
-            entity3.setNote_lasttime("5-3");
+            entity3.setNote_lasttime(TimeUtil.milliseconds2StringMsg(curren+3000));
             noteHelper.insert(entity3);
 
             NoteEntity entity4 = new NoteEntity();
+            entity4.setNote_id(curren+4000);
             entity4.setNote_content("今天出太阳");
-            entity4.setNote_lasttime("5-4");
+            entity4.setNote_lasttime(TimeUtil.milliseconds2StringMsg(curren+4000));
             noteHelper.insert(entity4);
 
             NoteEntity entity5 = new NoteEntity();
+            entity5.setNote_id(curren+5000);
             entity5.setNote_content("今天休息");
-            entity5.setNote_lasttime("5-4");
+            entity5.setNote_lasttime(TimeUtil.milliseconds2StringMsg(curren+5000));
             noteHelper.insert(entity5);
         }
     }

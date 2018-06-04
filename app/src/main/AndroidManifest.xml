@@ -106,6 +106,8 @@
             android:screenOrientation="portrait" />
         <activity android:name=".ui.module.other.time.TimeActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.module.other.note.NoteActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.module.other.nfc.NfcActivity"

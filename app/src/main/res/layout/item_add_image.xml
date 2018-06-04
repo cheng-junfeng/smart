@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/iv_addview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="@dimen/offset_60dp"
-    android:background="@drawable/shape_plus_bg" >
+    android:minHeight="@dimen/offset_60dp">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:id="@+id/iv_addview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="@dimen/offset_60dp"
+        android:background="@drawable/shape_plus_bg"
         android:layout_gravity="center"
-        android:layout_margin="3dp"
-        android:gravity="center_horizontal"
-        android:src="@drawable/ic_plus" />
+        android:gravity="center"
+        android:layout_marginTop="@dimen/offset_5dp"
+        android:layout_marginBottom="@dimen/offset_5dp"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:layout_marginRight="@dimen/offset_10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:gravity="center"
+            android:src="@drawable/ic_plus" />
 
+    </LinearLayout>
 </FrameLayout>

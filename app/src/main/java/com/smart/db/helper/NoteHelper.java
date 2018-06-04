@@ -38,6 +38,17 @@ public class NoteHelper extends BaseDao<NoteEntity> {
         super.deleteObject(message);
     }
 
+    public void delete(long noteId) {
+        NoteEntity entity = queryByNoteId(noteId);
+        if(entity != null){
+            delete(entity);
+        }
+    }
+
+    public void clear() {
+        super.deleteAll(NoteEntity.class);
+    }
+
     public boolean update(NoteEntity user) {
         try {
             daoSession.update(user);
@@ -53,5 +64,12 @@ public class NoteHelper extends BaseDao<NoteEntity> {
         return messDao.queryBuilder()
                 .orderDesc(NoteEntityDao.Properties.Note_lasttime)
                 .list();
+    }
+
+    public NoteEntity queryByNoteId(long noteId) {
+        NoteEntityDao messDao = daoSession.getNoteEntityDao();
+        return messDao.queryBuilder()
+                .where(NoteEntityDao.Properties.Note_id.eq(noteId))
+                .unique();
     }
 }

@@ -10,9 +10,12 @@ import android.view.ViewGroup;
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.layout.SingleLayoutHelper;
 import com.alibaba.android.vlayout.layout.StickyLayoutHelper;
+import com.base.app.event.RxBusHelper;
 import com.smart.R;
 import com.smart.app.activity.BaseCompatFragment;
 import com.smart.app.adapter.BaseDelegateAdapter;
+import com.smart.app.event.NoteEvent;
+import com.smart.app.event.NoteType;
 import com.smart.ui.module.main.find.adapter.FindSingleAdapter;
 import com.smart.ui.module.main.find.adapter.FindStickyAdapter;
 import com.smart.ui.module.main.find.contract.FindFragmentContract;
@@ -31,6 +34,8 @@ public class FindFragment extends BaseCompatFragment implements FindFragmentCont
     private FindFragmentContract.Presenter presenter;
     private List<DelegateAdapter.Adapter> mAdapters;
 
+    DelegateAdapter delegateAdapter;
+
     @Override
     protected int setContentView() {
         return R.layout.fragment_find;
@@ -39,6 +44,14 @@ public class FindFragment extends BaseCompatFragment implements FindFragmentCont
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View containerView = super.onCreateView(inflater, container, savedInstanceState);
+        RxBusHelper.doOnMainThread(this, NoteEvent.class, new RxBusHelper.OnEventListener<NoteEvent>() {
+            @Override
+            public void onEvent(NoteEvent noteEvent) {
+                if((noteEvent.getType() == NoteType.NEW) || (noteEvent.getType() == NoteType.DELETE)){
+                    reloadNote();
+                }
+            }
+        });
         presenter = new FindFragmentPresenter(this, this);
         initView();
         return containerView;
@@ -50,7 +63,7 @@ public class FindFragment extends BaseCompatFragment implements FindFragmentCont
     }
 
     private void initRecyclerView() {
-        DelegateAdapter delegateAdapter = presenter.initRecyclerView(recyclerView);
+        delegateAdapter = presenter.initRecyclerView(recyclerView);
         //把轮播器添加到集合
         BaseDelegateAdapter bannerAdapter = presenter.initMenu1();
         mAdapters.add(bannerAdapter);
@@ -77,5 +90,12 @@ public class FindFragment extends BaseCompatFragment implements FindFragmentCont
 
         //设置适配器
         delegateAdapter.setAdapters(mAdapters);
+    }
+
+    private void reloadNote(){
+        DelegateAdapter.Adapter bannerAdapter4 = presenter.initMenu4();
+        mAdapters.set(5, bannerAdapter4);
+        mAdapters.get(5).notifyDataSetChanged();
+        delegateAdapter.notifyDataSetChanged();
     }
 }
