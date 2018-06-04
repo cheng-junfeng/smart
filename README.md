@@ -2,22 +2,27 @@
 
 ### 1.关于模块的说明
 
-<img src="http://i1.bvimg.com/645352/d13cc4e6adde5fd8.png" width = "521" height = "465" align=center />
+- 非常粗略地划分为了17个模块，可以根据需要裁剪。具体如下：
+6个库 + 6个功能模块 + 5个第三方SDK模块
+- baselib:  	   基准库（主体窗口/事件/回调/全局配置/网络/拦截器/转化器/适配器/工具/切换动画）
+- hintlib:         提示模块   (自定义弹框/加载条/Toast)
+- customlib:       自定义布局模块   (左滑删除/编辑全清/倒计时/文字轮播/倒计数/秒表)
+- zxinglib:        扫码模块   (条形码/二维码)
+- webviewlib:      网页模块   (Jsbridage)
+- permissionlib:   权限模块   (权限工具)
 
-- 先给出层次图，描述待更新(网页，多媒体，权限，待提取为lib来使用)
-- 粗略划分为了9个模块，可以根据需要裁剪。具体如下：
-- base:  			        基准库（主体窗口，事件，回调，全局配置，网络，拦截器，转化器，控件，适配器，工具，切换动画）
-- app：  			        主模块 (多进程，数据库，网络服务，引导，启动页，主窗口，分页，详情，通知，扫码)
+- app(依赖base)：  		主模块 (进程，线程，数据库，网络服务，引导，启动页，主窗口，分页，详情，通知，扫码)
+- user(依赖base): 		用户模块 (DB/网络/登录/注册/我的/关于/版本更新/修改密码/设置/意见反馈)
+- photo(依赖base):      图片模块 (查看，缩放，编辑)
+- video(依赖base):      视频模块 (四种播放, 捕获，列表)
+- audio(依赖base)：     音频模块 (捕获，播放)
+- word(依赖base):       文本模块 (word查看/编辑，pdf查看)
 
-- Auser(依赖base): 		用户模块 (DB, 网络, 登录/注册/我的/关于/版本更新/修改密码/设置/意见反馈)
-- Apush(依赖base): 		推送模块 (服务, 消息接收 极光/MQTT)
-- Apermission(依赖base):  权限模块 (权限, 插件)
-- Amap(依赖base)：        地图模块 (百度定位, 轨迹)
-
-- videoAudio(独立):       音视频模块 (视频捕获，音频获取)
-- zxinglib(独立):         扫码模块   (条形码，二维码 获取)
-- webview(独立):          网页模块   (Jsbridage/JavascriptInterface 互调)
-
+- push(依赖base): 		推送模块 (极光推送，MQTT, 服务)
+- baidmap(依赖base):    地图模块 (百度地图，定位，图层，导航，轨迹)
+- txlive(依赖base):     直播模块 (腾讯直播，推流，播放)
+- hyphenate(依赖base):  聊天模块 (环信互聊，登录，聊天，群组)
+- hikvision(依赖base):  监控模块 (海康监控，播放)
 
 ### 2.关于开源项目的说明
 	常用
@@ -43,6 +48,7 @@
 - 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'  上拉加载下拉刷新
 - 'cn.bingoogolapple:bga-badgeview-api:1.1.7'
 - "cn.bingoogolapple:bga-badgeview-compiler:1.1.7"     角标
+- "com.alibaba.android:vlayout:1.2.2@aar"              阿里虚拟布局
 
 
 ### 4.自定义View
@@ -103,21 +109,20 @@
 <img src="http://i4.bvimg.com/645352/496945712f86291b.png" width = "270" height = "480" align=center />
 
 
-### 7.后记
+### 7.使用到的后台
+- 极光push平台，包名相关，后台不可修改包名 （manifest key值）
+- 百度map平台，包名相关，后台可修改包名 （manifest key值）
+- 腾讯Bugly平台, 包名无关（application key值）
+- 环信IM平台，包名无关（manifest key值）
+- 腾讯直播，包名无关，无key值，自建后台
+
+### 8.后记
 - 1 欢迎沟通
 - Email: sjun945@outlook.com 
 - WeChat: cheng-junfeng
 
 - 2 项目中有很多参考的是别人优秀的开源代码，未标记出处
 - 如有版权问题，请与我联系。
-
-- 3 项目代码持续优化中
-
-
-### 8.更新说明
-- 1 新增布局：表头+侧滑+底部框+筛选+悬浮按钮+视图分页+倒计时+弹框+文字轮播+照片长廊
-- 2 新增布局：照片轮播+拍照选图+相册选图
-- 3 新增功能：二维码生成
 
 
 
