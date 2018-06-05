@@ -16,7 +16,8 @@ public class ToastUtils {
         if (context == null) {
             return;
         }
-        final Toast toast = Toast.makeText(context, "", Toast.LENGTH_SHORT);
+        final Context applicationContext = context.getApplicationContext();
+        final Toast toast = Toast.makeText(applicationContext, "", Toast.LENGTH_SHORT);
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_toast, null, false);
         LinearLayout llToast = (LinearLayout) view.findViewById(R.id.toast);
         TextView lltext = (TextView) view.findViewById(R.id.toast_tv);

@@ -100,9 +100,9 @@ public class NoteActivity extends BaseCompatActivity {
         LogUtil.d(TAG, "result"+result+":"+isEdit);
         DialogUtils.dismissLoading();
         if(!result){
-            ToastUtils.showToast(mContext.getApplicationContext(), "保存失败，请稍后重试");
+            ToastUtils.showToast(mContext, "保存失败，请稍后重试");
         }else{
-            ToastUtils.showToast(mContext.getApplicationContext(), "保存成功");
+            ToastUtils.showToast(mContext, "保存成功");
         }
         RxBusHelper.post(new NoteEvent.Builder(NoteType.NEW).build());
         finish();
