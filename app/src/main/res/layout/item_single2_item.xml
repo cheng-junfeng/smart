@@ -23,18 +23,21 @@
             android:background="@drawable/type_blue"
             android:padding="@dimen/offset_5dp"
             android:gravity="start"
-            android:text="笔记"
+            android:text="主页"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_16" />
 
         <TextView
             android:id="@+id/hm_marquee"
             android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:ellipsize="marquee"
+            android:singleLine="true"
             android:gravity="start|center_vertical"
-            android:text="美好的一天，从早起开始">
+            android:text="有问题,请访问我的主页www.chengjunfeng.cn">
         </TextView>
     </LinearLayout>
 </RelativeLayout>

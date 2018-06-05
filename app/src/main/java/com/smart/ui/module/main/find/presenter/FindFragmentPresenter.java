@@ -154,7 +154,6 @@ public class FindFragmentPresenter implements FindFragmentContract.Presenter {
         }
         list1_image.recycle();
         GridLayoutHelper gridLayoutHelper = new GridLayoutHelper(4);
-        gridLayoutHelper.setMargin(0, 10, 0, 0);
         gridLayoutHelper.setPadding(0, 20, 0, 10);
         gridLayoutHelper.setVGap(10);// 控制子元素之间的垂直间距
         gridLayoutHelper.setHGap(0);// 控制子元素之间的水平间距
@@ -221,7 +220,6 @@ public class FindFragmentPresenter implements FindFragmentContract.Presenter {
         }
         proPic.recycle();
         GridLayoutHelper gridLayoutHelper = new GridLayoutHelper(4);
-        gridLayoutHelper.setMargin(0, 10, 0, 0);
         gridLayoutHelper.setPadding(0, 16, 0, 16);
         gridLayoutHelper.setVGap(16);   // 控制子元素之间的垂直间距
         gridLayoutHelper.setHGap(0);    // 控制子元素之间的水平间距
@@ -289,8 +287,7 @@ public class FindFragmentPresenter implements FindFragmentContract.Presenter {
         //设置间隔高度
         linearLayoutHelper.setDividerHeight(1);
         //设置布局底部与下个布局的间隔
-        linearLayoutHelper.setMarginTop(10);
-        linearLayoutHelper.setMarginBottom(100);
+        linearLayoutHelper.setMarginBottom(80);
 
         return new FindLinearAdapter(mContext, linearLayoutHelper, allData);
     }

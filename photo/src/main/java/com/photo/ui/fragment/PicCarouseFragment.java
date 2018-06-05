@@ -37,7 +37,7 @@ public class PicCarouseFragment extends PhotoBaseCompatFragment {
     private List<ImageView> mImageList; //轮播的图片集合
     private String[] mImageTitles;      //标题集合
     private int previousPosition = 0;//前一个被选中的position
-    private List<View> mDots;           //小点
+//    private List<View> mDots;           //小点
 
     private boolean isStop = false;//线程是否停止
     private static int PAGER_TIOME = 3000;//间隔时间
@@ -78,7 +78,7 @@ public class PicCarouseFragment extends PhotoBaseCompatFragment {
             mImageList.add(iv);
         }
 
-        mDots = addDots(lineLayoutDot, fromResToDrawable(mContext, R.drawable.ic_dot_normal), mImageList.size());//其中fromResToDrawable()方法是我自定义的，目的是将资源文件转成Drawable
+//        mDots = addDots(lineLayoutDot, fromResToDrawable(mContext, R.drawable.ic_dot_normal), mImageList.size());//其中fromResToDrawable()方法是我自定义的，目的是将资源文件转成Drawable
     }
 
     private class pagerImageOnClick implements View.OnClickListener {
@@ -113,13 +113,13 @@ public class PicCarouseFragment extends PhotoBaseCompatFragment {
                 // 把当前选中的点给切换了, 还有描述信息也切换
                 tvPagerTitle.setText(mImageTitles[newPosition]);//图片下面设置显示文本
                 //设置轮播点
-                LinearLayout.LayoutParams newDotParams = (LinearLayout.LayoutParams) mDots.get(newPosition).getLayoutParams();
-                newDotParams.width = 24;
-                newDotParams.height = 24;
-
-                LinearLayout.LayoutParams oldDotParams = (LinearLayout.LayoutParams) mDots.get(previousPosition).getLayoutParams();
-                oldDotParams.width = 16;
-                oldDotParams.height = 16;
+//                LinearLayout.LayoutParams newDotParams = (LinearLayout.LayoutParams) mDots.get(newPosition).getLayoutParams();
+//                newDotParams.width = 24;
+//                newDotParams.height = 24;
+//
+//                LinearLayout.LayoutParams oldDotParams = (LinearLayout.LayoutParams) mDots.get(previousPosition).getLayoutParams();
+//                oldDotParams.width = 16;
+//                oldDotParams.height = 16;
 
                 // 把当前的索引赋值给前一个索引变量, 方便下一次再切换.
                 previousPosition = newPosition;

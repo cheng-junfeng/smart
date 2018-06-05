@@ -6,8 +6,9 @@
     xmlns:smart="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/all_item_gray_selector"
     android:clickable="true"
+    android:layout_marginTop="1dp"
+    android:layout_marginBottom="1dp"
     android:minHeight="@dimen/msg_home_height">
-    <View style="@style/DeepUnderLine"/>
 
     <LinearLayout
         android:id="@+id/re_first_layout"

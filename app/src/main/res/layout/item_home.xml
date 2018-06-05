@@ -10,6 +10,8 @@
         android:orientation="vertical"
         android:gravity="center"
         android:padding="@dimen/offset_10dp"
+        android:layout_marginTop="@dimen/offset_5dp"
+        android:layout_marginLeft="@dimen/offset_5dp"
         android:minHeight="@dimen/main_margin_height"
         android:background="@drawable/all_item_gray_selector"
         android:clickable="true">

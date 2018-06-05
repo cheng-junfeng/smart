@@ -16,6 +16,7 @@ import com.smart.app.activity.BaseCompatFragment;
 import com.smart.app.adapter.BaseDelegateAdapter;
 import com.smart.app.event.NoteEvent;
 import com.smart.app.event.NoteType;
+import com.smart.ui.module.main.find.adapter.FindSingle2Adapter;
 import com.smart.ui.module.main.find.adapter.FindSingleAdapter;
 import com.smart.ui.module.main.find.adapter.FindStickyAdapter;
 import com.smart.ui.module.main.find.contract.FindFragmentContract;
@@ -71,7 +72,6 @@ public class FindFragment extends BaseCompatFragment implements FindFragmentCont
         //设置Sticky布局
         StickyLayoutHelper stickyLayoutHelper = new StickyLayoutHelper();
         stickyLayoutHelper.setStickyStart(true);
-        stickyLayoutHelper.setMarginTop(10);
         mAdapters.add(new FindStickyAdapter(this.getContext(), stickyLayoutHelper, 1));
 
         BaseDelegateAdapter bannerAdapter2 = presenter.initMenu2();
@@ -79,11 +79,13 @@ public class FindFragment extends BaseCompatFragment implements FindFragmentCont
 
         //设置通栏布局
         SingleLayoutHelper singleLayoutHelper = new SingleLayoutHelper();
-        singleLayoutHelper.setMarginTop(10);
-        mAdapters.add(new FindSingleAdapter(this.getContext(), singleLayoutHelper, 1));
+        mAdapters.add(new FindSingle2Adapter(this.getContext(), singleLayoutHelper, 1));
 
         BaseDelegateAdapter bannerAdapter3 = presenter.initMenu3();
         mAdapters.add(bannerAdapter3);
+
+        //设置通栏布局
+        mAdapters.add(new FindSingleAdapter(this.getContext(), singleLayoutHelper, 1));
 
         DelegateAdapter.Adapter bannerAdapter4 = presenter.initMenu4();
         mAdapters.add(bannerAdapter4);
@@ -93,9 +95,6 @@ public class FindFragment extends BaseCompatFragment implements FindFragmentCont
     }
 
     private void reloadNote(){
-        DelegateAdapter.Adapter bannerAdapter4 = presenter.initMenu4();
-        mAdapters.set(5, bannerAdapter4);
-        mAdapters.get(5).notifyDataSetChanged();
-        delegateAdapter.notifyDataSetChanged();
+        initView();
     }
 }

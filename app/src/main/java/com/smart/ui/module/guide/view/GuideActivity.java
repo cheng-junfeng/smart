@@ -7,15 +7,19 @@ import android.view.KeyEvent;
 import android.view.WindowManager;
 
 import com.base.utils.LogUtil;
+import com.custom.widget.CountDownView;
 import com.smart.R;
 import com.smart.app.activity.BaseCompatActivity;
-import com.base.app.thread.WeakHandler;
 import com.smart.ui.module.main.MainActivity;
-import com.user.ui.view.MyLoginActivity;
 import com.user.ui.presenter.LoginPresenter;
+import com.user.ui.view.MyLoginActivity;
+
+import butterknife.BindView;
 
 public class GuideActivity extends BaseCompatActivity {
     private final static String TAG = "GuideActivity";
+    @BindView(R.id.cdv_time)
+    CountDownView cdvTime;
 
     private boolean isLogin = false;
     private Context mContext;
@@ -37,14 +41,16 @@ public class GuideActivity extends BaseCompatActivity {
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         mContext = this;
-        presenter = new LoginPresenter();
 
+        presenter = new LoginPresenter();
         isLogin = presenter.isLogin(this);
-        WeakHandler handler = new WeakHandler(this);
-        Runnable runnable = new Runnable() {
+
+        cdvTime.setTime(3);
+        cdvTime.start();
+        cdvTime.setOnLoadingFinishListener(new CountDownView.OnLoadingFinishListener() {
             @Override
-            public void run() {
-                LogUtil.d(TAG, "isLogin "+isLogin);
+            public void finish() {
+                LogUtil.d(TAG, "isLogin " + isLogin);
                 if (isLogin) {
                     presenter.initLogin(mContext);
                     readGoFinishAnim(MainActivity.class);
@@ -52,8 +58,7 @@ public class GuideActivity extends BaseCompatActivity {
                     readGoFinishAnim(MyLoginActivity.class);
                 }
             }
-        };
-        handler.postDelayed(runnable, 1000);
+        });
     }
 
     /**
@@ -68,5 +73,13 @@ public class GuideActivity extends BaseCompatActivity {
                 break;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(cdvTime!=null && cdvTime.isShown()){
+            cdvTime.stop();
+        }
     }
 }

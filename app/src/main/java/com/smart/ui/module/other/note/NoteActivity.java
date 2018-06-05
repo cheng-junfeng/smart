@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.base.app.event.RxBusHelper;
+import com.base.utils.LogUtil;
 import com.base.utils.TimeUtil;
 import com.base.utils.ToolbarUtil;
 import com.custom.widget.MultiEditInputView;
@@ -25,7 +26,7 @@ import butterknife.BindView;
 
 public class NoteActivity extends BaseCompatActivity {
 
-    private final static String TAG = "MyFeedBackActivity";
+    private final static String TAG = "NoteActivity";
 
     @BindView(R.id.mev_view)
     MultiEditInputView mevView;
@@ -36,6 +37,7 @@ public class NoteActivity extends BaseCompatActivity {
 
     private NoteHelper noteHelper;
     private NoteEntity myEntity;
+    private boolean isEdit = false;
 
     @Override
     protected int setContentView() {
@@ -56,6 +58,7 @@ public class NoteActivity extends BaseCompatActivity {
         myEntity = noteHelper.queryByNoteId(noteId);
         if(myEntity != null){
             title = "编辑笔记";
+            isEdit = true;
             mevView.setContentText(myEntity.getNote_content());
         }
 
@@ -68,7 +71,6 @@ public class NoteActivity extends BaseCompatActivity {
         ToolbarUtil.setToolbarRight(toolbar, "保存", new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                onBackPressed();
                 saveNotes();
             }
         });
@@ -82,15 +84,22 @@ public class NoteActivity extends BaseCompatActivity {
             return;
         }
         long current = System.currentTimeMillis();
-        String inTime = TimeUtil.milliseconds2StringMsg(current);
-        if(myEntity == null){
+        String inTime = TimeUtil.milliseconds2String(current);
+        if(!isEdit){
             myEntity = new NoteEntity();
         }
         myEntity.setNote_id(current);
         myEntity.setNote_lasttime(inTime);
         myEntity.setNote_content(contentText);
+        boolean result = false;
+        if(!isEdit){
+            result = noteHelper.insert(myEntity);
+        }else{
+            result = noteHelper.update(myEntity);
+        }
+        LogUtil.d(TAG, "result"+result+":"+isEdit);
         DialogUtils.dismissLoading();
-        if(!noteHelper.insert(myEntity)){
+        if(!result){
             ToastUtils.showToast(mContext.getApplicationContext(), "保存失败，请稍后重试");
         }else{
             ToastUtils.showToast(mContext.getApplicationContext(), "保存成功");
@@ -98,9 +107,4 @@ public class NoteActivity extends BaseCompatActivity {
         RxBusHelper.post(new NoteEvent.Builder(NoteType.NEW).build());
         finish();
     }
-
-//    @OnClick(R.id.sure)
-//    public void onViewClicked() {
-//        saveNotes();
-//    }
 }
