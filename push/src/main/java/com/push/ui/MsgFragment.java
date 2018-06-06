@@ -14,6 +14,7 @@ import com.hint.utils.DialogUtils;
 import com.hint.utils.ToastUtils;
 import com.base.utils.LogUtil;
 import com.base.utils.ShareUtil;
+import com.push.PushAPI;
 import com.push.R;
 import com.push.R2;
 import com.push.app.activity.PushBaseCompatFragment;
@@ -21,7 +22,6 @@ import com.base.app.event.RxBusHelper;
 import com.push.app.event.MsgEvent;
 import com.push.app.event.MsgType;
 import com.base.app.listener.OnClickLongListener;
-import com.push.app.control.Push;
 import com.push.config.PushSharePre;
 import com.push.ui.adapter.MessageListAdapter;
 import com.push.ui.bean.MessageListBean;
@@ -88,7 +88,7 @@ public class MsgFragment extends PushBaseCompatFragment implements MsgContract.V
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
-            Push.resume(getActivity());
+            PushAPI.resume(getActivity());
             refreshStatus();
         }
     }
@@ -126,8 +126,8 @@ public class MsgFragment extends PushBaseCompatFragment implements MsgContract.V
             @Override
             public void onClick(View view) {
                 DialogUtils.showProgressDialog(mContext, "正在刷新");
-                Push.resume(mContext);
-                Push.resumeMqtt(mContext);
+                PushAPI.resume(mContext);
+                PushAPI.resumeMqtt(mContext);
                 recyclerView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -179,7 +179,7 @@ public class MsgFragment extends PushBaseCompatFragment implements MsgContract.V
     }
 
     private void refreshStatus() {
-        if (!Push.getStatus(mContext)) {
+        if (!PushAPI.getStatus(mContext)) {
             ivMsgError.setVisibility(View.VISIBLE);
         } else {
             ivMsgError.setVisibility(View.GONE);

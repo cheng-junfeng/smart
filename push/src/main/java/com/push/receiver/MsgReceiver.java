@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import com.base.config.GlobalConfig;
 import com.base.utils.LogUtil;
 import com.push.R;
-import com.push.app.control.Push;
+import com.push.PushAPI;
 import com.push.config.PushConfig;
 import com.push.utils.PrintUtil;
 import com.base.app.event.RxBusHelper;
@@ -89,7 +89,7 @@ public class MsgReceiver extends BroadcastReceiver {
 
         boolean hadInsert = MessageUtil.insertMessageDb(context, type, messId, netTitle, message, extras);
         if (hadInsert) {
-            Push.showNotification(context, getViewIntent(context), netTitle, message);
+            PushAPI.showNotification(context, getViewIntent(context), netTitle, message);
             MsgEvent event = new MsgEvent.Builder(MsgType.NEW)
                     .title(netTitle)
                     .content(message)

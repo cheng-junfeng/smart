@@ -15,6 +15,7 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.view.View;
 import android.widget.Button;
 
+import com.baidu.BmapAPI;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.trace.api.entity.OnEntityListener;
@@ -30,7 +31,6 @@ import com.baidu.trace.model.StatusCodes;
 import com.baidu.trace.model.TraceLocation;
 import com.baidu.track.BuildConfig;
 import com.baidu.track.R;
-import com.baidu.track.control.Bmap;
 import com.baidu.track.model.CurrentLocation;
 import com.baidu.track.utils.CommonUtil;
 import com.baidu.track.utils.Constants;
@@ -48,7 +48,7 @@ public class TracingActivity extends BmapBaseCompatActivity implements View.OnCl
 
     private final static String TAG = "TracingActivity";
 
-    private Bmap trackApp = null;
+    private BmapAPI trackApp = null;
     private ViewUtil viewUtil = null;
     private Button traceBtn = null;
     private Button gatherBtn = null;
@@ -99,7 +99,7 @@ public class TracingActivity extends BmapBaseCompatActivity implements View.OnCl
 
     private void init() {
         initListener();
-        trackApp = Bmap.getInstance();
+        trackApp = BmapAPI.getInstance();
         viewUtil = new ViewUtil();
         mapUtil = MapUtil.getInstance();
         mapUtil.init((MapView) findViewById(R.id.tracing_mapView));

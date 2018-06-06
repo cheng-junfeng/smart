@@ -1,4 +1,4 @@
-package com.push.app.control;
+package com.push;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -13,8 +13,10 @@ import com.base.utils.LogUtil;
 import com.base.utils.NotificationUtil;
 import com.base.utils.ShareUtil;
 import com.push.R;
+import com.push.app.control.TagAliasOperatorHelper;
 import com.push.config.PushConfig;
 import com.push.config.PushSharePre;
+import com.push.db.control.PushDbManager;
 import com.push.service.MqttService;
 
 import cn.jpush.android.api.BasicPushNotificationBuilder;
@@ -26,14 +28,15 @@ import static com.push.app.control.TagAliasOperatorHelper.ACTION_GET;
 import static com.push.app.control.TagAliasOperatorHelper.ACTION_SET;
 
 
-public class Push {
-    public final static String TAG = "JIGUANG-Push";
+public class PushAPI {
+    public final static String TAG = "JIGUANG-PushAPI";
 
     //初始化
     public static void init(Context context) {
+        PushDbManager.init(context);
         LogUtil.d(TAG, "init [0503]");
         JPushInterface.setDebugMode(GlobalConfig.IS_DEBUG);    // 设置开启日志,发布时请关闭日志
-        JPushInterface.init(context);                      // 初始化 Push
+        JPushInterface.init(context);                      // 初始化 PushAPI
         JPushInterface.stopPush(context);
         if (Build.VERSION.SDK_INT >= 26){
             NotificationManager notificationManager = (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);

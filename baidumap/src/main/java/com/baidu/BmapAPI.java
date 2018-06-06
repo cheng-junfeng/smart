@@ -1,4 +1,4 @@
-package com.baidu.track.control;
+package com.baidu;
 
 
 import android.annotation.TargetApi;
@@ -30,8 +30,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Bmap {
-    public final static String TAG = "Bmap";
+public class BmapAPI {
+    public final static String TAG = "BmapAPI";
     public static final long serviceId = 165006;
     public static String entityName = "myTrace";
 
@@ -43,11 +43,10 @@ public class Bmap {
     private LocRequest locRequest = null;
     public LBSTraceClient mClient = null;
 
-
-    private static Bmap map;
-    public static Bmap getInstance(){
+    private static BmapAPI map;
+    public static BmapAPI getInstance(){
         if(map == null){
-            map = new Bmap();
+            map = new BmapAPI();
         }
         return map;
     }

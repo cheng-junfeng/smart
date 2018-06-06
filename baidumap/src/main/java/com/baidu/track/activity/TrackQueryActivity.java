@@ -40,7 +40,7 @@ import com.baidu.trace.model.SortType;
 import com.baidu.trace.model.StatusCodes;
 import com.baidu.trace.model.TransportMode;
 import com.baidu.track.R;
-import com.baidu.track.control.Bmap;
+import com.baidu.BmapAPI;
 import com.baidu.track.dialog.TrackAnalysisDialog;
 import com.baidu.track.dialog.TrackAnalysisInfoLayout;
 import com.baidu.track.utils.BitmapUtil;
@@ -60,7 +60,7 @@ import java.util.List;
 public class TrackQueryActivity extends BmapBaseCompatActivity
         implements CompoundButton.OnCheckedChangeListener, BaiduMap.OnMarkerClickListener {
 
-    private Bmap trackApp = null;
+    private BmapAPI trackApp = null;
 
     private ViewUtil viewUtil = null;
 
@@ -233,7 +233,7 @@ public class TrackQueryActivity extends BmapBaseCompatActivity
                 ViewUtil.startActivityForResult((BaseAppCompatActivity)mContext, TrackQueryOptionsActivity.class, Constants.REQUEST_CODE);
             }
         });
-        trackApp = Bmap.getInstance();
+        trackApp = BmapAPI.getInstance();
         init();
     }
 

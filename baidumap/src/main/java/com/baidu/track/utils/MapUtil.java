@@ -22,7 +22,7 @@ import com.baidu.mapapi.utils.CoordinateConverter;
 import com.baidu.trace.model.CoordType;
 import com.baidu.trace.model.SortType;
 import com.baidu.trace.model.TraceLocation;
-import com.baidu.track.control.Bmap;
+import com.baidu.BmapAPI;
 import com.baidu.track.model.CurrentLocation;
 import com.base.utils.ShareUtil;
 
@@ -155,7 +155,7 @@ public class MapUtil {
      *
      * @param trackApp
      */
-    public void setCenter(Bmap trackApp) {
+    public void setCenter(BmapAPI trackApp) {
         if (!CommonUtil.isZeroPoint(CurrentLocation.latitude, CurrentLocation.longitude)) {
             LatLng currentLatLng = new LatLng(CurrentLocation.latitude, CurrentLocation.longitude);
             updateStatus(currentLatLng, false);

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.baidu.BmapAPI;
 import com.baidu.map.ui.MapBaseActivity;
 import com.baidu.map.ui.MapNaviActivity;
 import com.baidu.map.ui.MapOverLayActivity;
@@ -16,7 +17,6 @@ import com.baidu.map.ui.MapRouteActivity;
 import com.baidu.track.R;
 import com.baidu.track.R2;
 import com.baidu.track.adapter.MyAdapter;
-import com.baidu.track.control.Bmap;
 import com.baidu.track.model.ItemInfo;
 import com.baidu.track.utils.BitmapUtil;
 import com.baidu.track.utils.CommonUtil;
@@ -119,7 +119,7 @@ public class MapMainActivity extends BmapBaseCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         LogUtil.d(TAG, "onDestroy");
-        Bmap trackApp = Bmap.getInstance();
+        BmapAPI trackApp = BmapAPI.getInstance();
         CommonUtil.saveCurrentLocation();
         if (ShareUtil.contains("is_trace_started")
                 && ShareUtil.getBoolean("is_trace_started", true)) {

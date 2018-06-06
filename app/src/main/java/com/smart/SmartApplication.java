@@ -6,24 +6,19 @@ import android.content.Intent;
 import android.os.Environment;
 import android.support.multidex.MultiDexApplication;
 
-import com.baidu.track.control.Bmap;
+import com.baidu.BmapAPI;
 import com.blankj.utilcode.util.Utils;
-import com.hyphenate.chat.EMOptions;
-import com.hyphenate.easeui.EaseUI;
-import com.hyphenate.easeui.domain.EaseAvatarOptions;
+import com.hyphenate.EaseUIAPI;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
 import com.tencent.bugly.beta.UpgradeInfo;
 import com.tencent.bugly.beta.upgrade.UpgradeListener;
 import com.base.config.GlobalConfig;
 import com.base.utils.LogUtil;
-import com.push.app.control.Push;
-import com.push.db.control.PushDbManager;
-import com.smart.R;
+import com.push.PushAPI;
 import com.smart.db.control.AppDbManager;
 import com.smart.ui.module.other.data.control.DemoManager;
 import com.user.UserAPI;
-import com.user.db.control.UserDbManager;
 import com.user.ui.view.MyAboutActivity;
 import com.user.ui.view.MyUpgradeActvity;
 
@@ -60,35 +55,18 @@ public class SmartApplication extends MultiDexApplication {
 
         //db
         AppDbManager.init(mContext);
-        PushDbManager.init(mContext);
 
         //module
         UserAPI.init(mContext);
-        Push.init(mContext);
-        Bmap.getInstance().init(mContext);
-        initEaseUI();
+        PushAPI.init(mContext);
+        BmapAPI.getInstance().init(mContext);
+        EaseUIAPI.init(mContext);
 
         //upgrade
         initUpgrade();
 
         //demo
         DemoManager.init(mContext);//for datas
-    }
-
-    private void initEaseUI(){
-        EMOptions options = new EMOptions();
-        // 默认添加好友时，是不需要验证的，改成需要验证
-        options.setAcceptInvitationAlways(false);
-        LogUtil.d(TAG, "initEaseUI");
-        if (EaseUI.getInstance().init(this, options)){
-            EaseAvatarOptions easeAvatarOptions=new EaseAvatarOptions();
-            //圆形头像
-            easeAvatarOptions.setAvatarShape(1);
-            LogUtil.d(TAG, "setAvatarShape");
-            EaseUI.getInstance().setAvatarOptions(easeAvatarOptions);
-        }else{
-            LogUtil.d(TAG, "initEaseUI fail");
-        }
     }
 
     private void initUpgrade(){
