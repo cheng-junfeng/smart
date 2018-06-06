@@ -13,6 +13,7 @@ import com.context.bean.ProcessInfo;
 import com.context.bean.TaskInfo;
 import com.context.utils.AppUtils;
 import com.context.utils.FileUtil;
+import com.context.utils.ProcessUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,9 @@ public class TestSecondActivity extends AppCompatActivity {
             case 3:
                 initTaskView();
                 break;
+            case 4:
+                initTaskView2();
+                break;
             default:break;
         }
     }
@@ -84,7 +88,14 @@ public class TestSecondActivity extends AppCompatActivity {
 
     private void initTaskView() {
         List<TaskInfo> apps = AppUtils.getTaskInfos(this);
-        Log.d(TAG, "task:"+apps.size());
+        Log.d(TAG, "task1:"+apps.size());
+        TaskListAdapter mAdapter = new TaskListAdapter(mContext, apps);
+        mainView.setAdapter(mAdapter);
+    }
+
+    private void initTaskView2() {
+        List<TaskInfo> apps = ProcessUtils.getTaskInfos(this);
+        Log.d(TAG, "task2:"+apps.size());
         TaskListAdapter mAdapter = new TaskListAdapter(mContext, apps);
         mainView.setAdapter(mAdapter);
     }

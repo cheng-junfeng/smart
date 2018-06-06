@@ -1,6 +1,7 @@
 package com.context.simple;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,11 @@ class TaskListAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         TaskInfo appInfo = getItem(position);
+        if(!appInfo.isUserTask()){
+            holder.tvLayout.setBackgroundColor(Color.RED);
+        }else{
+            holder.tvLayout.setBackgroundColor(Color.WHITE);
+        }
         holder.tvCount.setText(""+(position+1));
         holder.tvIcon.setImageDrawable(appInfo.getTask_icon());
         holder.tvName.setText(appInfo.getTask_name());

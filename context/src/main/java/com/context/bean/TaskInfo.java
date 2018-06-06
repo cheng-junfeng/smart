@@ -14,6 +14,8 @@ public class TaskInfo {
     public String packageName;
     //进程id
     public int pid;
+    // true 用户进程 false 系统进程
+    private boolean userTask = true;
 
     public TaskInfo() {
         super();
@@ -58,6 +60,12 @@ public class TaskInfo {
     }
     public void setPid(int pid) {
         this.pid = pid;
+    }
+    public boolean isUserTask() {
+        return userTask;
+    }
+    public void setUserTask(boolean userTask) {
+        this.userTask = userTask;
     }
 
     @Override

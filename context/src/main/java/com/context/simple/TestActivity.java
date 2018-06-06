@@ -27,7 +27,7 @@ public class TestActivity extends AppCompatActivity {
         setTitle("Test");
     }
 
-    @OnClick({R2.id.all_app, R2.id.all_process, R2.id.all_ram, R2.id.all_task})
+    @OnClick({R2.id.all_app, R2.id.all_process, R2.id.all_ram, R2.id.all_task, R2.id.all_process2})
     public void onViewClicked(View view) {
         int viewId = view.getId();
         if(viewId == R.id.all_app){
@@ -52,6 +52,12 @@ public class TestActivity extends AppCompatActivity {
             Intent intent = new Intent(this, TestSecondActivity.class);
             Bundle bundle = new Bundle();
             bundle.putInt("POS", 3);
+            intent.putExtras(bundle);
+            startActivity(intent);
+        } else if(viewId == R.id.all_process2){
+            Intent intent = new Intent(this, TestSecondActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("POS", 4);
             intent.putExtras(bundle);
             startActivity(intent);
         }

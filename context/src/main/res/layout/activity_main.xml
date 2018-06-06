@@ -14,7 +14,7 @@
         android:id="@+id/all_process"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="所有进程"/>
+        android:text="所有进程(系统)"/>
 
     <Button
         android:id="@+id/all_ram"
@@ -26,5 +26,11 @@
         android:id="@+id/all_task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="所有任务"/>
+        android:text="所有任务(系统)"/>
+
+    <Button
+        android:id="@+id/all_process2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="进程(三方)"/>
 </LinearLayout>
