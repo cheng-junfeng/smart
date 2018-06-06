@@ -56,4 +56,7 @@ dependencies {
     implementation project(':hintlib')
     //customlib
     implementation project(':customlib')
+
+    //thirdlogin
+    api project(':thirdlogin')
 }

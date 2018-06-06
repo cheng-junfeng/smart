@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.base.utils.LogUtil;
 import com.bumptech.glide.Glide;
 import com.hint.listener.OnConfirmListener;
 import com.hint.utils.DialogUtils;
@@ -15,6 +16,9 @@ import com.base.config.GlobalConfig;
 import com.base.utils.ShareUtil;
 import com.base.utils.ToolbarUtil;
 
+import com.thirdlogin.simple.TestDefault;
+import com.thirdlogin.utils.ShareUtils;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.user.R;
 import com.user.R2;
 import com.user.app.acitvity.UserBaseCompatActivity;
@@ -63,6 +67,14 @@ public class MyInfoActivity extends UserBaseCompatActivity {
                 onBackPressed();
             }
         });
+        ToolbarUtil.setToolbarRight(toolbar, "分享", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ShareUtils.shareWeb(MyInfoActivity.this, TestDefault.url, TestDefault.title
+                        , TestDefault.text, TestDefault.imageurl, com.thirdlogin.R.mipmap.ic_launcher, SHARE_MEDIA.SINA
+                );
+            }
+        });
         RxBusHelper.doOnMainThread(this, MyEvent.class, new RxBusHelper.OnEventListener<MyEvent>() {
             @Override
             public void onEvent(MyEvent myEvent) {
@@ -83,7 +95,13 @@ public class MyInfoActivity extends UserBaseCompatActivity {
             if (img != null) {
                 Glide.with(this).load(img).into(ivPersonImage);
             } else {
-                ivPersonImage.setBackgroundResource(R.mipmap.avatar_default);
+                String url = userEntity.getUser_url();
+                LogUtil.d(TAG, "url:"+url);
+                if(url != null && url.length() > 0){
+                    Glide.with(this).load(url).into(ivPersonImage);
+                }else{
+                    ivPersonImage.setBackgroundResource(R.mipmap.avatar_default);
+                }
             }
             email = userEntity.getUser_email();
         }

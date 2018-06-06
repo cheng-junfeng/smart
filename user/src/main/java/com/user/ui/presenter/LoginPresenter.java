@@ -24,8 +24,9 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 public class LoginPresenter implements LoginContract.Presenter {
-    private final static String ROOT_ACCOUNT = "junfeng";
-    private final static int ROOT_ID = 10000;
+    public final static String ROOT_ACCOUNT = "junfeng";
+    public final static int ROOT_ID = 10000;
+    public final static int ROOT_ID_THIRD = 10001;
     private final static String TAG = "LoginPresenter";
     LoginContract.View mView;
 

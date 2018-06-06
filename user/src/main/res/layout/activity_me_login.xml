@@ -75,26 +75,100 @@
         android:layout_below="@id/ll_login"
         android:layout_marginLeft="@dimen/margin_left_small"
         android:layout_marginRight="@dimen/margin_left_small"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/all_item_blue_selector"
         android:text="登录"
         android:textColor="@color/color_white"
         android:textSize="16sp" />
 
-    <Button
+    <TextView
         android:id="@+id/bt_register"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/button_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/bt_login"
-        android:layout_centerHorizontal="true"
+        android:textColor="@color/color_red_logout"
+        android:gravity="start|center_vertical"
+        android:layout_marginTop="@dimen/offset_10dp"
         android:layout_marginLeft="@dimen/margin_left_small"
-        android:layout_marginRight="@dimen/margin_left_small"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/all_item_gray_selector"
-        android:text="注册"
-        android:visibility="gone"
-        android:textColor="@color/colorPrimary"
-        android:textSize="16sp"/>
+        android:text="没有账号？立即注册" />
+
+    <TextView
+        android:id="@+id/hint_tx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_register"
+        android:textColor="@color/blackText"
+        android:gravity="start|center_vertical"
+        android:layout_marginTop="@dimen/offset_10dp"
+        android:layout_marginLeft="@dimen/margin_left_small"
+        android:text="第三方快捷登录" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hint_tx"
+        android:layout_marginTop="@dimen/offset_10dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/hm_qq"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/offset_10dp"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:layout_marginLeft="@dimen/offset_5dp">
+            <ImageView
+                android:layout_width="@dimen/offset_60dp"
+                android:layout_height="@dimen/offset_60dp"
+                android:src="@drawable/umeng_socialize_qq"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QQ登录" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hm_wechat"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/offset_10dp"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:layout_marginLeft="@dimen/offset_5dp">
+            <ImageView
+                android:layout_width="@dimen/offset_60dp"
+                android:layout_height="@dimen/offset_60dp"
+                android:src="@drawable/umeng_socialize_wechat"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="微信登录" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hm_sina"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/offset_10dp"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:layout_marginLeft="@dimen/offset_5dp"
+            android:layout_marginRight="@dimen/offset_5dp">
+            <ImageView
+                android:layout_width="@dimen/offset_60dp"
+                android:layout_height="@dimen/offset_60dp"
+                android:src="@drawable/umeng_socialize_sina"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="微博登录" />
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.base.utils.LogUtil;
 import com.bumptech.glide.Glide;
 import com.custom.widget.CommEditText;
 import com.hint.listener.OnInputListener;
@@ -25,6 +26,9 @@ import com.hint.utils.ToastUtils;
 import com.base.utils.NotNull;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.base.config.GlobalConfig;
+import com.umeng.socialize.UMAuthListener;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.user.BuildConfig;
 import com.user.config.NetConfig;
 import com.base.utils.IPUtil;
@@ -41,6 +45,7 @@ import com.user.ui.presenter.LoginPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -193,7 +198,7 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
         });
     }
 
-    @OnClick({R2.id.bt_login, R2.id.bt_register})
+    @OnClick({R2.id.bt_login, R2.id.bt_register, R2.id.hm_qq, R2.id.hm_wechat, R2.id.hm_sina})
     public void onViewClicked(View view) {
         int viewId = view.getId();
         if(viewId == R.id.bt_login){
@@ -202,6 +207,12 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
             presenter.login(mContext, "junfeng", "123", this);
         }else if(viewId == R.id.bt_register){
             readGo(MyRegistActivity.class);
+        }else if(viewId == R.id.hm_qq){
+            authorization(SHARE_MEDIA.QQ);
+        }else if(viewId == R.id.hm_wechat){
+            authorization(SHARE_MEDIA.WEIXIN);
+        }else if(viewId == R.id.hm_sina){
+            authorization(SHARE_MEDIA.SINA);
         }
     }
 
@@ -234,7 +245,6 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
             finish();
         }else{
             ToastUtils.showToast(this, "应用内部错误，请清除数据");
-
         }
     }
 
@@ -261,5 +271,78 @@ public class MyLoginActivity extends UserBaseCompatActivity implements LoginCont
             }
         }
         return null;
+    }
+
+    private void authorization(SHARE_MEDIA share_media) {
+        UMShareAPI.get(this).getPlatformInfo(this, share_media, new UMAuthListener() {
+            @Override
+            public void onStart(SHARE_MEDIA share_media) {
+                LogUtil.d(TAG, "onStart " + "授权开始");
+            }
+
+            @Override
+            public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
+                LogUtil.d(TAG, "onComplete " + "授权完成");
+                //sdk是6.4.4的,但是获取值的时候用的是6.2以前的(access_token)才能获取到值,未知原因
+                String uid = map.get("uid");
+                String openid = map.get("openid");//微博没有
+                String unionid = map.get("unionid");//微博没有
+                String access_token = map.get("access_token");
+                String refresh_token = map.get("refresh_token");//微信,qq,微博都没有获取到
+                String expires_in = map.get("expires_in");
+                String name = map.get("name");
+                String gender = map.get("gender");
+                String iconurl = map.get("iconurl");
+
+                LogUtil.d(TAG, "uid:"+uid+":"+name+":"+gender+":"+iconurl);
+                LogUtil.d(TAG, "openid:"+openid+":"+unionid+":"+access_token+":"+refresh_token+":"+expires_in);
+
+                thirdLoginSuccess(name, iconurl);
+            }
+
+            @Override
+            public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
+                LogUtil.d(TAG, "onError " + "授权失败");
+                loginFail("三方授权失败");
+            }
+
+            @Override
+            public void onCancel(SHARE_MEDIA share_media, int i) {
+                LogUtil.d(TAG, "onCancel " + "三方授权取消");
+                loginFail("三方授权取消");
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void thirdLoginSuccess(String userName, String userurl){
+        UserHelper helper = UserHelper.getInstance();
+        UserEntity oldEntity = helper.queryByUserName(userName);
+
+        int userId = LoginPresenter.ROOT_ID_THIRD;
+        String token = Long.toString(System.currentTimeMillis()); // Token
+        long current = System.currentTimeMillis();
+        if(oldEntity == null){
+            UserEntity user = new UserEntity();
+            user.setUser_id(userId);
+            user.setUser_name(userName);
+            user.setUser_token(token);
+            user.setUser_url(userurl);
+            user.setUser_lasttime(Long.toString(current));
+            UserHelper.getInstance().insert(user);
+        }else{
+            oldEntity.setUser_id(userId);
+            oldEntity.setUser_token(token);
+            oldEntity.setUser_url(userurl);
+            oldEntity.setUser_lasttime(Long.toString(current));
+            UserHelper.getInstance().update(oldEntity);
+        }
+        ShareUtil.put(GlobalConfig.MY_USERNAME, userName);          // 存下token到SP中
+        loginSuccess();
     }
 }

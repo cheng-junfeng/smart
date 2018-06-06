@@ -79,7 +79,13 @@ public class MyFragment extends UserBaseCompatFragment {
             if (img != null) {
                 Glide.with(this).load(img).into(ivPersonImage);
             } else {
-                ivPersonImage.setBackgroundResource(R.mipmap.avatar_default);
+                String url = userEntity.getUser_url();
+                LogUtil.d(TAG, "url:"+url);
+                if(url != null && url.length() > 0){
+                    Glide.with(this).load(url).into(ivPersonImage);
+                }else{
+                    ivPersonImage.setBackgroundResource(R.mipmap.avatar_default);
+                }
             }
         }
         tvPersonName.setTitle(userName);

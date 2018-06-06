@@ -22,6 +22,7 @@ import com.push.db.control.PushDbManager;
 import com.smart.R;
 import com.smart.db.control.AppDbManager;
 import com.smart.ui.module.other.data.control.DemoManager;
+import com.user.UserAPI;
 import com.user.db.control.UserDbManager;
 import com.user.ui.view.MyAboutActivity;
 import com.user.ui.view.MyUpgradeActvity;
@@ -58,11 +59,11 @@ public class SmartApplication extends MultiDexApplication {
         LogUtil.d(TAG, "init");
 
         //db
-        UserDbManager.init(mContext);
         AppDbManager.init(mContext);
         PushDbManager.init(mContext);
 
         //module
+        UserAPI.init(mContext);
         Push.init(mContext);
         Bmap.getInstance().init(mContext);
         initEaseUI();
