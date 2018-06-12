@@ -116,8 +116,9 @@
 - 1 欢迎沟通
 - Email: sjun945@outlook.com 
 - WeChat: cheng-junfeng
-- 下载地址：https://fir.im/l9vb (使用账号 junfeng 密码 123登录)
-- <a href="https://fir.im/l9vb">App</a>
+- 下载地址：<a href="https://fir.im/l9vb" target="_blank">App</a>
+- (使用账号 junfeng 密码 123登录)
+
 
 - 2 项目中有很多参考的是别人优秀的开源代码，未标记出处
 - 如有版权问题，请与我联系。
