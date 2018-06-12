@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/main_path"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_button_height"
+        android:background="@color/color_alpha_light_black"
+        android:textColor="@color/color_light_white"
+        android:gravity="start|center"
+        android:text="/data"/>
+
+    <TextView
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:maxLines="20"
+        android:scrollbars="vertical"/>
+</LinearLayout>

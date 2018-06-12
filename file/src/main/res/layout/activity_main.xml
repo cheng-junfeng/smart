@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_toolbar_height"
+        android:paddingLeft="@dimen/offset_3dp"
+        android:paddingRight="@dimen/offset_3dp"
+        android:background="@color/color_light_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/base_toolbar_height"
+            android:layout_weight="6"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:padding="@dimen/offset_3dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <AutoCompleteTextView
+                android:id="@+id/search_bar"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:completionThreshold="1"
+                android:hint="Enter Path"
+                android:imeOptions="actionSearch"
+                android:inputType="textPostalAddress"
+                android:dropDownHeight="200dp"
+                android:dropDownWidth="180dp"
+                android:singleLine="true"
+                android:textColor="#317F6D"
+                android:textColorHint="#317F6D"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvBrower"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/base_button_height"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:background="@drawable/type_blue"
+            android:layout_margin="2dp"
+            android:textColor="@color/color_light_white"
+            android:text="Brower" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/down_setting"
+        android:layout_marginTop="@dimen/offset_20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="/data"/>
+
+    <Button
+        android:id="@+id/upload_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="/sdacrd/"/>
+
+</LinearLayout>
