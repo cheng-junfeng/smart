@@ -116,7 +116,7 @@
 - 1 欢迎沟通
 - Email: sjun945@outlook.com 
 - WeChat: cheng-junfeng
-- 下载地址：<a href="https://fir.im/l9vb" target="_blank">App</a>
+- 下载地址：<a href="https://fir.im/umg8" target="_blank">App</a>
 - (使用账号 junfeng 密码 123登录)
 
 
