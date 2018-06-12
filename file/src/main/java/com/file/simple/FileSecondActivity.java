@@ -20,8 +20,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class TestSecondActivity extends BaseAppCompatActivity {
-    public final static String TAG = "TestSecondActivity";
+public class FileSecondActivity extends BaseAppCompatActivity {
+    public final static String TAG = "FileSecondActivity";
     @BindView(R2.id.main_view)
     ListView mainView;
     @BindView(R2.id.main_path)
@@ -32,7 +32,7 @@ public class TestSecondActivity extends BaseAppCompatActivity {
 
     @Override
     protected int setContentView() {
-        return R.layout.activity_second;
+        return R.layout.file_second;
     }
 
     @Override

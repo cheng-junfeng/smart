@@ -19,6 +19,8 @@ import com.alibaba.android.vlayout.layout.GridLayoutHelper;
 import com.alibaba.android.vlayout.layout.LinearLayoutHelper;
 import com.audio.ui.AudioMainActivity;
 import com.baidu.track.activity.MapMainActivity;
+import com.context.simple.ContextActivity;
+import com.file.simple.FileTestActivity;
 import com.hikvison.ui.HikTestActivity;
 import com.hint.utils.ToastUtils;
 import com.hyphenate.simple.EaseMainActivity;
@@ -160,7 +162,7 @@ public class FindFragmentPresenter implements FindFragmentContract.Presenter {
         gridLayoutHelper.setWeights(new float[]{25, 25, 25 , 25});
         gridLayoutHelper.setBgColor(Color.WHITE);
         //gridLayoutHelper.setAutoExpand(true);//是否自动填充空白区域
-        return new BaseDelegateAdapter(mContext, gridLayoutHelper, R.layout.item_find, 7, Constant.viewType.typeGvSecond) {
+        return new BaseDelegateAdapter(mContext, gridLayoutHelper, R.layout.item_find, 9, Constant.viewType.typeGvSecond) {
             @Override
             public void onBindViewHolder(BaseViewHolder holder, @SuppressLint("RecyclerView") final int position) {
                 super.onBindViewHolder(holder, position);
@@ -196,6 +198,14 @@ public class FindFragmentPresenter implements FindFragmentContract.Presenter {
                             break;
                             case 6: {
                                 readGo(NfcActivity.class);
+                            }
+                            break;
+                            case 7: {
+                                readGo(FileTestActivity.class);
+                            }
+                            break;
+                            case 8: {
+                                readGo(ContextActivity.class);//context
                             }
                             break;
                             default:

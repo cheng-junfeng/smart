@@ -13,8 +13,8 @@ import com.file.utils.FileUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TestThirdActivity extends BaseAppCompatActivity {
-    public final static String TAG = "TestThirdActivity";
+public class FileThirdActivity extends BaseAppCompatActivity {
+    public final static String TAG = "FileThirdActivity";
     @BindView(R2.id.main_path)
     TextView mainPath;
     @BindView(R2.id.main_view)
@@ -24,7 +24,7 @@ public class TestThirdActivity extends BaseAppCompatActivity {
 
     @Override
     protected int setContentView() {
-        return R.layout.activity_third;
+        return R.layout.file_third;
     }
 
     @Override

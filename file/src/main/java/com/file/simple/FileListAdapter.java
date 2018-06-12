@@ -47,7 +47,7 @@ class FileListAdapter extends BaseAdapter {
         ViewHolder holder;
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = LayoutInflater.from(context).inflate(R.layout.app_list_item, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.file_list_item, null);
             holder.tvLayout = (LinearLayout) convertView.findViewById(R.id.hm_root);
 
             holder.tvType = (TextView) convertView.findViewById(R.id.hm_type);
@@ -68,7 +68,7 @@ class FileListAdapter extends BaseAdapter {
             holder.tvLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, TestSecondActivity.class);
+                    Intent intent = new Intent(context, FileSecondActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("PATH", appInfo.appPath);
                     intent.putExtras(bundle);
@@ -81,7 +81,7 @@ class FileListAdapter extends BaseAdapter {
             holder.tvLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, TestThirdActivity.class);
+                    Intent intent = new Intent(context, FileThirdActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("PATH", appInfo.appPath);
                     intent.putExtras(bundle);

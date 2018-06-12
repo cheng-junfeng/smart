@@ -22,8 +22,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class TestSecondActivity extends AppCompatActivity {
-    public final static String TAG = "TestSecondActivity";
+public class ContextSecondActivity extends AppCompatActivity {
+    public final static String TAG = "ContextSecondActivity";
     @BindView(R2.id.main_view)
     ListView mainView;
 
@@ -33,7 +33,7 @@ public class TestSecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.context_list);
         ButterKnife.bind(this);
         mContext = this;
         Bundle bundle = getIntent().getExtras();

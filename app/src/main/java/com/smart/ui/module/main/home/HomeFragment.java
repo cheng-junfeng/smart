@@ -16,6 +16,7 @@ import com.base.app.listener.OnClickLongListener;
 import com.hint.utils.ToastUtils;
 import com.photo.config.PhotoConfig;
 import com.photo.ui.PhotoActivity;
+import com.photo.ui.PhotoChooseActivity;
 import com.photo.ui.fragment.PicCarouseFragment;
 import com.smart.R;
 import com.smart.app.activity.BaseCompatFragment;
@@ -94,6 +95,7 @@ public class HomeFragment extends BaseCompatFragment {
         HomeListBean bean3e = new HomeListBean.Builder().content("虚拟布局").build();
         HomeListBean bean3f = new HomeListBean.Builder().content("手表").build();
         HomeListBean bean3g = new HomeListBean.Builder().content("画图").build();
+        HomeListBean bean3h = new HomeListBean.Builder().content("选图").build();
 
         allData3.add(bean30);
         allData3.add(bean31);
@@ -112,6 +114,7 @@ public class HomeFragment extends BaseCompatFragment {
         allData3.add(bean3e);
         allData3.add(bean3f);
         allData3.add(bean3g);
+        allData3.add(bean3h);
 
         if (mAdapter3 == null) {
             mAdapter3 = new HomeListAdapter(allData3);
@@ -177,6 +180,9 @@ public class HomeFragment extends BaseCompatFragment {
                             bundle.putInt(PhotoConfig.FRAGMENT_POS, PhotoConfig.POS_EDIT);
                             bundle.putString(PhotoConfig.PHOTO_URL, "/storage/emulated/0/1/image.jpg");
                             readGo(PhotoActivity.class, bundle);
+                            break;
+                        case 17:
+                            readGo(PhotoChooseActivity.class);
                             break;
                         default:
                             ToastUtils.showToast(mContext, "No More");

@@ -18,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class TestFileActivity extends BaseAppCompatActivity {
+public class FileTestActivity extends BaseAppCompatActivity {
 
     @BindView(R2.id.search_bar)
     AutoCompleteTextView searchBar;
@@ -27,7 +27,7 @@ public class TestFileActivity extends BaseAppCompatActivity {
 
     @Override
     protected int setContentView() {
-        return R.layout.activity_main;
+        return R.layout.file_main;
     }
 
     @Override
@@ -59,7 +59,7 @@ public class TestFileActivity extends BaseAppCompatActivity {
             }
             path = searchPath;
         }
-        Intent intent = new Intent(this, TestSecondActivity.class);
+        Intent intent = new Intent(this, FileSecondActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString("PATH", path);
         intent.putExtras(bundle);

@@ -13,15 +13,15 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class TestActivity extends AppCompatActivity {
-    public final static String TAG = "TestActivity";
+public class ContextActivity extends AppCompatActivity {
+    public final static String TAG = "ContextActivity";
 
     private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.context_main);
         ButterKnife.bind(this);
         mContext = this;
         setTitle("Test");
@@ -31,31 +31,31 @@ public class TestActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         int viewId = view.getId();
         if(viewId == R.id.all_app){
-            Intent intent = new Intent(this, TestSecondActivity.class);
+            Intent intent = new Intent(this, ContextSecondActivity.class);
             Bundle bundle = new Bundle();
             bundle.putInt("POS", 0);
             intent.putExtras(bundle);
             startActivity(intent);
         }else if(viewId == R.id.all_process){
-            Intent intent = new Intent(this, TestSecondActivity.class);
+            Intent intent = new Intent(this, ContextSecondActivity.class);
             Bundle bundle = new Bundle();
             bundle.putInt("POS", 1);
             intent.putExtras(bundle);
             startActivity(intent);
         } else if(viewId == R.id.all_ram){
-            Intent intent = new Intent(this, TestSecondActivity.class);
+            Intent intent = new Intent(this, ContextSecondActivity.class);
             Bundle bundle = new Bundle();
             bundle.putInt("POS", 2);
             intent.putExtras(bundle);
             startActivity(intent);
         } else if(viewId == R.id.all_task){
-            Intent intent = new Intent(this, TestSecondActivity.class);
+            Intent intent = new Intent(this, ContextSecondActivity.class);
             Bundle bundle = new Bundle();
             bundle.putInt("POS", 3);
             intent.putExtras(bundle);
             startActivity(intent);
         } else if(viewId == R.id.all_process2){
-            Intent intent = new Intent(this, TestSecondActivity.class);
+            Intent intent = new Intent(this, ContextSecondActivity.class);
             Bundle bundle = new Bundle();
             bundle.putInt("POS", 4);
             intent.putExtras(bundle);

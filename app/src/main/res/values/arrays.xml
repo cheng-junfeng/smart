@@ -24,6 +24,8 @@
         <item>@mipmap/ic_category_4</item>
         <item>@mipmap/ic_category_5</item>
         <item>@mipmap/ic_category_6</item>
+        <item>@mipmap/ic_category_7</item>
+        <item>@mipmap/ic_category_8</item>
     </integer-array>
     <string-array name="find_gv_title2">
         <item>线程</item>
@@ -33,6 +35,8 @@
         <item>Aidl</item>
         <item>分享</item>
         <item>NFC</item>
+        <item>File</item>
+        <item>Context</item>
     </string-array>
 
     <integer-array name="find_gv_image3">

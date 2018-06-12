@@ -149,6 +149,11 @@ dependencies {
     implementation project(':audio')
     //word
     implementation project(':word')
+    //context
+    implementation project(':context')
+    //file
+    implementation project(':file')
+
     //jpush
     implementation project(':push')
     //map

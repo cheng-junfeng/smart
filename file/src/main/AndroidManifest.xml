@@ -4,21 +4,21 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application>
-        <activity android:name=".simple.TestThirdActivity"
+        <activity android:name=".simple.FileThirdActivity"
             android:screenOrientation="portrait"
             android:theme="@style/BaseTheme">
         </activity>
-        <activity android:name=".simple.TestSecondActivity"
+        <activity android:name=".simple.FileSecondActivity"
             android:screenOrientation="portrait"
             android:theme="@style/BaseTheme">
         </activity>
-        <activity android:name=".simple.TestFileActivity"
+        <activity android:name=".simple.FileTestActivity"
             android:screenOrientation="portrait"
             android:theme="@style/BaseTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
     </application>
 </manifest>
