@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_light_gray"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_button_height"
+            android:background="@drawable/all_item_gray_selector"
+            android:clickable="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_left"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="我的应用"
+                    android:textColor="@color/blackText"
+                    android:textSize="@dimen/text_size_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="(按住拖动调整排列)"
+                    android:textColor="#989898"
+                    android:textSize="@dimen/text_size_16" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <com.custom.widget.DragGridView
+            android:id="@+id/top_view"
+            android:layout_marginRight="@dimen/offset_3dp"
+            android:layout_marginBottom="@dimen/offset_3dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:numColumns="4"></com.custom.widget.DragGridView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_marginTop="@dimen/offset_20dp"
+        android:layout_below="@id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_button_height"
+            android:background="@drawable/all_item_gray_selector"
+            android:clickable="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_left"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="其它"
+                    android:textColor="@color/blackText"
+                    android:textSize="@dimen/text_size_16" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <com.custom.widget.ScrollGridView
+            android:id="@+id/bottom_view"
+            android:layout_marginRight="@dimen/offset_3dp"
+            android:layout_marginBottom="@dimen/offset_3dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:numColumns="4" />
+    </LinearLayout>
+</RelativeLayout>

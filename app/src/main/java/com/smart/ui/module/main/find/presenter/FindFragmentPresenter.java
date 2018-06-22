@@ -26,7 +26,9 @@ import com.hint.utils.ToastUtils;
 import com.hyphenate.simple.EaseMainActivity;
 import com.smart.db.entity.NoteEntity;
 import com.smart.db.helper.NoteHelper;
+import com.smart.ui.module.guide.SplashActivity;
 import com.smart.ui.module.main.find.adapter.FindLinearAdapter;
+import com.smart.ui.module.main.more.MoreSimpleActivity;
 import com.txlive.ui.view.RtmpMainActivity;
 import com.video.ui.view.VideoMainActivity;
 import com.webview.config.WebConfig;
@@ -162,7 +164,7 @@ public class FindFragmentPresenter implements FindFragmentContract.Presenter {
         gridLayoutHelper.setWeights(new float[]{25, 25, 25 , 25});
         gridLayoutHelper.setBgColor(Color.WHITE);
         //gridLayoutHelper.setAutoExpand(true);//是否自动填充空白区域
-        return new BaseDelegateAdapter(mContext, gridLayoutHelper, R.layout.item_find, 9, Constant.viewType.typeGvSecond) {
+        return new BaseDelegateAdapter(mContext, gridLayoutHelper, R.layout.item_find, 11, Constant.viewType.typeGvSecond) {
             @Override
             public void onBindViewHolder(BaseViewHolder holder, @SuppressLint("RecyclerView") final int position) {
                 super.onBindViewHolder(holder, position);
@@ -206,6 +208,14 @@ public class FindFragmentPresenter implements FindFragmentContract.Presenter {
                             break;
                             case 8: {
                                 readGo(ContextActivity.class);//context
+                            }
+                            break;
+                            case 9: {
+                                readGo(SplashActivity.class);//context
+                            }
+                            break;
+                            case 10: {
+                                readGo(MoreSimpleActivity.class);//context
                             }
                             break;
                             default:

@@ -61,7 +61,7 @@ android {
     //greendao配置
     greendao {
         //版本号，升级时可配置
-        schemaVersion 3
+        schemaVersion 4
     }
     lintOptions {
         abortOnError false

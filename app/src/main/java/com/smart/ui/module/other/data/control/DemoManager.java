@@ -2,15 +2,20 @@ package com.smart.ui.module.other.data.control;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 
 import com.base.utils.LogUtil;
 import com.base.utils.TimeUtil;
+import com.smart.R;
 import com.smart.db.entity.DataEntity;
+import com.smart.db.entity.MoreEntity;
 import com.smart.db.entity.NoteEntity;
 import com.smart.db.helper.DataHelper;
 import com.push.db.helper.MessageHelper;
 import com.push.db.entity.MessagesEntity;
+import com.smart.db.helper.MoreHelper;
 import com.smart.db.helper.NoteHelper;
+import com.smart.ui.module.main.more.control.MoreConfig;
 
 import java.util.List;
 import java.util.Random;
@@ -88,6 +93,25 @@ public class DemoManager {
             entity5.setNote_content("今天休息");
             entity5.setNote_lasttime(TimeUtil.milliseconds2String(curren+5000));
             noteHelper.insert(entity5);
+        }
+
+        MoreHelper moreHelper = MoreHelper.getInstance();
+        List<MoreEntity> moreEntity = moreHelper.queryList();
+        if (moreEntity == null || moreEntity.size() == 0) {
+            final TypedArray proPic = mContext.getResources().obtainTypedArray(R.array.more_image);
+            final String[] proName = mContext.getResources().getStringArray(R.array.more_title);
+            for (int i = 0; i < proName.length; i++) {
+                int resId = proPic.getResourceId(i, R.mipmap.ic_category_more);
+                MoreEntity entity = new MoreEntity();
+                entity.entry_type = i;
+                entity.index = i;
+
+                entity.image_id = resId;
+                entity.title = proName[i];
+
+                entity.bottom = i > MoreConfig.NUM;
+                moreHelper.insert(entity);
+            }
         }
     }
 }
