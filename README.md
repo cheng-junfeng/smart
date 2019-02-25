@@ -96,12 +96,10 @@
 
  
 ### 6.功能展示
-<img src='http://i1.bvimg.com/645352/41426ca33a2ddeb9.png' width = "270" height = "480" align=center />
-<img src="http://i2.bvimg.com/645352/a224d91ff8d07552.png" width = "270" height = "480" align=center />
-<img src="http://i2.bvimg.com/645352/063b415c6c896ce4.png" width = "270" height = "480" align=center />
-<img src="http://i2.bvimg.com/645352/7ed595d20a80ed9a.png" width = "270" height = "480" align=center />
-<img src="http://i4.bvimg.com/645352/8e49fdf8c5678540.png" width = "270" height = "480" align=center />
-<img src="http://i4.bvimg.com/645352/496945712f86291b.png" width = "270" height = "480" align=center />
+<img src='https://github.com/cheng-junfeng/smart/blob/master/pic/1.jpg' width = "270" height = "480" align=center />
+<img src='https://github.com/cheng-junfeng/smart/blob/master/pic/2.jpg' width = "270" height = "480" align=center />
+<img src='https://github.com/cheng-junfeng/smart/blob/master/pic/3.jpg' width = "270" height = "480" align=center />
+<img src='https://github.com/cheng-junfeng/smart/blob/master/pic/4.jpg' width = "270" height = "480" align=center />
 
 
 ### 7.使用到的后台
@@ -118,10 +116,6 @@
 - WeChat: cheng-junfeng
 - 下载地址：<a href="https://fir.im/umg8" target="_blank">App</a>
 - (使用账号 junfeng 密码 123登录)
-
-
-- 2 项目中有很多参考的是别人优秀的开源代码，未标记出处
-- 如有版权问题，请与我联系。
 
 
 
